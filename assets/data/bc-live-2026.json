@@ -211,30 +211,30 @@
   },
   {
     "riding": "Burnaby North",
-    "reportingPct": 93.1,
+    "reportingPct": 94.4,
     "candidates": [
       {
         "name": "Simon Chandler",
         "party": "Conservative Party",
-        "votes": 8138,
+        "votes": 8243,
         "status": null
       },
       {
         "name": "Maddy Kennedy-Parrott",
         "party": "BC Green Party",
-        "votes": 1588,
+        "votes": 1617,
         "status": null
       },
       {
         "name": "Janet Routledge",
         "party": "BC NDP",
-        "votes": 7365,
+        "votes": 7474,
         "status": null
       },
       {
         "name": "Jenny Yamagata",
         "party": "OneBC",
-        "votes": 411,
+        "votes": 413,
         "status": null
       }
     ]
@@ -432,7 +432,7 @@
       {
         "name": "Brennan Day",
         "party": "Conservative Party",
-        "votes": 12692,
+        "votes": 12693,
         "status": null
       },
       {
@@ -1950,7 +1950,7 @@
       {
         "name": "Harj Dhaliwal",
         "party": "Conservative Party",
-        "votes": 7325,
+        "votes": 7327,
         "status": null
       },
       {
@@ -1962,7 +1962,7 @@
       {
         "name": "Jessie Sunner",
         "party": "BC NDP",
-        "votes": 5464,
+        "votes": 5468,
         "status": null
       }
     ]
@@ -1974,19 +1974,19 @@
       {
         "name": "Jag Bhandari",
         "party": "Unaffiliated",
-        "votes": 59,
+        "votes": 60,
         "status": null
       },
       {
         "name": "Parm Bhandol",
         "party": "CentreBC",
-        "votes": 317,
+        "votes": 318,
         "status": null
       },
       {
         "name": "Mandeep Singh Dhaliwal",
         "party": "Conservative Party",
-        "votes": 7418,
+        "votes": 7434,
         "status": null
       },
       {
@@ -1998,13 +1998,13 @@
       {
         "name": "Tanya Gupta",
         "party": "OneBC",
-        "votes": 238,
+        "votes": 239,
         "status": null
       },
       {
         "name": "Sahib Thind",
         "party": "BC NDP",
-        "votes": 4211,
+        "votes": 4232,
         "status": null
       }
     ]
@@ -2028,13 +2028,13 @@
       {
         "name": "Jinny Sims",
         "party": "BC NDP",
-        "votes": 4893,
+        "votes": 4894,
         "status": null
       },
       {
         "name": "Bryan Tepper",
         "party": "Conservative Party",
-        "votes": 8573,
+        "votes": 8576,
         "status": null
       }
     ]
@@ -2046,7 +2046,7 @@
       {
         "name": "Judy Higginbotham",
         "party": "CentreBC",
-        "votes": 887,
+        "votes": 888,
         "status": null
       },
       {
@@ -2058,7 +2058,7 @@
       {
         "name": "Sikander Kang",
         "party": "BC NDP",
-        "votes": 5667,
+        "votes": 5671,
         "status": null
       },
       {
@@ -2070,7 +2070,7 @@
       {
         "name": "Jessy Sahota",
         "party": "Conservative Party",
-        "votes": 10095,
+        "votes": 10098,
         "status": null
       }
     ]
