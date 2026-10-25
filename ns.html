@@ -173,8 +173,8 @@ body.av-locked{overflow:hidden}
 .av-dist-btn .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
 .av-dist-note{color:#4b5563;font-size:14px;max-width:820px}
 
-.map-box{height:560px;border:1px solid #e5e7eb;background:#f2f4f7}
-@media(max-width:640px){.map-box{height:400px}}
+.map-box{height:420px;border:1px solid #e5e7eb;background:#f2f4f7}
+@media(max-width:640px){.map-box{height:320px}}
 @media print{.map-box{display:none}}
 .map-fallback{color:#4b5563;font-size:14px}
 .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
@@ -190,12 +190,12 @@ body.av-locked{overflow:hidden}
 .cand-row .c-party{color:#4b5563}
 .cand-row .c-votes{font-variant-numeric:tabular-nums;white-space:nowrap}
 </style>
-<section class="section">
+<section class="section"><div class="container">
 <div class="eyebrow">Results map</div>
 <h2>Results map — who won where</h2>
 <p class="av-dist-note">Tap a district on the map, or pick one below, to see all its candidates. Districts are coloured by the winning party.</p>
 <div id="nsMap" class="map-box" role="img" aria-label="Map of Nova Scotia's 55 electoral districts coloured by winning party: Progressive Conservatives won 43 districts, New Democrats 9, Liberals 2, Independent 1"></div>
-<div id="mapFallback" class="map-fallback" hidden>The map can't load on this device — every district's winner is still listed below.</div>
+<div id="mapFallback" class="map-fallback" hidden>The map can't load on this device — every district's winner is still listed below.</div></div>
 </section>
 <section class="section">
 <div class="eyebrow">District results</div>
@@ -301,7 +301,7 @@ select(def);
     if(!m) return;
     var tries=0;
     var iv=setInterval(function(){
-      var mp=(m.getMap?m.getMap():m.map); if(mp){ clearInterval(iv);
+      var mp=(m.getMap?m.getMap():m.map); if(mp){ clearInterval(iv); if(mp.scrollZoom&&mp.scrollZoom.disable) mp.scrollZoom.disable();
         mp.on("click","districts-fill",function(e){
           var ft=e.features&&e.features[0];
           if(ft&&typeof ft.properties.idx==="number"){ select(ft.properties.idx); var gl=document.getElementById("avDistList"); if(gl) gl.scrollIntoView({behavior:"smooth",block:"nearest"}); }
