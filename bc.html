@@ -68,8 +68,6 @@ a{color:var(--accent)}
 .live-meta{font-size:15px;color:#d7dde3}
 .live-meta b{color:#fff}
 .source-badge{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--accent);color:var(--accent);padding:4px 8px}
-button.refresh{font:inherit;font-size:15px;font-weight:700;border:1px solid var(--ink);background:#fff;color:var(--ink);padding:8px 14px;cursor:pointer}
-button.refresh:hover{border-color:var(--accent);color:var(--accent)}
 .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 20px}
 .controls input[type="search"]{font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);min-width:260px;flex:1 1 260px}
 .controls select{font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);background:#fff}
@@ -133,7 +131,7 @@ button.refresh:hover{border-color:var(--accent);color:var(--accent)}
     <p class="lede">Preliminary results as Elections BC reports them. 93 ridings · 47 seats for a majority. Results tonight are preliminary and exclude vote-by-mail, absentee and assisted-telephone ballots — those are counted at the final count, November 6–10. Atlantic Votes also projects winners from votes counted and polls reported; projections are labelled as such and can change as more votes are counted.</p>
     <div class="live-banner" role="status">
       <span class="live-status"><span class="live-dot awaiting" id="liveDot"></span><span id="liveStatus">Awaiting results</span></span>
-      <span class="live-meta">Last checked: <b id="lastChecked">—</b> · Next refresh in <b id="countdown">60s</b> · <button class="refresh" id="refreshBtn" type="button">Refresh now</button></span>
+      <span class="live-meta">Last checked: <b id="lastChecked">—</b> · Next refresh in <b id="countdown">60s</b></span>
       <span class="source-badge">Results from Elections BC only</span>
     </div>
   </div></section>
@@ -157,9 +155,9 @@ button.refresh:hover{border-color:var(--accent);color:var(--accent)}
 
   <section class="section"><div class="container">
     <div class="eyebrow">Ridings</div>
-    <h2>All 93 ridings — live count</h2>
+    <h2>Live count by riding</h2>
     <p class="section-sub">Every candidate as listed by Elections BC. Votes and shares are counted votes only; reporting percentages appear when Elections BC provides them.</p>
-    <p class="feed-msg" id="feedMsg"><b>Awaiting the official live feed.</b> Elections BC has not yet published 2026 results on its results site. This page checks automatically about every 60 seconds and will show the count as soon as it appears. Nothing here comes from any media or third-party site.</p>
+    <p class="feed-msg" id="feedMsg"><b>Loading the live count.</b> Reading the latest results from Elections BC — this page refreshes automatically about every 60 seconds. Nothing here comes from any media or third-party site.</p>
     <div class="controls">
       <input type="search" id="q" placeholder="Search a riding or candidate" aria-label="Search a riding or candidate" />
       <select id="sort" aria-label="Sort ridings">
@@ -168,6 +166,7 @@ button.refresh:hover{border-color:var(--accent);color:var(--accent)}
         <option value="votes">Most votes counted first</option>
         <option value="az">Riding name A–Z</option>
       </select>
+      <label style="font-size:15px;display:flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="reportedOnly" checked /> Reported ridings only</label>
     </div>
     <div class="chips" id="chips" role="group" aria-label="Filter by leading party"></div>
     <p class="note" id="countLine">Showing 93 of 93 ridings.</p>
@@ -204,7 +203,7 @@ var ROSTER=[["Abbotsford South",[["Leah Ballantyne", "BC NDP"],["Bruce Banman", 
    reportingPct, or pollsReporting + pollsTotal. The reporting figure is what
    lets the projection model run: without it a riding can only ever show
    Leading, never Projected. */
-var FEED_URL = "";
+var FEED_URL = "assets/data/bc-live-2026.json";
 var REFRESH_MS = 60000;
 
 var PARTY_META = {
@@ -229,7 +228,7 @@ function initials(name){ var p = String(name).trim().split(/\s+/); return ((p[0]
 
 /* State: results keyed by normalized riding name. Each riding: {cands: {normName: {name, party, votes, status}}, reportingPct, totalVotes} */
 var RESULTS = {};
-var state = { q: "", party: "all", sort: "order", feed: "awaiting", feedMsg: "", lastChecked: null };
+var state = { q: "", party: "all", sort: "order", reportedOnly: true, feed: "awaiting", feedMsg: "", lastChecked: null };
 var $ = function(id){ return document.getElementById(id); };
 
 function ridingResult(ridingName){
@@ -357,6 +356,9 @@ function filteredRidings(){
       return r.cands.some(function(c){ return norm(c[0]).indexOf(q) !== -1; });
     });
   }
+  if (state.reportedOnly){
+    list = list.filter(function(r){ return totalOf(r.name) > 0 || reportingPctOf(r.name) > 0; });
+  }
   if (state.sort === "close"){
     list.sort(function(a, b){ return marginOf(a.name) - marginOf(b.name); });
   } else if (state.sort === "votes"){
@@ -367,6 +369,7 @@ function filteredRidings(){
   return list;
 }
 function totalOf(name){ var r = RESULTS[norm(name)]; return r ? r.totalVotes : 0; }
+function reportingPctOf(name){ var r = RESULTS[norm(name)]; return r && r.reportingPct ? r.reportingPct : 0; }
 function marginOf(name){
   var r = RESULTS[norm(name)];
   if (!r) return Infinity;
@@ -389,7 +392,7 @@ function renderChips(){
 }
 function renderCards(){
   var list = filteredRidings();
-  $("countLine").textContent = "Showing " + list.length + " of 93 ridings.";
+  $("countLine").textContent = "Showing " + list.length + " of 93 ridings" + (state.reportedOnly ? " with results reported." : ".");
   var grid = $("cards");
   grid.innerHTML = "";
   list.forEach(function(r){
@@ -582,7 +585,7 @@ function fetchFeed(){
 /* Controls + refresh loop */
 $("q").addEventListener("input", function(e){ state.q = e.target.value; renderCards(); });
 $("sort").addEventListener("change", function(e){ state.sort = e.target.value; renderCards(); });
-$("refreshBtn").addEventListener("click", function(){ fetchFeed(); resetCountdown(); });
+$("reportedOnly").addEventListener("change", function(e){ state.reportedOnly = e.target.checked; renderCards(); });
 var countdown = 60;
 function resetCountdown(){ countdown = 60; $("countdown").textContent = "60s"; }
 setInterval(function(){
