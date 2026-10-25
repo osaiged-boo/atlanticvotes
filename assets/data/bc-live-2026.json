@@ -138,25 +138,25 @@
       {
         "name": "Joshua Domnich",
         "party": "Conservative Party",
-        "votes": 6676,
+        "votes": 6735,
         "status": null
       },
       {
         "name": "Vikas Gautam",
         "party": "CentreBC",
-        "votes": 354,
+        "votes": 370,
         "status": null
       },
       {
         "name": "Anne Kang",
         "party": "BC NDP",
-        "votes": 5834,
+        "votes": 5955,
         "status": null
       },
       {
         "name": "Shila Taheri",
         "party": "BC Green Party",
-        "votes": 1150,
+        "votes": 1169,
         "status": null
       }
     ]
@@ -883,7 +883,7 @@
   },
   {
     "riding": "Langford-Highlands",
-    "reportingPct": 96.2,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "Sean Flynn",
@@ -2395,7 +2395,7 @@
   },
   {
     "riding": "Vancouver-South Granville",
-    "reportingPct": 91.4,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "Maria J Cruz",
@@ -2538,7 +2538,7 @@
       {
         "name": "Blair Visscher",
         "party": "BC Green Party",
-        "votes": 1724,
+        "votes": 1729,
         "status": null
       }
     ]
