@@ -1,0 +1,1277 @@
+[
+  {
+    "district": "Restigouche West",
+    "candidates": [
+      {
+        "name": "Gilles LePage",
+        "party": "L",
+        "votes": 3993
+      },
+      {
+        "name": "Diane Cyr",
+        "party": "PC",
+        "votes": 1733
+      },
+      {
+        "name": "Myriam Cormier",
+        "party": "PVNBGP",
+        "votes": 380
+      },
+      {
+        "name": "Ronald Geraghty",
+        "party": "LPNB",
+        "votes": 116
+      }
+    ]
+  },
+  {
+    "district": "Restigouche East",
+    "candidates": [
+      {
+        "name": "Guy H. Arseneault",
+        "party": "L",
+        "votes": 3590
+      },
+      {
+        "name": "Normand Pelletier",
+        "party": "PC",
+        "votes": 2271
+      },
+      {
+        "name": "Daisy Petersen",
+        "party": "NBNDP",
+        "votes": 501
+      },
+      {
+        "name": "Gilles Cormier",
+        "party": "PVNBGP",
+        "votes": 389
+      }
+    ]
+  },
+  {
+    "district": "Belle-Baie-Belledune",
+    "candidates": [
+      {
+        "name": "Marco LeBlanc",
+        "party": "L",
+        "votes": 5053
+      },
+      {
+        "name": "Rachel Boudreau",
+        "party": "PVNBGP",
+        "votes": 1411
+      },
+      {
+        "name": "Louis Robichaud",
+        "party": "PC",
+        "votes": 1254
+      },
+      {
+        "name": "Tyler (Ty) Boulay",
+        "party": "NBNDP",
+        "votes": 293
+      }
+    ]
+  },
+  {
+    "district": "Bathurst",
+    "candidates": [
+      {
+        "name": "René Legacy",
+        "party": "L",
+        "votes": 3357
+      },
+      {
+        "name": "Kim Chamberlain",
+        "party": "PC",
+        "votes": 2029
+      },
+      {
+        "name": "Robert Kryszko",
+        "party": "PVNBGP",
+        "votes": 325
+      },
+      {
+        "name": "Jeff Frenette",
+        "party": "NBNDP",
+        "votes": 212
+      }
+    ]
+  },
+  {
+    "district": "Hautes-Terres-Nepisiguit",
+    "candidates": [
+      {
+        "name": "Luc Robichaud",
+        "party": "L",
+        "votes": 4675
+      },
+      {
+        "name": "Jason Purdy",
+        "party": "PC",
+        "votes": 1454
+      }
+    ]
+  },
+  {
+    "district": "Caraquet",
+    "candidates": [
+      {
+        "name": "Isabelle Thériault",
+        "party": "L",
+        "votes": 6002
+      },
+      {
+        "name": "Jean Paul Lanteigne",
+        "party": "PC",
+        "votes": 719
+      }
+    ]
+  },
+  {
+    "district": "Shippagan-Les-Îles",
+    "candidates": [
+      {
+        "name": "Eric Mallet",
+        "party": "L",
+        "votes": 5021
+      },
+      {
+        "name": "Wilfred Roussel",
+        "party": "PVNBGP",
+        "votes": 1111
+      },
+      {
+        "name": "François Robichaud",
+        "party": "PC",
+        "votes": 530
+      }
+    ]
+  },
+  {
+    "district": "Tracadie",
+    "candidates": [
+      {
+        "name": "Keith Chiasson",
+        "party": "L",
+        "votes": 5030
+      },
+      {
+        "name": "Serge Brideau",
+        "party": "PVNBGP",
+        "votes": 3829
+      },
+      {
+        "name": "Gertrude McLaughlin",
+        "party": "PC",
+        "votes": 537
+      }
+    ]
+  },
+  {
+    "district": "Miramichi Bay-Neguac",
+    "candidates": [
+      {
+        "name": "Sam Johnston",
+        "party": "L",
+        "votes": 4219
+      },
+      {
+        "name": "Réjean Savoie",
+        "party": "PC",
+        "votes": 3146
+      },
+      {
+        "name": "Wayne Hitchcock",
+        "party": "PVNBGP",
+        "votes": 711
+      }
+    ]
+  },
+  {
+    "district": "Miramichi East",
+    "candidates": [
+      {
+        "name": "Michelle Conroy",
+        "party": "PC",
+        "votes": 3633
+      },
+      {
+        "name": "Veronique Arsenault",
+        "party": "L",
+        "votes": 2921
+      },
+      {
+        "name": "Josh Shaddick",
+        "party": "PVNBGP",
+        "votes": 355
+      },
+      {
+        "name": "Tom L'Huillier",
+        "party": "PANB",
+        "votes": 236
+      }
+    ]
+  },
+  {
+    "district": "Miramichi West",
+    "candidates": [
+      {
+        "name": "Mike Dawson",
+        "party": "PC",
+        "votes": 3814
+      },
+      {
+        "name": "Mark Hambrook",
+        "party": "L",
+        "votes": 2254
+      },
+      {
+        "name": "Genevieve MacRae",
+        "party": "PVNBGP",
+        "votes": 273
+      },
+      {
+        "name": "Rhonda L'Huillier",
+        "party": "PANB",
+        "votes": 229
+      },
+      {
+        "name": "Richard Sutherland",
+        "party": "IND",
+        "votes": 112
+      }
+    ]
+  },
+  {
+    "district": "Kent North",
+    "candidates": [
+      {
+        "name": "Pat Finnigan",
+        "party": "L",
+        "votes": 3928
+      },
+      {
+        "name": "Kevin Arseneau",
+        "party": "PVNBGP",
+        "votes": 3251
+      },
+      {
+        "name": "Carl Cosby",
+        "party": "PC",
+        "votes": 1441
+      },
+      {
+        "name": "Carole Boudreau",
+        "party": "PANB",
+        "votes": 145
+      }
+    ]
+  },
+  {
+    "district": "Beausoleil-Grand-Bouctouche-Kent",
+    "candidates": [
+      {
+        "name": "Benoît Bourque",
+        "party": "L",
+        "votes": 5794
+      },
+      {
+        "name": "Ann Bastarache",
+        "party": "PC",
+        "votes": 1761
+      },
+      {
+        "name": "Bernadette Morin",
+        "party": "PVNBGP",
+        "votes": 1220
+      },
+      {
+        "name": "Lenny O'Brien",
+        "party": "CNBP",
+        "votes": 112
+      },
+      {
+        "name": "Eddy Richard",
+        "party": "LPNB",
+        "votes": 90
+      }
+    ]
+  },
+  {
+    "district": "Shediac Bay-Dieppe",
+    "candidates": [
+      {
+        "name": "Robert Gauvin",
+        "party": "L",
+        "votes": 6530
+      },
+      {
+        "name": "René Ephestion",
+        "party": "PC",
+        "votes": 1803
+      },
+      {
+        "name": "Chantal Landry",
+        "party": "PVNBGP",
+        "votes": 1254
+      }
+    ]
+  },
+  {
+    "district": "Shediac-Cap-Acadie",
+    "candidates": [
+      {
+        "name": "Jacques LeBlanc",
+        "party": "L",
+        "votes": 5438
+      },
+      {
+        "name": "Jean Bourgeois",
+        "party": "PVNBGP",
+        "votes": 2901
+      },
+      {
+        "name": "Christine Arsenault",
+        "party": "PC",
+        "votes": 1322
+      }
+    ]
+  },
+  {
+    "district": "Tantramar",
+    "candidates": [
+      {
+        "name": "Megan Mitton",
+        "party": "PVNBGP",
+        "votes": 2468
+      },
+      {
+        "name": "John Higham",
+        "party": "L",
+        "votes": 1276
+      },
+      {
+        "name": "Bruce Phinney",
+        "party": "PC",
+        "votes": 1166
+      },
+      {
+        "name": "Evelyne Godfrey",
+        "party": "NBNDP",
+        "votes": 84
+      },
+      {
+        "name": "Donna Allen",
+        "party": "LPNB",
+        "votes": 57
+      }
+    ]
+  },
+  {
+    "district": "Dieppe-Memramcook",
+    "candidates": [
+      {
+        "name": "Natacha Vautour",
+        "party": "L",
+        "votes": 5600
+      },
+      {
+        "name": "Jacques Giguère",
+        "party": "PVNBGP",
+        "votes": 1531
+      },
+      {
+        "name": "Dean Léonard",
+        "party": "PC",
+        "votes": 1311
+      }
+    ]
+  },
+  {
+    "district": "Moncton East",
+    "candidates": [
+      {
+        "name": "Alexandre Cédric Doucet",
+        "party": "L",
+        "votes": 4449
+      },
+      {
+        "name": "Paolo (PJ) Andreetti",
+        "party": "PC",
+        "votes": 1903
+      },
+      {
+        "name": "Diani Blanco",
+        "party": "PVNBGP",
+        "votes": 736
+      },
+      {
+        "name": "Alex Gagne",
+        "party": "NBNDP",
+        "votes": 329
+      }
+    ]
+  },
+  {
+    "district": "Moncton Centre",
+    "candidates": [
+      {
+        "name": "Rob McKee",
+        "party": "L",
+        "votes": 3501
+      },
+      {
+        "name": "Dave Melanson",
+        "party": "PC",
+        "votes": 1738
+      },
+      {
+        "name": "Sarah Colwell",
+        "party": "PVNBGP",
+        "votes": 711
+      },
+      {
+        "name": "James Ryan",
+        "party": "NBNDP",
+        "votes": 242
+      }
+    ]
+  },
+  {
+    "district": "Moncton South",
+    "candidates": [
+      {
+        "name": "Claire Johnson",
+        "party": "L",
+        "votes": 3559
+      },
+      {
+        "name": "Greg Turner",
+        "party": "PC",
+        "votes": 2229
+      },
+      {
+        "name": "Vincent Merola",
+        "party": "PVNBGP",
+        "votes": 900
+      }
+    ]
+  },
+  {
+    "district": "Moncton Northwest",
+    "candidates": [
+      {
+        "name": "Tania Sodhi",
+        "party": "L",
+        "votes": 3761
+      },
+      {
+        "name": "Ernie Steeves",
+        "party": "PC",
+        "votes": 3536
+      },
+      {
+        "name": "Ana Santana",
+        "party": "PVNBGP",
+        "votes": 804
+      }
+    ]
+  },
+  {
+    "district": "Champdoré-Irishtown",
+    "candidates": [
+      {
+        "name": "Lyne Chantal Boudreau",
+        "party": "L",
+        "votes": 3732
+      },
+      {
+        "name": "Ricky Gautreau",
+        "party": "PC",
+        "votes": 2450
+      },
+      {
+        "name": "Matthew Ian Clark",
+        "party": "PVNBGP",
+        "votes": 743
+      },
+      {
+        "name": "Adam Hennessey",
+        "party": "LPNB",
+        "votes": 103
+      }
+    ]
+  },
+  {
+    "district": "Riverview",
+    "candidates": [
+      {
+        "name": "Rob Weir",
+        "party": "PC",
+        "votes": 3114
+      },
+      {
+        "name": "Scott Grant",
+        "party": "L",
+        "votes": 2740
+      },
+      {
+        "name": "Sarah Lord",
+        "party": "PVNBGP",
+        "votes": 1978
+      },
+      {
+        "name": "Desiree Despres",
+        "party": "NBNDP",
+        "votes": 128
+      },
+      {
+        "name": "Rebecca Mallaley",
+        "party": "LPNB",
+        "votes": 69
+      }
+    ]
+  },
+  {
+    "district": "Albert-Riverview",
+    "candidates": [
+      {
+        "name": "Sherry Wilson",
+        "party": "PC",
+        "votes": 4363
+      },
+      {
+        "name": "Dave Gouthro",
+        "party": "L",
+        "votes": 2599
+      },
+      {
+        "name": "Liam MacDougall",
+        "party": "PVNBGP",
+        "votes": 972
+      },
+      {
+        "name": "Sharon Buchanan",
+        "party": "PANB",
+        "votes": 297
+      },
+      {
+        "name": "William Jones",
+        "party": "LPNB",
+        "votes": 97
+      }
+    ]
+  },
+  {
+    "district": "Arcadia-Butternut Valley-Maple Hills",
+    "candidates": [
+      {
+        "name": "Don Monahan",
+        "party": "PC",
+        "votes": 4284
+      },
+      {
+        "name": "Connie Larson",
+        "party": "L",
+        "votes": 2289
+      },
+      {
+        "name": "Brian Boucher",
+        "party": "PVNBGP",
+        "votes": 1093
+      },
+      {
+        "name": "Anthony Matthews",
+        "party": "LPNB",
+        "votes": 149
+      }
+    ]
+  },
+  {
+    "district": "Sussex-Three Rivers",
+    "candidates": [
+      {
+        "name": "Tammy Scott-Wallace",
+        "party": "PC",
+        "votes": 3789
+      },
+      {
+        "name": "Bruce Northrup",
+        "party": "L",
+        "votes": 3282
+      },
+      {
+        "name": "Teri McMackin",
+        "party": "PVNBGP",
+        "votes": 1235
+      },
+      {
+        "name": "Wayne Wheeler",
+        "party": "LPNB",
+        "votes": 159
+      }
+    ]
+  },
+  {
+    "district": "Hampton-Fundy-St. Martins",
+    "candidates": [
+      {
+        "name": "John Herron",
+        "party": "L",
+        "votes": 3259
+      },
+      {
+        "name": "Faytene Grasseschi",
+        "party": "PC",
+        "votes": 3035
+      },
+      {
+        "name": "Laura Myers",
+        "party": "PVNBGP",
+        "votes": 1553
+      },
+      {
+        "name": "Gordie Stackhouse",
+        "party": "NBNDP",
+        "votes": 171
+      },
+      {
+        "name": "Peter Graham",
+        "party": "PANB",
+        "votes": 153
+      },
+      {
+        "name": "Barbara Dempsey",
+        "party": "LPNB",
+        "votes": 120
+      }
+    ]
+  },
+  {
+    "district": "Quispamsis",
+    "candidates": [
+      {
+        "name": "Aaron Kennedy",
+        "party": "L",
+        "votes": 3861
+      },
+      {
+        "name": "Blaine Higgs",
+        "party": "PC",
+        "votes": 3668
+      },
+      {
+        "name": "Andrew Conradi",
+        "party": "PVNBGP",
+        "votes": 378
+      },
+      {
+        "name": "Alex White",
+        "party": "NBNDP",
+        "votes": 360
+      },
+      {
+        "name": "David Raymond Amos",
+        "party": "IND",
+        "votes": 42
+      }
+    ]
+  },
+  {
+    "district": "Rothesay",
+    "candidates": [
+      {
+        "name": "Alyson Townsend",
+        "party": "L",
+        "votes": 4085
+      },
+      {
+        "name": "Hugh J. (Ted) Flemming",
+        "party": "PC",
+        "votes": 3373
+      },
+      {
+        "name": "Zara MacKay-Boyce",
+        "party": "PVNBGP",
+        "votes": 549
+      },
+      {
+        "name": "Austin Venedam",
+        "party": "LPNB",
+        "votes": 85
+      }
+    ]
+  },
+  {
+    "district": "Saint John East",
+    "candidates": [
+      {
+        "name": "Glen Savoie",
+        "party": "PC",
+        "votes": 3181
+      },
+      {
+        "name": "David Alston",
+        "party": "L",
+        "votes": 3147
+      },
+      {
+        "name": "Gerald Irish",
+        "party": "PVNBGP",
+        "votes": 514
+      },
+      {
+        "name": "Josh Floyd",
+        "party": "NBNDP",
+        "votes": 252
+      },
+      {
+        "name": "Tanya Graham",
+        "party": "PANB",
+        "votes": 118
+      },
+      {
+        "name": "Denise Campbell",
+        "party": "LPNB",
+        "votes": 92
+      }
+    ]
+  },
+  {
+    "district": "Saint John Portland-Simonds",
+    "candidates": [
+      {
+        "name": "John Dornan",
+        "party": "L",
+        "votes": 3546
+      },
+      {
+        "name": "Paul Dempsey",
+        "party": "PC",
+        "votes": 2497
+      },
+      {
+        "name": "P.J. Duncan",
+        "party": "PVNBGP",
+        "votes": 438
+      }
+    ]
+  },
+  {
+    "district": "Saint John Harbour",
+    "candidates": [
+      {
+        "name": "David Hickey",
+        "party": "L",
+        "votes": 3413
+      },
+      {
+        "name": "Adam Smith",
+        "party": "PC",
+        "votes": 1563
+      },
+      {
+        "name": "Mariah Darling",
+        "party": "PVNBGP",
+        "votes": 715
+      },
+      {
+        "name": "Kenneth Procter",
+        "party": "NBNDP",
+        "votes": 228
+      },
+      {
+        "name": "Shelley Craig",
+        "party": "LPNB",
+        "votes": 82
+      }
+    ]
+  },
+  {
+    "district": "Saint John West-Lancaster",
+    "candidates": [
+      {
+        "name": "Kate Elman Wilcott",
+        "party": "L",
+        "votes": 3525
+      },
+      {
+        "name": "Kim Costain",
+        "party": "PC",
+        "votes": 2787
+      },
+      {
+        "name": "Joanna Killen",
+        "party": "PVNBGP",
+        "votes": 864
+      },
+      {
+        "name": "Jane Ryan",
+        "party": "NBNDP",
+        "votes": 330
+      },
+      {
+        "name": "Sherie Vukelic",
+        "party": "LPNB",
+        "votes": 69
+      }
+    ]
+  },
+  {
+    "district": "Kings Centre",
+    "candidates": [
+      {
+        "name": "Bill Oliver",
+        "party": "PC",
+        "votes": 3821
+      },
+      {
+        "name": "Brian Stephenson",
+        "party": "L",
+        "votes": 2557
+      },
+      {
+        "name": "Bruce Dryer",
+        "party": "PVNBGP",
+        "votes": 1136
+      },
+      {
+        "name": "Crystal Tays",
+        "party": "LPNB",
+        "votes": 139
+      }
+    ]
+  },
+  {
+    "district": "Fundy-The Isles-Saint John Lorneville",
+    "candidates": [
+      {
+        "name": "Ian Lee",
+        "party": "PC",
+        "votes": 3971
+      },
+      {
+        "name": "Patty Borthwick",
+        "party": "L",
+        "votes": 2052
+      },
+      {
+        "name": "Rhonda Connell",
+        "party": "PVNBGP",
+        "votes": 346
+      },
+      {
+        "name": "Chris Wanamaker",
+        "party": "NBNDP",
+        "votes": 158
+      },
+      {
+        "name": "Sharon Greenlaw",
+        "party": "CNBP",
+        "votes": 113
+      },
+      {
+        "name": "Keith Tays",
+        "party": "LPNB",
+        "votes": 88
+      }
+    ]
+  },
+  {
+    "district": "Saint Croix",
+    "candidates": [
+      {
+        "name": "Kathy Bockus",
+        "party": "PC",
+        "votes": 3271
+      },
+      {
+        "name": "Troy Lyons",
+        "party": "L",
+        "votes": 2063
+      },
+      {
+        "name": "Mark Groleau",
+        "party": "PVNBGP",
+        "votes": 1442
+      },
+      {
+        "name": "Kris Booth",
+        "party": "IND",
+        "votes": 170
+      },
+      {
+        "name": "Alex Tessmann",
+        "party": "PANB",
+        "votes": 96
+      },
+      {
+        "name": "Bola Ademolu",
+        "party": "NBNDP",
+        "votes": 90
+      },
+      {
+        "name": "Krysten Mitchell",
+        "party": "LPNB",
+        "votes": 82
+      }
+    ]
+  },
+  {
+    "district": "Oromocto-Sunbury",
+    "candidates": [
+      {
+        "name": "Mary E. Wilson",
+        "party": "PC",
+        "votes": 4381
+      },
+      {
+        "name": "Stephen Horsman",
+        "party": "L",
+        "votes": 2725
+      },
+      {
+        "name": "Emerald Gibson",
+        "party": "PVNBGP",
+        "votes": 868
+      },
+      {
+        "name": "Glenna Hanley",
+        "party": "NBNDP",
+        "votes": 341
+      }
+    ]
+  },
+  {
+    "district": "Fredericton-Grand Lake",
+    "candidates": [
+      {
+        "name": "Kris Austin",
+        "party": "PC",
+        "votes": 4456
+      },
+      {
+        "name": "Kevin Dignam",
+        "party": "L",
+        "votes": 2277
+      },
+      {
+        "name": "Ken Washburn",
+        "party": "PVNBGP",
+        "votes": 862
+      },
+      {
+        "name": "Rick DeSaulniers",
+        "party": "PANB",
+        "votes": 461
+      },
+      {
+        "name": "Arthur Taylor",
+        "party": "NBNDP",
+        "votes": 195
+      }
+    ]
+  },
+  {
+    "district": "Fredericton Lincoln",
+    "candidates": [
+      {
+        "name": "David Coon",
+        "party": "PVNBGP",
+        "votes": 3646
+      },
+      {
+        "name": "Daniel Chippin",
+        "party": "PC",
+        "votes": 2307
+      },
+      {
+        "name": "Joni Leger",
+        "party": "L",
+        "votes": 2244
+      }
+    ]
+  },
+  {
+    "district": "Fredericton South-Silverwood",
+    "candidates": [
+      {
+        "name": "Susan Holt",
+        "party": "L",
+        "votes": 4605
+      },
+      {
+        "name": "Nicolle Carlin",
+        "party": "PC",
+        "votes": 2287
+      },
+      {
+        "name": "Simon Ouellette",
+        "party": "PVNBGP",
+        "votes": 1860
+      },
+      {
+        "name": "Nicki Lyons-MacFarlane",
+        "party": "NBNDP",
+        "votes": 165
+      }
+    ]
+  },
+  {
+    "district": "Fredericton North",
+    "candidates": [
+      {
+        "name": "Luke Randall",
+        "party": "L",
+        "votes": 4130
+      },
+      {
+        "name": "Jill Green",
+        "party": "PC",
+        "votes": 2753
+      },
+      {
+        "name": "Anthea Plummer",
+        "party": "PVNBGP",
+        "votes": 922
+      },
+      {
+        "name": "Matthew Stocek",
+        "party": "NBNDP",
+        "votes": 120
+      },
+      {
+        "name": "Glen Davis",
+        "party": "PANB",
+        "votes": 107
+      },
+      {
+        "name": "Andrew Vandette",
+        "party": "LPNB",
+        "votes": 46
+      }
+    ]
+  },
+  {
+    "district": "Fredericton-York",
+    "candidates": [
+      {
+        "name": "Ryan Cullins",
+        "party": "PC",
+        "votes": 3572
+      },
+      {
+        "name": "Tanya Whitney",
+        "party": "L",
+        "votes": 2527
+      },
+      {
+        "name": "Pam Allen-LeBlanc",
+        "party": "PVNBGP",
+        "votes": 1673
+      },
+      {
+        "name": "Michael Broderick",
+        "party": "PANB",
+        "votes": 256
+      },
+      {
+        "name": "Steven J. LaForest",
+        "party": "NBNDP",
+        "votes": 133
+      }
+    ]
+  },
+  {
+    "district": "Hanwell-New Maryland",
+    "candidates": [
+      {
+        "name": "Cindy Miles",
+        "party": "L",
+        "votes": 4006
+      },
+      {
+        "name": "Judy Wilson-Shee",
+        "party": "PC",
+        "votes": 3948
+      },
+      {
+        "name": "Susan Jonah",
+        "party": "PVNBGP",
+        "votes": 1051
+      },
+      {
+        "name": "Kris Hurtubise",
+        "party": "PANB",
+        "votes": 177
+      },
+      {
+        "name": "Joël Cyr LaPlante",
+        "party": "NBNDP",
+        "votes": 119
+      },
+      {
+        "name": "Meryl W. Sarty",
+        "party": "LPNB",
+        "votes": 67
+      }
+    ]
+  },
+  {
+    "district": "Carleton-York",
+    "candidates": [
+      {
+        "name": "Richard Ames",
+        "party": "PC",
+        "votes": 4622
+      },
+      {
+        "name": "Chris Duffie",
+        "party": "L",
+        "votes": 2136
+      },
+      {
+        "name": "Burt Folkins",
+        "party": "PVNBGP",
+        "votes": 675
+      },
+      {
+        "name": "Sterling Wright",
+        "party": "PANB",
+        "votes": 415
+      }
+    ]
+  },
+  {
+    "district": "Woodstock-Hartland",
+    "candidates": [
+      {
+        "name": "Bill Hogan",
+        "party": "PC",
+        "votes": 4199
+      },
+      {
+        "name": "Marisa Pelkey",
+        "party": "L",
+        "votes": 2549
+      },
+      {
+        "name": "Charlie Webber",
+        "party": "PANB",
+        "votes": 575
+      },
+      {
+        "name": "Jada Roche",
+        "party": "PVNBGP",
+        "votes": 276
+      },
+      {
+        "name": "Ernest Culberson",
+        "party": "IND",
+        "votes": 209
+      },
+      {
+        "name": "Bo Sheaves",
+        "party": "NBNDP",
+        "votes": 138
+      }
+    ]
+  },
+  {
+    "district": "Carleton-Victoria",
+    "candidates": [
+      {
+        "name": "Margaret Johnson",
+        "party": "PC",
+        "votes": 4798
+      },
+      {
+        "name": "Julian Moulton",
+        "party": "L",
+        "votes": 2159
+      },
+      {
+        "name": "Rebecca Blaevoet",
+        "party": "PVNBGP",
+        "votes": 451
+      },
+      {
+        "name": "Tasha Rossignol",
+        "party": "SJPNB",
+        "votes": 290
+      }
+    ]
+  },
+  {
+    "district": "Grand Falls-Vallée-des-Rivières-Saint-Quentin",
+    "candidates": [
+      {
+        "name": "Chuck Chiasson",
+        "party": "L",
+        "votes": 4976
+      },
+      {
+        "name": "Marc-André Ross",
+        "party": "PC",
+        "votes": 2493
+      },
+      {
+        "name": "Dani McLean-Godbout",
+        "party": "PVNBGP",
+        "votes": 540
+      }
+    ]
+  },
+  {
+    "district": "Edmundston-Vallée-des-Rivières",
+    "candidates": [
+      {
+        "name": "Jean Claude (JC) D'Amours",
+        "party": "L",
+        "votes": 5573
+      },
+      {
+        "name": "Roger Quimper",
+        "party": "PC",
+        "votes": 1049
+      },
+      {
+        "name": "Sylvain Gerald Voisine",
+        "party": "SJPNB",
+        "votes": 186
+      }
+    ]
+  },
+  {
+    "district": "Madawaska Les Lacs-Edmundston",
+    "candidates": [
+      {
+        "name": "Francine Landry",
+        "party": "L",
+        "votes": 4798
+      },
+      {
+        "name": "Michel Morin",
+        "party": "PC",
+        "votes": 1970
+      },
+      {
+        "name": "Alain Martel",
+        "party": "PVNBGP",
+        "votes": 218
+      },
+      {
+        "name": "André Martin",
+        "party": "NBNDP",
+        "votes": 114
+      },
+      {
+        "name": "Richard Barahoga",
+        "party": "CNBP",
+        "votes": 53
+      }
+    ]
+  }
+]

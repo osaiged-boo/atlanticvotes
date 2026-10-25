@@ -1,0 +1,1232 @@
+[
+  {
+    "district": "Annapolis",
+    "candidates": [
+      {
+        "name": "David Bowlby",
+        "party": "PC",
+        "votes": 3289
+      },
+      {
+        "name": "Carman Kerr",
+        "party": "LIB",
+        "votes": 3281
+      },
+      {
+        "name": "Cheryl Burbidge",
+        "party": "NDP",
+        "votes": 689
+      },
+      {
+        "name": "Sara Adams",
+        "party": "GRN",
+        "votes": 138
+      }
+    ]
+  },
+  {
+    "district": "Antigonish",
+    "candidates": [
+      {
+        "name": "Michelle Thompson",
+        "party": "PC",
+        "votes": 5202
+      },
+      {
+        "name": "Sheila Sears",
+        "party": "LIB",
+        "votes": 1720
+      },
+      {
+        "name": "John David MacIsaac",
+        "party": "NDP",
+        "votes": 1103
+      }
+    ]
+  },
+  {
+    "district": "Argyle",
+    "candidates": [
+      {
+        "name": "Colton LeBlanc",
+        "party": "PC",
+        "votes": 3383
+      },
+      {
+        "name": "Lorelei Murphy",
+        "party": "LIB",
+        "votes": 439
+      },
+      {
+        "name": "Lauren Skabar",
+        "party": "NDP",
+        "votes": 67
+      },
+      {
+        "name": "Lynette Amirault",
+        "party": "GRN",
+        "votes": 61
+      }
+    ]
+  },
+  {
+    "district": "Bedford Basin",
+    "candidates": [
+      {
+        "name": "Tim Outhit",
+        "party": "PC",
+        "votes": 3692
+      },
+      {
+        "name": "Doris Robbins",
+        "party": "LIB",
+        "votes": 1310
+      },
+      {
+        "name": "Ryan Lutes",
+        "party": "NDP",
+        "votes": 1136
+      }
+    ]
+  },
+  {
+    "district": "Bedford South",
+    "candidates": [
+      {
+        "name": "Damian Stoilov",
+        "party": "PC",
+        "votes": 2888
+      },
+      {
+        "name": "Braedon Clark",
+        "party": "LIB",
+        "votes": 2786
+      },
+      {
+        "name": "Isaac G. Wilson",
+        "party": "NDP",
+        "votes": 1243
+      },
+      {
+        "name": "Ron G. Parker",
+        "party": "GRN",
+        "votes": 85
+      }
+    ]
+  },
+  {
+    "district": "Cape Breton Centre-Whitney Pier",
+    "candidates": [
+      {
+        "name": "Kendra Coombes",
+        "party": "NDP",
+        "votes": 3212
+      },
+      {
+        "name": "Darren O'Quinn",
+        "party": "PC",
+        "votes": 2676
+      },
+      {
+        "name": "Joleen Magliaro",
+        "party": "LIB",
+        "votes": 721
+      }
+    ]
+  },
+  {
+    "district": "Cape Breton East",
+    "candidates": [
+      {
+        "name": "Brian Comer",
+        "party": "PC",
+        "votes": 4250
+      },
+      {
+        "name": "Joe Ward",
+        "party": "LIB",
+        "votes": 1737
+      },
+      {
+        "name": "Isabelle Lalonde",
+        "party": "NDP",
+        "votes": 942
+      }
+    ]
+  },
+  {
+    "district": "Chester-St. Margaret's",
+    "candidates": [
+      {
+        "name": "Danielle Barkhouse",
+        "party": "PC",
+        "votes": 4806
+      },
+      {
+        "name": "Laura Mulrooney",
+        "party": "LIB",
+        "votes": 2160
+      },
+      {
+        "name": "Brendan Mosher",
+        "party": "NDP",
+        "votes": 1290
+      }
+    ]
+  },
+  {
+    "district": "Clare",
+    "candidates": [
+      {
+        "name": "Ryan Robicheau",
+        "party": "PC",
+        "votes": 2805
+      },
+      {
+        "name": "Ronnie LeBlanc",
+        "party": "LIB",
+        "votes": 1790
+      },
+      {
+        "name": "Dre Taylor",
+        "party": "NDP",
+        "votes": 103
+      }
+    ]
+  },
+  {
+    "district": "Clayton Park West",
+    "candidates": [
+      {
+        "name": "Adegoke Fadare",
+        "party": "PC",
+        "votes": 2096
+      },
+      {
+        "name": "Wendy Hood-Morris",
+        "party": "NDP",
+        "votes": 2010
+      },
+      {
+        "name": "Elizabeth Eustaquio-Domondon",
+        "party": "LIB",
+        "votes": 1813
+      }
+    ]
+  },
+  {
+    "district": "Colchester-Musquodoboit Valley",
+    "candidates": [
+      {
+        "name": "Scott Armstrong",
+        "party": "PC",
+        "votes": 4030
+      },
+      {
+        "name": "Janet Moulton",
+        "party": "NDP",
+        "votes": 1111
+      },
+      {
+        "name": "Gwynneth (Gwyn) Bellefontaine",
+        "party": "LIB",
+        "votes": 827
+      }
+    ]
+  },
+  {
+    "district": "Colchester North",
+    "candidates": [
+      {
+        "name": "Tom Taggart",
+        "party": "PC",
+        "votes": 4282
+      },
+      {
+        "name": "Christina McCarron",
+        "party": "NDP",
+        "votes": 1062
+      },
+      {
+        "name": "Dustin Rekunyk",
+        "party": "LIB",
+        "votes": 828
+      },
+      {
+        "name": "Jillian Foster",
+        "party": "GRN",
+        "votes": 145
+      }
+    ]
+  },
+  {
+    "district": "Cole Harbour",
+    "candidates": [
+      {
+        "name": "Leah Martin",
+        "party": "PC",
+        "votes": 1986
+      },
+      {
+        "name": "Alec Stratford",
+        "party": "NDP",
+        "votes": 1748
+      },
+      {
+        "name": "Tania Meloni",
+        "party": "LIB",
+        "votes": 893
+      },
+      {
+        "name": "John E. McStay",
+        "party": "GRN",
+        "votes": 70
+      }
+    ]
+  },
+  {
+    "district": "Cole Harbour-Dartmouth",
+    "candidates": [
+      {
+        "name": "Brad McGowan",
+        "party": "PC",
+        "votes": 4243
+      },
+      {
+        "name": "Kayley Dixon",
+        "party": "NDP",
+        "votes": 2079
+      },
+      {
+        "name": "Vishal Bhardwaj",
+        "party": "LIB",
+        "votes": 1894
+      }
+    ]
+  },
+  {
+    "district": "Cumberland North",
+    "candidates": [
+      {
+        "name": "Elizabeth Smith-McCrossin",
+        "party": "IND",
+        "votes": 3567
+      },
+      {
+        "name": "Bill Dowe",
+        "party": "PC",
+        "votes": 2194
+      },
+      {
+        "name": "Kurt Ditner",
+        "party": "LIB",
+        "votes": 414
+      },
+      {
+        "name": "Tyson Boyd",
+        "party": "NDP",
+        "votes": 277
+      }
+    ]
+  },
+  {
+    "district": "Cumberland South",
+    "candidates": [
+      {
+        "name": "Tory Rushton",
+        "party": "PC",
+        "votes": 3442
+      },
+      {
+        "name": "Liam D. MacDonald",
+        "party": "LIB",
+        "votes": 540
+      },
+      {
+        "name": "Larry Duchesne",
+        "party": "NDP",
+        "votes": 476
+      }
+    ]
+  },
+  {
+    "district": "Dartmouth East",
+    "candidates": [
+      {
+        "name": "Timothy Halman",
+        "party": "PC",
+        "votes": 3167
+      },
+      {
+        "name": "Holly Fraughton",
+        "party": "NDP",
+        "votes": 2235
+      },
+      {
+        "name": "Stacy Chesnutt",
+        "party": "LIB",
+        "votes": 1768
+      }
+    ]
+  },
+  {
+    "district": "Dartmouth North",
+    "candidates": [
+      {
+        "name": "Susan Leblanc",
+        "party": "NDP",
+        "votes": 3698
+      },
+      {
+        "name": "Karina Sanford",
+        "party": "PC",
+        "votes": 1353
+      },
+      {
+        "name": "Pam Cooley",
+        "party": "LIB",
+        "votes": 826
+      }
+    ]
+  },
+  {
+    "district": "Dartmouth South",
+    "candidates": [
+      {
+        "name": "Claudia Chender",
+        "party": "NDP",
+        "votes": 4415
+      },
+      {
+        "name": "Bea MacGregor",
+        "party": "PC",
+        "votes": 1449
+      },
+      {
+        "name": "Barb Henderson",
+        "party": "LIB",
+        "votes": 585
+      }
+    ]
+  },
+  {
+    "district": "Digby-Annapolis",
+    "candidates": [
+      {
+        "name": "Jill Balser",
+        "party": "PC",
+        "votes": 3300
+      },
+      {
+        "name": "Joey Amero",
+        "party": "LIB",
+        "votes": 854
+      },
+      {
+        "name": "Shannon Long",
+        "party": "NDP",
+        "votes": 353
+      }
+    ]
+  },
+  {
+    "district": "Eastern Passage",
+    "candidates": [
+      {
+        "name": "Barbara Adams",
+        "party": "PC",
+        "votes": 2754
+      },
+      {
+        "name": "Chris Peters",
+        "party": "LIB",
+        "votes": 1110
+      },
+      {
+        "name": "Tammy Jakeman",
+        "party": "IND",
+        "votes": 456
+      }
+    ]
+  },
+  {
+    "district": "Eastern Shore",
+    "candidates": [
+      {
+        "name": "Kent Smith",
+        "party": "PC",
+        "votes": 4690
+      },
+      {
+        "name": "Doyle Safire",
+        "party": "LIB",
+        "votes": 1441
+      },
+      {
+        "name": "Don Carney",
+        "party": "NDP",
+        "votes": 1231
+      },
+      {
+        "name": "Kevin Conrod",
+        "party": "GRN",
+        "votes": 197
+      }
+    ]
+  },
+  {
+    "district": "Fairview-Clayton Park",
+    "candidates": [
+      {
+        "name": "Lina Hamid",
+        "party": "NDP",
+        "votes": 2429
+      },
+      {
+        "name": "Nicole Mosher",
+        "party": "PC",
+        "votes": 2023
+      },
+      {
+        "name": "Patricia Arab",
+        "party": "LIB",
+        "votes": 1779
+      }
+    ]
+  },
+  {
+    "district": "Glace Bay-Dominion",
+    "candidates": [
+      {
+        "name": "John White",
+        "party": "PC",
+        "votes": 4187
+      },
+      {
+        "name": "David Alexander MacLeod",
+        "party": "LIB",
+        "votes": 1009
+      },
+      {
+        "name": "Kathy Chapman",
+        "party": "NDP",
+        "votes": 594
+      }
+    ]
+  },
+  {
+    "district": "Guysborough-Tracadie",
+    "candidates": [
+      {
+        "name": "Greg Morrow",
+        "party": "PC",
+        "votes": 3128
+      },
+      {
+        "name": "George Grant",
+        "party": "LIB",
+        "votes": 590
+      },
+      {
+        "name": "Deborah Martinello",
+        "party": "NDP",
+        "votes": 320
+      }
+    ]
+  },
+  {
+    "district": "Halifax Armdale",
+    "candidates": [
+      {
+        "name": "Rod Wilson",
+        "party": "NDP",
+        "votes": 2521
+      },
+      {
+        "name": "Craig Myra",
+        "party": "PC",
+        "votes": 2280
+      },
+      {
+        "name": "Ali Duale",
+        "party": "LIB",
+        "votes": 1597
+      }
+    ]
+  },
+  {
+    "district": "Halifax Atlantic",
+    "candidates": [
+      {
+        "name": "Brendan Maguire",
+        "party": "PC",
+        "votes": 3879
+      },
+      {
+        "name": "Cathy Cervin",
+        "party": "NDP",
+        "votes": 1883
+      },
+      {
+        "name": "Phil Chisholm",
+        "party": "LIB",
+        "votes": 911
+      },
+      {
+        "name": "Gadfly Stratton",
+        "party": "GRN",
+        "votes": 84
+      }
+    ]
+  },
+  {
+    "district": "Halifax Chebucto",
+    "candidates": [
+      {
+        "name": "Krista Gallagher",
+        "party": "NDP",
+        "votes": 3682
+      },
+      {
+        "name": "Tonya Malay",
+        "party": "PC",
+        "votes": 1577
+      },
+      {
+        "name": "Gerard Bray",
+        "party": "LIB",
+        "votes": 1441
+      },
+      {
+        "name": "Jonathan Bradet-Legris",
+        "party": "GRN",
+        "votes": 120
+      }
+    ]
+  },
+  {
+    "district": "Halifax Citadel-Sable Island",
+    "candidates": [
+      {
+        "name": "Lisa Lachance",
+        "party": "NDP",
+        "votes": 3903
+      },
+      {
+        "name": "Eleanor Humphries",
+        "party": "PC",
+        "votes": 1908
+      },
+      {
+        "name": "Rob Grace",
+        "party": "LIB",
+        "votes": 1440
+      },
+      {
+        "name": "Karen Beazley",
+        "party": "GRN",
+        "votes": 159
+      }
+    ]
+  },
+  {
+    "district": "Halifax Needham",
+    "candidates": [
+      {
+        "name": "Suzy Hansen",
+        "party": "NDP",
+        "votes": 5126
+      },
+      {
+        "name": "Trayvone Clayton",
+        "party": "PC",
+        "votes": 1279
+      },
+      {
+        "name": "Jon Frost",
+        "party": "LIB",
+        "votes": 1003
+      },
+      {
+        "name": "Amethyste Hamel-Gregory",
+        "party": "GRN",
+        "votes": 127
+      }
+    ]
+  },
+  {
+    "district": "Hammonds Plains-Lucasville",
+    "candidates": [
+      {
+        "name": "Rick Burns",
+        "party": "PC",
+        "votes": 3508
+      },
+      {
+        "name": "Ben Jessome",
+        "party": "LIB",
+        "votes": 3105
+      },
+      {
+        "name": "Terry J. Eyland",
+        "party": "NDP",
+        "votes": 895
+      },
+      {
+        "name": "Roger Croll",
+        "party": "GRN",
+        "votes": 67
+      }
+    ]
+  },
+  {
+    "district": "Hants East",
+    "candidates": [
+      {
+        "name": "John A. MacDonald",
+        "party": "PC",
+        "votes": 4614
+      },
+      {
+        "name": "Abby Cameron",
+        "party": "NDP",
+        "votes": 1696
+      },
+      {
+        "name": "Shannon MacWilliam",
+        "party": "LIB",
+        "votes": 1050
+      }
+    ]
+  },
+  {
+    "district": "Hants West",
+    "candidates": [
+      {
+        "name": "Melissa Sheehy-Richard",
+        "party": "PC",
+        "votes": 4253
+      },
+      {
+        "name": "Brian Casey",
+        "party": "LIB",
+        "votes": 2621
+      },
+      {
+        "name": "Simon Greenough",
+        "party": "NDP",
+        "votes": 1120
+      },
+      {
+        "name": "James Omand",
+        "party": "IND",
+        "votes": 93
+      }
+    ]
+  },
+  {
+    "district": "Inverness",
+    "candidates": [
+      {
+        "name": "Kyle MacQuarrie",
+        "party": "PC",
+        "votes": 4058
+      },
+      {
+        "name": "Jaime Beaton",
+        "party": "LIB",
+        "votes": 2099
+      },
+      {
+        "name": "Joanna Clark",
+        "party": "NDP",
+        "votes": 884
+      }
+    ]
+  },
+  {
+    "district": "Kings North",
+    "candidates": [
+      {
+        "name": "John A. Lohr",
+        "party": "PC",
+        "votes": 4047
+      },
+      {
+        "name": "Gillian Yorke",
+        "party": "NDP",
+        "votes": 2095
+      },
+      {
+        "name": "Richelle Brown Redden",
+        "party": "LIB",
+        "votes": 1260
+      },
+      {
+        "name": "Dave Lowe",
+        "party": "GRN",
+        "votes": 139
+      }
+    ]
+  },
+  {
+    "district": "Kings South",
+    "candidates": [
+      {
+        "name": "Julie Vanexan",
+        "party": "PC",
+        "votes": 3372
+      },
+      {
+        "name": "Ramona Jennex",
+        "party": "NDP",
+        "votes": 2326
+      },
+      {
+        "name": "Mike Hamm",
+        "party": "LIB",
+        "votes": 2230
+      },
+      {
+        "name": "Sheila G. Richardson",
+        "party": "GRN",
+        "votes": 144
+      }
+    ]
+  },
+  {
+    "district": "Kings West",
+    "candidates": [
+      {
+        "name": "Chris Palmer",
+        "party": "PC",
+        "votes": 5226
+      },
+      {
+        "name": "Brad Beardsley",
+        "party": "LIB",
+        "votes": 1074
+      },
+      {
+        "name": "Paul Doerr",
+        "party": "NDP",
+        "votes": 714
+      },
+      {
+        "name": "Madeline Taylor",
+        "party": "GRN",
+        "votes": 167
+      }
+    ]
+  },
+  {
+    "district": "Lunenburg",
+    "candidates": [
+      {
+        "name": "Susan Corkum-Greek",
+        "party": "PC",
+        "votes": 4308
+      },
+      {
+        "name": "Melissa Duggan",
+        "party": "LIB",
+        "votes": 1496
+      },
+      {
+        "name": "Nick Jennery",
+        "party": "NDP",
+        "votes": 1185
+      },
+      {
+        "name": "Frank Fawson",
+        "party": "GRN",
+        "votes": 172
+      }
+    ]
+  },
+  {
+    "district": "Lunenburg West",
+    "candidates": [
+      {
+        "name": "Becky Druhan",
+        "party": "PC",
+        "votes": 4239
+      },
+      {
+        "name": "Jonathan Crouse",
+        "party": "LIB",
+        "votes": 2302
+      },
+      {
+        "name": "Nicholas Piovesan",
+        "party": "NDP",
+        "votes": 846
+      },
+      {
+        "name": "Mitchell Thomas-Langford",
+        "party": "GRN",
+        "votes": 145
+      }
+    ]
+  },
+  {
+    "district": "Northside-Westmount",
+    "candidates": [
+      {
+        "name": "Fred Tilley",
+        "party": "PC",
+        "votes": 4978
+      },
+      {
+        "name": "Danny Laffin",
+        "party": "LIB",
+        "votes": 1675
+      },
+      {
+        "name": "Katelyn Armstrong",
+        "party": "NDP",
+        "votes": 679
+      }
+    ]
+  },
+  {
+    "district": "Pictou Centre",
+    "candidates": [
+      {
+        "name": "Danny MacGillivray",
+        "party": "PC",
+        "votes": 3741
+      },
+      {
+        "name": "Kris MacFarlane",
+        "party": "LIB",
+        "votes": 972
+      },
+      {
+        "name": "Mary Stewart",
+        "party": "NDP",
+        "votes": 820
+      }
+    ]
+  },
+  {
+    "district": "Pictou East",
+    "candidates": [
+      {
+        "name": "Tim Houston",
+        "party": "PC",
+        "votes": 4424
+      },
+      {
+        "name": "Vernon Theriault",
+        "party": "NDP",
+        "votes": 656
+      },
+      {
+        "name": "Stephanie Quinn",
+        "party": "LIB",
+        "votes": 528
+      }
+    ]
+  },
+  {
+    "district": "Pictou West",
+    "candidates": [
+      {
+        "name": "Marco MacLeod",
+        "party": "PC",
+        "votes": 4325
+      },
+      {
+        "name": "Mary Wooldridge-Elliott",
+        "party": "LIB",
+        "votes": 778
+      },
+      {
+        "name": "Carol Ferguson",
+        "party": "NDP",
+        "votes": 620
+      },
+      {
+        "name": "Clare Brett",
+        "party": "GRN",
+        "votes": 115
+      }
+    ]
+  },
+  {
+    "district": "Preston",
+    "candidates": [
+      {
+        "name": "Twila Grosse",
+        "party": "PC",
+        "votes": 2139
+      },
+      {
+        "name": "Colter (C.C.) Simmonds",
+        "party": "NDP",
+        "votes": 1214
+      },
+      {
+        "name": "Carlo Simmons",
+        "party": "LIB",
+        "votes": 739
+      },
+      {
+        "name": "Andre Anderson",
+        "party": "GRN",
+        "votes": 69
+      }
+    ]
+  },
+  {
+    "district": "Queens",
+    "candidates": [
+      {
+        "name": "Kim Masland",
+        "party": "PC",
+        "votes": 3461
+      },
+      {
+        "name": "Cathy DeRome",
+        "party": "LIB",
+        "votes": 487
+      },
+      {
+        "name": "Brian Skabar",
+        "party": "NDP",
+        "votes": 382
+      }
+    ]
+  },
+  {
+    "district": "Richmond",
+    "candidates": [
+      {
+        "name": "Trevor Boudreau",
+        "party": "PC",
+        "votes": 3496
+      },
+      {
+        "name": "Rochelle Heudes",
+        "party": "LIB",
+        "votes": 1221
+      },
+      {
+        "name": "Marc Currie",
+        "party": "NDP",
+        "votes": 218
+      }
+    ]
+  },
+  {
+    "district": "Sackville-Cobequid",
+    "candidates": [
+      {
+        "name": "Paul Wozney",
+        "party": "NDP",
+        "votes": 2834
+      },
+      {
+        "name": "Paul Russell",
+        "party": "PC",
+        "votes": 2771
+      },
+      {
+        "name": "Agatha Bourassa",
+        "party": "LIB",
+        "votes": 724
+      }
+    ]
+  },
+  {
+    "district": "Sackville-Uniacke",
+    "candidates": [
+      {
+        "name": "Brad Johns",
+        "party": "PC",
+        "votes": 2925
+      },
+      {
+        "name": "Lisa Blackburn",
+        "party": "NDP",
+        "votes": 2529
+      },
+      {
+        "name": "Thomas Trappenberg",
+        "party": "LIB",
+        "votes": 517
+      }
+    ]
+  },
+  {
+    "district": "Shelburne",
+    "candidates": [
+      {
+        "name": "Nolan Young",
+        "party": "PC",
+        "votes": 3092
+      },
+      {
+        "name": "Bridget Taylor",
+        "party": "NDP",
+        "votes": 482
+      },
+      {
+        "name": "Debbie Muise",
+        "party": "LIB",
+        "votes": 452
+      }
+    ]
+  },
+  {
+    "district": "Sydney-Membertou",
+    "candidates": [
+      {
+        "name": "Derek Mombourquette",
+        "party": "LIB",
+        "votes": 3691
+      },
+      {
+        "name": "Brian MacArthur",
+        "party": "PC",
+        "votes": 2905
+      },
+      {
+        "name": "Alison Aho",
+        "party": "NDP",
+        "votes": 1513
+      },
+      {
+        "name": "Steven McGrath",
+        "party": "GRN",
+        "votes": 85
+      }
+    ]
+  },
+  {
+    "district": "Timberlea-Prospect",
+    "candidates": [
+      {
+        "name": "Iain Rankin",
+        "party": "LIB",
+        "votes": 4969
+      },
+      {
+        "name": "Trish MacDonald",
+        "party": "PC",
+        "votes": 2890
+      },
+      {
+        "name": "Rose Gillam",
+        "party": "NDP",
+        "votes": 1062
+      },
+      {
+        "name": "Jane Matheson",
+        "party": "GRN",
+        "votes": 132
+      }
+    ]
+  },
+  {
+    "district": "Truro-Bible Hill-Millbrook-Salmon River",
+    "candidates": [
+      {
+        "name": "Dave Ritcey",
+        "party": "PC",
+        "votes": 4034
+      },
+      {
+        "name": "Cailen Pygott",
+        "party": "NDP",
+        "votes": 1067
+      },
+      {
+        "name": "Frank Johnston",
+        "party": "LIB",
+        "votes": 852
+      }
+    ]
+  },
+  {
+    "district": "Victoria-The Lakes",
+    "candidates": [
+      {
+        "name": "Dianne L. Timmins",
+        "party": "PC",
+        "votes": 3685
+      },
+      {
+        "name": "Stephen MacAskill",
+        "party": "LIB",
+        "votes": 1218
+      },
+      {
+        "name": "Samuel Stirling",
+        "party": "NDP",
+        "votes": 510
+      },
+      {
+        "name": "Adrianna MacKinnon",
+        "party": "GRN",
+        "votes": 113
+      },
+      {
+        "name": "Stemer MacLeod",
+        "party": "IND",
+        "votes": 104
+      }
+    ]
+  },
+  {
+    "district": "Waverley-Fall River-Beaver Bank",
+    "candidates": [
+      {
+        "name": "Brian Wong",
+        "party": "PC",
+        "votes": 4653
+      },
+      {
+        "name": "Elizabeth Booth",
+        "party": "LIB",
+        "votes": 1635
+      },
+      {
+        "name": "Donna McCarthy",
+        "party": "NDP",
+        "votes": 1575
+      },
+      {
+        "name": "Anthony Edmonds",
+        "party": "GRN",
+        "votes": 344
+      }
+    ]
+  },
+  {
+    "district": "Yarmouth",
+    "candidates": [
+      {
+        "name": "Nick Hilton",
+        "party": "PC",
+        "votes": 3663
+      },
+      {
+        "name": "Zach Churchill",
+        "party": "LIB",
+        "votes": 3647
+      },
+      {
+        "name": "Gillian Rowley",
+        "party": "NDP",
+        "votes": 208
+      },
+      {
+        "name": "Adam Randall",
+        "party": "GRN",
+        "votes": 62
+      }
+    ]
+  }
+]

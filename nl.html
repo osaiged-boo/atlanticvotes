@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:," />
+<title>Newfoundland and Labrador Election Results — 2025 | Atlantic Votes</title>
+<style>
+/* Atlantic Votes — shared chrome. Layout patterns only; no third-party identity. */
+:root{
+  --bg:#ffffff; --ink:#111111; --muted:#5b6b7d; --line:#e2e5e9; --band:#F2F4F7;
+  --accent:#0033ff; --accent-soft:#e9efff;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
+a{color:var(--accent)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+/* Sticky two-bar header */
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.utility-bar{border-bottom:1px solid var(--line)}
+.utility-in{display:flex;align-items:center;justify-content:space-between;height:38px}
+.province-switcher{border:0;background:none;font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--ink);padding:0;display:flex;align-items:center;gap:6px}
+.province-switcher .caret{color:var(--accent);font-size:12px}
+.province-switcher:hover{color:var(--accent)}
+.utility-link{font-size:14px;color:var(--muted);text-decoration:none}
+.utility-link:hover{color:var(--accent)}
+.main-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.wordmark{font-weight:900;font-size:22px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--accent)}
+.main-nav{display:flex;gap:28px;align-items:center}
+.main-nav a,.main-nav button{font:inherit;font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:0}
+.main-nav a:hover,.main-nav button:hover{color:var(--accent)}
+.main-nav a[aria-current="page"]{color:var(--accent)}
+/* Hero + sections */
+.hero{padding:56px 0 32px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.eyebrow::before{content:"";width:32px;height:2px;background:var(--accent);flex:0 0 auto}
+.hero h1{font-family:var(--serif);font-size:clamp(44px,7vw,84px);line-height:1.02;letter-spacing:-.01em;margin:16px 0 16px;font-weight:700;max-width:900px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.lede{font-size:19px;color:var(--muted);max-width:760px;margin:0}
+.section{padding:40px 0;border-top:1px solid var(--line)}
+.section:first-of-type{border-top:0}
+.section-gray{background:var(--band)}
+.section h2{font-family:var(--serif);font-size:clamp(30px,4vw,52px);line-height:1.08;margin:14px 0 8px}
+.section-sub{color:var(--muted);margin:0 0 24px;max-width:760px}
+/* Large-numeral stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:8px}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{border-top:1px solid var(--line);padding-top:14px}
+.stat b{display:block;font-size:34px;line-height:1;font-weight:800;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--muted)}
+/* Data visuals — party colours are data and are never overridden */
+.seatbar{display:flex;height:52px;overflow:hidden;background:var(--band);margin:20px 0 8px}
+.seatbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;min-width:0;overflow:hidden;white-space:nowrap}
+.legend{display:flex;gap:16px 24px;flex-wrap:wrap;font-size:15px;color:var(--muted);margin-bottom:8px}
+.legend b{color:var(--ink)}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em;padding:10px 8px;border-bottom:2px solid var(--ink)}
+td{padding:12px 8px;border-bottom:1px solid var(--line);font-size:17px}
+tr:last-child td{border-bottom:0}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:11px;height:11px;margin-right:8px;vertical-align:1px}
+tfoot td{font-weight:800;border-top:2px solid var(--ink)}
+.vote-row{display:grid;grid-template-columns:180px 1fr 130px;gap:16px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.vote-row:first-of-type{border-top:0}
+@media(max-width:640px){.vote-row{grid-template-columns:1fr auto}.vote-track{grid-column:1/-1;order:3}}
+.party-name{font-weight:700;display:flex;align-items:center;gap:10px}
+.party-name i{width:10px;height:24px;flex:0 0 auto;display:block}
+.vote-track{height:14px;background:var(--band)}
+.vote-fill{height:100%}
+.vote-num{text-align:right;font-variant-numeric:tabular-nums}
+.vote-num b{font-size:18px}
+.vote-num span{display:block;font-size:14px;color:var(--muted)}
+.note{font-size:15px;color:var(--muted)}
+.note a{color:var(--accent)}
+/* Province selector modal */
+.av-modal-backdrop{position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.55);display:flex;align-items:flex-start;justify-content:center;padding:8vh 20px 20px;overflow:auto}
+.av-modal-backdrop[hidden]{display:none}
+.av-modal{background:#fff;width:100%;max-width:580px;padding:40px 44px;box-shadow:0 24px 64px rgba(0,0,0,.25)}
+@media(max-width:560px){.av-modal{padding:28px 22px}}
+.av-modal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.av-modal-close{border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:var(--ink);padding:0 2px}
+.av-modal-close:hover{color:var(--accent)}
+.av-modal-title{font-size:clamp(30px,5vw,40px);line-height:1.1;margin:28px 0 8px;font-weight:800}
+.av-modal-sub{color:var(--muted);margin:0 0 28px}
+.av-rows{display:flex;flex-direction:column}
+.av-row{display:flex;gap:16px;align-items:flex-start;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:20px 4px;cursor:pointer;font:inherit}
+.av-row:last-of-type{border-bottom:1px solid var(--line)}
+.av-row:hover .av-row-title{color:var(--accent)}
+.av-row-icon{flex:0 0 auto;color:var(--ink);padding-top:2px}
+.av-row-text{flex:1;min-width:0}
+.av-row-title{display:block;font-size:19px;font-weight:800;line-height:1.25}
+.av-row-title .av-chevron{color:var(--accent);margin-left:6px}
+.av-row-desc{display:block;font-size:14px;color:var(--muted);margin-top:3px}
+.av-current{flex:0 0 auto;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:4px 8px}
+.av-row.is-current{background:var(--accent-soft)}
+.av-row.is-current .av-row-title{color:var(--accent)}
+.av-modal-foot{margin-top:22px;font-size:14px;color:var(--muted)}
+.av-modal-foot a{color:var(--accent)}
+body.av-locked{overflow:hidden}
+/* Footer */
+.site-footer{border-top:1px solid var(--line);background:#fff}
+.footer-in{padding:44px 0 36px}
+.footer-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+@media(max-width:720px){.footer-cols{grid-template-columns:1fr}}
+.footer-cols h3{font-size:14px;margin:0 0 12px}
+.footer-cols ul{list-style:none;margin:0;padding:0}
+.footer-cols li{margin:0 0 8px}
+.footer-cols a{color:var(--ink);text-decoration:none;font-size:15px}
+.footer-cols a:hover{color:var(--accent)}
+.footer-note{color:var(--muted);font-size:14px;margin:28px 0 0;max-width:820px}
+.footer-copy{color:var(--muted);font-size:13px;margin:8px 0 0}
+:root{--pc:#0b3d91;--lib:#d71920;--ndp:#f26522;--ind:#6b7280}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="utility-bar"><div class="container utility-in">
+    <button class="province-switcher" type="button" data-av-open aria-haspopup="dialog"><span id="provinceSwitcherLabel" data-fixed="1">Newfoundland and Labrador</span> <span class="caret">▾</span></button>
+    <a class="utility-link" href="provinces.html">All provinces</a>
+  </div></div>
+  <div class="main-bar"><div class="container main-in">
+    <a class="wordmark" href="index.html">Atlantic<span>Votes</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <button type="button" data-av-open>Change province</button>
+    </nav>
+  </div></div>
+</header>
+<div class="av-modal-backdrop" id="avModal" data-closable="true" hidden role="dialog" aria-modal="true" aria-labelledby="avModalTitle">
+  <div class="av-modal">
+    <div class="av-modal-top">
+      <a class="wordmark" href="index.html">Atlantic<span>Votes</span></a>
+      <button class="av-modal-close" id="avModalClose" type="button" aria-label="Close">×</button>
+    </div>
+    <h2 class="av-modal-title" id="avModalTitle">Select your province</h2>
+    <p class="av-modal-sub">Choose a province to see its latest election results.</p>
+    <div class="av-rows">
+      <a class="av-row" href="pei.html" data-province="pei"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">Prince Edward Island<span class="av-chevron">›</span></span><span class="av-row-desc">April 3, 2023 · PC majority, 22 of 27 seats</span></span></a>
+      <a class="av-row" href="ns.html" data-province="ns"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">Nova Scotia<span class="av-chevron">›</span></span><span class="av-row-desc">November 26, 2024 · PC majority, 43 of 55 seats</span></span></a>
+      <a class="av-row" href="nb.html" data-province="nb"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">New Brunswick<span class="av-chevron">›</span></span><span class="av-row-desc">October 21, 2024 · Liberal majority, 31 of 49 seats</span></span></a>
+      <a class="av-row is-current" href="nl.html" data-province="nl" aria-current="true"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">Newfoundland and Labrador<span class="av-chevron">›</span></span><span class="av-row-desc">October 14, 2025 · PC majority, 21 of 40 seats</span></span><span class="av-current">Current</span></a>
+    </div>
+    <div class="av-modal-foot"><a href="provinces.html">See all provinces</a> &middot; Figures from official elections-agency reports only.</div>
+  </div>
+</div>
+<main><div class="container">
+<section class="hero">
+<div class="eyebrow">Newfoundland and Labrador — General Election</div>
+<h1>A Progressive Conservative <em>majority</em> in Newfoundland and Labrador</h1>
+<p class="lede">October 14, 2025 · 40 seats · Majority: 21 seats. The Progressive Conservatives took 21 of 40 seats.</p>
+</section><div class="stats">
+<div class="stat"><b>199,565</b><span>Votes recorded</span></div><div class="stat"><b>40</b><span>Seats</span></div><div class="stat"><b>21</b><span>PC seats</span></div><div class="stat"><b>52.3%</b><span>Turnout</span></div>
+</div>
+</div>
+<section class="section"><div class="container"><div class="eyebrow">Seats</div><h2>Seats — 40 in the House of Assembly</h2><p class="section-sub">Majority: 21 seats.</p><div class="seatbar" role="img" aria-label="Seat bar: Progressive Conservative 21, Liberal 15, New Democratic 2, Independent 2"><div style="width:52.5%;background:var(--pc)">21</div><div style="width:37.5%;background:var(--lib)">15</div><div style="width:5%;background:var(--ndp)">2</div><div style="width:5%;background:var(--ind)">2</div></div><div class="legend"><span><b>PC 21</b> — majority government</span><span>Liberal 15</span><span>NDP 2</span><span>Independent 2</span></div></div></section><section class="section section-gray"><div class="container"><div class="eyebrow">Popular vote</div><h2>Votes by party</h2><table><thead><tr><th>Party</th><th class="num">Seats</th><th class="num">Votes</th></tr></thead><tbody><tr><td><span class="dot" style="background:var(--pc)"></span>Progressive Conservative</td><td class="num">21</td><td class="num">88,551</td></tr><tr><td><span class="dot" style="background:var(--lib)"></span>Liberal</td><td class="num">15</td><td class="num">86,668</td></tr><tr><td><span class="dot" style="background:var(--ndp)"></span>New Democratic</td><td class="num">2</td><td class="num">16,580</td></tr><tr><td><span class="dot" style="background:var(--ind)"></span>Independent</td><td class="num">2</td><td class="num">7,766</td></tr></tbody><tfoot><tr><td>Total votes recorded</td><td class="num">40</td><td class="num">199,565</td></tr></tfoot></table></div></section>
+<style>
+.av-dist-detail{background:#f2f4f7;border:1px solid #e5e7eb;border-radius:8px;padding:20px;display:flex;gap:16px;align-items:flex-start;margin:20px 0}
+.av-dist-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;flex:0 0 auto}
+.av-dist-name{font-size:22px;font-weight:700;line-height:1.2}
+.av-dist-party{color:#4b5563;margin-top:2px}
+.av-dist-votes{color:#111;margin-top:8px}
+.av-dist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:8px}
+.av-dist-btn{text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px;cursor:pointer;font:inherit;color:#111}
+.av-dist-btn:hover{border-color:#9ca3af}
+.av-dist-btn[aria-pressed="true"]{border:2px solid #111}
+.av-dist-btn .d1{font-weight:700;line-height:1.25}
+.av-dist-btn .d2{color:#4b5563;font-size:14px;margin-top:2px}
+.av-dist-btn .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.av-dist-note{color:#4b5563;font-size:14px;max-width:820px}
+
+.map-box{height:560px;border:1px solid #e5e7eb;background:#f2f4f7}
+@media(max-width:640px){.map-box{height:400px}}
+@media print{.map-box{display:none}}
+.map-fallback{color:#4b5563;font-size:14px}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+@media(max-width:640px){.photo-grid{grid-template-columns:1fr}}
+.photo-grid figure{margin:0}
+.photo-grid img{width:100%;height:auto;display:block;border:1px solid #e5e7eb}
+.photo-grid figcaption{font-size:13px;color:#4b5563;margin-top:6px}
+.cand-list{margin-top:16px}
+.cand-head{font-weight:700;margin:4px 0 2px}
+.cand-row{display:flex;gap:8px;align-items:baseline;padding:7px 0;border-top:1px solid #e5e7eb;font-size:14px}
+.cand-row .dot{display:inline-block;width:10px;height:10px;border-radius:50%;flex:0 0 auto;align-self:center}
+.cand-row .c-name{flex:1}
+.cand-row .c-party{color:#4b5563}
+.cand-row .c-votes{font-variant-numeric:tabular-nums;white-space:nowrap}
+</style>
+<section class="section">
+<div class="eyebrow">Results map</div>
+<h2>Results map — who won where</h2>
+<p class="av-dist-note">Tap a district on the map, or pick one below, to see all its candidates. Districts are coloured by the winning party.</p>
+<div id="nlMap" class="map-box" role="img" aria-label="Map of Newfoundland and Labrador's 40 electoral districts coloured by winning party: Progressive Conservatives won 21 districts, Liberals 15, New Democrats 2, Independents 2"></div>
+<div id="mapFallback" class="map-fallback" hidden>The map can't load on this device — every district's winner is still listed below.</div>
+</section>
+<section class="section">
+<div class="eyebrow">District results</div>
+<h2>District results — who won where</h2>
+<div class="av-dist-detail">
+<span class="av-dist-avatar" id="avDistAvatar"></span>
+<div>
+<div class="av-dist-name" id="avDistName"></div>
+<div class="av-dist-party" id="avDistParty"></div>
+<div class="av-dist-votes" id="avDistVotes"></div>
+</div>
+</div>
+<div class="cand-list" id="avDistCands"></div>
+<p class="av-dist-note">Pick a district to see all its candidates.</p>
+<div class="av-dist-grid" id="avDistList"></div>
+</section>
+
+<script src="assets/js/hatchmaps.js"></script>
+<script src="assets/js/maphelpers.js"></script>
+<script>
+(function(){
+var DATA = [["Baie Verte – Green Bay", "Lin Paddock", "PC", 3643, null], ["Bonavista", "Craig Pardy", "PC", 3260, null], ["Burgeo – La Poile", "Michael A. King", "LIB", 2001, null], ["Burin – Grand Bank", "Paul A. Pike", "LIB", 2438, null], ["Cape St. Francis", "Joedy Wall", "PC", 3388, null], ["Carbonear – Trinity – Bay de Verde", "Riley Balsom", "PC", 3459, null], ["Cartwright – L'Anse au Clair", "Lisa V. Dempster", "LIB", 789, null], ["Conception Bay East – Bell Island", "Fred Hutton", "LIB", 3730, null], ["Conception Bay South", "Barry Calvin Petten", "PC", 3060, null], ["Corner Brook", "Jim Parsons", "LIB", 2347, null], ["Exploits", "Pleaman Forsey", "PC", 3406, null], ["Ferryland", "Loyola O'Driscoll", "PC", 3507, null], ["Fogo Island – Cape Freels", "Jim McKenna", "PC", 2602, null], ["Fortune Bay – Cape La Hune", "Elvis Loveless", "LIB", 1844, null], ["Gander", "Bettina Ford", "LIB", 3063, null], ["Grand Falls-Windsor – Buchans", "Chris Tibbs", "PC", 3408, null], ["Harbour Grace – Port de Grave", "Pam Parsons", "LIB", 3750, null], ["Harbour Main", "Helen Conway Ottenheimer", "PC", 4187, null], ["Humber – Bay of Islands", "Eddie Joyce", "IND", 3433, null], ["Humber – Gros Morne", "Mike Goosney", "PC", 3239, null], ["Labrador West", "Joseph Power", "PC", 1639, null], ["Lake Melville", "Keith Russell", "PC", 1718, null], ["Lewisporte – Twillingate", "Mark Butt", "PC", 2570, null], ["Mount Pearl North", "Lucy S. Stoyles", "LIB", 3038, null], ["Mount Pearl – Southlands", "Paul Lane", "IND", 3361, null], ["Mount Scio", "Sarah Stoodley", "LIB", 2006, null], ["Placentia – St. Mary's", "Sherry Gambin-Walsh", "LIB", 2972, null], ["Placentia West – Bellevue", "Jeff Dwyer", "PC", 2641, null], ["St. Barbe – L'Anse aux Meadows", "Andrea Barbour", "PC", 2596, null], ["St. George's – Humber", "Hal Cormier", "PC", 2648, null], ["St. John's Centre", "Jim Dinn", "NDP", 2398, null], ["St. John's East – Quidi Vidi", "Sheilagh O'Leary", "NDP", 2886, null], ["St. John's West", "Keith White", "LIB", 2354, null], ["Stephenville – Port au Port", "Tony Wakeham", "PC", 3820, null], ["Terra Nova", "Lloyd Parrott", "PC", 3875, null], ["Topsail – Paradise", "Paul Dinn", "PC", 3029, null], ["Torngat Mountains", "Lela Evans", "PC", 859, null], ["Virginia Waters – Pleasantville", "Bernard Davis", "LIB", 3366, null], ["Waterford Valley", "Jamie Korab", "LIB", 2527, null], ["Windsor Lake", "John Hogan", "LIB", 3424, null]];
+var CANDS = {"Baie Verte \u2013 Green Bay":[["Lin Paddock","PC",3643],["Owen J. Burt","LIB",1013],["Sarah Hillier","NDP",239]],"Bonavista":[["Craig Pardy","PC",3260],["Heather Matthews","LIB",1037],["David Ellis","NDP",253]],"Burgeo \u2013 La Poile":[["Michael A. King","LIB",2001],["Victoria Young","PC",1259],["Judy Vanta","NDP",84]],"Burin \u2013 Grand Bank":[["Paul A. Pike","LIB",2438],["Jamie Archibald Engram","PC",2384],["Tori Locke","NDP",141]],"Cape St. Francis":[["Joedy Wall","PC",3388],["Kara L. Connors","LIB",2457],["Greg Rockwood","NDP",392]],"Carbonear \u2013 Trinity \u2013 Bay de Verde":[["Riley Balsom","PC",3459],["Danielle Doyle","LIB",3085],["Kathleen E. Burt","NDP",242],["Alison Coffin","IND",134],["Edward Thomas Cole","IND",15]],"Cartwright \u2013 L'Anse au Clair":[["Lisa V. Dempster","LIB",789],["Nina Rumbolt Pye","PC",641],["Patricia Bailey","NDP",38]],"Conception Bay East \u2013 Bell Island":[["Fred Hutton","LIB",3730],["Tina Neary","PC",2285],["Henry House","NDP",503]],"Conception Bay South":[["Barry Calvin Petten","PC",3060],["Ken McDonald","LIB",2043],["Rhonda Watkins","NDP",309]],"Corner Brook":[["Jim Parsons","LIB",2347],["Charles Pender","PC",1420],["Jean Graham","NDP",355]],"Exploits":[["Pleaman Forsey","PC",3406],["Fabian Power","LIB",2019],["Dawn Lahey","NDP",160]],"Ferryland":[["Loyola O'Driscoll","PC",3507],["Cheryl O'Brien","LIB",2904],["Joshua Meadus","NDP",243]],"Fogo Island \u2013 Cape Freels":[["Jim McKenna","PC",2602],["Dale Lewis","LIB",2208],["Garry Leyte","IND",144],["Albert Murphy","NDP",70]],"Fortune Bay \u2013 Cape La Hune":[["Elvis Loveless","LIB",1844],["Ada John","PC",903],["Eamon Carew","NDP",48]],"Gander":[["Bettina Ford","LIB",3063],["Tom Healey","PC",2054],["Justin Foley","NDP",138]],"Grand Falls-Windsor \u2013 Buchans":[["Chris Tibbs","PC",3408],["Barry Manuel","LIB",2144],["Liz Noseworthy","NDP",229]],"Harbour Grace \u2013 Port de Grave":[["Pam Parsons","LIB",3750],["Walter Yetman","PC",2241],["Alison Coffin","IND",233],["Darian Vincent","NDP",110]],"Harbour Main":[["Helen Conway Ottenheimer","PC",4187],["Don Lewis","LIB",2297],["Dion Hynes","NDP",263],["Clem J. Whittle","IND",93]],"Humber \u2013 Bay of Islands":[["Eddie Joyce","IND",3433],["Meghan Parsons","LIB",735],["Ethan Wheeler-Park","PC",514],["Collin Glavac","NDP",77]],"Humber \u2013 Gros Morne":[["Mike Goosney","PC",3239],["Helen Reid","LIB",2090],["Rebecca Brushett","NDP",247]],"Labrador West":[["Joseph Power","PC",1639],["Todd Seward","LIB",1364],["Shazia Razi","NDP",464]],"Lake Melville":[["Keith Russell","PC",1718],["Shaun MacLean","LIB",1280],["Jamie Ruby","NDP",102]],"Lewisporte \u2013 Twillingate":[["Mark Butt","PC",2570],["Derek J. Bennett","LIB",2552],["Steven Kent","NDP",76],["Stacy D. Coish","IND",15]],"Mount Pearl North":[["Lucy S. Stoyles","LIB",3038],["Jim Lester","PC",1733],["Donn Sears","NDP",430]],"Mount Pearl \u2013 Southlands":[["Paul Lane","IND",3361],["Sarah Furlong","LIB",1682],["Bryan F. Robbins","PC",666],["Brenda Walsh","NDP",217]],"Mount Scio":[["Sarah Stoodley","LIB",2006],["Darrell Hynes","PC",1551],["Laurabel Mba","NDP",792]],"Placentia \u2013 St. Mary's":[["Sherry Gambin-Walsh","LIB",2972],["Rhonda Power","PC",2470],["Philip Gardiner","IND",338],["Douglas Meggison","NDP",176]],"Placentia West \u2013 Bellevue":[["Jeff Dwyer","PC",2641],["Brian Keating","LIB",2577],["Jasmine Paul","NDP",388]],"St. Barbe \u2013 L'Anse aux Meadows":[["Andrea Barbour","PC",2596],["Krista Lynn Howell","LIB",2001],["Beth Ryan","NDP",106]],"St. George's \u2013 Humber":[["Hal Cormier","PC",2648],["Mark Lamswood","LIB",2366],["Jim McKeown","NDP",208]],"St. John's Centre":[["Jim Dinn","NDP",2398],["Gemma Hickey","LIB",1003],["Ben Duggan","PC",457]],"St. John's East \u2013 Quidi Vidi":[["Sheilagh O'Leary","NDP",2886],["John R. Whelan","LIB",2458],["Alex Edwards-Cepovski","PC",440]],"St. John's West":[["Keith White","LIB",2354],["Kristina Ennis","PC",1472],["Marius Normore","NDP",552]],"Stephenville \u2013 Port au Port":[["Tony Wakeham","PC",3820],["Jeff Young","LIB",1044],["Susan Jarvis","NDP",143]],"Terra Nova":[["Lloyd Parrott","PC",3875],["Gregory J. French","LIB",1704],["Melanie R. Adams","NDP",231]],"Topsail \u2013 Paradise":[["Paul Dinn","PC",3029],["Dan Bobbett","LIB",2923],["Tyler Bourne","NDP",354]],"Torngat Mountains":[["Lela Evans","PC",859],["Tony F. Powell","LIB",29],["MK Morris","NDP",10]],"Virginia Waters \u2013 Pleasantville":[["Bernard Davis","LIB",3366],["Raj Sharan","NDP",1080],["G. Patrick Condon","PC",986]],"Waterford Valley":[["Jamie Korab","LIB",2527],["David Thomlyn","PC",1467],["Nicole Boland","NDP",1360]],"Windsor Lake":[["John Hogan","LIB",3424],["Deanne Stapleton","PC",1052],["Marcia Porter","NDP",467]]};
+var PARTY_META = {"PC":["Progressive Conservative","#0b3d91"],"LIB":["Liberal","#d71920"],"NDP":["New Democratic","#f26522"],"GRN":["Green","#2e8b57"],"IND":["Independent","#6b7280"],"LPNB":["Libertarian","#b8960c"],"PANB":["People's Alliance","#6d28a8"],"CNBP":["Consensus NB","#8a94a6"],"SJPNB":["Social Justice","#4b5563"]};
+var LABEL = {"PC": "Progressive Conservative", "LIB": "Liberal", "NDP": "New Democratic", "GRN": "Green", "IND": "Independent"};
+var VARS = {"PC": "var(--pc)", "LIB": "var(--lib)", "NDP": "var(--ndp)", "GRN": "var(--grn)", "IND": "var(--ind)"};
+function initials(name){
+  var parts = name.replace(/[()]/g, "").split(/\s+/).filter(function(p){ return p && p !== "E."; });
+  var first = parts.length ? parts[0].charAt(0) : "";
+  var last = parts.length > 1 ? parts[parts.length - 1].charAt(0) : "";
+  return (first + last).toUpperCase();
+}
+function esc(s){
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function fmt(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+var list = document.getElementById("avDistList");
+var avatar = document.getElementById("avDistAvatar");
+var dname = document.getElementById("avDistName");
+var dparty = document.getElementById("avDistParty");
+var dvotes = document.getElementById("avDistVotes");
+var candsEl = document.getElementById("avDistCands");
+if(!list) return;
+function select(i){
+  var d = DATA[i];
+  avatar.textContent = initials(d[1]);
+  avatar.style.background = VARS[d[2]];
+  dname.textContent = "District " + (i + 1) + " \u00b7 " + d[0];
+  dparty.textContent = d[1] + " \u2014 " + LABEL[d[2]];
+  var v = "Winner votes: " + fmt(d[3]);
+  if(d[4] !== null) v += " \u00b7 " + d[4].toFixed(2) + "% of valid votes";
+  dvotes.textContent = v;
+  if(candsEl){
+    var cl = CANDS[d[0]] || [];
+    var tot = 0; cl.forEach(function(c){ tot += c[2]; });
+    var ch = '<div class="cand-head">All candidates \u2014 ' + fmt(tot) + ' valid votes</div>';
+    cl.forEach(function(c){
+      var meta = PARTY_META[c[1]] || [c[1], "#6b7280"];
+      var pct = tot ? (c[2]/tot*100).toFixed(2) : "0.00";
+      ch += '<div class="cand-row"><span class="dot" style="background:'+meta[1]+'"></span><span class="c-name">'+esc(c[0])+'</span><span class="c-party">'+esc(meta[0])+'</span><span class="c-votes">'+fmt(c[2])+' \u00b7 '+pct+'%</span></div>';
+    });
+    candsEl.innerHTML = ch;
+  }
+  var btns = list.querySelectorAll("button");
+  btns.forEach(function(b, j){ b.setAttribute("aria-pressed", j === i ? "true" : "false"); });
+}
+DATA.forEach(function(d, i){
+  var b = document.createElement("button");
+  b.type = "button";
+  b.className = "av-dist-btn";
+  b.setAttribute("aria-pressed", "false");
+  b.innerHTML = "<div class=\"d1\"><span class=\"dot\" style=\"background:" + VARS[d[2]] + "\"></span>" + esc(d[0]) + "</div><div class=\"d2\">" + esc(d[1]) + " \u00b7 " + LABEL[d[2]] + "</div>";
+  b.addEventListener("click", function(){ select(i); });
+  list.appendChild(b);
+});
+var def = 0;
+DATA.forEach(function(d, i){ if(d[0] === "Stephenville – Port au Port") def = i; });
+select(def);
+(function(){
+  var box=document.getElementById("nlMap"); if(!box) return;
+  function mapUnavailable(){ box.hidden=true; var fb=document.getElementById("mapFallback"); if(fb) fb.hidden=false; }
+  if(!window.MapHelpers||!window.HatchMaps){ mapUnavailable(); return; }
+  fetch("assets/geo/nl-districts.geojson").then(function(r){ if(!r.ok) throw new Error("geo"); return r.json(); }).then(function(gj){
+    var minLng=180,maxLng=-180,minLat=90,maxLat=-90;
+    function walk(c){ if(typeof c[0]==="number"){ if(c[0]<minLng)minLng=c[0]; if(c[0]>maxLng)maxLng=c[0]; if(c[1]<minLat)minLat=c[1]; if(c[1]>maxLat)maxLat=c[1]; } else { c.forEach(walk); } }
+    gj.features.forEach(function(f){ walk(f.geometry.coordinates); });
+    var W=box.clientWidth||800,H=box.clientHeight||520;
+    function merc(lat){var ph=lat*Math.PI/180;return Math.log(Math.tan(Math.PI/4+ph/2));}
+    var spanLng=maxLng-minLng,y0=merc(minLat),y1=merc(maxLat);
+    var zW=Math.log2(W/(256*(spanLng/360)));
+    var zH=Math.log2(H/(256*((y1-y0)/(2*Math.PI))));
+    var zoom=Math.max(3,Math.min(11,Math.min(zW,zH)-0.04));
+    var midY=(y0+y1)/2, clat=(2*Math.atan(Math.exp(midY))-Math.PI/2)*180/Math.PI;
+    var m=MapHelpers.mountMap(box,{
+      center:{lng:(minLng+maxLng)/2,lat:clat}, zoom:zoom,
+      baseStyle:"grayscale",
+      tooltip:function(f){var p=f.properties;return "District "+p.n+" \u00b7 "+p.name+" \u2014 "+p.wname+" ("+LABEL[p.party]+") won by "+fmt(p.margin)+" votes";},
+      overlays:[{id:"districts",data:gj,layers:[
+        {id:"districts-fill",type:"fill",source:"districts",paint:{"fill-color":["match",["get","party"],"PC","#0b3d91","LIB","#d71920","GRN","#2e8b57","NDP","#f26522","IND","#6b7280","#999999"],"fill-opacity":0.72}},
+        {id:"districts-line",type:"line",source:"districts",paint:{"line-color":"#ffffff","line-width":1.4}}
+      ]}]
+    },mapUnavailable);
+    if(!m) return;
+    var tries=0;
+    var iv=setInterval(function(){
+      if(m.map){ clearInterval(iv);
+        m.map.on("click","districts-fill",function(e){
+          var ft=e.features&&e.features[0];
+          if(ft&&typeof ft.properties.idx==="number"){ select(ft.properties.idx); var gl=document.getElementById("avDistList"); if(gl) gl.scrollIntoView({behavior:"smooth",block:"nearest"}); }
+        });
+        m.map.on("mouseenter","districts-fill",function(){ m.map.getCanvas().style.cursor="pointer"; });
+        m.map.on("mouseleave","districts-fill",function(){ m.map.getCanvas().style.cursor=""; });
+      }
+      if(++tries>100) clearInterval(iv);
+    },100);
+  }).catch(function(){ mapUnavailable(); });
+})();
+})();
+</script>
+<section class="section">
+<div class="eyebrow">Photos</div>
+<h2>Scenes from Newfoundland and Labrador</h2>
+<div class="photo-grid">
+<figure><img src="assets/photos/nl-confederation-building.jpg" alt="Confederation Building, St. John's" loading="lazy"><figcaption>Confederation Building, St. John's. Photo: Shhewitt, CC BY-SA 4.0, via Wikimedia Commons.</figcaption></figure>
+<figure><img src="assets/photos/nl-signal-hill.jpg" alt="Signal Hill and St. John's harbour" loading="lazy"><figcaption>Signal Hill and St. John's harbour. Photo: Michel Rathwell, CC BY 2.0, via Wikimedia Commons.</figcaption></figure>
+</div>
+</section>
+<section class="section"><div class="container"><p class="note">381,818 electors; 52.3% turnout. Note: seats shown are the election-night allocation.</p>
+<p class="note">District figures: the candidate votes above sum to 199,560 valid votes, 5 fewer than the published total of 199,565 — the official report’s district totals and the government’s results release differ slightly by tabulation. The figures on this page follow the official report; the published total above is unchanged.</p><p class="note">Source: Elections NL, 2025 General Election Report — <a href="https://www.elections.gov.nl.ca/files/2025-General-Election-Report.pdf">elections.gov.nl.ca</a></p></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-in">
+  <div class="footer-cols">
+    <div><button type="button" data-av-open>Change province</button></div>
+    <div><h3>Sources</h3><ul><li><a href="https://www.electionspei.ca">Elections PEI</a></li><li><a href="https://electionsnovascotia.ca">Elections Nova Scotia</a></li><li><a href="https://www.electionsnb.ca">Elections New Brunswick</a></li><li><a href="https://www.elections.gov.nl.ca">Elections NL</a></li></ul></div>
+  </div>
+  <p class="footer-note">Source: Elections NL, 2025 General Election Report. Figures from official elections-agency reports only.</p>
+  <p class="footer-copy">© 2026 Atlantic Votes · atlanticvotes.ca</p>
+</div></footer>
+<script>
+(function(){
+  var KEY='av-province';
+  var PAGES={pei:'pei.html',ns:'ns.html',nb:'nb.html',nl:'nl.html'};
+  var NAMES={pei:'Prince Edward Island',ns:'Nova Scotia',nb:'New Brunswick',nl:'Newfoundland and Labrador'};
+  var modal=document.getElementById('avModal');
+  if(!modal) return;
+  var closable=modal.getAttribute('data-closable')==='true';
+  function open(){ modal.hidden=false; document.body.classList.add('av-locked'); }
+  function close(){ if(!closable) return; modal.hidden=true; document.body.classList.remove('av-locked'); }
+  document.querySelectorAll('[data-av-open]').forEach(function(b){ b.addEventListener('click',open); });
+  var closeBtn=document.getElementById('avModalClose');
+  if(closeBtn) closeBtn.addEventListener('click',close);
+  modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
+  modal.querySelectorAll('.av-row').forEach(function(row){
+    row.addEventListener('click',function(){
+      try{ localStorage.setItem(KEY,row.getAttribute('data-province')); }catch(e){}
+    });
+  });
+  var labelEl=document.getElementById('provinceSwitcherLabel');
+  if(labelEl && !labelEl.getAttribute('data-fixed')){
+    try{
+      var stored=localStorage.getItem(KEY);
+      if(stored && NAMES[stored]) labelEl.textContent=NAMES[stored];
+    }catch(e){}
+  }
+})();
+
+</script>
+</body>
+</html>
