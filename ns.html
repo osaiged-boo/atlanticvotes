@@ -209,6 +209,32 @@ body.av-locked{overflow:hidden}
 .cand-row .c-name{flex:1}
 .cand-row .c-party{color:#4b5563}
 .cand-row .c-votes{font-variant-numeric:tabular-nums;white-space:nowrap}
+.avc-sort{font:inherit;font-size:14px;font-weight:600}
+.avc-sort select{font:inherit;font-size:14px;padding:8px 10px;border:1px solid #e5e7eb;background:#fff;color:#111;margin-left:6px}
+.avc-count{font-size:14px;color:#4b5563;margin:12px 0 0}
+.avc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+@media(max-width:900px){.avc-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.avc-cards{grid-template-columns:1fr}}
+.avc-card{background:#fff;border:1px solid #e5e7eb;padding:16px;display:flex;flex-direction:column;scroll-margin-top:16px}
+.avc-card h3{font-family:var(--serif);font-size:21px;margin:4px 0 0;line-height:1.2}
+.avc-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.avc-dnum{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4b5563}
+.avc-pill{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:5px 8px;white-space:nowrap}
+.avc-wblock{display:flex;gap:12px;align-items:center;margin:14px 0 4px}
+.avc-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;flex:0 0 auto}
+.avc-wname{font-family:var(--serif);font-size:21px;font-weight:800;line-height:1.12}
+.avc-wsub{font-size:13.5px;color:#4b5563}
+.avc-margin{font-size:13px;color:#4b5563;margin:0 0 10px}
+.avc-cand{padding:8px 0;border-top:1px solid #e5e7eb}
+.avc-cand-win{background:#f2f4f7}
+.avc-cand-head{display:flex;justify-content:space-between;gap:10px;font-size:14px}
+.avc-who{overflow:hidden}
+.avc-pty{color:#4b5563;font-size:12.5px}
+.avc-nums{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.avc-bar{height:6px;background:#f2f4f7;margin-top:6px}
+.avc-bar i{display:block;height:100%}
+.avc-flash{outline:3px solid #111;outline-offset:2px}
+
 </style>
 <section class="section"><div class="container">
 <div class="eyebrow">Results map</div>
@@ -231,11 +257,14 @@ body.av-locked{overflow:hidden}
 <div class="cand-list" id="avDistCands"></div>
 <p class="av-dist-note">Pick a district to see all its candidates.</p>
 <h3 class="av-dist-tiles-head">All 55 districts at a glance</h3>
-<p class="av-dist-note">Coloured by the winning party — tap a tile to select that district.</p>
+<p class="av-dist-note">Coloured by the winning party — tap a tile to jump to its full result.</p>
 <div class="controls"><label class="search"><span style="position:absolute;left:-9999px">Search districts or candidates</span><input id="avDistSearch" type="search" placeholder="Search a district or candidate…" autocomplete="off"></label>
-<div class="chips" role="group" aria-label="Filter by winning party"><button type="button" class="chip" data-filter="all" aria-pressed="true">All</button><button type="button" class="chip" data-filter="PC" aria-pressed="false">PC</button><button type="button" class="chip" data-filter="LIB" aria-pressed="false">Liberal</button><button type="button" class="chip" data-filter="NDP" aria-pressed="false">NDP</button><button type="button" class="chip" data-filter="IND" aria-pressed="false">Independent</button></div></div>
+<div class="chips" role="group" aria-label="Filter by winning party"><button type="button" class="chip" data-filter="all" aria-pressed="true">All</button><button type="button" class="chip" data-filter="PC" aria-pressed="false">PC</button><button type="button" class="chip" data-filter="LIB" aria-pressed="false">Liberal</button><button type="button" class="chip" data-filter="NDP" aria-pressed="false">NDP</button><button type="button" class="chip" data-filter="IND" aria-pressed="false">Independent</button></div><label class="avc-sort">Sort by <select id="avDistSort"><option value="num">District number</option><option value="close">Closest races first</option><option value="margin">Largest margin first</option><option value="az">District name A–Z</option></select></label></div>
 <div class="tiles" id="avDistTiles"></div>
 <p class="tile-note" id="avDistEmpty" hidden>No districts match your search.</p>
+<p class="avc-count" id="avCardCount"></p>
+<div class="avc-cards" id="avDistCards"></div>
+
 </div>
 </section>
 
@@ -313,9 +342,13 @@ function renderTiles(){
     b.setAttribute("aria-label", "District " + (i + 1) + " " + d[0] + ", won by " + d[1] + " (" + (TILE_LABEL[d[2]] || d[2]) + ")");
     b.innerHTML = "<b>" + (i + 1) + "</b><span>" + esc(d[0]) + "</span><span class=\"t-name\">" + esc(d[1]) + "</span><span class=\"t-party\">" + esc(TILE_LABEL[d[2]] || d[2]) + "</span>";
     b.addEventListener("click", function(){
+      tileState.q = ""; tileState.filter = "all";
+      if(searchEl) searchEl.value = "";
+      document.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed", c.getAttribute("data-filter") === "all" ? "true" : "false"); });
+      renderTiles(); renderCards();
       select(i);
-      var det = document.querySelector(".av-dist-detail");
-      if(det) det.scrollIntoView({behavior: "smooth", block: "start"});
+      var el = document.getElementById("d" + (i+1));
+      if(el){ el.scrollIntoView({behavior: "smooth", block: "start"}); el.classList.add("avc-flash"); setTimeout(function(){ el.classList.remove("avc-flash"); }, 1800); }
     });
     tilesEl.appendChild(b);
   });
@@ -323,15 +356,69 @@ function renderTiles(){
   if(empty) empty.hidden = shown > 0;
 }
 var searchEl = document.getElementById("avDistSearch");
-if(searchEl) searchEl.addEventListener("input", function(e){ tileState.q = e.target.value.trim().toLowerCase(); renderTiles(); });
+if(searchEl) searchEl.addEventListener("input", function(e){ tileState.q = e.target.value.trim().toLowerCase(); renderTiles(); renderCards(); });
 document.querySelectorAll(".chip").forEach(function(ch){
   ch.addEventListener("click", function(){
     tileState.filter = ch.getAttribute("data-filter");
     document.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed", c.getAttribute("data-filter") === tileState.filter ? "true" : "false"); });
-    renderTiles();
+    renderTiles(); renderCards();
   });
 });
 renderTiles();
+
+var cardState = {sort: "num"};
+var cardsEl = document.getElementById("avDistCards");
+var countEl = document.getElementById("avCardCount");
+function cardMargin(i){
+  var cl = CANDS[DATA[i][0]] || [];
+  if(cl.length < 2) return 0;
+  var s = cl.slice().sort(function(a,b){ return b[2]-a[2]; });
+  return s[0][2]-s[1][2];
+}
+function renderCards(){
+  if(!cardsEl) return;
+  var list = [];
+  DATA.forEach(function(d, i){
+    if(tileState.filter !== "all" && d[2] !== tileState.filter) return;
+    if(tileState.q && tileHay(i).indexOf(tileState.q) === -1) return;
+    list.push(i);
+  });
+  if(cardState.sort === "close") list.sort(function(a,b){ return cardMargin(a)-cardMargin(b); });
+  else if(cardState.sort === "margin") list.sort(function(a,b){ return cardMargin(b)-cardMargin(a); });
+  else if(cardState.sort === "az") list.sort(function(a,b){ return DATA[a][0].localeCompare(DATA[b][0]); });
+  else list.sort(function(a,b){ return a-b; });
+  cardsEl.innerHTML = "";
+  list.forEach(function(i){
+    var d = DATA[i];
+    var cl = (CANDS[d[0]] || []).slice().sort(function(a,b){ return b[2]-a[2]; });
+    if(!cl.length) return;
+    var tot = 0; cl.forEach(function(c){ tot += c[2]; });
+    var w = cl[0];
+    var m = cl.length > 1 ? cl[0][2]-cl[1][2] : 0;
+    var mpct = tot ? (m/tot*100).toFixed(1) : "0.0";
+    var wmeta = PARTY_META[w[1]] || [w[1], "#6b7280"];
+    var art = document.createElement("article");
+    art.className = "avc-card";
+    art.id = "d" + (i+1);
+    var rows = cl.map(function(c, j){
+      var meta = PARTY_META[c[1]] || [c[1], "#6b7280"];
+      var pct = tot ? (c[2]/tot*100) : 0;
+      return '<div class="avc-cand' + (j === 0 ? ' avc-cand-win' : '') + '"><div class="avc-cand-head"><div class="avc-who"><b>' + esc(c[0]) + '</b> <span class="avc-pty">' + esc(meta[0]) + '</span></div><div class="avc-nums"><b>' + fmt(c[2]) + '</b> · ' + pct.toFixed(1) + '%</div></div><div class="avc-bar"><i style="width:' + pct.toFixed(1) + '%;background:' + meta[1] + '"></i></div></div>';
+    }).join("");
+    var marginLine = cl.length > 1
+      ? '<p class="avc-margin">Won by ' + fmt(m) + ' votes (' + mpct + ' pts) over ' + esc(cl[1][0]) + ' · ' + fmt(tot) + ' valid votes</p>'
+      : '<p class="avc-margin">Won unopposed · ' + fmt(tot) + ' valid votes</p>';
+    art.innerHTML = '<div class="avc-top"><div><div class="avc-dnum">District ' + (i+1) + '</div><h3>' + esc(d[0]) + '</h3></div><span class="avc-pill" style="background:' + wmeta[1] + '">' + esc(TILE_LABEL[w[1]] || w[1]) + ' win</span></div>'
+      + '<div class="avc-wblock"><span class="avc-avatar" style="background:' + wmeta[1] + '">' + initials(w[0]) + '</span><div><div class="avc-wname">' + esc(w[0]) + '</div><div class="avc-wsub">Elected — ' + esc(LABEL[w[1]] || w[1]) + '</div></div></div>'
+      + marginLine + rows;
+    cardsEl.appendChild(art);
+  });
+  if(countEl) countEl.textContent = "Showing " + list.length + " of " + DATA.length + " districts";
+}
+var sortEl = document.getElementById("avDistSort");
+if(sortEl) sortEl.addEventListener("change", function(e){ cardState.sort = e.target.value; renderCards(); });
+
+renderCards();
 var def = 0;
 DATA.forEach(function(d, i){ if(d[0] === "Pictou East") def = i; });
 select(def);
