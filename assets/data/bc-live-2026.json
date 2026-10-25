@@ -282,7 +282,7 @@
       {
         "name": "Lorne Doerkson",
         "party": "Conservative Party",
-        "votes": 14215,
+        "votes": 14216,
         "status": null
       },
       {
@@ -342,7 +342,7 @@
       {
         "name": "Andrea Dunlop",
         "party": "BC NDP",
-        "votes": 6100,
+        "votes": 6101,
         "status": null
       },
       {
@@ -450,13 +450,13 @@
       {
         "name": "Bert Chen",
         "party": "Conservative Party",
-        "votes": 11098,
+        "votes": 11099,
         "status": null
       },
       {
         "name": "James Chumsa",
         "party": "Communist Party of BC",
-        "votes": 99,
+        "votes": 100,
         "status": null
       },
       {
@@ -534,19 +534,19 @@
       {
         "name": "Sidney Coles",
         "party": "BC Green Party",
-        "votes": 5765,
+        "votes": 5766,
         "status": null
       },
       {
         "name": "Dave Johnston",
         "party": "Conservative Party",
-        "votes": 7390,
+        "votes": 7391,
         "status": null
       },
       {
         "name": "Darlene Rotchford",
         "party": "BC NDP",
-        "votes": 10954,
+        "votes": 10955,
         "status": null
       },
       {
@@ -583,36 +583,36 @@
   },
   {
     "riding": "Juan de Fuca-Malahat",
-    "reportingPct": 98.8,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "Jeff Brown",
         "party": "Christian Heritage Party of BC",
-        "votes": 57,
+        "votes": 60,
         "status": null
       },
       {
         "name": "David Evans",
         "party": "BC Green Party",
-        "votes": 3649,
+        "votes": 3880,
         "status": null
       },
       {
         "name": "Shane Friesen",
         "party": "OneBC",
-        "votes": 536,
+        "votes": 553,
         "status": null
       },
       {
         "name": "Mike Hicks",
         "party": "Conservative Party",
-        "votes": 8807,
+        "votes": 9246,
         "status": null
       },
       {
         "name": "Dana Lajeunesse",
         "party": "BC NDP",
-        "votes": 8057,
+        "votes": 8477,
         "status": null
       }
     ]
@@ -912,7 +912,7 @@
       {
         "name": "Cindy Scott",
         "party": "Conservative Party",
-        "votes": 7584,
+        "votes": 7588,
         "status": null
       },
       {
@@ -1254,7 +1254,7 @@
       {
         "name": "Benjamin Olsson",
         "party": "BC Green Party",
-        "votes": 1946,
+        "votes": 1947,
         "status": null
       }
     ]
