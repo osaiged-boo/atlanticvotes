@@ -1231,30 +1231,30 @@
   },
   {
     "riding": "North Island",
-    "reportingPct": 97.2,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "Anna Kindy",
         "party": "Conservative Party",
-        "votes": 11842,
+        "votes": 11982,
         "status": null
       },
       {
         "name": "Richard Lambert",
         "party": "Independent",
-        "votes": 329,
+        "votes": 469,
         "status": null
       },
       {
         "name": "Sara Lopez",
         "party": "BC NDP",
-        "votes": 10531,
+        "votes": 10671,
         "status": null
       },
       {
         "name": "Benjamin Olsson",
         "party": "BC Green Party",
-        "votes": 1947,
+        "votes": 2133,
         "status": null
       }
     ]
@@ -2226,19 +2226,19 @@
       {
         "name": "Mable Elmore",
         "party": "BC NDP",
-        "votes": 7275,
+        "votes": 7278,
         "status": null
       },
       {
         "name": "Adam Hawk",
         "party": "BC Green Party",
-        "votes": 2706,
+        "votes": 2716,
         "status": null
       },
       {
         "name": "Aron Lageri",
         "party": "Conservative Party",
-        "votes": 5596,
+        "votes": 5599,
         "status": null
       }
     ]
