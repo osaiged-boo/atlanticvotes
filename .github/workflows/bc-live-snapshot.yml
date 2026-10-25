@@ -1,5 +1,5 @@
 # Build a same-origin JSON snapshot of Elections BC's 2026 election-night
-# results for the BC live page (bc.html), every 5 minutes.
+# results for the BC live page (bc.html), every 5 minutes (GitHub's minimum scheduled interval).
 #
 # The live page cannot fetch Elections BC's HTML tables directly (it expects
 # JSON/CSV), so this workflow polls the two official Elections BC pages,
