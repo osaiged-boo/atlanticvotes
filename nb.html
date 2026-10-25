@@ -301,13 +301,13 @@ select(def);
     if(!m) return;
     var tries=0;
     var iv=setInterval(function(){
-      if(m.map){ clearInterval(iv);
-        m.map.on("click","districts-fill",function(e){
+      var mp=(m.getMap?m.getMap():m.map); if(mp){ clearInterval(iv);
+        mp.on("click","districts-fill",function(e){
           var ft=e.features&&e.features[0];
           if(ft&&typeof ft.properties.idx==="number"){ select(ft.properties.idx); var gl=document.getElementById("avDistList"); if(gl) gl.scrollIntoView({behavior:"smooth",block:"nearest"}); }
         });
-        m.map.on("mouseenter","districts-fill",function(){ m.map.getCanvas().style.cursor="pointer"; });
-        m.map.on("mouseleave","districts-fill",function(){ m.map.getCanvas().style.cursor=""; });
+        mp.on("mouseenter","districts-fill",function(){ mp.getCanvas().style.cursor="pointer"; });
+        mp.on("mouseleave","districts-fill",function(){ mp.getCanvas().style.cursor=""; });
       }
       if(++tries>100) clearInterval(iv);
     },100);
