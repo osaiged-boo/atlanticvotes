@@ -246,7 +246,7 @@
       {
         "name": "Paul Choi",
         "party": "BC NDP",
-        "votes": 5808,
+        "votes": 5809,
         "status": null
       },
       {
@@ -264,7 +264,7 @@
       {
         "name": "David Xie",
         "party": "Conservative Party",
-        "votes": 5741,
+        "votes": 5742,
         "status": null
       }
     ]
@@ -510,7 +510,7 @@
       {
         "name": "Jason McCormick",
         "party": "BC NDP",
-        "votes": 6917,
+        "votes": 6918,
         "status": null
       },
       {
@@ -546,7 +546,7 @@
       {
         "name": "Darlene Rotchford",
         "party": "BC NDP",
-        "votes": 10953,
+        "votes": 10954,
         "status": null
       },
       {
@@ -925,36 +925,36 @@
   },
   {
     "riding": "Langley-Abbotsford",
-    "reportingPct": 97.7,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "Harman Bhangu",
         "party": "Conservative Party",
-        "votes": 13077,
+        "votes": 13471,
         "status": null
       },
       {
         "name": "Shelly Jan",
         "party": "OneBC",
-        "votes": 1064,
+        "votes": 1092,
         "status": null
       },
       {
         "name": "Alex Joehl",
         "party": "Libertarian",
-        "votes": 308,
+        "votes": 311,
         "status": null
       },
       {
         "name": "Erin Osborne",
         "party": "BC NDP",
-        "votes": 5092,
+        "votes": 5198,
         "status": null
       },
       {
         "name": "Melissa Snazell",
         "party": "BC Green Party",
-        "votes": 1813,
+        "votes": 1872,
         "status": null
       }
     ]
@@ -984,7 +984,7 @@
       {
         "name": "Misty Van Popta",
         "party": "Conservative Party",
-        "votes": 12303,
+        "votes": 12304,
         "status": null
       }
     ]
@@ -1051,30 +1051,30 @@
   },
   {
     "riding": "Maple Ridge-Pitt Meadows",
-    "reportingPct": 95.6,
+    "reportingPct": 96.7,
     "candidates": [
       {
         "name": "Lisa Beare",
         "party": "BC NDP",
-        "votes": 9370,
+        "votes": 9400,
         "status": null
       },
       {
         "name": "Susan Einarsson",
         "party": "OneBC",
-        "votes": 729,
+        "votes": 734,
         "status": null
       },
       {
         "name": "Doug Morneau",
         "party": "Conservative Party",
-        "votes": 10252,
+        "votes": 10302,
         "status": null
       },
       {
         "name": "Jordan Simmons",
         "party": "CentreBC",
-        "votes": 763,
+        "votes": 767,
         "status": null
       }
     ]
@@ -1200,7 +1200,7 @@
       {
         "name": "Jennifer Whiteside",
         "party": "BC NDP",
-        "votes": 9288,
+        "votes": 9289,
         "status": null
       }
     ]
@@ -1440,7 +1440,7 @@
       {
         "name": "Mike Farnworth",
         "party": "BC NDP",
-        "votes": 9755,
+        "votes": 9757,
         "status": null
       },
       {
@@ -1633,7 +1633,7 @@
   },
   {
     "riding": "Richmond-Queensborough",
-    "reportingPct": 97.6,
+    "reportingPct": 98.8,
     "candidates": [
       {
         "name": "Luc Burns",
@@ -1854,13 +1854,13 @@
       {
         "name": "Sargy Chima",
         "party": "CentreBC",
-        "votes": 585,
+        "votes": 586,
         "status": null
       },
       {
         "name": "Stephen Dooley",
         "party": "BC NDP",
-        "votes": 5843,
+        "votes": 5844,
         "status": null
       },
       {
@@ -1890,7 +1890,7 @@
       {
         "name": "Jagrup Brar",
         "party": "BC NDP",
-        "votes": 6506,
+        "votes": 6511,
         "status": null
       },
       {
@@ -1908,7 +1908,7 @@
       {
         "name": "Garry Purewal",
         "party": "Conservative Party",
-        "votes": 8671,
+        "votes": 8673,
         "status": null
       }
     ]
@@ -1920,13 +1920,13 @@
       {
         "name": "Garry Begg",
         "party": "BC NDP",
-        "votes": 6253,
+        "votes": 6256,
         "status": null
       },
       {
         "name": "Jodi Murphy",
         "party": "BC Green Party",
-        "votes": 960,
+        "votes": 961,
         "status": null
       },
       {
