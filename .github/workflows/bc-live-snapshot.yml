@@ -1,0 +1,54 @@
+# Build a same-origin JSON snapshot of Elections BC's 2026 election-night
+# results for the BC live page (bc.html), every 5 minutes.
+#
+# The live page cannot fetch Elections BC's HTML tables directly (it expects
+# JSON/CSV), so this workflow polls the two official Elections BC pages,
+# parses them with scripts/bc-live-snapshot.py, and commits the resulting
+# assets/data/bc-live-2026.json. The page then reads that same-origin file
+# on its normal ~60-second refresh cycle.
+#
+# Safety properties:
+# - The parser exits non-zero (and writes nothing) if either Elections BC
+#   page fails to fetch or parse, so a failed run never publishes bad data.
+# - The commit step only runs when the snapshot actually changed, so there
+#   are no empty commits.
+# - Uses only the built-in GITHUB_TOKEN (contents: write). No secrets, no PAT.
+
+name: BC live results snapshot
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bc-live-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build snapshot from Elections BC
+        run: python3 scripts/bc-live-snapshot.py assets/data/bc-live-2026.json
+
+      - name: Commit and push only if the snapshot changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/data/bc-live-2026.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update BC live results snapshot"
+            git push
+          fi
