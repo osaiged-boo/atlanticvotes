@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:," />
+<title>British Columbia Election Results — 2024 | Atlantic Votes</title>
+<meta name="description" content="British Columbia 2024 provincial general election results: 93 ridings, NDP 47 seats, Conservative 44, Green 2 — every riding's candidates and votes. Source: Elections BC Statement of Votes.">
+<style>
+/* Atlantic Votes — shared chrome. Layout patterns only; no third-party identity. */
+:root{
+  --bg:#ffffff; --ink:#111111; --muted:#5b6b7d; --line:#e2e5e9; --band:#F2F4F7;
+  --accent:#f26522; --accent-soft:#fdf0e9;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
+a{color:var(--accent)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+/* Sticky two-bar header */
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.utility-bar{border-bottom:1px solid var(--line)}
+.utility-in{display:flex;align-items:center;justify-content:space-between;height:38px}
+.province-switcher{border:0;background:none;font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--ink);padding:0;display:flex;align-items:center;gap:6px}
+.province-switcher .caret{color:var(--accent);font-size:12px}
+.province-switcher:hover{color:var(--accent)}
+.utility-link{font-size:14px;color:var(--muted);text-decoration:none}
+.utility-link:hover{color:var(--accent)}
+.main-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.wordmark{font-weight:900;font-size:22px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--accent)}
+.main-nav{display:flex;gap:28px;align-items:center}
+.main-nav a,.main-nav button{font:inherit;font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:0}
+.main-nav a:hover,.main-nav button:hover{color:var(--accent)}
+.main-nav a[aria-current="page"]{color:var(--accent)}
+/* Hero + sections */
+.hero{padding:56px 0 32px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.eyebrow::before{content:"";width:32px;height:2px;background:var(--accent);flex:0 0 auto}
+.hero h1{font-family:var(--serif);font-size:clamp(44px,7vw,84px);line-height:1.02;letter-spacing:-.01em;margin:16px 0 16px;font-weight:700;max-width:900px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.lede{font-size:19px;color:var(--muted);max-width:760px;margin:0}
+.section{padding:40px 0;border-top:1px solid var(--line)}
+.section:first-of-type{border-top:0}
+.section-gray{background:var(--band)}
+.section h2{font-family:var(--serif);font-size:clamp(30px,4vw,52px);line-height:1.08;margin:14px 0 8px}
+.section-sub{color:var(--muted);margin:0 0 24px;max-width:760px}
+/* Large-numeral stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:8px}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{border-top:1px solid var(--line);padding-top:14px}
+.stat b{display:block;font-size:34px;line-height:1;font-weight:800;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--muted)}
+/* Data visuals — party colours are data and are never overridden */
+.seatbar{display:flex;height:52px;overflow:hidden;background:var(--band);margin:20px 0 8px}
+.seatbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;min-width:0;overflow:hidden;white-space:nowrap}
+.legend{display:flex;gap:16px 24px;flex-wrap:wrap;font-size:15px;color:var(--muted);margin-bottom:8px}
+.legend b{color:var(--ink)}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em;padding:10px 8px;border-bottom:2px solid var(--ink)}
+td{padding:12px 8px;border-bottom:1px solid var(--line);font-size:17px}
+tr:last-child td{border-bottom:0}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:11px;height:11px;margin-right:8px;vertical-align:1px}
+tfoot td{font-weight:800;border-top:2px solid var(--ink)}
+.vote-row{display:grid;grid-template-columns:180px 1fr 130px;gap:16px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.vote-row:first-of-type{border-top:0}
+@media(max-width:640px){.vote-row{grid-template-columns:1fr auto}.vote-track{grid-column:1/-1;order:3}}
+.party-name{font-weight:700;display:flex;align-items:center;gap:10px}
+.party-name i{width:10px;height:24px;flex:0 0 auto;display:block}
+.vote-track{height:14px;background:var(--band)}
+.vote-fill{height:100%}
+.vote-num{text-align:right;font-variant-numeric:tabular-nums}
+.vote-num b{font-size:18px}
+.vote-num span{display:block;font-size:14px;color:var(--muted)}
+.note{font-size:15px;color:var(--muted)}
+.note a{color:var(--accent)}
+/* Province selector modal */
+.av-modal-backdrop{position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.55);display:flex;align-items:flex-start;justify-content:center;padding:8vh 20px 20px;overflow:auto}
+.av-modal-backdrop[hidden]{display:none}
+.av-modal{background:#fff;width:100%;max-width:580px;padding:40px 44px;box-shadow:0 24px 64px rgba(0,0,0,.25)}
+@media(max-width:560px){.av-modal{padding:28px 22px}}
+.av-modal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.av-modal-close{border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:var(--ink);padding:0 2px}
+.av-modal-close:hover{color:var(--accent)}
+.av-modal-title{font-size:clamp(30px,5vw,40px);line-height:1.1;margin:28px 0 8px;font-weight:800}
+.av-modal-sub{color:var(--muted);margin:0 0 28px}
+.av-rows{display:flex;flex-direction:column}
+.av-row{display:flex;gap:16px;align-items:flex-start;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:20px 4px;cursor:pointer;font:inherit}
+.av-row:last-of-type{border-bottom:1px solid var(--line)}
+.av-row:hover .av-row-title{color:var(--accent)}
+.av-row-icon{flex:0 0 auto;color:var(--ink);padding-top:2px}
+.av-row-text{flex:1;min-width:0}
+.av-row-title{display:block;font-size:19px;font-weight:800;line-height:1.25}
+.av-row-title .av-chevron{color:var(--accent);margin-left:6px}
+.av-row-desc{display:block;font-size:14px;color:var(--muted);margin-top:3px}
+.av-current{flex:0 0 auto;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:4px 8px}
+.av-row.is-current{background:var(--accent-soft)}
+.av-row.is-current .av-row-title{color:var(--accent)}
+.av-modal-foot{margin-top:22px;font-size:14px;color:var(--muted)}
+.av-modal-foot a{color:var(--accent)}
+body.av-locked{overflow:hidden}
+/* Footer */
+.site-footer{border-top:1px solid var(--line);background:#fff}
+.footer-in{padding:44px 0 36px}
+.footer-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+@media(max-width:720px){.footer-cols{grid-template-columns:1fr}}
+.footer-cols h3{font-size:14px;margin:0 0 12px}
+.footer-cols ul{list-style:none;margin:0;padding:0}
+.footer-cols li{margin:0 0 8px}
+.footer-cols a{color:var(--ink);text-decoration:none;font-size:15px}
+.footer-cols a:hover{color:var(--accent)}
+.footer-note{color:var(--muted);font-size:14px;margin:28px 0 0;max-width:820px}
+.footer-copy{color:var(--muted);font-size:13px;margin:8px 0 0}
+:root{--con:#0b3d91;--ndp:#f26522;--grn:#2e8b57;--ind:#6b7280}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="utility-bar"><div class="container utility-in">
+    <button class="province-switcher" type="button" data-av-open aria-haspopup="dialog"><span id="provinceSwitcherLabel" data-fixed="1">British Columbia</span> <span class="caret">▾</span></button>
+    <a class="utility-link" href="provinces.html">All provinces</a>
+  </div></div>
+  <div class="main-bar"><div class="container main-in">
+    <a class="wordmark" href="index.html">Atlantic<span>Votes</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <button type="button" data-av-open>Change province</button>
+    </nav>
+  </div></div>
+</header>
+<div class="av-modal-backdrop" id="avModal" data-closable="true" hidden role="dialog" aria-modal="true" aria-labelledby="avModalTitle">
+  <div class="av-modal">
+    <div class="av-modal-top">
+      <a class="wordmark" href="index.html">Atlantic<span>Votes</span></a>
+      <button class="av-modal-close" id="avModalClose" type="button" aria-label="Close">×</button>
+    </div>
+    <h2 class="av-modal-title" id="avModalTitle">Select your province</h2>
+    <p class="av-modal-sub">Choose a province to see its latest election results.</p>
+    <div class="av-rows">
+      <a class="av-row" href="pei.html" data-province="pei"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">Prince Edward Island<span class="av-chevron">›</span></span><span class="av-row-desc">April 3, 2023 · PC majority, 22 of 27 seats</span></span></a>
+      <a class="av-row" href="ns.html" data-province="ns"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">Nova Scotia<span class="av-chevron">›</span></span><span class="av-row-desc">November 26, 2024 · PC majority, 43 of 55 seats</span></span></a>
+      <a class="av-row" href="nb.html" data-province="nb"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">New Brunswick<span class="av-chevron">›</span></span><span class="av-row-desc">October 21, 2024 · Liberal majority, 31 of 49 seats</span></span></a>
+      <a class="av-row" href="nl.html" data-province="nl"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">Newfoundland and Labrador<span class="av-chevron">›</span></span><span class="av-row-desc">October 14, 2025 · PC majority, 21 of 40 seats</span></span></a>
+    </div>
+    <div class="av-modal-foot"><a href="provinces.html">See all provinces</a> &middot; Figures from official elections-agency reports only.</div>
+  </div>
+</div>
+<main><div class="container">
+<section class="hero">
+<div class="eyebrow">British Columbia — 43rd General Election</div>
+<h1>A BC NDP <em>majority</em> in British Columbia</h1>
+<p class="lede">October 19, 2024 · 93 seats · Majority: 47 seats. The BC NDP took 47 of 93 seats on 44.87% of the vote — the narrowest possible majority.</p>
+</section><div class="stats">
+<div class="stat"><b>2,105,341</b><span>Valid votes cast</span></div><div class="stat"><b>93</b><span>Seats</span></div><div class="stat"><b>47</b><span>BC NDP seats</span></div><div class="stat"><b>44.87%</b><span>BC NDP vote share</span></div>
+</div>
+</div>
+<section class="section"><div class="container"><div class="eyebrow">Seats</div><h2>Seats — 93 in the Legislative Assembly</h2><p class="section-sub">Majority: 47 seats.</p><div class="seatbar" role="img" aria-label="Seat bar: BC NDP 47, Conservative Party 44, BC Green Party 2"><div style="width:50.54%;background:var(--ndp)">47</div><div style="width:47.31%;background:var(--con)">44</div><div style="width:2.15%;background:var(--grn)">2</div></div><div class="legend"><span><b>NDP 47</b> — majority government</span><span>Conservative 44</span><span>Green 2</span></div></div></section><section class="section section-gray"><div class="container"><div class="eyebrow">Popular vote</div><h2>Province-wide popular vote</h2><div style="margin-top:24px"><div class="vote-row"><div class="party-name"><i style="background:#f26522"></i>BC NDP</div><div class="vote-track"><div class="vote-fill" style="width:44.87%;background:#f26522"></div></div><div class="vote-num"><b>44.87%</b><span>944,579 votes · 47 seats</span></div></div><div class="vote-row"><div class="party-name"><i style="background:#0b3d91"></i>Conservative Party</div><div class="vote-track"><div class="vote-fill" style="width:43.28%;background:#0b3d91"></div></div><div class="vote-num"><b>43.28%</b><span>911,153 votes · 44 seats</span></div></div><div class="vote-row"><div class="party-name"><i style="background:#2e8b57"></i>BC Green Party</div><div class="vote-track"><div class="vote-fill" style="width:8.24%;background:#2e8b57"></div></div><div class="vote-num"><b>8.24%</b><span>173,377 votes · 2 seats</span></div></div><div class="vote-row"><div class="party-name"><i style="background:#6b7280"></i>Independent</div><div class="vote-track"><div class="vote-fill" style="width:2.24%;background:#6b7280"></div></div><div class="vote-num"><b>2.24%</b><span>47,117 votes · 0 seats</span></div></div><div class="vote-row"><div class="party-name"><i style="background:#6b7280"></i>Unaffiliated</div><div class="vote-track"><div class="vote-fill" style="width:1.21%;background:#6b7280"></div></div><div class="vote-num"><b>1.21%</b><span>25,464 votes · 0 seats</span></div></div><div class="vote-row"><div class="party-name"><i style="background:#6b7280"></i>Libertarian</div><div class="vote-track"><div class="vote-fill" style="width:0.07%;background:#6b7280"></div></div><div class="vote-num"><b>0.07%</b><span>1,380 votes · 0 seats</span></div></div><div class="vote-row"><div class="party-name"><i style="background:#6b7280"></i>Freedom Party of BC</div><div class="vote-track"><div class="vote-fill" style="width:0.06%;background:#6b7280"></div></div><div class="vote-num"><b>0.06%</b><span>1,267 votes · 0 seats</span></div></div><div class="vote-row"><div class="party-name"><i style="background:#6b7280"></i>Communist Party of BC</div><div class="vote-track"><div class="vote-fill" style="width:0.03%;background:#6b7280"></div></div><div class="vote-num"><b>0.03%</b><span>639 votes · 0 seats</span></div></div><div class="vote-row"><div class="party-name"><i style="background:#6b7280"></i>Christian Heritage Party of B.C.</div><div class="vote-track"><div class="vote-fill" style="width:0.02%;background:#6b7280"></div></div><div class="vote-num"><b>0.02%</b><span>365 votes · 0 seats</span></div></div></div></div></section>
+<style>
+.av-dist-detail{background:#f2f4f7;border:1px solid #e5e7eb;border-radius:8px;padding:20px;display:flex;gap:16px;align-items:flex-start;margin:20px 0}
+.av-dist-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;flex:0 0 auto}
+.av-dist-name{font-size:22px;font-weight:700;line-height:1.2}
+.av-dist-party{color:#4b5563;margin-top:2px}
+.av-dist-votes{color:#111;margin-top:8px}
+
+.tiles{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;margin-top:8px}
+@media(max-width:800px){.tiles{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:420px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{border:0;cursor:pointer;color:#fff;padding:10px 6px 8px;text-align:left;min-height:64px;display:flex;flex-direction:column;justify-content:space-between}
+.tile b{font-size:18px;line-height:1}
+.tile span{font-size:10.5px;line-height:1.15;opacity:.92;display:block;margin-top:4px}
+.tile:focus-visible,.tile:hover{outline:2px solid #111;outline-offset:1px}
+.tile[aria-pressed="true"]{outline:3px solid #111;outline-offset:1px}
+.tile-con{background:var(--con)}
+.tile-ndp{background:var(--ndp)}
+.tile-grn{background:var(--grn)}
+.tile-ind{background:var(--ind)}
+.tile .t-name{font-size:13px;font-weight:700;line-height:1.2;opacity:1;margin-top:5px}
+.tile .t-party{font-size:10.5px;opacity:.85}
+.tile-note{font-size:13px;color:#4b5563;margin-top:10px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid #e5e7eb;background:#fff;color:#111;padding:8px 12px;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.chip[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
+.search{flex:1 1 240px;display:flex}
+.search input{width:100%;border:1px solid #e5e7eb;padding:10px 12px;font:inherit;font-size:15px}
+.av-dist-tiles-head{font-family:var(--serif);font-size:26px;margin:28px 0 8px}
+.take-list{margin:8px 0 0;padding-left:22px}
+.take-list li{margin:0 0 10px}
+.av-dist-note{color:#4b5563;font-size:14px;max-width:820px}
+
+.map-box{height:420px;border:1px solid #e5e7eb;background:#f2f4f7}
+@media(max-width:640px){.map-box{height:320px}}
+@media print{.map-box{display:none}}
+.map-fallback{color:#4b5563;font-size:14px}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+@media(max-width:640px){.photo-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.photo-grid img{height:200px}}
+.photo-grid figure{margin:0}
+.photo-grid img{width:100%;height:260px;object-fit:cover;display:block;border:1px solid #e5e7eb}
+.photo-grid figcaption{font-size:13px;color:#4b5563;margin-top:6px}
+.cand-list{margin-top:16px}
+.cand-head{font-weight:700;margin:4px 0 2px}
+.cand-row{display:flex;gap:8px;align-items:baseline;padding:7px 0;border-top:1px solid #e5e7eb;font-size:14px}
+.cand-row .dot{display:inline-block;width:10px;height:10px;border-radius:50%;flex:0 0 auto;align-self:center}
+.cand-row .c-name{flex:1}
+.cand-row .c-party{color:#4b5563}
+.cand-row .c-votes{font-variant-numeric:tabular-nums;white-space:nowrap}
+.avc-sort{font:inherit;font-size:14px;font-weight:600}
+.avc-sort select{font:inherit;font-size:14px;padding:8px 10px;border:1px solid #e5e7eb;background:#fff;color:#111;margin-left:6px}
+.avc-count{font-size:14px;color:#4b5563;margin:12px 0 0}
+.avc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+@media(max-width:900px){.avc-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.avc-cards{grid-template-columns:1fr}}
+.avc-card{background:#fff;border:1px solid #e5e7eb;padding:16px;display:flex;flex-direction:column;scroll-margin-top:16px}
+.avc-card h3{font-family:var(--serif);font-size:21px;margin:4px 0 0;line-height:1.2}
+.avc-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.avc-dnum{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4b5563}
+.avc-pill{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:5px 8px;white-space:nowrap}
+.avc-wblock{display:flex;gap:12px;align-items:center;margin:14px 0 4px}
+.avc-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;flex:0 0 auto}
+.avc-wname{font-family:var(--serif);font-size:21px;font-weight:800;line-height:1.12}
+.avc-wsub{font-size:13.5px;color:#4b5563}
+.avc-margin{font-size:13px;color:#4b5563;margin:0 0 10px}
+.avc-cand{padding:8px 0;border-top:1px solid #e5e7eb}
+.avc-cand-win{background:#f2f4f7}
+.avc-cand-head{display:flex;justify-content:space-between;gap:10px;font-size:14px}
+.avc-who{overflow:hidden}
+.avc-pty{color:#4b5563;font-size:12.5px}
+.avc-nums{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.avc-bar{height:6px;background:#f2f4f7;margin-top:6px}
+.avc-bar i{display:block;height:100%}
+.avc-flash{outline:3px solid #111;outline-offset:2px}
+
+</style>
+<section class="section"><div class="container">
+<div class="eyebrow">Results map</div>
+<h2>Results map — who won where</h2>
+<p class="av-dist-note">Tap a riding on the map, or pick one below, to see all its candidates. Ridings are coloured by the winning party.</p>
+<div id="bcMap" class="map-box" role="img" aria-label="Map of British Columbia's 93 electoral districts coloured by winning party: BC NDP won 47 ridings, Conservatives 44, Greens 2"></div>
+<div id="mapFallback" class="map-fallback" hidden>The map can't load on this device — every riding's winner is still listed below.</div></div>
+</section>
+<section class="section"><div class="container">
+<div class="eyebrow">Riding results</div>
+<h2>Riding results — who won where</h2>
+<div class="av-dist-detail">
+<span class="av-dist-avatar" id="avDistAvatar"></span>
+<div>
+<div class="av-dist-name" id="avDistName"></div>
+<div class="av-dist-party" id="avDistParty"></div>
+<div class="av-dist-votes" id="avDistVotes"></div>
+</div>
+</div>
+<div class="cand-list" id="avDistCands"></div>
+<p class="av-dist-note">Pick a riding to see all its candidates.</p>
+<h3 class="av-dist-tiles-head">All 93 ridings at a glance</h3>
+<p class="av-dist-note">Coloured by the winning party — tap a tile to jump to its full result.</p>
+<div class="controls"><label class="search"><span style="position:absolute;left:-9999px">Search ridings or candidates</span><input id="avDistSearch" type="search" placeholder="Search a riding or candidate…" autocomplete="off"></label>
+<div class="chips" role="group" aria-label="Filter by winning party"><button type="button" class="chip" data-filter="all" aria-pressed="true">All</button><button type="button" class="chip" data-filter="NDP" aria-pressed="false">NDP</button><button type="button" class="chip" data-filter="CON" aria-pressed="false">Conservative</button><button type="button" class="chip" data-filter="GRN" aria-pressed="false">Green</button></div><label class="avc-sort">Sort by <select id="avDistSort"><option value="num">District number</option><option value="close">Closest races first</option><option value="margin">Largest margin first</option><option value="az">District name A–Z</option></select></label></div>
+<div class="tiles" id="avDistTiles"></div>
+<p class="tile-note" id="avDistEmpty" hidden>No ridings match your search.</p>
+<p class="avc-count" id="avCardCount"></p>
+<div class="avc-cards" id="avDistCards"></div>
+
+</div>
+</section>
+
+<script src="assets/js/hatchmaps.js?v=2"></script>
+<script src="assets/js/maphelpers.js"></script>
+<script>
+(function(){
+var DATA = [["Abbotsford-Mission", "Reann Gasper", "CON", 13523, 55.38], ["Abbotsford South", "Bruce Banman", "CON", 13053, 61.61], ["Abbotsford West", "Korky Neufeld", "CON", 11483, 58.35], ["Boundary-Similkameen", "Donegal Wilson", "CON", 11935, 48.39], ["Bulkley Valley-Stikine", "Sharon L. Hartwell", "CON", 4992, 52.31], ["Burnaby Centre", "Anne Kang", "NDP", 9780, 57.28], ["Burnaby East", "Reah Arora", "NDP", 10490, 51.85], ["Burnaby-New Westminster", "Raj Chouhan", "NDP", 10647, 59.99], ["Burnaby North", "Janet Routledge", "NDP", 10724, 53.26], ["Burnaby South-Metrotown", "Paul Choi", "NDP", 7560, 49.33], ["Cariboo-Chilcotin", "Lorne Doerkson", "CON", 13714, 69.59], ["Chilliwack-Cultus Lake", "A'aliya Warbus", "CON", 13656, 54.58], ["Chilliwack North", "Heather Maahs", "CON", 11776, 54.58], ["Columbia River-Revelstoke", "Scott McInnis", "CON", 8768, 47.92], ["Coquitlam-Burke Mountain", "Jodie Wickens", "NDP", 11020, 50.85], ["Coquitlam-Maillardville", "Jennifer Blatherwick", "NDP", 11972, 51.8], ["Courtenay-Comox", "Brennan Day", "CON", 13481, 38.83], ["Cowichan Valley", "Debra Toporowski", "NDP", 11795, 40.51], ["Delta North", "Ravi Kahlon", "NDP", 10988, 52.73], ["Delta South", "Ian Paton", "CON", 14491, 55.07], ["Esquimalt-Colwood", "Darlene Rotchford", "NDP", 15238, 51.47], ["Fraser-Nicola", "Tony Luck", "CON", 10326, 54.34], ["Juan de Fuca-Malahat", "Dana Lajeunesse", "NDP", 9308, 38.79], ["Kamloops Centre", "Peter Milobar", "CON", 12372, 48.83], ["Kamloops-North Thompson", "Ward Stamer", "CON", 17930, 59.74], ["Kelowna Centre", "Kristina Loewen", "CON", 11033, 42.85], ["Kelowna-Lake Country-Coldstream", "Tara Armstrong", "CON", 14303, 53.92], ["Kelowna-Mission", "Gavin Dew", "CON", 14071, 51.49], ["Kootenay Central", "Brittny Anderson", "NDP", 8716, 39.63], ["Kootenay-Monashee", "Steve Morissette", "NDP", 10202, 52.04], ["Kootenay-Rockies", "Pete Davis", "CON", 8217, 42.71], ["Ladysmith-Oceanside", "Stephanie Higginson", "NDP", 14144, 41.49], ["Langford-Highlands", "Ravi Parmar", "NDP", 11444, 51.87], ["Langley-Abbotsford", "Harman Bhangu", "CON", 14341, 55.65], ["Langley-Walnut Grove", "Misty Van Popta", "CON", 12121, 49.56], ["Langley-Willowbrook", "Jody Toor", "CON", 10979, 48.24], ["Maple Ridge East", "Lawrence Mok", "CON", 12058, 47.02], ["Maple Ridge-Pitt Meadows", "Lisa Beare", "NDP", 14480, 54.89], ["Mid Island-Pacific Rim", "Josie Osborne", "NDP", 14042, 48.74], ["Nanaimo-Gabriola Island", "Sheila Malcolmson", "NDP", 14663, 52.75], ["Nanaimo-Lantzville", "George Anderson", "NDP", 15307, 51.75], ["Nechako Lakes", "John Rustad", "CON", 7851, 67.45], ["New Westminster-Coquitlam", "Jennifer Whiteside", "NDP", 12757, 59.13], ["North Coast-Haida Gwaii", "Tamara Davidson", "NDP", 4863, 64.92], ["North Island", "Anna Kindy", "CON", 14100, 47.07], ["North Vancouver-Lonsdale", "Bowinn Ma", "NDP", 16759, 64.88], ["North Vancouver-Seymour", "Susie Chant", "NDP", 16210, 52.77], ["Oak Bay-Gordon Head", "Diana Gibson", "NDP", 14519, 49.1], ["Peace River North", "Jordan Kealy", "CON", 11213, 74.36], ["Peace River South", "Larry Neufeld", "CON", 7182, 69.84], ["Penticton-Summerland", "Amelia Boultbee", "CON", 11615, 41.37], ["Port Coquitlam", "Mike Farnworth", "NDP", 13843, 53.87], ["Port Moody-Burquitlam", "Rick Glumac", "NDP", 13488, 52.06], ["Powell River-Sunshine Coast", "Randene Neill", "NDP", 14474, 49.62], ["Prince George-Mackenzie", "Kiel Giddens", "CON", 11307, 60.92], ["Prince George-North Cariboo", "Sheldon Clare", "CON", 11430, 56.82], ["Prince George-Valemount", "Rosalyn Bird", "CON", 9018, 55.19], ["Richmond-Bridgeport", "Teresa Wat", "CON", 9908, 58.19], ["Richmond Centre", "Hon Chan", "CON", 8426, 51.99], ["Richmond-Queensborough", "Steve Kooner", "CON", 10052, 50.91], ["Richmond-Steveston", "Kelly Greene", "NDP", 10332, 44.27], ["Saanich North and the Islands", "Rob Botterell", "GRN", 12308, 36.15], ["Saanich South", "Lana Popham", "NDP", 15338, 49.76], ["Salmon Arm-Shuswap", "David L. Williams", "CON", 16566, 52.11], ["Skeena", "Claire Rattée", "CON", 6243, 51.2], ["Surrey City Centre", "Amna Shah", "NDP", 6726, 46.7], ["Surrey-Cloverdale", "Elenore Sturko", "CON", 10268, 48.31], ["Surrey-Fleetwood", "Jagrup Brar", "NDP", 9923, 48.61], ["Surrey-Guildford", "Garry Begg", "NDP", 8947, 46.93], ["Surrey-Newton", "Jessie Sunner", "NDP", 7924, 51.17], ["Surrey North", "Mandeep Dhaliwal", "CON", 7954, 50.67], ["Surrey-Panorama", "Bryan Tepper", "CON", 8735, 49.6], ["Surrey-Serpentine River", "Linda Hepner", "CON", 9782, 49.7], ["Surrey South", "Brent Chapman", "CON", 13056, 58.83], ["Surrey-White Rock", "Trevor Halford", "CON", 14667, 52.31], ["Vancouver-Fraserview", "George Chow", "NDP", 11896, 57.18], ["Vancouver-Hastings", "Niki Sharma", "NDP", 14237, 64.15], ["Vancouver-Kensington", "Mable Elmore", "NDP", 11713, 60.9], ["Vancouver-Langara", "Sunita Dhir", "NDP", 8506, 48.43], ["Vancouver-Little Mountain", "Christine Boyle", "NDP", 15636, 62.11], ["Vancouver-Point Grey", "David Eby", "NDP", 12538, 56.77], ["Vancouver-Quilchena", "Dallas Brodie", "CON", 11464, 51.58], ["Vancouver-Renfrew", "Adrian Dix", "NDP", 10983, 63.22], ["Vancouver-South Granville", "Brenda Bailey", "NDP", 17208, 64.31], ["Vancouver-Strathcona", "Joan Phillip", "NDP", 13673, 68.17], ["Vancouver-West End", "Spencer Chandra Herbert", "NDP", 13143, 63.01], ["Vancouver-Yaletown", "Terry Yung", "NDP", 9018, 49.76], ["Vernon-Lumby", "Harwinder Sandhu", "NDP", 11837, 42.69], ["Victoria-Beacon Hill", "Grace Lore", "NDP", 13634, 47.35], ["Victoria-Swan Lake", "Nina Krieger", "NDP", 14273, 56.03], ["West Kelowna-Peachland", "Macklin McCall", "CON", 13475, 50.85], ["West Vancouver-Capilano", "Lynne Block", "CON", 12049, 46.67], ["West Vancouver-Sea to Sky", "Jeremy Valeriote", "GRN", 10438, 38.08]];
+var CANDS = {"Abbotsford-Mission": [["Reann Gasper", "CON", 13523], ["Pam Alexis", "NDP", 10894]], "Abbotsford South": [["Bruce Banman", "CON", 13053], ["Sarah Kooner", "NDP", 7454], ["Amandeep Singh", "IND", 681]], "Abbotsford West": [["Korky Neufeld", "CON", 11483], ["Graeme Hutchison", "NDP", 7255], ["James Davison", "IND", 940]], "Boundary-Similkameen": [["Donegal Wilson", "CON", 11935], ["Roly Russell", "NDP", 10497], ["Kevin Eastwood", "GRN", 1454], ["Sean Taylor", "IND", 779]], "Bulkley Valley-Stikine": [["Sharon L. Hartwell", "CON", 4992], ["Nathan Cullen", "NDP", 3709], ["Gamlakyeltxw Wilhelm Marsden", "GRN", 604], ["Rod Taylor", "CHP", 239]], "Burnaby Centre": [["Anne Kang", "NDP", 9780], ["Dharam Kajal", "CON", 7294]], "Burnaby East": [["Reah Arora", "NDP", 10490], ["Simon Chandler", "CON", 8198], ["Tara Shushtarian", "GRN", 1544]], "Burnaby-New Westminster": [["Raj Chouhan", "NDP", 10647], ["Deepak Suri", "CON", 6161], ["Daniel Kofi Ampong", "IND", 940]], "Burnaby North": [["Janet Routledge", "NDP", 10724], ["Michael Wu", "CON", 8658], ["Martin Kendell", "IND", 754]], "Burnaby South-Metrotown": [["Paul Choi", "NDP", 7560], ["Han Lee", "CON", 6373], ["Carrie McLaren", "GRN", 960], ["Meiling Chia", "UNA", 290], ["MichaelAngelo Abc Robinhood", "IND", 142]], "Cariboo-Chilcotin": [["Lorne Doerkson", "CON", 13714], ["Michael Moses", "NDP", 5992]], "Chilliwack-Cultus Lake": [["A'aliya Warbus", "CON", 13656], ["Kelli Paddon", "NDP", 11366]], "Chilliwack North": [["Heather Maahs", "CON", 11776], ["Dan Coulter", "NDP", 8125], ["Tim Cooper", "GRN", 1187], ["Dan Grice", "IND", 487]], "Columbia River-Revelstoke": [["Scott McInnis", "CON", 8768], ["Andrea Dunlop", "NDP", 8098], ["Calvin Beauchesne", "GRN", 1430]], "Coquitlam-Burke Mountain": [["Jodie Wickens", "NDP", 11020], ["Stephen Frolek", "CON", 10652]], "Coquitlam-Maillardville": [["Jennifer Blatherwick", "NDP", 11972], ["Hamed Najafi", "CON", 9146], ["Nicola Spurling", "GRN", 1461], ["Ken Holowanky", "IND", 535]], "Courtenay-Comox": [["Brennan Day", "CON", 13481], ["Ronna-Rae Leonard", "NDP", 13388], ["Arzeena Hamir", "GRN", 7202], ["John Hedican", "IND", 504], ["Devin Howell", "IND", 143]], "Cowichan Valley": [["Debra Toporowski", "NDP", 11795], ["John Koury", "CON", 10946], ["Cammy Lockwood", "GRN", 5773], ["Eden Haythornthwaite", "IND", 341], ["Jon Coleman", "UNA", 263]], "Delta North": [["Ravi Kahlon", "NDP", 10988], ["Raj Veauli", "CON", 8381], ["Nick Dickinson-Wilde", "GRN", 1292], ["Manqoosh Khan", "FPBC", 177]], "Delta South": [["Ian Paton", "CON", 14491], ["Jason McCormick", "NDP", 11822]], "Esquimalt-Colwood": [["Darlene Rotchford", "NDP", 15238], ["John Wilson", "CON", 8652], ["Camille Currie", "GRN", 5716]], "Fraser-Nicola": [["Tony Luck", "CON", 10326], ["Francyne Joe", "NDP", 6917], ["Jonah Timms", "GRN", 1761]], "Juan de Fuca-Malahat": [["Dana Lajeunesse", "NDP", 9308], ["Marina Sapozhnikov", "CON", 9167], ["David Evans", "GRN", 5522]], "Kamloops Centre": [["Peter Milobar", "CON", 12372], ["Kamal Grewal", "NDP", 10369], ["Randy Sunderman", "GRN", 2597]], "Kamloops-North Thompson": [["Ward Stamer", "CON", 17930], ["Maddi Genn", "NDP", 9874], ["Tristan Cavers", "GRN", 2209]], "Kelowna Centre": [["Kristina Loewen", "CON", 11033], ["Loyal Wooldridge", "NDP", 10993], ["Michael Humer", "UNA", 2613], ["Bryce Tippe", "GRN", 1111]], "Kelowna-Lake Country-Coldstream": [["Tara Armstrong", "CON", 14303], ["Anna Warwick Sears", "NDP", 9350], ["Kevin Kraft", "IND", 1724], ["Andrew Rose", "GRN", 1151]], "Kelowna-Mission": [["Gavin Dew", "CON", 14071], ["Harpreet Badohal", "NDP", 8913], ["Ashley Ramsay", "UNA", 2996], ["Billy Young", "GRN", 1349]], "Kootenay Central": [["Brittny Anderson", "NDP", 8716], ["Kelly Vandenberghe", "CON", 6967], ["Nicole Charlwood", "GRN", 4123], ["Corinne Mori", "IND", 2190]], "Kootenay-Monashee": [["Steve Morissette", "NDP", 10202], ["Glen Byle", "CON", 7616], ["Donovan Cavers", "GRN", 1785]], "Kootenay-Rockies": [["Pete Davis", "CON", 8217], ["Tom Shypitka", "IND", 5844], ["Sam Atwal", "NDP", 4184], ["Kerri Wall", "GRN", 996]], "Ladysmith-Oceanside": [["Stephanie Higginson", "NDP", 14144], ["Brett Fee", "CON", 12097], ["Adam Walker", "IND", 5559], ["Laura Ferreira", "GRN", 2292]], "Langford-Highlands": [["Ravi Parmar", "NDP", 11444], ["Mike Harris", "CON", 8251], ["Erin Cassels", "GRN", 2368]], "Langley-Abbotsford": [["Harman Bhangu", "CON", 14341], ["John Aldag", "NDP", 8691], ["Melissa Snazell", "GRN", 1434], ["Karen Long", "IND", 1104], ["Alex Joehl", "LBN", 200]], "Langley-Walnut Grove": [["Misty Van Popta", "CON", 12121], ["Megan Dykeman", "NDP", 10949], ["Rylee Mac Lean", "GRN", 1254], ["Carlos Suarez Rubio", "IND", 134]], "Langley-Willowbrook": [["Jody Toor", "CON", 10979], ["Andrew Mercier", "NDP", 10112], ["Petrina Arnason", "GRN", 1670]], "Maple Ridge East": [["Lawrence Mok", "CON", 12058], ["Bob D'Eith", "NDP", 11961], ["Kylee Williams", "GRN", 1626]], "Maple Ridge-Pitt Meadows": [["Lisa Beare", "NDP", 14480], ["Mike Morden", "CON", 11901]], "Mid Island-Pacific Rim": [["Josie Osborne", "NDP", 14042], ["Adam Hayduk", "CON", 11366], ["Ross Reid", "GRN", 3402]], "Nanaimo-Gabriola Island": [["Sheila Malcolmson", "NDP", 14663], ["Dale Parker", "CON", 9633], ["Shirley Lambrecht", "GRN", 3502]], "Nanaimo-Lantzville": [["George Anderson", "NDP", 15307], ["Gwen O'Mahony", "CON", 11687], ["Lia Versaevel", "GRN", 2586]], "Nechako Lakes": [["John Rustad", "CON", 7851], ["Murphy Abraham", "NDP", 3167], ["Douglas Gook", "GRN", 622]], "New Westminster-Coquitlam": [["Jennifer Whiteside", "NDP", 12757], ["Ndellie Massey", "CON", 6438], ["Maureen Curran", "GRN", 2380]], "North Coast-Haida Gwaii": [["Tamara Davidson", "NDP", 4863], ["Christopher Jason Sankey", "CON", 2628]], "North Island": [["Anna Kindy", "CON", 14100], ["Michele Babchuk", "NDP", 13461], ["Nic Dedeluk", "GRN", 2397]], "North Vancouver-Lonsdale": [["Bowinn Ma", "NDP", 16759], ["David Splett", "CON", 9073]], "North Vancouver-Seymour": [["Susie Chant", "NDP", 16210], ["Sam Chandola", "CON", 10995], ["Mitchell Baker", "IND", 1794], ["Subhadarshi Tripathy", "GRN", 1722]], "Oak Bay-Gordon Head": [["Diana Gibson", "NDP", 14519], ["Stephen Andrew", "CON", 8542], ["Lisa Gunderson", "GRN", 6509]], "Peace River North": [["Jordan Kealy", "CON", 11213], ["Dan Davies", "IND", 3038], ["Ian McMahon", "NDP", 828]], "Peace River South": [["Larry Neufeld", "CON", 7182], ["Mike Bernier", "UNA", 2525], ["Marshall Bigsby", "NDP", 576]], "Penticton-Summerland": [["Amelia Boultbee", "CON", 11615], ["Tina Lee", "NDP", 11298], ["Tracy St Claire", "UNA", 2720], ["Bradley Bartsch", "GRN", 1472], ["Roger Harrington", "IND", 827], ["Anna Paddon", "IND", 144]], "Port Coquitlam": [["Mike Farnworth", "NDP", 13843], ["Keenan Adams", "CON", 9967], ["Adam Bremner-Akins", "GRN", 1644], ["Lewis Dahlby", "LBN", 244]], "Port Moody-Burquitlam": [["Rick Glumac", "NDP", 13488], ["Kerry van Aswegen", "CON", 10493], ["Samantha Agtarap", "GRN", 1927]], "Powell River-Sunshine Coast": [["Randene Neill", "NDP", 14474], ["Chris Moore", "CON", 10409], ["Chris Hergesheimer", "GRN", 3932], ["Greg Reid", "IND", 356]], "Prince George-Mackenzie": [["Kiel Giddens", "CON", 11307], ["Shar McCrory", "NDP", 5242], ["James Steidle", "GRN", 1576], ["Rachael Weber", "UNA", 435]], "Prince George-North Cariboo": [["Sheldon Clare", "CON", 11430], ["Coralee Oakes", "IND", 4394], ["Denice Bardua", "NDP", 3426], ["Randy Thompson", "GRN", 866]], "Prince George-Valemount": [["Rosalyn Bird", "CON", 9018], ["Clay Pountney", "NDP", 5709], ["Gwen Johansson", "GRN", 1612]], "Richmond-Bridgeport": [["Teresa Wat", "CON", 9908], ["Linda Li", "NDP", 5921], ["Tamás Revóczi", "GRN", 547], ["Glynnis Hoi Sum Chan", "IND", 519], ["Charlie Smith", "IND", 132]], "Richmond Centre": [["Hon Chan", "CON", 8426], ["Henry Yao", "NDP", 5961], ["Wendy Yuan", "UNA", 1028], ["Dickens Cheung", "IND", 556], ["Sunny Ho", "IND", 237]], "Richmond-Queensborough": [["Steve Kooner", "CON", 10052], ["Aman Singh", "NDP", 8713], ["Cindy Wu", "IND", 721], ["Errol E. Povah", "IND", 258]], "Richmond-Steveston": [["Kelly Greene", "NDP", 10332], ["Michelle Mollineaux", "CON", 9848], ["Jackie Lee", "UNA", 2354], ["Elodie Vaudandaine", "GRN", 803]], "Saanich North and the Islands": [["Rob Botterell", "GRN", 12308], ["Sarah Riddell", "NDP", 10958], ["David Busch", "CON", 10145], ["Amy Haysom", "IND", 635]], "Saanich South": [["Lana Popham", "NDP", 15338], ["Adam Kubel", "CON", 10003], ["Ned Taylor", "GRN", 5485]], "Salmon Arm-Shuswap": [["David L. Williams", "CON", 16566], ["Sylvia Lindgren", "NDP", 9677], ["Greg McCune", "IND", 2922], ["Jed Wiebe", "GRN", 2250], ["Sherry Roy", "IND", 373]], "Skeena": [["Claire Rattée", "CON", 6243], ["Sarah Zimmerman", "NDP", 5419], ["Teri Young", "GRN", 406], ["Irwin Jeffrey", "CHP", 126]], "Surrey City Centre": [["Amna Shah", "NDP", 6726], ["Zeeshan Wahla", "CON", 6494], ["Colin Boyd", "GRN", 877], ["Saeed Naguib", "IND", 160], ["Ryan Abbott", "COMM", 147]], "Surrey-Cloverdale": [["Elenore Sturko", "CON", 10268], ["Mike Starchuk", "NDP", 9682], ["Pat McCutcheon", "GRN", 1150], ["Judy Meilleur", "FPBC", 153]], "Surrey-Fleetwood": [["Jagrup Brar", "NDP", 9923], ["Avtar Gill", "CON", 9170], ["Tim Binnema", "GRN", 1321]], "Surrey-Guildford": [["Garry Begg", "NDP", 8947], ["Honveer Singh Randhawa", "CON", 8925], ["Manjeet Singh Sahota", "GRN", 824], ["Kabir Qurban", "IND", 370]], "Surrey-Newton": [["Jessie Sunner", "NDP", 7924], ["Tegjot Bal", "CON", 6658], ["Amrit Birring", "FPBC", 371], ["Japreet Lehal", "UNA", 344], ["Joginder Singh Randhawa", "IND", 189]], "Surrey North": [["Mandeep Dhaliwal", "CON", 7954], ["Rachna Singh", "NDP", 6795], ["Sim Sandhu", "GRN", 662], ["Kiran Hundal", "FPBC", 162], ["Hobby Nijjar", "IND", 125]], "Surrey-Panorama": [["Bryan Tepper", "CON", 8735], ["Jinny Sims", "NDP", 8472], ["Paramjit Rai", "FPBC", 404]], "Surrey-Serpentine River": [["Linda Hepner", "CON", 9782], ["Baltej Singh Dhillon", "NDP", 9347], ["Jim McMurtry", "IND", 554]], "Surrey South": [["Brent Chapman", "CON", 13056], ["Haroon Ghaffar", "NDP", 9136]], "Surrey-White Rock": [["Trevor Halford", "CON", 14667], ["Darryl Walker", "NDP", 12698], ["Damyn Tassie", "LBN", 671]], "Vancouver-Fraserview": [["George Chow", "NDP", 11896], ["Jag S Sanghera", "CON", 7618], ["Francoise Raunet", "GRN", 1290]], "Vancouver-Hastings": [["Niki Sharma", "NDP", 14237], ["Jacob Burdge", "CON", 5391], ["Bridget Burns", "GRN", 2409], ["Zsolt Kiss", "IND", 157]], "Vancouver-Kensington": [["Mable Elmore", "NDP", 11713], ["Syed Mohsin", "CON", 6061], ["Amy Fox", "GRN", 1458]], "Vancouver-Langara": [["Sunita Dhir", "NDP", 8506], ["Bryan Breguet", "CON", 8087], ["Scottford Price", "GRN", 969]], "Vancouver-Little Mountain": [["Christine Boyle", "NDP", 15636], ["John Coupar", "CON", 7704], ["Wendy Hayko", "GRN", 1833]], "Vancouver-Point Grey": [["David Eby", "NDP", 12538], ["Paul Ratchford", "CON", 7622], ["Devyani Singh", "GRN", 1925]], "Vancouver-Quilchena": [["Dallas Brodie", "CON", 11464], ["Callista Ryan", "NDP", 8649], ["Michael Barkusky", "GRN", 1729], ["Caroline Ying-Mei Wang", "IND", 385]], "Vancouver-Renfrew": [["Adrian Dix", "NDP", 10983], ["Tom Ikonomou", "CON", 5327], ["Lawrence Taylor", "GRN", 1064]], "Vancouver-South Granville": [["Brenda Bailey", "NDP", 17208], ["Aron Lageri", "CON", 6678], ["Adam Hawk", "GRN", 2872]], "Vancouver-Strathcona": [["Joan Phillip", "NDP", 13673], ["Scott Muller", "CON", 3430], ["Simon de Weerdt", "GRN", 2618], ["Kimball Cariou", "COMM", 336]], "Vancouver-West End": [["Spencer Chandra Herbert", "NDP", 13143], ["Jon Ellacott", "CON", 5677], ["Eoin O'Dwyer", "GRN", 1893], ["Carl Turnbull", "IND", 144]], "Vancouver-Yaletown": [["Terry Yung", "NDP", 9018], ["Melissa De Genova", "CON", 7857], ["Dana-Lyn Mackenzie", "GRN", 1248]], "Vernon-Lumby": [["Harwinder Sandhu", "NDP", 11837], ["Dennis Giesbrecht", "CON", 11361], ["Kevin Acton", "UNA", 4266], ["Robert Johnson", "LBN", 265]], "Victoria-Beacon Hill": [["Grace Lore", "NDP", 13634], ["Sonia Furstenau", "GRN", 9644], ["Tim Thielmann", "CON", 5514]], "Victoria-Swan Lake": [["Nina Krieger", "NDP", 14273], ["Christina Winter", "GRN", 5899], ["Tim Taylor", "CON", 5146], ["Robert Crooks", "COMM", 156]], "West Kelowna-Peachland": [["Macklin McCall", "CON", 13475], ["Krystal Smith", "NDP", 7394], ["Stephen Johnston", "UNA", 5630]], "West Vancouver-Capilano": [["Lynne Block", "CON", 12049], ["Sara Eftekhar", "NDP", 7006], ["Karin Kirkpatrick", "IND", 5326], ["Archie Kaario", "GRN", 1435]], "West Vancouver-Sea to Sky": [["Jeremy Valeriote", "GRN", 10438], ["Yuri Fulmer", "CON", 9762], ["Jen Ford", "NDP", 7213]]};
+var PARTY_META = {"NDP":["BC NDP","#f26522"],"CON":["Conservative Party","#0b3d91"],"GRN":["BC Green Party","#2e8b57"],"IND":["Independent","#6b7280"],"UNA":["Unaffiliated","#6b7280"],"LBN":["Libertarian","#6b7280"],"FPBC":["Freedom Party of BC","#6b7280"],"COMM":["Communist Party of BC","#6b7280"],"CHP":["Christian Heritage Party of B.C.","#6b7280"]};
+var LABEL = {"NDP": "BC NDP", "CON": "Conservative Party", "GRN": "BC Green Party", "IND": "Independent", "UNA": "Unaffiliated", "LBN": "Libertarian", "FPBC": "Freedom Party of BC", "COMM": "Communist Party of BC", "CHP": "Christian Heritage Party of B.C."};
+var VARS = {"NDP": "var(--ndp)", "CON": "var(--con)", "GRN": "var(--grn)", "IND": "var(--ind)", "UNA": "var(--ind)", "LBN": "var(--ind)", "FPBC": "var(--ind)", "COMM": "var(--ind)", "CHP": "var(--ind)"};
+function initials(name){
+  var parts = name.replace(/[()]/g, "").split(/\s+/).filter(function(p){ return p && p !== "E."; });
+  var first = parts.length ? parts[0].charAt(0) : "";
+  var last = parts.length > 1 ? parts[parts.length - 1].charAt(0) : "";
+  return (first + last).toUpperCase();
+}
+function esc(s){
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function fmt(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+var tilesEl = document.getElementById("avDistTiles");
+var avatar = document.getElementById("avDistAvatar");
+var dname = document.getElementById("avDistName");
+var dparty = document.getElementById("avDistParty");
+var dvotes = document.getElementById("avDistVotes");
+var candsEl = document.getElementById("avDistCands");
+if(!tilesEl) return;
+function select(i){
+  var d = DATA[i];
+  avatar.textContent = initials(d[1]);
+  avatar.style.background = VARS[d[2]];
+  dname.textContent = "Riding " + (i + 1) + " \u00b7 " + d[0];
+  dparty.textContent = d[1] + " \u2014 " + LABEL[d[2]];
+  var v = "Winner votes: " + fmt(d[3]);
+  if(d[4] !== null) v += " \u00b7 " + d[4].toFixed(2) + "% of valid votes";
+  dvotes.textContent = v;
+  if(candsEl){
+    var cl = CANDS[d[0]] || [];
+    var tot = 0; cl.forEach(function(c){ tot += c[2]; });
+    var ch = '<div class="cand-head">All candidates \u2014 ' + fmt(tot) + ' valid votes</div>';
+    cl.forEach(function(c){
+      var meta = PARTY_META[c[1]] || [c[1], "#6b7280"];
+      var pct = tot ? (c[2]/tot*100).toFixed(2) : "0.00";
+      ch += '<div class="cand-row"><span class="dot" style="background:'+meta[1]+'"></span><span class="c-name">'+esc(c[0])+'</span><span class="c-party">'+esc(meta[0])+'</span><span class="c-votes">'+fmt(c[2])+' \u00b7 '+pct+'%</span></div>';
+    });
+    candsEl.innerHTML = ch;
+  }
+  selIdx = i;
+  if(tilesEl){ var ts = tilesEl.querySelectorAll("button"); ts.forEach(function(b){ var j = parseInt(b.getAttribute("data-idx"), 10); b.setAttribute("aria-pressed", j === i ? "true" : "false"); }); }
+}
+var TILE_CLS = {"NDP": "tile-ndp", "CON": "tile-con", "GRN": "tile-grn", "IND": "tile-ind", "UNA": "tile-ind", "LBN": "tile-ind", "FPBC": "tile-ind", "COMM": "tile-ind", "CHP": "tile-ind"};
+var TILE_LABEL = {"NDP": "NDP", "CON": "Conservative", "GRN": "Green", "IND": "Independent", "UNA": "Unaffiliated", "LBN": "Libertarian", "FPBC": "Freedom", "COMM": "Communist", "CHP": "Christian Heritage"};
+var tileState = {q: "", filter: "all"};
+var selIdx = -1;
+function tileHay(i){
+  var d = DATA[i];
+  var names = (CANDS[d[0]] || []).map(function(c){ return c[0]; }).join(" ");
+  return ((i + 1) + " " + d[0] + " " + names).toLowerCase();
+}
+function renderTiles(){
+  if(!tilesEl) return;
+  tilesEl.innerHTML = "";
+  var shown = 0;
+  DATA.forEach(function(d, i){
+    if(tileState.filter !== "all" && d[2] !== tileState.filter) return;
+    if(tileState.q && tileHay(i).indexOf(tileState.q) === -1) return;
+    shown++;
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "tile " + (TILE_CLS[d[2]] || "tile-ind");
+    b.setAttribute("data-idx", i);
+    b.setAttribute("aria-pressed", i === selIdx ? "true" : "false");
+    b.setAttribute("aria-label", "Riding " + (i + 1) + " " + d[0] + ", won by " + d[1] + " (" + (TILE_LABEL[d[2]] || d[2]) + ")");
+    b.innerHTML = "<b>" + (i + 1) + "</b><span>" + esc(d[0]) + "</span><span class=\"t-name\">" + esc(d[1]) + "</span><span class=\"t-party\">" + esc(TILE_LABEL[d[2]] || d[2]) + "</span>";
+    b.addEventListener("click", function(){
+      tileState.q = ""; tileState.filter = "all";
+      if(searchEl) searchEl.value = "";
+      document.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed", c.getAttribute("data-filter") === "all" ? "true" : "false"); });
+      renderTiles(); renderCards();
+      select(i);
+      var el = document.getElementById("d" + (i+1));
+      if(el){ el.scrollIntoView({behavior: "smooth", block: "start"}); el.classList.add("avc-flash"); setTimeout(function(){ el.classList.remove("avc-flash"); }, 1800); }
+    });
+    tilesEl.appendChild(b);
+  });
+  var empty = document.getElementById("avDistEmpty");
+  if(empty) empty.hidden = shown > 0;
+}
+var searchEl = document.getElementById("avDistSearch");
+if(searchEl) searchEl.addEventListener("input", function(e){ tileState.q = e.target.value.trim().toLowerCase(); renderTiles(); renderCards(); });
+document.querySelectorAll(".chip").forEach(function(ch){
+  ch.addEventListener("click", function(){
+    tileState.filter = ch.getAttribute("data-filter");
+    document.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed", c.getAttribute("data-filter") === tileState.filter ? "true" : "false"); });
+    renderTiles(); renderCards();
+  });
+});
+renderTiles();
+
+var cardState = {sort: "num"};
+var cardsEl = document.getElementById("avDistCards");
+var countEl = document.getElementById("avCardCount");
+function cardMargin(i){
+  var cl = CANDS[DATA[i][0]] || [];
+  if(cl.length < 2) return 0;
+  var s = cl.slice().sort(function(a,b){ return b[2]-a[2]; });
+  return s[0][2]-s[1][2];
+}
+function renderCards(){
+  if(!cardsEl) return;
+  var list = [];
+  DATA.forEach(function(d, i){
+    if(tileState.filter !== "all" && d[2] !== tileState.filter) return;
+    if(tileState.q && tileHay(i).indexOf(tileState.q) === -1) return;
+    list.push(i);
+  });
+  if(cardState.sort === "close") list.sort(function(a,b){ return cardMargin(a)-cardMargin(b); });
+  else if(cardState.sort === "margin") list.sort(function(a,b){ return cardMargin(b)-cardMargin(a); });
+  else if(cardState.sort === "az") list.sort(function(a,b){ return DATA[a][0].localeCompare(DATA[b][0]); });
+  else list.sort(function(a,b){ return a-b; });
+  cardsEl.innerHTML = "";
+  list.forEach(function(i){
+    var d = DATA[i];
+    var cl = (CANDS[d[0]] || []).slice().sort(function(a,b){ return b[2]-a[2]; });
+    if(!cl.length) return;
+    var tot = 0; cl.forEach(function(c){ tot += c[2]; });
+    var w = cl[0];
+    var m = cl.length > 1 ? cl[0][2]-cl[1][2] : 0;
+    var mpct = tot ? (m/tot*100).toFixed(1) : "0.0";
+    var wmeta = PARTY_META[w[1]] || [w[1], "#6b7280"];
+    var art = document.createElement("article");
+    art.className = "avc-card";
+    art.id = "d" + (i+1);
+    var rows = cl.map(function(c, j){
+      var meta = PARTY_META[c[1]] || [c[1], "#6b7280"];
+      var pct = tot ? (c[2]/tot*100) : 0;
+      return '<div class="avc-cand' + (j === 0 ? ' avc-cand-win' : '') + '"><div class="avc-cand-head"><div class="avc-who"><b>' + esc(c[0]) + '</b> <span class="avc-pty">' + esc(meta[0]) + '</span></div><div class="avc-nums"><b>' + fmt(c[2]) + '</b> · ' + pct.toFixed(1) + '%</div></div><div class="avc-bar"><i style="width:' + pct.toFixed(1) + '%;background:' + meta[1] + '"></i></div></div>';
+    }).join("");
+    var marginLine = cl.length > 1
+      ? '<p class="avc-margin">Won by ' + fmt(m) + ' votes (' + mpct + ' pts) over ' + esc(cl[1][0]) + ' · ' + fmt(tot) + ' valid votes</p>'
+      : '<p class="avc-margin">Won unopposed · ' + fmt(tot) + ' valid votes</p>';
+    art.innerHTML = '<div class="avc-top"><div><div class="avc-dnum">Riding ' + (i+1) + '</div><h3>' + esc(d[0]) + '</h3></div><span class="avc-pill" style="background:' + wmeta[1] + '">' + esc(TILE_LABEL[w[1]] || w[1]) + ' win</span></div>'
+      + '<div class="avc-wblock"><span class="avc-avatar" style="background:' + wmeta[1] + '">' + initials(w[0]) + '</span><div><div class="avc-wname">' + esc(w[0]) + '</div><div class="avc-wsub">Elected — ' + esc(LABEL[w[1]] || w[1]) + '</div></div></div>'
+      + marginLine + rows;
+    cardsEl.appendChild(art);
+  });
+  if(countEl) countEl.textContent = "Showing " + list.length + " of " + DATA.length + " ridings";
+}
+var sortEl = document.getElementById("avDistSort");
+if(sortEl) sortEl.addEventListener("change", function(e){ cardState.sort = e.target.value; renderCards(); });
+
+renderCards();
+var def = 0;
+DATA.forEach(function(d, i){ if(d[0] === "Vancouver-Point Grey") def = i; });
+select(def);
+(function(){
+  var box=document.getElementById("bcMap"); if(!box) return;
+  function mapUnavailable(){ box.hidden=true; var fb=document.getElementById("mapFallback"); if(fb) fb.hidden=false; }
+  if(!window.MapHelpers||!window.HatchMaps){ mapUnavailable(); return; }
+  fetch("assets/geo/bc-districts.geojson").then(function(r){ if(!r.ok) throw new Error("geo"); return r.json(); }).then(function(gj){
+    var minLng=180,maxLng=-180,minLat=90,maxLat=-90;
+    function walk(c){ if(typeof c[0]==="number"){ if(c[0]<minLng)minLng=c[0]; if(c[0]>maxLng)maxLng=c[0]; if(c[1]<minLat)minLat=c[1]; if(c[1]>maxLat)maxLat=c[1]; } else { c.forEach(walk); } }
+    gj.features.forEach(function(f){ walk(f.geometry.coordinates); });
+    var W=box.clientWidth||800,H=box.clientHeight||520;
+    function merc(lat){var ph=lat*Math.PI/180;return Math.log(Math.tan(Math.PI/4+ph/2));}
+    var spanLng=maxLng-minLng,y0=merc(minLat),y1=merc(maxLat);
+    var zW=Math.log2(W/(256*(spanLng/360)));
+    var zH=Math.log2(H/(256*((y1-y0)/(2*Math.PI))));
+    var zoom=Math.max(3,Math.min(11,Math.min(zW,zH)-0.04));
+    var midY=(y0+y1)/2, clat=(2*Math.atan(Math.exp(midY))-Math.PI/2)*180/Math.PI;
+    var m=MapHelpers.mountMap(box,{
+      center:{lng:(minLng+maxLng)/2,lat:clat}, zoom:zoom,
+      baseStyle:"grayscale",
+      tooltip:function(f){var p=f.properties;return "Riding "+p.n+" \u00b7 "+p.name+" \u2014 "+p.wname+" ("+LABEL[p.party]+") won by "+fmt(p.margin)+" votes";},
+      overlays:[{id:"districts",data:gj,layers:[
+        {id:"districts-fill",type:"fill",source:"districts",paint:{"fill-color":["match",["get","party"],"NDP","#f26522","CON","#0b3d91","GRN","#2e8b57","IND","#6b7280","#999999"],"fill-opacity":0.72}},
+        {id:"districts-line",type:"line",source:"districts",paint:{"line-color":"#ffffff","line-width":1.4}}
+      ]}]
+    },mapUnavailable);
+    if(!m) return;
+    var tries=0;
+    var iv=setInterval(function(){
+      var mp=(m.getMap?m.getMap():m.map); if(mp){ clearInterval(iv); if(mp.scrollZoom&&mp.scrollZoom.disable) mp.scrollZoom.disable();
+        mp.on("click","districts-fill",function(e){
+          var ft=e.features&&e.features[0];
+          if(ft&&typeof ft.properties.idx==="number"){ select(ft.properties.idx); var det=document.querySelector(".av-dist-detail"); if(det) det.scrollIntoView({behavior:"smooth",block:"start"}); }
+        });
+        mp.on("mouseenter","districts-fill",function(){ mp.getCanvas().style.cursor="pointer"; });
+        mp.on("mouseleave","districts-fill",function(){ mp.getCanvas().style.cursor=""; });
+      }
+      if(++tries>100) clearInterval(iv);
+    },100);
+  }).catch(function(){ mapUnavailable(); });
+})();
+})();
+</script>
+<section class="section"><div class="container">
+<div class="eyebrow">Photos</div>
+<h2>Scenes from British Columbia</h2>
+<div class="photo-grid">
+<figure><img src="assets/photos/bc-parliament-1.jpg" alt="British Columbia Parliament Buildings, Victoria" loading="lazy"><figcaption>British Columbia Parliament Buildings, Victoria. Photo: Podzemnik, CC BY-SA 4.0, via Wikimedia Commons.</figcaption></figure>
+<figure><img src="assets/photos/bc-parliament-2.jpg" alt="British Columbia Parliament Buildings, Victoria" loading="lazy"><figcaption>British Columbia Parliament Buildings, Victoria. Photo: Podzemnik, CC BY-SA 4.0, via Wikimedia Commons.</figcaption></figure>
+</div></div>
+</section>
+<section class="section"><div class="container"><p class="note">Total valid votes: 2,105,341. Seats: BC NDP 47, Conservative Party 44, BC Green Party 2. Majority: 47 seats.</p><p class="note">Source: Elections BC, Statement of Votes, 43rd Provincial General Election, October 19, 2024 — <a href="https://elections.bc.ca/docs/rpt/statement-of-votes-2024-provincial-election.pdf">elections.bc.ca</a></p></div></section>
+<section class="section"><div class="container"><div class="eyebrow">Takeaways</div><h2>What the numbers say</h2><ul class="take-list"><li>The narrowest possible majority: the BC NDP won 47 of 93 seats — exactly the 47 needed — on 44.87% of the vote (944,579 votes).</li><li>The closest race was Surrey-Guildford, decided by 22 votes (Garry Begg 8,947 to Honveer Singh Randhawa 8,925); Kelowna Centre was decided by 40 votes, and four ridings were decided by fewer than 100 votes.</li><li>The Conservatives took 44 seats on 43.28% of the vote — 1.59 points behind the NDP, but 3 fewer seats.</li><li>The Greens held 2 seats on 8.24% of the vote; their leader, Sonia Furstenau, lost her own riding of Victoria-Beacon Hill to the NDP&rsquo;s Grace Lore, while NDP leader David Eby won Vancouver-Point Grey and Conservative leader John Rustad won Nechako Lakes.</li></ul></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-in">
+  <div class="footer-cols">
+    <div><button type="button" data-av-open>Change province</button></div>
+    <div><h3>Sources</h3><ul><li><a href="https://elections.bc.ca">Elections BC</a></li></ul></div>
+  </div>
+  <p class="footer-note">Source: Elections BC, Statement of Votes, 43rd Provincial General Election, October 19, 2024. Figures from official elections-agency reports only.</p>
+  <p class="footer-copy">© 2026 Atlantic Votes · atlanticvotes.ca</p>
+</div></footer>
+<script>
+(function(){
+  var KEY='av-province';
+  var PAGES={pei:'pei.html',ns:'ns.html',nb:'nb.html',nl:'nl.html'};
+  var NAMES={pei:'Prince Edward Island',ns:'Nova Scotia',nb:'New Brunswick',nl:'Newfoundland and Labrador'};
+  var modal=document.getElementById('avModal');
+  if(!modal) return;
+  var closable=modal.getAttribute('data-closable')==='true';
+  function open(){ modal.hidden=false; document.body.classList.add('av-locked'); }
+  function close(){ if(!closable) return; modal.hidden=true; document.body.classList.remove('av-locked'); }
+  document.querySelectorAll('[data-av-open]').forEach(function(b){ b.addEventListener('click',open); });
+  var closeBtn=document.getElementById('avModalClose');
+  if(closeBtn) closeBtn.addEventListener('click',close);
+  modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
+  modal.querySelectorAll('.av-row').forEach(function(row){
+    row.addEventListener('click',function(){
+      try{ localStorage.setItem(KEY,row.getAttribute('data-province')); }catch(e){}
+    });
+  });
+  var labelEl=document.getElementById('provinceSwitcherLabel');
+  if(labelEl && !labelEl.getAttribute('data-fixed')){
+    try{
+      var stored=localStorage.getItem(KEY);
+      if(stored && NAMES[stored]) labelEl.textContent=NAMES[stored];
+    }catch(e){}
+  }
+})();
+
+</script>
+</body>
+</html>
