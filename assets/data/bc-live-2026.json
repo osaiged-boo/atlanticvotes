@@ -180,7 +180,7 @@
       {
         "name": "Javad Shushtarian",
         "party": "BC Green Party",
-        "votes": 1669,
+        "votes": 1670,
         "status": null
       },
       {
@@ -246,7 +246,7 @@
       {
         "name": "Paul Choi",
         "party": "BC NDP",
-        "votes": 5809,
+        "votes": 5811,
         "status": null
       },
       {
@@ -361,7 +361,7 @@
   },
   {
     "riding": "Coquitlam-Burke Mountain",
-    "reportingPct": 98.7,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "Kaden Mann",
@@ -378,7 +378,7 @@
       {
         "name": "Ryan Peterson",
         "party": "Conservative Party",
-        "votes": 9809,
+        "votes": 9811,
         "status": null
       },
       {
@@ -402,7 +402,7 @@
       {
         "name": "Matt Liang",
         "party": "Conservative Party",
-        "votes": 9623,
+        "votes": 9624,
         "status": null
       },
       {
@@ -432,7 +432,7 @@
       {
         "name": "Brennan Day",
         "party": "Conservative Party",
-        "votes": 12693,
+        "votes": 12694,
         "status": null
       },
       {
@@ -480,7 +480,7 @@
       {
         "name": "Monica Mohan",
         "party": "Conservative Party",
-        "votes": 9792,
+        "votes": 9793,
         "status": null
       },
       {
@@ -954,7 +954,7 @@
       {
         "name": "Melissa Snazell",
         "party": "BC Green Party",
-        "votes": 1872,
+        "votes": 1873,
         "status": null
       }
     ]
@@ -991,7 +991,7 @@
   },
   {
     "riding": "Langley-Willowbrook",
-    "reportingPct": 98.9,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "Shubham Joshi",
@@ -1140,7 +1140,7 @@
       {
         "name": "Kelsey Pringle",
         "party": "Conservative Party",
-        "votes": 10698,
+        "votes": 10700,
         "status": null
       },
       {
@@ -1188,7 +1188,7 @@
       {
         "name": "Maureen Curran",
         "party": "BC Green Party",
-        "votes": 2836,
+        "votes": 2838,
         "status": null
       },
       {
@@ -1278,7 +1278,7 @@
       {
         "name": "Trevor Withers",
         "party": "Conservative Party",
-        "votes": 9119,
+        "votes": 9120,
         "status": null
       }
     ]
@@ -1290,7 +1290,7 @@
       {
         "name": "Lynne Block",
         "party": "Conservative Party",
-        "votes": 12288,
+        "votes": 12289,
         "status": null
       },
       {
@@ -1326,7 +1326,7 @@
       {
         "name": "Diana Gibson",
         "party": "BC NDP",
-        "votes": 9199,
+        "votes": 9200,
         "status": null
       },
       {
@@ -1404,7 +1404,7 @@
       {
         "name": "Tina Lee",
         "party": "BC NDP",
-        "votes": 10469,
+        "votes": 10470,
         "status": null
       },
       {
@@ -1470,7 +1470,7 @@
       {
         "name": "John McEwen",
         "party": "Conservative Party",
-        "votes": 10707,
+        "votes": 10709,
         "status": null
       },
       {
@@ -1710,7 +1710,7 @@
       {
         "name": "Richard Smith",
         "party": "CentreBC",
-        "votes": 697,
+        "votes": 698,
         "status": null
       },
       {
@@ -1818,7 +1818,7 @@
       {
         "name": "Amna Shah",
         "party": "BC NDP",
-        "votes": 5317,
+        "votes": 5318,
         "status": null
       },
       {
@@ -1932,7 +1932,7 @@
       {
         "name": "Garry Thind",
         "party": "Conservative Party",
-        "votes": 7715,
+        "votes": 7716,
         "status": null
       },
       {
@@ -1962,7 +1962,7 @@
       {
         "name": "Jessie Sunner",
         "party": "BC NDP",
-        "votes": 5468,
+        "votes": 5469,
         "status": null
       }
     ]
@@ -2088,7 +2088,7 @@
       {
         "name": "Megan Knight",
         "party": "Conservative Party",
-        "votes": 12551,
+        "votes": 12553,
         "status": null
       },
       {
@@ -2124,7 +2124,7 @@
       {
         "name": "Trevor Halford",
         "party": "Conservative Party",
-        "votes": 14335,
+        "votes": 14336,
         "status": null
       },
       {
@@ -2148,7 +2148,7 @@
       {
         "name": "Darryl Walker",
         "party": "BC NDP",
-        "votes": 7124,
+        "votes": 7125,
         "status": null
       }
     ]
