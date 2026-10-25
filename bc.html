@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:," />
+<title>British Columbia Election Results — Live 2026 | Atlantic Votes</title>
+<meta name="description" content="Live 2026 British Columbia election results for all 93 ridings, updating as Elections BC counts, with projected winners." />
+<meta property="og:title" content="British Columbia Election Results — Live 2026 | Atlantic Votes" />
+<meta property="og:description" content="Live 2026 British Columbia election results for all 93 ridings, updating as Elections BC counts, with projected winners." />
+<link rel="canonical" href="https://atlanticvotes.ca/bc.html" />
+<style>
+/* Atlantic Votes — shared chrome, adapted from the province pages. Layout patterns only; no third-party identity. */
+:root{
+  --bg:#ffffff; --ink:#111111; --muted:#5b6b7d; --line:#e2e5e9; --band:#F2F4F7;
+  --accent:#f26522; --accent-soft:#fef3ec;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
+a{color:var(--accent)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.utility-bar{border-bottom:1px solid var(--line)}
+.utility-in{display:flex;align-items:center;justify-content:space-between;height:38px}
+.province-switcher{border:0;background:none;font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--ink);padding:0;display:flex;align-items:center;gap:6px;text-decoration:none}
+.province-switcher .caret{color:var(--accent);font-size:12px}
+.province-switcher:hover{color:var(--accent)}
+.utility-link{font-size:14px;color:var(--muted);text-decoration:none}
+.utility-link:hover{color:var(--accent)}
+.main-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.wordmark{font-weight:900;font-size:22px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--accent)}
+.main-nav{display:flex;gap:28px;align-items:center}
+.main-nav a{font-size:15px;font-weight:600;color:var(--ink);text-decoration:none}
+.main-nav a:hover{color:var(--accent)}
+.hero{padding:56px 0 32px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.eyebrow::before{content:"";width:32px;height:2px;background:var(--accent);flex:0 0 auto}
+.hero h1{font-family:var(--serif);font-size:clamp(44px,7vw,84px);line-height:1.02;letter-spacing:-.01em;margin:16px 0 16px;font-weight:700;max-width:900px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.lede{font-size:19px;color:var(--muted);max-width:760px;margin:0}
+.section{padding:40px 0;border-top:1px solid var(--line)}
+.section:first-of-type{border-top:0}
+.section-gray{background:var(--band)}
+.section h2{font-family:var(--serif);font-size:clamp(30px,4vw,52px);line-height:1.08;margin:14px 0 8px}
+.section-sub{color:var(--muted);margin:0 0 24px;max-width:760px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:8px}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{border-top:1px solid var(--line);padding-top:14px}
+.stat b{display:block;font-size:34px;line-height:1;font-weight:800;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--muted)}
+.seatbar{display:flex;height:52px;overflow:hidden;background:var(--band);margin:20px 0 8px}
+.seatbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;min-width:0;overflow:hidden;white-space:nowrap}
+.legend{display:flex;gap:16px 24px;flex-wrap:wrap;font-size:15px;color:var(--muted);margin-bottom:8px}
+.legend b{color:var(--ink)}
+.note{font-size:15px;color:var(--muted)}
+.note a{color:var(--accent)}
+/* Live bits */
+.live-banner{background:#111;color:#fff;padding:18px 20px;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
+.live-dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:#f26522;vertical-align:1px;margin-right:8px}
+.live-dot.awaiting{background:#f5b301}
+.live-status{font-weight:800}
+.live-meta{font-size:15px;color:#d7dde3}
+.live-meta b{color:#fff}
+.source-badge{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--accent);color:var(--accent);padding:4px 8px}
+button.refresh{font:inherit;font-size:15px;font-weight:700;border:1px solid var(--ink);background:#fff;color:var(--ink);padding:8px 14px;cursor:pointer}
+button.refresh:hover{border-color:var(--accent);color:var(--accent)}
+.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 20px}
+.controls input[type="search"]{font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);min-width:260px;flex:1 1 260px}
+.controls select{font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);background:#fff}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:inherit;font-size:14px;font-weight:700;border:1px solid var(--line);background:#fff;padding:6px 12px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:960px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);padding:18px 18px 14px;background:#fff}
+.card h3{font-size:19px;margin:0 0 2px;line-height:1.25}
+.card .rid-status{font-size:14px;color:var(--muted);margin:0 0 10px}
+.card .rid-status b{color:var(--ink)}
+.card .report{font-size:14px;color:var(--muted);margin:0 0 12px}
+.cand{padding:9px 0;border-top:1px solid var(--line)}
+.cand:first-of-type{border-top:0}
+.cand-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.cand-head b{font-size:16px}
+.cand-head .pty{font-size:14px;color:var(--muted)}
+.cand-nums{font-variant-numeric:tabular-nums;white-space:nowrap;font-size:15px}
+.cand-nums b{font-size:16px}
+.cand-bar{height:8px;background:var(--band);margin-top:6px}
+.cand-bar i{display:block;height:100%}
+.cand-win{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.cand-proj{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);border:1px dashed var(--ink);padding:1px 5px}
+.proj-note{font-size:14px;color:var(--muted);margin:-6px 0 12px}
+.seatbar-wrap{position:relative}
+.majority-line{position:absolute;top:-6px;bottom:-6px;left:50.5376%;width:3px;background:#111}
+.feed-msg{background:var(--accent-soft);border:1px solid #f5c9a8;padding:14px 16px;font-size:15px;margin:0 0 20px}
+.feed-msg b{color:var(--ink)}
+.site-footer{border-top:1px solid var(--line);background:#fff}
+.footer-in{padding:44px 0 36px}
+.footer-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+@media(max-width:720px){.footer-cols{grid-template-columns:1fr}}
+.footer-cols h3{font-size:14px;margin:0 0 12px}
+.footer-cols ul{list-style:none;margin:0;padding:0}
+.footer-cols li{margin:0 0 8px}
+.footer-cols a{color:var(--ink);text-decoration:none;font-size:15px}
+.footer-cols a:hover{color:var(--accent)}
+.footer-note{color:var(--muted);font-size:14px;margin:28px 0 0;max-width:820px}
+.footer-copy{color:var(--muted);font-size:13px;margin:8px 0 0}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="utility-bar"><div class="container utility-in">
+    <a class="province-switcher" href="provinces.html">Change province <span class="caret">▾</span></a>
+    <a class="utility-link" href="https://results.elections.bc.ca/">Results from Elections BC</a>
+  </div></div>
+  <div class="container main-in">
+    <a class="wordmark" href="index.html">Atlantic <span>Votes</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="provinces.html">Provinces</a>
+      <a href="https://results.elections.bc.ca/">Elections BC results</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero"><div class="container">
+    <div class="eyebrow">British Columbia · 44th Provincial General Election · Live</div>
+    <h1>British Columbia votes — <em>live results</em></h1>
+    <p class="lede">Preliminary results as Elections BC reports them. 93 ridings · 47 seats for a majority. Results tonight are preliminary and exclude vote-by-mail, absentee and assisted-telephone ballots — those are counted at the final count, November 6–10. Atlantic Votes also projects winners from votes counted and polls reported; projections are labelled as such and can change as more votes are counted.</p>
+    <div class="live-banner" role="status">
+      <span class="live-status"><span class="live-dot awaiting" id="liveDot"></span><span id="liveStatus">Awaiting results</span></span>
+      <span class="live-meta">Last checked: <b id="lastChecked">—</b> · Next refresh in <b id="countdown">60s</b> · <button class="refresh" id="refreshBtn" type="button">Refresh now</button></span>
+      <span class="source-badge">Results from Elections BC only</span>
+    </div>
+  </div></section>
+
+  <section class="section section-gray"><div class="container">
+    <div class="eyebrow">Seats</div>
+    <h2 id="seats-h">Seats — 93 in the Legislative Assembly</h2>
+    <p class="section-sub">Elected counts only ridings Elections BC itself has declared. Projected counts ridings where the leader's margin is bigger than the votes that could still arrive, estimated from votes counted and polls reported — projections are this site's model, not results, and can change as more votes are counted. Leading counts ridings where a candidate is ahead but the race is not projected; Too close to call is shown when the margin is under 100 votes or under 0.5% of counted votes. 47 seats are needed for a majority.</p>
+    <div class="stats">
+      <div class="stat"><b id="statElected">0</b><span>Ridings declared elected</span></div>
+      <div class="stat"><b id="statProjected">0</b><span>Ridings projected</span></div>
+      <div class="stat"><b id="statLeading">0</b><span>Ridings leading</span></div>
+      <div class="stat"><b id="statClose">0</b><span>Ridings too close to call</span></div>
+      <div class="stat"><b id="statVotes">0</b><span>Votes counted so far</span></div>
+    </div>
+    <div class="seatbar-wrap"><div class="seatbar" id="seatbar" aria-hidden="true"></div><div class="majority-line" title="47 seats for a majority"></div></div>
+    <div class="legend" id="seatLegend"></div>
+    <p class="note">The black line on the bar marks 47 seats — a majority in the 93-seat Assembly.</p>
+    <p class="note" id="seatNote">No results reported yet. A majority needs 47 of the 93 seats.</p>
+  </div></section>
+
+  <section class="section"><div class="container">
+    <div class="eyebrow">Ridings</div>
+    <h2>All 93 ridings — live count</h2>
+    <p class="section-sub">Every candidate as listed by Elections BC. Votes and shares are counted votes only; reporting percentages appear when Elections BC provides them.</p>
+    <p class="feed-msg" id="feedMsg"><b>Awaiting the official live feed.</b> Elections BC has not yet published 2026 results on its results site. This page checks automatically about every 60 seconds and will show the count as soon as it appears. Nothing here comes from any media or third-party site.</p>
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search a riding or candidate" aria-label="Search a riding or candidate" />
+      <select id="sort" aria-label="Sort ridings">
+        <option value="order">Riding order</option>
+        <option value="close">Closest races first</option>
+        <option value="votes">Most votes counted first</option>
+        <option value="az">Riding name A–Z</option>
+      </select>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filter by leading party"></div>
+    <p class="note" id="countLine">Showing 93 of 93 ridings.</p>
+    <div class="cards" id="cards"></div>
+  </div></section>
+
+  <section class="section"><div class="container">
+    <div class="eyebrow">Sources</div>
+    <h2>Where the numbers come from</h2>
+    <p class="note">Preliminary results: <a href="https://results.elections.bc.ca/">Elections BC, results site</a> — the only results source used on this page. Candidate list: <a href="https://elections.bc.ca/2026-provincial-election/candidate-list/">Elections BC, final 2026 candidate list</a> (nominations closed October 3, 2026). Election-night results are preliminary; the final count runs November 6–10, 2026 and Return Day is November 18, 2026. Status words (Leading / Elected) are Elections BC's own. "Projected" is this site's model: when the leader's margin is bigger than the votes that could still arrive, estimated from votes counted and polls reported, the riding is marked Projected — projections are not results and can change as more votes are counted. A riding Elections BC declares Elected is never overridden by a projection.</p>
+  </div></section>
+</main>
+<footer class="site-footer"><div class="container footer-in">
+  <div class="footer-cols">
+    <div><h3>Atlantic Votes</h3><ul><li><a href="index.html">Home</a></li><li><a href="provinces.html">Provinces</a></li></ul></div>
+    <div><h3>Sources</h3><ul><li><a href="https://results.elections.bc.ca/">Elections BC results</a></li><li><a href="https://elections.bc.ca/2026-provincial-election/candidate-list/">Elections BC candidates</a></li></ul></div>
+    <div><h3>This page</h3><ul><li>Live results, BC 2026</li><li>Auto-refreshes every 60 seconds</li></ul></div>
+  </div>
+  <p class="footer-note">Preliminary results from Elections BC only. Projections by Atlantic Votes from counted votes and polls reported — not results, and they can change. Final count November 6–10, 2026.</p>
+  <p class="footer-copy">Atlantic Votes · British Columbia live results, 2026 provincial general election.</p>
+</div></footer>
+<script>
+var ROSTER=[["Abbotsford South",[["Leah Ballantyne", "BC NDP"],["Bruce Banman", "Conservative Party"],["Robin Roy", "OneBC"]]],["Abbotsford West",[["Gurpreet Chahal", "CentreBC"],["Jules Côté", "BC NDP"],["Korky Neufeld", "Conservative Party"]]],["Abbotsford-Mission",[["Pam Alexis", "BC NDP"],["Virender Dass", "OneBC"],["Lakhwinder Jhaj", "CentreBC"],["Darryl Kropp", "Conservative Party"],["Jeff Monds", "Libertarian"]]],["Boundary-Similkameen",[["Keith Pomeroy", "OneBC"],["Roly Russell", "BC NDP"],["Donegal Wilson", "Conservative Party"]]],["Bulkley Valley-Stikine",[["Frankie Abel", "BC NDP"],["Ed Ewald", "Christian Heritage Party of BC"],["Sharon Hartwell", "Conservative Party"]]],["Burnaby Centre",[["Joshua Domnich", "Conservative Party"],["Vikas Gautam", "CentreBC"],["Anne Kang", "BC NDP"],["Shila Taheri", "BC Green Party"]]],["Burnaby East",[["Rohini Reah Arora", "BC NDP"],["De Ding", "OneBC"],["Javad Shushtarian", "BC Green Party"],["Peter Si", "Conservative Party"]]],["Burnaby North",[["Simon Chandler", "Conservative Party"],["Maddy Kennedy-Parrott", "BC Green Party"],["Janet Routledge", "BC NDP"],["Jenny Yamagata", "OneBC"]]],["Burnaby South-Metrotown",[["Paul Choi", "BC NDP"],["Bryan Fockler", "BC Green Party"],["Andrew Rose", "OneBC"],["David Xie", "Conservative Party"]]],["Burnaby-New Westminster",[["Raj Chouhan", "BC NDP"],["Joe Latam", "Conservative Party"],["Greg DePaco", "BC Green Party"]]],["Cariboo-Chilcotin",[["Kathryn Askew", "BC NDP"],["Lorne Doerkson", "Conservative Party"],["Douglas Gook", "BC Green Party"]]],["Chilliwack North",[["Dan Grice", "CentreBC"],["Heather Maahs", "Conservative Party"],["Adila Shaukat", "BC NDP"]]],["Chilliwack-Cultus Lake",[["Kelli Paddon", "BC NDP"],["A'aliya Warbus", "Conservative Party"]]],["Columbia River-Revelstoke",[["Andrea Dunlop", "BC NDP"],["Scott McInnis", "Conservative Party"],["Rana Nelson", "BC Green Party"]]],["Coquitlam-Burke Mountain",[["Kaden Mann", "CentreBC"],["Valerie Morrison", "BC Green Party"],["Ryan Peterson", "Conservative Party"],["Jodie Wickens", "BC NDP"]]],["Coquitlam-Maillardville",[["Jennifer Blatherwick", "BC NDP"],["Matt Liang", "Conservative Party"],["Nicola Spurling", "BC Green Party"]]],["Courtenay-Comox",[["Will Cole-Hamilton", "BC NDP"],["Jason Cook", "CentreBC"],["Brennan Day", "Conservative Party"],["Jay Van Oostdam", "BC Green Party"]]],["Cowichan Valley",[["Bert Chen", "Conservative Party"],["James Chumsa", "Communist Party of BC"],["Justin Douglas", "BC Green Party"],["Debra Toporowski", "BC NDP"]]],["Delta North",[["Monica Mohan", "Conservative Party"],["Kuldeep Rangi", "CentreBC"],["Todd Schierling", "BC NDP"]]],["Delta South",[["Skadi Green", "BC Green Party"],["Jason McCormick", "BC NDP"],["Jim McMurtry", "OneBC"],["Ian Paton", "Conservative Party"]]],["Esquimalt-Colwood",[["Sidney Coles", "BC Green Party"],["Dave Johnston", "Conservative Party"],["Darlene Rotchford", "BC NDP"],["Sid Tobias", "CentreBC"]]],["Fraser-Nicola",[["Jason Leboe", "BC NDP"],["Tony Luck", "Conservative Party"],["Patrick Michell", "BC Green Party"]]],["Juan de Fuca-Malahat",[["Jeff Brown", "Christian Heritage Party of BC"],["David Evans", "BC Green Party"],["Shane Friesen", "OneBC"],["Mike Hicks", "Conservative Party"],["Dana Lajeunesse", "BC NDP"]]],["Kamloops Centre",[["Annelise Beach", "BC Green Party"],["Rocky McAfee", "OneBC"],["Peter Milobar", "Conservative Party"],["Thaelo Proctor", "Independent"],["Mike Wisla", "BC NDP"]]],["Kamloops-North Thompson",[["Kory Clark", "BC NDP"],["Deborah Friesen", "OneBC"],["Ward Stamer", "Conservative Party"]]],["Kelowna Centre",[["Bill Desrosiers", "OneBC"],["Kristina Loewen", "Conservative Party"],["Loyal Wooldridge", "BC NDP"]]],["Kelowna-Lake Country-Coldstream",[["Binny Boparai", "BC NDP"],["Carter Mochinski", "BC Green Party"],["Pavneet Singh", "Conservative Party"],["Alexandra Wright", "OneBC"]]],["Kelowna-Mission",[["Gavin Dew", "Conservative Party"],["Saoirse MacKinnon", "BC Green Party"],["Abraham Nordine", "OneBC"],["Miriam Rycroft", "BC NDP"]]],["Kootenay Central",[["Brittny Anderson", "BC NDP"],["Nicole Charlwood", "BC Green Party"],["Hunter Corrigal", "OneBC"],["Gordon Skulnec", "Conservative Party"]]],["Kootenay-Monashee",[["Stephen Hill", "OneBC"],["Connie Larochelle", "BC Green Party"],["Warren Mirko", "Conservative Party"],["Steve Morissette", "BC NDP"]]],["Kootenay-Rockies",[["Norma Blissett", "BC NDP"],["Pete Davis", "Conservative Party"],["Keenan Dennehy", "BC Green Party"],["Paul Heywood", "CentreBC"],["AJ Wolfe", "OneBC"]]],["Ladysmith-Oceanside",[["Stephanie Higginson", "BC NDP"],["Kris McNichol", "Conservative Party"],["Charlene Smylie", "BC Green Party"]]],["Langford-Highlands",[["Sean Flynn", "CentreBC"],["Christian McCay", "Christian Heritage Party of BC"],["Christopher Moon", "BC Green Party"],["Ravi Parmar", "BC NDP"],["Cindy Scott", "Conservative Party"],["Alex Thurlborn", "Independent"]]],["Langley-Abbotsford",[["Harman Bhangu", "Conservative Party"],["Shelly Jan", "OneBC"],["Alex Joehl", "Libertarian"],["Erin Osborne", "BC NDP"],["Melissa Snazell", "BC Green Party"]]],["Langley-Walnut Grove",[["Holly Isaac", "BC NDP"],["Sam Meyer", "BC Green Party"],["Kyle Stevenson", "CentreBC"],["Misty Van Popta", "Conservative Party"]]],["Langley-Willowbrook",[["Shubham Joshi", "OneBC"],["Andrew Mercier", "BC NDP"],["Anisha Sandhu", "BC Green Party"],["Jody Toor", "Conservative Party"]]],["Maple Ridge East",[["Hudson Campbell", "BC NDP"],["Chris Hatchwell", "Independent"],["Daniel Kite", "BC Green Party"],["Lawrence Mok", "Conservative Party"]]],["Maple Ridge-Pitt Meadows",[["Lisa Beare", "BC NDP"],["Susan Einarsson", "OneBC"],["Doug Morneau", "Conservative Party"],["Jordan Simmons", "CentreBC"]]],["Mid Island-Pacific Rim",[["Joshua Dahling", "Conservative Party"],["Gracie MacDonald", "BC Green Party"],["Josie Osborne", "BC NDP"]]],["Nanaimo-Gabriola Island",[["Mark MacDonald", "Conservative Party"],["Sheila Malcolmson", "BC NDP"],["Anna Mary McKenzie", "BC Green Party"]]],["Nanaimo-Lantzville",[["George Anderson", "BC NDP"],["Kelsey Pringle", "Conservative Party"],["Pepper Saltman", "Communist Party of BC"],["Sharleen Weatherley", "BC Green Party"]]],["Nechako Lakes",[["Diane Black", "Conservative Party"],["Jesse Gervais", "BC NDP"],["Clint Lambert", "Unaffiliated"]]],["New Westminster-Coquitlam",[["Maureen Curran", "BC Green Party"],["Michele Lau", "Conservative Party"],["Jennifer Whiteside", "BC NDP"]]],["North Coast-Haida Gwaii",[["Tamara Davidson", "BC NDP"],["Rodney Proskiw", "Conservative Party"],["Francis Racy", "BC Green Party"]]],["North Island",[["Anna Kindy", "Conservative Party"],["Richard Lambert", "Independent"],["Sara Lopez", "BC NDP"],["Benjamin Olsson", "BC Green Party"]]],["North Vancouver-Lonsdale",[["Joshua A Singer Johnson", "BC Green Party"],["Bowinn Ma", "BC NDP"],["Trevor Withers", "Conservative Party"]]],["North Vancouver-Seymour",[["Lynne Block", "Conservative Party"],["Susie Chant", "BC NDP"],["Lori Climenhaga", "CentreBC"],["Ben Holt", "BC Green Party"]]],["Oak Bay-Gordon Head",[["Andrew Appleton", "BC Green Party"],["Diana Gibson", "BC NDP"],["Stan Sipos", "Conservative Party"],["Andrew Weaver", "CentreBC"]]],["Peace River North",[["Jordan Kealy", "Independent"],["Curtis Whitford", "Conservative Party"]]],["Peace River South",[["Marsha Rose Dufresne", "BC NDP"],["Larry Neufeld", "Conservative Party"],["Helen Scott", "Unaffiliated"]]],["Penticton-Summerland",[["Bradley Sean Bartsch", "BC Green Party"],["Warren Hamm", "OneBC"],["Tina Lee", "BC NDP"],["Tracy St Claire", "Conservative Party"]]],["Port Coquitlam",[["Keenan Adams", "Conservative Party"],["Lee-Ann Bates", "Unaffiliated"],["Lewis C. Dahlby", "Libertarian"],["Mike Farnworth", "BC NDP"],["Stephanie Hendy", "BC Green Party"]]],["Port Moody-Burquitlam",[["Wei Chou", "BC Green Party"],["Rick Glumac", "BC NDP"],["John McEwen", "Conservative Party"],["Freddy Rawji", "CentreBC"]]],["Powell River-Sunshine Coast",[["John Henderson", "Conservative Party"],["Griffin Leonard Lea", "BC Green Party"],["Randene Neill", "BC NDP"]]],["Prince George-Mackenzie",[["Kiel Giddens", "Conservative Party"],["Ian McMahon", "BC NDP"],["Teri Young", "BC Green Party"]]],["Prince George-North Cariboo",[["Denice Bardua", "BC NDP"],["Sheldon Clare", "Conservative Party"],["Randy Thompson", "BC Green Party"]]],["Prince George-Valemount",[["Rosalyn Bird", "Conservative Party"],["Carol Bourque", "BC NDP"],["Jodie Capling", "BC Green Party"],["Mitchell Lukoni", "OneBC"]]],["Richmond Centre",[["Lawrence Chen", "CWP"],["Calvin Dang", "BC Green Party"],["Sacha Peter", "Conservative Party"],["Henry Yao", "BC NDP"]]],["Richmond-Bridgeport",[["Linda Li", "BC NDP"],["Teresa Wat", "Conservative Party"]]],["Richmond-Queensborough",[["Luc Burns", "BC Green Party"],["Dhar Grewal", "BC NDP"],["Steve Kooner", "Conservative Party"]]],["Richmond-Steveston",[["Robert Evans", "Independent"],["Bruce Kong", "BC NDP"],["Barry Wosk", "CentreBC"],["Keenan Yang", "CWP"],["Gordon Zhang", "Conservative Party"]]],["Saanich North and the Islands",[["Kala Bryson", "BC NDP"],["Emily Lowan", "BC Green Party"],["Richard Smith", "CentreBC"],["Ryan Windsor", "Conservative Party"]]],["Saanich South",[["Lisa Lapointe", "BC Green Party"],["Cathie Ounsted", "Conservative Party"],["Richard Zussman", "BC NDP"]]],["Salmon Arm-Shuswap",[["Gloria Morgan", "BC NDP"],["Barbara Presch", "OneBC"],["Denise Reimer", "CentreBC"],["Jed Wiebe", "BC Green Party"],["David L Williams", "Conservative Party"]]],["Skeena",[["Nick Gottlieb", "BC Green Party"],["Claire Rattée", "Conservative Party"],["Larry Eugene Taylor", "OneBC"],["Sarah Zimmerman", "BC NDP"]]],["Surrey City Centre",[["Amna Shah", "BC NDP"],["Raman Sharma", "CentreBC"],["Zeeshan Wahla", "Conservative Party"],["Oliver Wildfong", "OneBC"]]],["Surrey North",[["Jag Bhandari", "Unaffiliated"],["Parm Bhandol", "CentreBC"],["Mandeep Singh Dhaliwal", "Conservative Party"],["Yudhbir Gill", "BC Green Party"],["Tanya Gupta", "OneBC"],["Sahib Thind", "BC NDP"]]],["Surrey South",[["Denis R Hurtubise", "Unaffiliated"],["Megan Knight", "Conservative Party"],["Bill McConnell", "BC Green Party"],["Elenore Sturko", "CentreBC"],["Parik Tahlan", "BC NDP"]]],["Surrey-Cloverdale",[["Nicholas Cartmell", "Conservative Party"],["Sargy Chima", "CentreBC"],["Stephen Dooley", "BC NDP"],["Travis Marchenski", "OneBC"],["Pat McCutcheon", "BC Green Party"]]],["Surrey-Fleetwood",[["Tim Binnema", "BC Green Party"],["Jagrup Brar", "BC NDP"],["Paul Brar", "CentreBC"],["Carolyn Hofbauer", "OneBC"],["Garry Purewal", "Conservative Party"]]],["Surrey-Guildford",[["Garry Begg", "BC NDP"],["Jodi Murphy", "BC Green Party"],["Garry Thind", "Conservative Party"],["James Yaroshuk", "Unaffiliated"]]],["Surrey-Newton",[["Harj Dhaliwal", "Conservative Party"],["Harman Preet Singh", "CentreBC"],["Jessie Sunner", "BC NDP"]]],["Surrey-Panorama",[["Manav Manro", "CentreBC"],["Nolen Scott", "BC Green Party"],["Jinny Sims", "BC NDP"],["Bryan Tepper", "Conservative Party"]]],["Surrey-Serpentine River",[["Judy Higginbotham", "CentreBC"],["Todd Holowchak", "OneBC"],["Sikander Kang", "BC NDP"],["Errol Povah", "Freedom Party of BC"],["Jessy Sahota", "Conservative Party"]]],["Surrey-White Rock",[["Kevin Diakiw", "Independent"],["Trevor Halford", "Conservative Party"],["Amanda James", "OneBC"],["Christine Kinnie", "BC Green Party"],["Waqas Rana", "CentreBC"],["Darryl Walker", "BC NDP"]]],["Vancouver-Fraserview",[["Francoise Raunet", "BC Green Party"],["Deep Sandhu", "Conservative Party"],["Aman Singh", "BC NDP"]]],["Vancouver-Hastings",[["Christian Bosio", "CentreBC"],["Kimball Cariou", "Communist Party of BC"],["Kyra Philbert", "BC Green Party"],["Niki Sharma", "BC NDP"],["Phyllis Tang", "Conservative Party"],["Phil Webb", "Libertarian"]]],["Vancouver-Kensington",[["Mable Elmore", "BC NDP"],["Adam Hawk", "BC Green Party"],["Aron Lageri", "Conservative Party"]]],["Vancouver-Langara",[["John Atoyebi", "BC Green Party"],["Alan Beesley", "CentreBC"],["Sunita Dhir", "BC NDP"],["Jaime Stein", "Conservative Party"]]],["Vancouver-Little Mountain",[["Christine Boyle", "BC NDP"],["Sarah MacLeod", "BC Green Party"],["Alex Muir", "Conservative Party"]]],["Vancouver-Point Grey",[["Michael Davis", "CentreBC"],["David Eby", "BC NDP"],["Alex McMillan", "Conservative Party"],["Beatrice Sharpe", "BC Green Party"]]],["Vancouver-Quilchena",[["Carson Binda", "Conservative Party"],["Dallas Brodie", "OneBC"],["Douglas Courtemanche", "BC Green Party"],["Petra Kuret", "CentreBC"],["Callista Ryan", "BC NDP"]]],["Vancouver-Renfrew",[["Adrian Dix", "BC NDP"],["Rebecca Haber", "BC Green Party"],["Tom Ikonomou", "Conservative Party"],["Lisa Prescott", "CentreBC"]]],["Vancouver-South Granville",[["Maria J Cruz", "BC Green Party"],["Lara Honrado", "BC NDP"],["Lisa Phillips", "Conservative Party"],["Colin Smith", "CentreBC"],["Salvatore Vetro", "OneBC"]]],["Vancouver-Strathcona",[["Amanda Burrows", "BC NDP"],["Robert Crooks", "Communist Party of BC"],["Jordan Zheng McIntosh", "Conservative Party"],["Tanya Webking", "BC Green Party"]]],["Vancouver-West End",[["Spencer Chandra Herbert", "BC NDP"],["Scott MacDonald", "BC Green Party"],["Dion Weisner", "Conservative Party"]]],["Vancouver-Yaletown",[["Sam Chandola", "CentreBC"],["Margareta Dovgal", "Conservative Party"],["Priyan Samarakoone", "BC Green Party"],["Terry Yung", "BC NDP"]]],["Vernon-Lumby",[["Kevin Acton", "Conservative Party"],["Chantel Gibbs", "OneBC"],["Harwinder Sandhu", "BC NDP"],["Blair Visscher", "BC Green Party"]]],["Victoria-Beacon Hill",[["Joachim Agou", "Conservative Party"],["Grace Lore", "BC NDP"],["Rajinder S. Sahota", "BC Green Party"]]],["Victoria-Swan Lake",[["Carolyn Howe", "BC Green Party"],["Nina Krieger", "BC NDP"],["Tim Taylor", "Conservative Party"]]],["West Kelowna-Peachland",[["Adam Frank", "BC Green Party"],["Macklin McCall", "Conservative Party"],["George Morgan", "BC NDP"]]],["West Vancouver-Capilano",[["Honieh Barzegari", "BC NDP"],["Naomi Chocyk", "OneBC"],["Caroline Elliott", "Conservative Party"],["Arwa Shurab", "BC Green Party"]]],["West Vancouver-Sea to Sky",[["Ayla Dumais", "Conservative Party"],["Michelle Livaja", "BC NDP"],["Jeremy Valeriote", "BC Green Party"],["Dan Wood", "CentreBC"]]]];
+/* Live results adapter — Elections BC only.
+   FEED_URL must be set to Elections BC's live 2026 results data URL once it
+   appears on https://results.elections.bc.ca/ . Until then the page shows the
+   awaiting state and never fetches a guessed URL. When FEED_URL is set, the
+   page fetches it directly from the visitor's browser about every 60 seconds.
+   If the feed server blocks cross-site reads (CORS), the fetch fails in the
+   browser and the status line says so plainly instead of showing other data.
+   Feed fields the page expects (per riding): a riding/district name; a
+   candidates list with name, party/affiliation, votes, and status
+   (Elections BC's own "Leading" / "Elected" words); and a reporting figure —
+   reportingPct, or pollsReporting + pollsTotal. The reporting figure is what
+   lets the projection model run: without it a riding can only ever show
+   Leading, never Projected. */
+var FEED_URL = "";
+var REFRESH_MS = 60000;
+
+var PARTY_META = {
+  "Conservative Party": ["Conservative", "#0b3d91"],
+  "BC NDP": ["BC NDP", "#f26522"],
+  "BC Green Party": ["BC Green", "#2e8b57"],
+  "CentreBC": ["CentreBC", "#d71920"],
+  "OneBC": ["OneBC", "#c9a227"],
+  "Independent": ["Independent", "#6b7280"],
+  "Unaffiliated": ["Unaffiliated", "#6b7280"],
+  "Libertarian": ["Libertarian", "#7c3aed"],
+  "Christian Heritage Party of BC": ["Christian Heritage", "#5b6b7d"],
+  "Communist Party of BC": ["Communist", "#b91c1c"],
+  "Freedom Party of BC": ["Freedom", "#0e7490"],
+  "CWP": ["CWP", "#5b6b7d"]
+};
+function metaFor(party){ return PARTY_META[party] || [party, "#6b7280"]; }
+function esc(s){ return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+function fmt(n){ return Number(n).toLocaleString("en-CA"); }
+function norm(s){ return String(s == null ? "" : s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim(); }
+function initials(name){ var p = String(name).trim().split(/\s+/); return ((p[0] || "").charAt(0) + (p.length > 1 ? p[p.length - 1].charAt(0) : "")).toUpperCase(); }
+
+/* State: results keyed by normalized riding name. Each riding: {cands: {normName: {name, party, votes, status}}, reportingPct, totalVotes} */
+var RESULTS = {};
+var state = { q: "", party: "all", sort: "order", feed: "awaiting", feedMsg: "", lastChecked: null };
+var $ = function(id){ return document.getElementById(id); };
+
+function ridingResult(ridingName){
+  var key = norm(ridingName);
+  if (!RESULTS[key]) RESULTS[key] = { cands: {}, reportingPct: null, totalVotes: 0 };
+  return RESULTS[key];
+}
+function leaderOf(ridingName){
+  var r = RESULTS[norm(ridingName)];
+  if (!r) return null;
+  var best = null;
+  Object.keys(r.cands).forEach(function(k){
+    var c = r.cands[k];
+    if (c.votes != null && (best === null || c.votes > best.votes)) best = c;
+  });
+  return best;
+}
+function electedOf(ridingName){
+  var r = RESULTS[norm(ridingName)];
+  if (!r) return null;
+  var found = null;
+  Object.keys(r.cands).forEach(function(k){
+    var c = r.cands[k];
+    if (c.status && /elect/i.test(c.status)) found = c;
+  });
+  return found;
+}
+/* Win projection — Atlantic Votes model, from counted votes and polls reported only.
+   Elections BC is never overridden: a riding Elections BC marks Elected always stays Elected.
+   Rule, in order:
+   - Elections BC Elected -> "elected".
+   - % of polls reported unknown, zero, or over 100 -> "leading" only (never projected).
+   - Else estimate remaining votes = counted x (100 - pct) / pct.
+     - Leader margin > estimated remaining -> "projected" for the leader.
+     - Else margin under 100 votes OR under 0.5% of counted votes -> "tooclose".
+     - Else -> "leading".
+   Margin = leader votes minus runner-up votes (a runner-up with no counted votes counts as 0).
+   Too-close threshold: under 100 votes OR under 0.5 points of counted votes. */
+function predictStatus(leaderVotes, runnerUpVotes, counted, pct){
+  if (leaderVotes == null) return "none";
+  if (pct == null || pct <= 0 || pct > 100) return "leading";
+  var margin = leaderVotes - (runnerUpVotes || 0);
+  var remaining = counted * (100 - pct) / pct;
+  if (margin > remaining) return "projected";
+  if (margin < 100 || (counted > 0 && margin / counted * 100 < 0.5)) return "tooclose";
+  return "leading";
+}
+function projectionOf(ridingName){
+  var e = electedOf(ridingName);
+  if (e) return { kind: "elected", leader: e, margin: null, pct: null, remaining: null };
+  var r = RESULTS[norm(ridingName)];
+  if (!r) return { kind: "none", leader: null, margin: null, pct: null, remaining: null };
+  var vs = Object.keys(r.cands).map(function(k){ return r.cands[k]; }).filter(function(c){ return c.votes != null; }).sort(function(a, b){ return b.votes - a.votes; });
+  if (!vs.length) return { kind: "none", leader: null, margin: null, pct: null, remaining: null };
+  var leader = vs[0], second = vs.length > 1 ? vs[1] : null;
+  var counted = r.totalVotes;
+  var pct = r.reportingPct;
+  var kind = predictStatus(leader.votes, second ? second.votes : 0, counted, pct);
+  var remaining = (pct != null && pct > 0 && pct <= 100) ? counted * (100 - pct) / pct : null;
+  return { kind: kind, leader: leader, margin: leader.votes - (second ? second.votes : 0), pct: pct, remaining: remaining };
+}
+
+function renderSeatBoard(){
+  var cats = {}, votes = 0, elc = 0, prj = 0, led = 0, cls = 0;
+  ROSTER.forEach(function(row){
+    var name = row[0], r = RESULTS[norm(name)];
+    var p = projectionOf(name);
+    if (p.kind === "none") return;
+    var party = p.leader.party || "";
+    if (!cats[party]) cats[party] = { elected: 0, projected: 0, leading: 0, tooclose: 0 };
+    if (p.kind === "elected"){ cats[party].elected++; elc++; }
+    else if (p.kind === "projected"){ cats[party].projected++; prj++; }
+    else if (p.kind === "tooclose"){ cats[party].tooclose++; cls++; }
+    else { cats[party].leading++; led++; }
+    if (r) votes += r.totalVotes;
+  });
+  $("statElected").textContent = fmt(elc);
+  $("statProjected").textContent = fmt(prj);
+  $("statLeading").textContent = fmt(led);
+  $("statClose").textContent = fmt(cls);
+  $("statVotes").textContent = fmt(votes);
+  var order = ["Conservative Party", "BC NDP", "BC Green Party", "CentreBC", "OneBC", "Independent", "Unaffiliated"];
+  Object.keys(cats).forEach(function(p){ if (order.indexOf(p) === -1) order.push(p); });
+  var bar = $("seatbar"), legend = $("seatLegend");
+  bar.innerHTML = ""; legend.innerHTML = "";
+  var any = false;
+  order.forEach(function(p){
+    var c = cats[p];
+    if (!c) return;
+    var n = c.elected + c.projected + c.leading + c.tooclose;
+    if (!n) return;
+    any = true;
+    var m = metaFor(p);
+    var d = document.createElement("div");
+    d.style.width = (n / 93 * 100) + "%";
+    d.style.background = m[1];
+    d.textContent = n;
+    d.title = m[0] + ": " + n + " (" + c.elected + " elected, " + c.projected + " projected, " + c.leading + " leading, " + c.tooclose + " too close)";
+    bar.appendChild(d);
+    var s = document.createElement("span");
+    s.innerHTML = "<b>" + esc(m[0]) + " " + n + "</b> (" + c.elected + " elected · " + c.projected + " projected · " + c.leading + " leading · " + c.tooclose + " too close)";
+    legend.appendChild(s);
+  });
+  if (!any){
+    bar.innerHTML = "<div style=\"width:100%;background:var(--band);color:var(--muted)\">No results reported yet</div>";
+    legend.innerHTML = "";
+  }
+  $("seatNote").textContent = any
+    ? "Elected counts only ridings Elections BC itself has declared. Projected counts ridings this site's model calls from votes counted and polls reported — projections are not results and can change. Leading counts ridings where a candidate is ahead but the race is not projected. 47 seats are needed for a majority."
+    : "No results reported yet. A majority needs 47 of the 93 seats.";
+}
+function filteredRidings(){
+  var q = norm(state.q);
+  var list = ROSTER.map(function(row, i){ return { name: row[0], cands: row[1], idx: i }; });
+  if (state.party !== "all"){
+    list = list.filter(function(r){
+      var e = electedOf(r.name), l = leaderOf(r.name);
+      var p = e ? e.party : (l ? l.party : null);
+      return p === state.party;
+    });
+  }
+  if (q){
+    list = list.filter(function(r){
+      if (norm(r.name).indexOf(q) !== -1) return true;
+      return r.cands.some(function(c){ return norm(c[0]).indexOf(q) !== -1; });
+    });
+  }
+  if (state.sort === "close"){
+    list.sort(function(a, b){ return marginOf(a.name) - marginOf(b.name); });
+  } else if (state.sort === "votes"){
+    list.sort(function(a, b){ return (totalOf(b.name) - totalOf(a.name)) || (a.idx - b.idx); });
+  } else if (state.sort === "az"){
+    list.sort(function(a, b){ return a.name.localeCompare(b.name); });
+  }
+  return list;
+}
+function totalOf(name){ var r = RESULTS[norm(name)]; return r ? r.totalVotes : 0; }
+function marginOf(name){
+  var r = RESULTS[norm(name)];
+  if (!r) return Infinity;
+  var vs = Object.keys(r.cands).map(function(k){ return r.cands[k].votes; }).filter(function(v){ return v != null; }).sort(function(a, b){ return b - a; });
+  if (vs.length < 2) return Infinity;
+  return vs[0] - vs[1];
+}
+function renderChips(){
+  var wrap = $("chips");
+  wrap.innerHTML = "";
+  var parties = ["all", "Conservative Party", "BC NDP", "BC Green Party", "CentreBC", "OneBC"];
+  parties.forEach(function(p){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip";
+    b.setAttribute("aria-pressed", state.party === p ? "true" : "false");
+    b.textContent = p === "all" ? "All parties" : metaFor(p)[0];
+    b.addEventListener("click", function(){ state.party = p; renderChips(); renderCards(); });
+    wrap.appendChild(b);
+  });
+}
+function renderCards(){
+  var list = filteredRidings();
+  $("countLine").textContent = "Showing " + list.length + " of 93 ridings.";
+  var grid = $("cards");
+  grid.innerHTML = "";
+  list.forEach(function(r){
+    var res = RESULTS[norm(r.name)];
+    var e = electedOf(r.name), l = leaderOf(r.name);
+    var proj = projectionOf(r.name);
+    var statusHtml, rows = [];
+    var counted = [];
+    r.cands.forEach(function(c){
+      var rc = res && res.cands[norm(c[0])];
+      counted.push({ name: c[0], party: c[1], votes: rc ? rc.votes : null, status: rc ? rc.status : null, feedOnly: false });
+    });
+    if (res){
+      Object.keys(res.cands).forEach(function(k){
+        var fc = res.cands[k];
+        if (!r.cands.some(function(c){ return norm(c[0]) === k; })){
+          counted.push({ name: fc.name, party: fc.party, votes: fc.votes, status: fc.status, feedOnly: true });
+        }
+      });
+    }
+    counted.sort(function(a, b){ return (b.votes == null ? -1 : b.votes) - (a.votes == null ? -1 : a.votes); });
+    var tot = counted.reduce(function(s, c){ return s + (c.votes || 0); }, 0);
+    if (proj.kind === "elected") statusHtml = "<b>Elected: " + esc(e.name) + "</b> — " + esc(metaFor(e.party)[0]);
+    else if (proj.kind === "projected") statusHtml = "<b>Projected: " + esc(proj.leader.name) + "</b> — " + esc(metaFor(proj.leader.party)[0]) + " <span class=\"cand-proj\">Projected</span>";
+    else if (proj.kind === "tooclose") statusHtml = "<b>Too close to call</b> — " + esc(proj.leader.name) + " leads by " + fmt(proj.margin) + " votes";
+    else if (proj.kind === "leading") statusHtml = "<b>Leading: " + esc(l.name) + "</b> — " + esc(metaFor(l.party)[0]) + " (counted votes)";
+    else statusHtml = "Not yet reported";
+    var repHtml = "";
+    if (res && res.reportingPct != null) repHtml = "<p class=\"report\">" + res.reportingPct + "% of polls reporting · " + fmt(tot) + " votes counted</p>";
+    else if (tot > 0) repHtml = "<p class=\"report\">" + fmt(tot) + " votes counted</p>";
+    else repHtml = "<p class=\"report\">No votes reported yet</p>";
+    var projNoteHtml = (proj.kind === "projected") ? "<p class=\"proj-note\">Atlantic Votes projection from counted votes and polls reported — not a result; can change as more votes are counted.</p>" : "";
+    rows = counted.map(function(c){
+      var m = metaFor(c.party);
+      var pct = tot > 0 && c.votes != null ? (c.votes / tot * 100) : 0;
+      var isLeader = (e && norm(e.name) === norm(c.name)) || (!e && l && norm(l.name) === norm(c.name));
+      var winMark = !isLeader ? "" : (e ? "<span class=\"cand-win\">Elected</span> " : (proj.kind === "projected" ? "<span class=\"cand-proj\">Projected</span> " : "<span class=\"cand-win\">Leading</span> "));
+      return "<div class=\"cand\"><div class=\"cand-head\"><div><b>" + esc(c.name) + "</b> <span class=\"pty\">" + esc(m[0]) + "</span> " + winMark + "</div><div class=\"cand-nums\">" + (c.votes == null ? "—" : "<b>" + fmt(c.votes) + "</b> · " + pct.toFixed(1) + "%") + "</div></div><div class=\"cand-bar\"><i style=\"width:" + pct.toFixed(1) + "%;background:" + m[1] + "\"></i></div></div>";
+    }).join("");
+    var art = document.createElement("article");
+    art.className = "card";
+    art.innerHTML = "<h3>" + esc(r.name) + "</h3><p class=\"rid-status\">" + statusHtml + "</p>" + repHtml + projNoteHtml + rows;
+    grid.appendChild(art);
+  });
+  renderSeatBoard();
+}
+
+/* ---- Feed parsing (generic shapes; Elections BC's exact live format is applied here once published) ---- */
+function pick(obj, keys){
+  for (var i = 0; i < keys.length; i++){
+    var k = keys[i];
+    if (obj[k] !== undefined && obj[k] !== null && obj[k] !== "") return obj[k];
+  }
+  return undefined;
+}
+function toNum(v){
+  if (v == null || v === "") return null;
+  var n = Number(String(v).replace(/,/g, ""));
+  return isNaN(n) ? null : n;
+}
+function parseJSONFeed(data){
+  var arr = Array.isArray(data) ? data : (data.ridings || data.districts || data.results || null);
+  if (!arr || !Array.isArray(arr)) return null;
+  var out = [];
+  arr.forEach(function(item){
+    var rname = pick(item, ["riding", "district", "electoralDistrict", "name", "edName"]);
+    var cands = item.candidates || item.results || item.votes || null;
+    if (!rname || !cands || !Array.isArray(cands)) return;
+    var rep = pick(item, ["reportingPct", "pollsReportingPct", "pctReporting", "percentReporting"]);
+    var pollsRep = pick(item, ["pollsReporting", "ballotBoxesReporting", "boxesReporting"]);
+    var pollsTot = pick(item, ["pollsTotal", "ballotBoxes", "boxesTotal", "totalPolls"]);
+    var pct = toNum(rep);
+    if (pct == null && pollsRep != null && pollsTot){
+      var pr = toNum(pollsRep), pt = toNum(pollsTot);
+      if (pr != null && pt) pct = Math.round(pr / pt * 1000) / 10;
+    }
+    out.push({ riding: rname, reportingPct: pct, candidates: cands.map(function(c){
+      return { name: pick(c, ["name", "candidate", "candidateName"]), party: pick(c, ["party", "affiliation", "partyName"]), votes: toNum(pick(c, ["votes", "voteCount", "totalVotes"])), status: pick(c, ["status", "result", "state"]) };
+    }).filter(function(c){ return c.name; }) });
+  });
+  return out.length ? out : null;
+}
+function parseCSVFeed(text){
+  var lines = text.split(/\r?\n/).filter(function(l){ return l.trim() !== ""; });
+  if (lines.length < 2) return null;
+  function splitRow(row){
+    var out = [], cur = "", inQ = false;
+    for (var i = 0; i < row.length; i++){
+      var ch = row[i];
+      if (ch === '"'){ inQ = !inQ; }
+      else if (ch === "," && !inQ){ out.push(cur); cur = ""; }
+      else cur += ch;
+    }
+    out.push(cur);
+    return out.map(function(s){ return s.trim(); });
+  }
+  var header = splitRow(lines[0]).map(function(h){ return norm(h); });
+  function col(names){ for (var i = 0; i < names.length; i++){ var j = header.indexOf(norm(names[i])); if (j !== -1) return j; } return -1; }
+  var cR = col(["electoral district", "riding", "district", "ed name"]);
+  var cC = col(["candidate ballot name", "candidate", "candidate name"]);
+  var cV = col(["votes", "vote count", "total votes"]);
+  var cP = col(["affiliation", "party", "party name"]);
+  var cS = col(["status", "result"]);
+  var cPct = col(["reporting pct", "polls reporting pct", "pct reporting", "percent reporting"]);
+  if (cR === -1 || cC === -1 || cV === -1) return null;
+  var map = {};
+  for (var r = 1; r < lines.length; r++){
+    var f = splitRow(lines[r]);
+    var riding = f[cR];
+    if (!riding) continue;
+    if (!map[riding]) map[riding] = { riding: riding, reportingPct: null, candidates: [] };
+    var pct = cPct !== -1 ? toNum(f[cPct]) : null;
+    if (pct != null) map[riding].reportingPct = pct;
+    map[riding].candidates.push({ name: f[cC], party: cP !== -1 ? f[cP] : "", votes: toNum(f[cV]), status: cS !== -1 ? f[cS] : null });
+  }
+  var out = Object.keys(map).map(function(k){ return map[k]; });
+  return out.length ? out : null;
+}
+function applyFeed(parsed){
+  var ridingsWithVotes = 0;
+  parsed.forEach(function(item){
+    var res = ridingResult(item.riding);
+    item.candidates.forEach(function(c){
+      res.cands[norm(c.name)] = { name: c.name, party: c.party || "", votes: c.votes, status: c.status || null };
+    });
+    if (item.reportingPct != null) res.reportingPct = item.reportingPct;
+    var tot = 0;
+    Object.keys(res.cands).forEach(function(k){ tot += res.cands[k].votes || 0; });
+    res.totalVotes = tot;
+    if (tot > 0) ridingsWithVotes++;
+  });
+  return ridingsWithVotes;
+}
+function setFeedState(status, msg){
+  state.feed = status;
+  state.feedMsg = msg;
+  var dot = $("liveDot"), st = $("liveStatus"), fm = $("feedMsg");
+  if (status === "live"){
+    dot.className = "live-dot";
+    st.textContent = "Counting — live from Elections BC";
+    fm.innerHTML = "<b>Live.</b> " + esc(msg);
+  } else if (status === "blocked"){
+    dot.className = "live-dot awaiting";
+    st.textContent = "Feed blocked from this page";
+    fm.innerHTML = "<b>Live results could not be read from this page.</b> " + esc(msg) + " No numbers from any other source are shown instead.";
+  } else if (status === "unreadable"){
+    dot.className = "live-dot awaiting";
+    st.textContent = "Feed format not readable";
+    fm.innerHTML = "<b>The official feed was reached but its format could not be read.</b> " + esc(msg) + " No numbers are shown rather than guessed ones.";
+  } else {
+    dot.className = "live-dot awaiting";
+    st.textContent = "Awaiting results";
+    fm.innerHTML = "<b>Awaiting the official live feed.</b> " + esc(msg);
+  }
+}
+function fetchFeed(){
+  state.lastChecked = new Date();
+  $("lastChecked").textContent = state.lastChecked.toLocaleString("en-CA", { timeZone: "America/Halifax" }) + " Atlantic";
+  if (!FEED_URL){
+    setFeedState("awaiting", "Elections BC has not yet published 2026 results on its results site. This page checks automatically about every 60 seconds and will show the count as soon as the live feed address is set and the feed is published. Nothing here comes from any media or third-party site.");
+    renderCards();
+    return;
+  }
+  fetch(FEED_URL, { cache: "no-store" }).then(function(resp){
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
+    var ct = (resp.headers.get("content-type") || "").toLowerCase();
+    return (ct.indexOf("json") !== -1 ? resp.json().then(function(j){ return { kind: "json", data: j }; }) : resp.text().then(function(t){
+      try { return { kind: "json", data: JSON.parse(t) }; } catch (e) { return { kind: "csv", data: t }; }
+    }));
+  }).then(function(parsed){
+    var rows = parsed.kind === "json" ? parseJSONFeed(parsed.data) : parseCSVFeed(parsed.data);
+    if (!rows){
+      setFeedState("unreadable", "The feed did not match a readable results shape (JSON riding list or CSV with riding/candidate/votes columns).");
+    } else {
+      var n = applyFeed(rows);
+      setFeedState("live", "Preliminary results as reported by Elections BC. " + n + " of 93 ridings reporting votes.");
+    }
+    renderCards();
+  }).catch(function(err){
+    var msg = String(err && err.message ? err.message : err);
+    if (/Failed to fetch|NetworkError|Load failed/i.test(msg)){
+      setFeedState("blocked", "The feed could not be reached from this page — this can mean the feed server blocks cross-site reads (CORS) or the address is not yet live. The fallback is a same-origin results snapshot (see the publisher notes).");
+    } else {
+      setFeedState("unreadable", "The feed request failed: " + msg);
+    }
+    renderCards();
+  });
+}
+
+/* Controls + refresh loop */
+$("q").addEventListener("input", function(e){ state.q = e.target.value; renderCards(); });
+$("sort").addEventListener("change", function(e){ state.sort = e.target.value; renderCards(); });
+$("refreshBtn").addEventListener("click", function(){ fetchFeed(); resetCountdown(); });
+var countdown = 60;
+function resetCountdown(){ countdown = 60; $("countdown").textContent = "60s"; }
+setInterval(function(){
+  countdown--;
+  if (countdown <= 0){ fetchFeed(); resetCountdown(); }
+  else $("countdown").textContent = countdown + "s";
+}, 1000);
+document.addEventListener("visibilitychange", function(){ if (!document.hidden) fetchFeed(); });
+renderChips();
+fetchFeed();
+</script>
+</body>
+</html>
