@@ -54,10 +54,20 @@ a{color:var(--accent)}
 .stat{border-top:1px solid var(--line);padding-top:14px}
 .stat b{display:block;font-size:34px;line-height:1;font-weight:800;font-variant-numeric:tabular-nums}
 .stat span{font-size:14px;color:var(--muted)}
-.seatbar{display:flex;height:52px;overflow:hidden;background:var(--band);margin:20px 0 8px}
-.seatbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;min-width:0;overflow:hidden;white-space:nowrap}
-.legend{display:flex;gap:16px 24px;flex-wrap:wrap;font-size:15px;color:var(--muted);margin-bottom:8px}
-.legend b{color:var(--ink)}
+.leaders{margin:20px 0 8px}
+.leader-row{display:flex;align-items:center;gap:12px;margin:0 0 22px}
+.leader-photo{width:52px;height:52px;border-radius:50%;flex:0 0 52px;position:relative;overflow:hidden;background:var(--band);display:flex;align-items:center;justify-content:center}
+.leader-photo span{font-weight:800;font-size:18px;color:var(--muted)}
+.leader-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.leader-who{flex:0 0 118px;min-width:0}
+.leader-name{font-weight:700;font-size:16px;line-height:1.2}
+.leader-party{color:var(--muted);font-size:13px;margin-top:1px}
+.leader-track{flex:1;height:14px;background:var(--band);position:relative;min-width:40px}
+.leader-fill{height:100%}
+.leader-tick{position:absolute;left:50.54%;top:-3px;bottom:-3px;width:2px;background:var(--ink)}
+.leader-seats{font-weight:800;font-size:26px;flex:0 0 44px;text-align:right;line-height:1}
+.leader-maj{display:block;font-size:10px;font-weight:700;color:var(--ink);letter-spacing:.04em}
+@media(max-width:480px){.leader-who{flex-basis:96px}.leader-name{font-size:15px}.leader-seats{font-size:22px;flex-basis:36px}}
 .note{font-size:15px;color:var(--muted)}
 .note a{color:var(--accent)}
 /* Live bits */
@@ -94,8 +104,6 @@ a{color:var(--accent)}
 .cand-win{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 .cand-proj{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);border:1px dashed var(--ink);padding:1px 5px}
 .proj-note{font-size:14px;color:var(--muted);margin:-6px 0 12px}
-.seatbar-wrap{position:relative}
-.majority-line{position:absolute;top:-6px;bottom:-6px;left:50.5376%;width:3px;background:#111}
 .feed-msg{background:var(--accent-soft);border:1px solid #f5c9a8;padding:14px 16px;font-size:15px;margin:0 0 20px}
 .feed-msg b{color:var(--ink)}
 .site-footer{border-top:1px solid var(--line);background:#fff}
@@ -138,8 +146,8 @@ a{color:var(--accent)}
 
   <section class="section section-gray"><div class="container">
     <div class="eyebrow">Seats</div>
-    <h2 id="seats-h">Seats — 93 in the Legislative Assembly</h2>
-    <p class="section-sub">Elected counts only ridings Elections BC itself has declared. Projected counts ridings where the leader's margin is bigger than the votes that could still arrive, estimated from votes counted and polls reported — projections are this site's model, not results, and can change as more votes are counted. Leading counts ridings where a candidate is ahead but the race is not projected; Too close to call is shown when the margin is under 100 votes or under 0.5% of counted votes. 47 seats are needed for a majority.</p>
+    <h2 id="seats-h">The race for premier</h2>
+    <p class="section-sub">Seats won or likely · live from Elections BC</p>
     <div class="stats">
       <div class="stat"><b id="statElected">0</b><span>Ridings declared elected</span></div>
       <div class="stat"><b id="statProjected">0</b><span>Ridings projected</span></div>
@@ -147,9 +155,7 @@ a{color:var(--accent)}
       <div class="stat"><b id="statClose">0</b><span>Ridings too close to call</span></div>
       <div class="stat"><b id="statVotes">0</b><span>Votes counted so far</span></div>
     </div>
-    <div class="seatbar-wrap"><div class="seatbar" id="seatbar" aria-hidden="true"></div><div class="majority-line" title="47 seats for a majority"></div></div>
-    <div class="legend" id="seatLegend"></div>
-    <p class="note">The black line on the bar marks 47 seats — a majority in the 93-seat Assembly.</p>
+    <div class="leaders" id="leaders"></div>
     <p class="note" id="seatNote">No results reported yet. A majority needs 47 of the 93 seats.</p>
   </div></section>
 
@@ -176,7 +182,7 @@ a{color:var(--accent)}
   <section class="section"><div class="container">
     <div class="eyebrow">Sources</div>
     <h2>Where the numbers come from</h2>
-    <p class="note">Preliminary results: <a href="https://results.elections.bc.ca/">Elections BC, results site</a> — the only results source used on this page. Candidate list: <a href="https://elections.bc.ca/2026-provincial-election/candidate-list/">Elections BC, final 2026 candidate list</a> (nominations closed October 3, 2026). Election-night results are preliminary; the final count runs November 6–10, 2026 and Return Day is November 18, 2026. Status words (Leading / Elected) are Elections BC's own. "Projected" is this site's model: when the leader's margin is bigger than the votes that could still arrive, estimated from votes counted and polls reported, the riding is marked Projected — projections are not results and can change as more votes are counted. A riding Elections BC declares Elected is never overridden by a projection.</p>
+    <p class="note">Preliminary results: <a href="https://results.elections.bc.ca/">Elections BC, results site</a> — the only results source used on this page. Candidate list: <a href="https://elections.bc.ca/2026-provincial-election/candidate-list/">Elections BC, final 2026 candidate list</a> (nominations closed October 3, 2026). Election-night results are preliminary; the final count runs November 6–10, 2026 and Return Day is November 18, 2026. Status words (Leading / Elected) are Elections BC's own. "Projected" is this site's model: when the leader's margin is bigger than the votes that could still arrive, estimated from votes counted and polls reported, the riding is marked Projected — projections are not results and can change as more votes are counted. A riding Elections BC declares Elected is never overridden by a projection. Leader portraits: BC Legislature (Lorne Doerkson, Elenore Sturko, Dallas Brodie), Government of BC (David Eby), BC Greens (Emily Lowan).</p>
   </div></section>
 </main>
 <footer class="site-footer"><div class="container footer-in">
@@ -291,6 +297,13 @@ function projectionOf(ridingName){
   return { kind: kind, leader: leader, margin: leader.votes - (second ? second.votes : 0), pct: pct, remaining: remaining };
 }
 
+var LEADERS = [
+  { name: "Lorne Doerkson", party: "Conservative Party", short: "Conservative", photo: "assets/photos/bc-doerkson.jpg", initials: "LD" },
+  { name: "David Eby", party: "BC NDP", short: "BC NDP", photo: "assets/photos/bc-eby.jpg", initials: "DE" },
+  { name: "Emily Lowan", party: "BC Green Party", short: "BC Green", photo: "assets/photos/bc-lowan.jpg", initials: "EL" },
+  { name: "Elenore Sturko", party: "CentreBC", short: "CentreBC", photo: "assets/photos/bc-sturko.jpg", initials: "ES" },
+  { name: "Dallas Brodie", party: "OneBC", short: "OneBC", photo: "assets/photos/bc-brodie.jpg", initials: "DB" }
+];
 function renderSeatBoard(){
   var cats = {}, votes = 0, elc = 0, prj = 0, led = 0, cls = 0;
   ROSTER.forEach(function(row){
@@ -310,35 +323,27 @@ function renderSeatBoard(){
   $("statLeading").textContent = fmt(led);
   $("statClose").textContent = fmt(cls);
   $("statVotes").textContent = fmt(votes);
-  var order = ["Conservative Party", "BC NDP", "BC Green Party", "CentreBC", "OneBC", "Independent", "Unaffiliated"];
-  Object.keys(cats).forEach(function(p){ if (order.indexOf(p) === -1) order.push(p); });
-  var bar = $("seatbar"), legend = $("seatLegend");
-  bar.innerHTML = ""; legend.innerHTML = "";
+  var wrap = $("leaders");
+  wrap.innerHTML = "";
   var any = false;
-  order.forEach(function(p){
-    var c = cats[p];
-    if (!c) return;
-    var n = c.elected + c.projected + c.leading + c.tooclose;
-    if (!n) return;
-    any = true;
-    var m = metaFor(p);
-    var d = document.createElement("div");
-    d.style.width = (n / 93 * 100) + "%";
-    d.style.background = m[1];
-    d.textContent = n;
-    d.title = m[0] + ": " + n + " (" + c.elected + " elected, " + c.projected + " projected, " + c.leading + " leading, " + c.tooclose + " too close)";
-    bar.appendChild(d);
-    var s = document.createElement("span");
-    s.innerHTML = "<b>" + esc(m[0]) + " " + n + "</b> (" + c.elected + " elected · " + c.projected + " projected · " + c.leading + " leading · " + c.tooclose + " too close)";
-    legend.appendChild(s);
+  Object.keys(cats).forEach(function(p){ if (cats[p].elected + cats[p].projected + cats[p].leading + cats[p].tooclose > 0) any = true; });
+  var rows = LEADERS.map(function(l){
+    var c = cats[l.party] || { elected: 0, projected: 0, leading: 0, tooclose: 0 };
+    return { l: l, c: c, win: c.elected + c.projected + c.leading };
+  }).sort(function(a, b){ return b.win - a.win; });
+  rows.forEach(function(r){
+    var m = metaFor(r.l.party);
+    var row = document.createElement("div");
+    row.className = "leader-row";
+    row.title = r.l.name + ": " + r.win + " seats won or likely";
+    row.innerHTML = "<div class=\"leader-photo\"><span>" + esc(r.l.initials) + "</span><img src=\"" + esc(r.l.photo) + "\" alt=\"" + esc(r.l.name) + "\" onerror=\"this.remove()\" /></div>"
+      + "<div class=\"leader-who\"><div class=\"leader-name\">" + esc(r.l.name) + "</div><div class=\"leader-party\">" + esc(r.l.short) + "</div></div>"
+      + "<div class=\"leader-track\"><div class=\"leader-fill\" style=\"width:" + (r.win / 93 * 100).toFixed(1) + "%;background:" + m[1] + "\"></div><div class=\"leader-tick\"></div></div>"
+      + "<div class=\"leader-seats\" style=\"color:" + m[1] + "\">" + r.win + (r.win >= 47 ? "<span class=\"leader-maj\">Majority</span>" : "") + "</div>";
+    wrap.appendChild(row);
   });
-  if (!any){
-    bar.innerHTML = "<div style=\"width:100%;background:var(--band);color:var(--muted)\">No results reported yet</div>";
-    legend.innerHTML = "";
-  }
-  $("seatNote").textContent = any
-    ? "Elected counts only ridings Elections BC itself has declared. Projected counts ridings this site's model calls from votes counted and polls reported — projections are not results and can change. Leading counts ridings where a candidate is ahead but the race is not projected. 47 seats are needed for a majority."
-    : "No results reported yet. A majority needs 47 of the 93 seats.";
+  if (any){ $("seatNote").textContent = ""; $("seatNote").style.display = "none"; }
+  else { $("seatNote").textContent = "No results reported yet. A majority needs 47 of the 93 seats."; $("seatNote").style.display = ""; }
 }
 function filteredRidings(){
   var q = norm(state.q);
