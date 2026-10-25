@@ -85,7 +85,7 @@
   },
   {
     "riding": "Boundary-Similkameen",
-    "reportingPct": 95.5,
+    "reportingPct": 96.6,
     "candidates": [
       {
         "name": "Keith Pomeroy",
@@ -102,61 +102,61 @@
       {
         "name": "Donegal Wilson",
         "party": "Conservative Party",
-        "votes": 9972,
+        "votes": 9977,
         "status": null
       }
     ]
   },
   {
     "riding": "Bulkley Valley-Stikine",
-    "reportingPct": 88.9,
+    "reportingPct": 93.3,
     "candidates": [
       {
         "name": "Frankie Abel",
         "party": "BC NDP",
-        "votes": 3575,
+        "votes": 3689,
         "status": null
       },
       {
         "name": "Ed Ewald",
         "party": "Christian Heritage Party of BC",
-        "votes": 277,
+        "votes": 278,
         "status": null
       },
       {
         "name": "Sharon Hartwell",
         "party": "Conservative Party",
-        "votes": 4257,
+        "votes": 4261,
         "status": null
       }
     ]
   },
   {
     "riding": "Burnaby Centre",
-    "reportingPct": 95.2,
+    "reportingPct": 98.4,
     "candidates": [
       {
         "name": "Joshua Domnich",
         "party": "Conservative Party",
-        "votes": 6535,
+        "votes": 6585,
         "status": null
       },
       {
         "name": "Vikas Gautam",
         "party": "CentreBC",
-        "votes": 342,
+        "votes": 346,
         "status": null
       },
       {
         "name": "Anne Kang",
         "party": "BC NDP",
-        "votes": 5686,
+        "votes": 5749,
         "status": null
       },
       {
         "name": "Shila Taheri",
         "party": "BC Green Party",
-        "votes": 1120,
+        "votes": 1131,
         "status": null
       }
     ]
@@ -271,24 +271,24 @@
   },
   {
     "riding": "Cariboo-Chilcotin",
-    "reportingPct": 94.4,
+    "reportingPct": 96.6,
     "candidates": [
       {
         "name": "Kathryn Askew",
         "party": "BC NDP",
-        "votes": 2798,
+        "votes": 2829,
         "status": null
       },
       {
         "name": "Lorne Doerkson",
         "party": "Conservative Party",
-        "votes": 12914,
+        "votes": 12964,
         "status": null
       },
       {
         "name": "Douglas Gook",
         "party": "BC Green Party",
-        "votes": 1002,
+        "votes": 1010,
         "status": null
       }
     ]
@@ -306,7 +306,7 @@
       {
         "name": "A&#39;aliya Warbus",
         "party": "Conservative Party",
-        "votes": 12693,
+        "votes": 12695,
         "status": null
       }
     ]
@@ -342,7 +342,7 @@
       {
         "name": "Andrea Dunlop",
         "party": "BC NDP",
-        "votes": 6095,
+        "votes": 6098,
         "status": null
       },
       {
@@ -354,7 +354,7 @@
       {
         "name": "Rana Nelson",
         "party": "BC Green Party",
-        "votes": 1941,
+        "votes": 1942,
         "status": null
       }
     ]
@@ -378,7 +378,7 @@
       {
         "name": "Ryan Peterson",
         "party": "Conservative Party",
-        "votes": 9405,
+        "votes": 9406,
         "status": null
       },
       {
@@ -420,7 +420,7 @@
       {
         "name": "Will Cole-Hamilton",
         "party": "BC NDP",
-        "votes": 12233,
+        "votes": 12236,
         "status": null
       },
       {
@@ -432,25 +432,25 @@
       {
         "name": "Brennan Day",
         "party": "Conservative Party",
-        "votes": 11436,
+        "votes": 11437,
         "status": null
       },
       {
         "name": "Jay Van Oostdam",
         "party": "BC Green Party",
-        "votes": 2658,
+        "votes": 2659,
         "status": null
       }
     ]
   },
   {
     "riding": "Cowichan Valley",
-    "reportingPct": 94.3,
+    "reportingPct": 95.4,
     "candidates": [
       {
         "name": "Bert Chen",
         "party": "Conservative Party",
-        "votes": 10739,
+        "votes": 10779,
         "status": null
       },
       {
@@ -462,13 +462,13 @@
       {
         "name": "Justin Douglas",
         "party": "BC Green Party",
-        "votes": 3660,
+        "votes": 3669,
         "status": null
       },
       {
         "name": "Debra Toporowski",
         "party": "BC NDP",
-        "votes": 10712,
+        "votes": 10735,
         "status": null
       }
     ]
@@ -504,7 +504,7 @@
       {
         "name": "Skadi Green",
         "party": "BC Green Party",
-        "votes": 1967,
+        "votes": 1968,
         "status": null
       },
       {
@@ -534,56 +534,56 @@
       {
         "name": "Sidney Coles",
         "party": "BC Green Party",
-        "votes": 5758,
+        "votes": 5759,
         "status": null
       },
       {
         "name": "Dave Johnston",
         "party": "Conservative Party",
-        "votes": 7381,
+        "votes": 7384,
         "status": null
       },
       {
         "name": "Darlene Rotchford",
         "party": "BC NDP",
-        "votes": 10947,
+        "votes": 10950,
         "status": null
       },
       {
         "name": "Sid Tobias",
         "party": "CentreBC",
-        "votes": 1215,
+        "votes": 1216,
         "status": null
       }
     ]
   },
   {
     "riding": "Fraser-Nicola",
-    "reportingPct": 77.2,
+    "reportingPct": 78.5,
     "candidates": [
       {
         "name": "Jason Leboe",
         "party": "BC NDP",
-        "votes": 3973,
+        "votes": 3999,
         "status": null
       },
       {
         "name": "Tony Luck",
         "party": "Conservative Party",
-        "votes": 8011,
+        "votes": 8071,
         "status": null
       },
       {
         "name": "Patrick Michell",
         "party": "BC Green Party",
-        "votes": 1796,
+        "votes": 1805,
         "status": null
       }
     ]
   },
   {
     "riding": "Juan de Fuca-Malahat",
-    "reportingPct": 76.2,
+    "reportingPct": 79.8,
     "candidates": [
       {
         "name": "Jeff Brown",
@@ -594,25 +594,25 @@
       {
         "name": "David Evans",
         "party": "BC Green Party",
-        "votes": 3248,
+        "votes": 3299,
         "status": null
       },
       {
         "name": "Shane Friesen",
         "party": "OneBC",
-        "votes": 486,
+        "votes": 497,
         "status": null
       },
       {
         "name": "Mike Hicks",
         "party": "Conservative Party",
-        "votes": 7890,
+        "votes": 8009,
         "status": null
       },
       {
         "name": "Dana Lajeunesse",
         "party": "BC NDP",
-        "votes": 7404,
+        "votes": 7494,
         "status": null
       }
     ]
@@ -660,19 +660,19 @@
       {
         "name": "Kory Clark",
         "party": "BC NDP",
-        "votes": 7408,
+        "votes": 7502,
         "status": null
       },
       {
         "name": "Deborah Friesen",
         "party": "OneBC",
-        "votes": 1590,
+        "votes": 1621,
         "status": null
       },
       {
         "name": "Ward Stamer",
         "party": "Conservative Party",
-        "votes": 16549,
+        "votes": 16845,
         "status": null
       }
     ]
@@ -690,43 +690,43 @@
       {
         "name": "Kristina Loewen",
         "party": "Conservative Party",
-        "votes": 10783,
+        "votes": 10784,
         "status": null
       },
       {
         "name": "Loyal Wooldridge",
         "party": "BC NDP",
-        "votes": 10652,
+        "votes": 10653,
         "status": null
       }
     ]
   },
   {
     "riding": "Kelowna-Lake Country-Coldstream",
-    "reportingPct": 90.0,
+    "reportingPct": 96.7,
     "candidates": [
       {
         "name": "Binny Boparai",
         "party": "BC NDP",
-        "votes": 6709,
+        "votes": 7045,
         "status": null
       },
       {
         "name": "Carter Mochinski",
         "party": "BC Green Party",
-        "votes": 1754,
+        "votes": 1831,
         "status": null
       },
       {
         "name": "Pavneet Singh",
         "party": "Conservative Party",
-        "votes": 9836,
+        "votes": 10259,
         "status": null
       },
       {
         "name": "Alexandra Wright",
         "party": "OneBC",
-        "votes": 2339,
+        "votes": 2472,
         "status": null
       }
     ]
@@ -768,7 +768,7 @@
       {
         "name": "Brittny Anderson",
         "party": "BC NDP",
-        "votes": 7588,
+        "votes": 7590,
         "status": null
       },
       {
@@ -786,14 +786,14 @@
       {
         "name": "Gordon Skulnec",
         "party": "Conservative Party",
-        "votes": 7107,
+        "votes": 7108,
         "status": null
       }
     ]
   },
   {
     "riding": "Kootenay-Monashee",
-    "reportingPct": 84.8,
+    "reportingPct": 86.4,
     "candidates": [
       {
         "name": "Stephen Hill",
@@ -804,19 +804,19 @@
       {
         "name": "Connie Larochelle",
         "party": "BC Green Party",
-        "votes": 1000,
+        "votes": 1033,
         "status": null
       },
       {
         "name": "Warren Mirko",
         "party": "Conservative Party",
-        "votes": 3297,
+        "votes": 3342,
         "status": null
       },
       {
         "name": "Steve Morissette",
         "party": "BC NDP",
-        "votes": 3782,
+        "votes": 3907,
         "status": null
       }
     ]
@@ -828,31 +828,31 @@
       {
         "name": "Norma Blissett",
         "party": "BC NDP",
-        "votes": 4314,
+        "votes": 4403,
         "status": null
       },
       {
         "name": "Pete Davis",
         "party": "Conservative Party",
-        "votes": 8683,
+        "votes": 9124,
         "status": null
       },
       {
         "name": "Keenan Dennehy",
         "party": "BC Green Party",
-        "votes": 1152,
+        "votes": 1164,
         "status": null
       },
       {
         "name": "Paul Heywood",
         "party": "CentreBC",
-        "votes": 644,
+        "votes": 647,
         "status": null
       },
       {
         "name": "AJ Wolfe",
         "party": "OneBC",
-        "votes": 843,
+        "votes": 865,
         "status": null
       }
     ]
@@ -864,7 +864,7 @@
       {
         "name": "Stephanie Higginson",
         "party": "BC NDP",
-        "votes": 13323,
+        "votes": 13324,
         "status": null
       },
       {
@@ -876,19 +876,19 @@
       {
         "name": "Charlene Smylie",
         "party": "BC Green Party",
-        "votes": 3360,
+        "votes": 3361,
         "status": null
       }
     ]
   },
   {
     "riding": "Langford-Highlands",
-    "reportingPct": 92.3,
+    "reportingPct": 93.6,
     "candidates": [
       {
         "name": "Sean Flynn",
         "party": "CentreBC",
-        "votes": 421,
+        "votes": 422,
         "status": null
       },
       {
@@ -900,19 +900,19 @@
       {
         "name": "Christopher Moon",
         "party": "BC Green Party",
-        "votes": 2484,
+        "votes": 2501,
         "status": null
       },
       {
         "name": "Ravi Parmar",
         "party": "BC NDP",
-        "votes": 8532,
+        "votes": 8566,
         "status": null
       },
       {
         "name": "Cindy Scott",
         "party": "Conservative Party",
-        "votes": 7419,
+        "votes": 7461,
         "status": null
       },
       {
@@ -930,7 +930,7 @@
       {
         "name": "Harman Bhangu",
         "party": "Conservative Party",
-        "votes": 12883,
+        "votes": 12897,
         "status": null
       },
       {
@@ -948,13 +948,13 @@
       {
         "name": "Erin Osborne",
         "party": "BC NDP",
-        "votes": 5033,
+        "votes": 5034,
         "status": null
       },
       {
         "name": "Melissa Snazell",
         "party": "BC Green Party",
-        "votes": 1792,
+        "votes": 1799,
         "status": null
       }
     ]
@@ -984,7 +984,7 @@
       {
         "name": "Misty Van Popta",
         "party": "Conservative Party",
-        "votes": 7553,
+        "votes": 7554,
         "status": null
       }
     ]
@@ -1002,7 +1002,7 @@
       {
         "name": "Andrew Mercier",
         "party": "BC NDP",
-        "votes": 6736,
+        "votes": 6738,
         "status": null
       },
       {
@@ -1014,7 +1014,7 @@
       {
         "name": "Jody Toor",
         "party": "Conservative Party",
-        "votes": 9855,
+        "votes": 9856,
         "status": null
       }
     ]
@@ -1038,7 +1038,7 @@
       {
         "name": "Daniel Kite",
         "party": "BC Green Party",
-        "votes": 1704,
+        "votes": 1705,
         "status": null
       },
       {
@@ -1051,30 +1051,30 @@
   },
   {
     "riding": "Maple Ridge-Pitt Meadows",
-    "reportingPct": 85.6,
+    "reportingPct": 86.7,
     "candidates": [
       {
         "name": "Lisa Beare",
         "party": "BC NDP",
-        "votes": 8621,
+        "votes": 8750,
         "status": null
       },
       {
         "name": "Susan Einarsson",
         "party": "OneBC",
-        "votes": 673,
+        "votes": 682,
         "status": null
       },
       {
         "name": "Doug Morneau",
         "party": "Conservative Party",
-        "votes": 9464,
+        "votes": 9610,
         "status": null
       },
       {
         "name": "Jordan Simmons",
         "party": "CentreBC",
-        "votes": 705,
+        "votes": 715,
         "status": null
       }
     ]
@@ -1159,24 +1159,24 @@
   },
   {
     "riding": "Nechako Lakes",
-    "reportingPct": 63.2,
+    "reportingPct": 71.9,
     "candidates": [
       {
         "name": "Diane Black",
         "party": "Conservative Party",
-        "votes": 4119,
+        "votes": 4223,
         "status": null
       },
       {
         "name": "Jesse Gervais",
         "party": "BC NDP",
-        "votes": 1438,
+        "votes": 1504,
         "status": null
       },
       {
         "name": "Clint Lambert",
         "party": "Unaffiliated",
-        "votes": 747,
+        "votes": 764,
         "status": null
       }
     ]
@@ -1218,7 +1218,7 @@
       {
         "name": "Rodney Proskiw",
         "party": "Conservative Party",
-        "votes": 1897,
+        "votes": 1898,
         "status": null
       },
       {
@@ -1231,30 +1231,30 @@
   },
   {
     "riding": "North Island",
-    "reportingPct": 72.2,
+    "reportingPct": 75.0,
     "candidates": [
       {
         "name": "Anna Kindy",
         "party": "Conservative Party",
-        "votes": 9298,
+        "votes": 9524,
         "status": null
       },
       {
         "name": "Richard Lambert",
         "party": "Independent",
-        "votes": 270,
+        "votes": 272,
         "status": null
       },
       {
         "name": "Sara Lopez",
         "party": "BC NDP",
-        "votes": 8515,
+        "votes": 8722,
         "status": null
       },
       {
         "name": "Benjamin Olsson",
         "party": "BC Green Party",
-        "votes": 1606,
+        "votes": 1641,
         "status": null
       }
     ]
@@ -1266,19 +1266,19 @@
       {
         "name": "Joshua A Singer Johnson",
         "party": "BC Green Party",
-        "votes": 2499,
+        "votes": 2501,
         "status": null
       },
       {
         "name": "Bowinn Ma",
         "party": "BC NDP",
-        "votes": 10304,
+        "votes": 10305,
         "status": null
       },
       {
         "name": "Trevor Withers",
         "party": "Conservative Party",
-        "votes": 9105,
+        "votes": 9106,
         "status": null
       }
     ]
@@ -1290,13 +1290,13 @@
       {
         "name": "Lynne Block",
         "party": "Conservative Party",
-        "votes": 12272,
+        "votes": 12275,
         "status": null
       },
       {
         "name": "Susie Chant",
         "party": "BC NDP",
-        "votes": 9814,
+        "votes": 9816,
         "status": null
       },
       {
@@ -1320,7 +1320,7 @@
       {
         "name": "Andrew Appleton",
         "party": "BC Green Party",
-        "votes": 5360,
+        "votes": 5361,
         "status": null
       },
       {
@@ -1332,7 +1332,7 @@
       {
         "name": "Stan Sipos",
         "party": "Conservative Party",
-        "votes": 7495,
+        "votes": 7496,
         "status": null
       },
       {
@@ -1345,18 +1345,18 @@
   },
   {
     "riding": "Peace River North",
-    "reportingPct": 93.9,
+    "reportingPct": 95.5,
     "candidates": [
       {
         "name": "Jordan Kealy",
         "party": "Independent",
-        "votes": 1460,
+        "votes": 1463,
         "status": null
       },
       {
         "name": "Curtis Whitford",
         "party": "Conservative Party",
-        "votes": 8759,
+        "votes": 8812,
         "status": null
       }
     ]
@@ -1392,7 +1392,7 @@
       {
         "name": "Bradley Sean Bartsch",
         "party": "BC Green Party",
-        "votes": 1974,
+        "votes": 1975,
         "status": null
       },
       {
@@ -1404,7 +1404,7 @@
       {
         "name": "Tina Lee",
         "party": "BC NDP",
-        "votes": 10286,
+        "votes": 10289,
         "status": null
       },
       {
@@ -1422,7 +1422,7 @@
       {
         "name": "Keenan Adams",
         "party": "Conservative Party",
-        "votes": 9364,
+        "votes": 9369,
         "status": null
       },
       {
@@ -1440,7 +1440,7 @@
       {
         "name": "Mike Farnworth",
         "party": "BC NDP",
-        "votes": 9742,
+        "votes": 9748,
         "status": null
       },
       {
@@ -1458,7 +1458,7 @@
       {
         "name": "Wei Chou",
         "party": "BC Green Party",
-        "votes": 1867,
+        "votes": 1871,
         "status": null
       },
       {
@@ -1483,24 +1483,24 @@
   },
   {
     "riding": "Powell River-Sunshine Coast",
-    "reportingPct": 98.8,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "John Henderson",
         "party": "Conservative Party",
-        "votes": 9570,
+        "votes": 10118,
         "status": null
       },
       {
         "name": "Griffin Leonard Lea",
         "party": "BC Green Party",
-        "votes": 2844,
+        "votes": 3090,
         "status": null
       },
       {
         "name": "Randene Neill",
         "party": "BC NDP",
-        "votes": 11795,
+        "votes": 12732,
         "status": null
       }
     ]
@@ -1512,7 +1512,7 @@
       {
         "name": "Kiel Giddens",
         "party": "Conservative Party",
-        "votes": 9829,
+        "votes": 9832,
         "status": null
       },
       {
@@ -1542,7 +1542,7 @@
       {
         "name": "Sheldon Clare",
         "party": "Conservative Party",
-        "votes": 10564,
+        "votes": 10566,
         "status": null
       },
       {
@@ -1560,13 +1560,13 @@
       {
         "name": "Rosalyn Bird",
         "party": "Conservative Party",
-        "votes": 4536,
+        "votes": 4538,
         "status": null
       },
       {
         "name": "Carol Bourque",
         "party": "BC NDP",
-        "votes": 2401,
+        "votes": 2402,
         "status": null
       },
       {
@@ -1590,13 +1590,13 @@
       {
         "name": "Linda Li",
         "party": "BC NDP",
-        "votes": 4336,
+        "votes": 4341,
         "status": null
       },
       {
         "name": "Teresa Wat",
         "party": "Conservative Party",
-        "votes": 9309,
+        "votes": 9317,
         "status": null
       }
     ]
@@ -1620,13 +1620,13 @@
       {
         "name": "Sacha Peter",
         "party": "Conservative Party",
-        "votes": 4157,
+        "votes": 4160,
         "status": null
       },
       {
         "name": "Henry Yao",
         "party": "BC NDP",
-        "votes": 2455,
+        "votes": 2457,
         "status": null
       }
     ]
@@ -1644,13 +1644,13 @@
       {
         "name": "Dhar Grewal",
         "party": "BC NDP",
-        "votes": 3703,
+        "votes": 3706,
         "status": null
       },
       {
         "name": "Steve Kooner",
         "party": "Conservative Party",
-        "votes": 6665,
+        "votes": 6671,
         "status": null
       }
     ]
@@ -1668,7 +1668,7 @@
       {
         "name": "Bruce Kong",
         "party": "BC NDP",
-        "votes": 6973,
+        "votes": 6976,
         "status": null
       },
       {
@@ -1686,37 +1686,37 @@
       {
         "name": "Gordon Zhang",
         "party": "Conservative Party",
-        "votes": 10791,
+        "votes": 10793,
         "status": null
       }
     ]
   },
   {
     "riding": "Saanich North and the Islands",
-    "reportingPct": 84.8,
+    "reportingPct": 90.5,
     "candidates": [
       {
         "name": "Kala Bryson",
         "party": "BC NDP",
-        "votes": 4566,
+        "votes": 4727,
         "status": null
       },
       {
         "name": "Emily Lowan",
         "party": "BC Green Party",
-        "votes": 12707,
+        "votes": 13178,
         "status": null
       },
       {
         "name": "Richard Smith",
         "party": "CentreBC",
-        "votes": 611,
+        "votes": 637,
         "status": null
       },
       {
         "name": "Ryan Windsor",
         "party": "Conservative Party",
-        "votes": 8469,
+        "votes": 8713,
         "status": null
       }
     ]
@@ -1734,13 +1734,13 @@
       {
         "name": "Cathie Ounsted",
         "party": "Conservative Party",
-        "votes": 10438,
+        "votes": 10442,
         "status": null
       },
       {
         "name": "Richard Zussman",
         "party": "BC NDP",
-        "votes": 9256,
+        "votes": 9257,
         "status": null
       }
     ]
@@ -1776,7 +1776,7 @@
       {
         "name": "David L Williams",
         "party": "Conservative Party",
-        "votes": 13984,
+        "votes": 13989,
         "status": null
       }
     ]
@@ -1813,66 +1813,66 @@
   },
   {
     "riding": "Surrey City Centre",
-    "reportingPct": 87.5,
+    "reportingPct": 97.2,
     "candidates": [
       {
         "name": "Amna Shah",
         "party": "BC NDP",
-        "votes": 4668,
+        "votes": 4895,
         "status": null
       },
       {
         "name": "Raman Sharma",
         "party": "CentreBC",
-        "votes": 384,
+        "votes": 400,
         "status": null
       },
       {
         "name": "Zeeshan Wahla",
         "party": "Conservative Party",
-        "votes": 4981,
+        "votes": 5290,
         "status": null
       },
       {
         "name": "Oliver Wildfong",
         "party": "OneBC",
-        "votes": 544,
+        "votes": 549,
         "status": null
       }
     ]
   },
   {
     "riding": "Surrey-Cloverdale",
-    "reportingPct": 74.7,
+    "reportingPct": 76.0,
     "candidates": [
       {
         "name": "Nicholas Cartmell",
         "party": "Conservative Party",
-        "votes": 6490,
+        "votes": 6561,
         "status": null
       },
       {
         "name": "Sargy Chima",
         "party": "CentreBC",
-        "votes": 421,
+        "votes": 428,
         "status": null
       },
       {
         "name": "Stephen Dooley",
         "party": "BC NDP",
-        "votes": 4235,
+        "votes": 4265,
         "status": null
       },
       {
         "name": "Travis Marchenski",
         "party": "OneBC",
-        "votes": 423,
+        "votes": 425,
         "status": null
       },
       {
         "name": "Pat McCutcheon",
         "party": "BC Green Party",
-        "votes": 991,
+        "votes": 1000,
         "status": null
       }
     ]
@@ -1884,13 +1884,13 @@
       {
         "name": "Tim Binnema",
         "party": "BC Green Party",
-        "votes": 1027,
+        "votes": 1028,
         "status": null
       },
       {
         "name": "Jagrup Brar",
         "party": "BC NDP",
-        "votes": 6476,
+        "votes": 6481,
         "status": null
       },
       {
@@ -1902,13 +1902,13 @@
       {
         "name": "Carolyn Hofbauer",
         "party": "OneBC",
-        "votes": 498,
+        "votes": 499,
         "status": null
       },
       {
         "name": "Garry Purewal",
         "party": "Conservative Party",
-        "votes": 8628,
+        "votes": 8638,
         "status": null
       }
     ]
@@ -1920,7 +1920,7 @@
       {
         "name": "Garry Begg",
         "party": "BC NDP",
-        "votes": 6237,
+        "votes": 6240,
         "status": null
       },
       {
@@ -1932,7 +1932,7 @@
       {
         "name": "Garry Thind",
         "party": "Conservative Party",
-        "votes": 7700,
+        "votes": 7701,
         "status": null
       },
       {
@@ -1950,7 +1950,7 @@
       {
         "name": "Harj Dhaliwal",
         "party": "Conservative Party",
-        "votes": 7106,
+        "votes": 7116,
         "status": null
       },
       {
@@ -1962,7 +1962,7 @@
       {
         "name": "Jessie Sunner",
         "party": "BC NDP",
-        "votes": 5342,
+        "votes": 5347,
         "status": null
       }
     ]
@@ -1980,19 +1980,19 @@
       {
         "name": "Parm Bhandol",
         "party": "CentreBC",
-        "votes": 311,
+        "votes": 313,
         "status": null
       },
       {
         "name": "Mandeep Singh Dhaliwal",
         "party": "Conservative Party",
-        "votes": 7269,
+        "votes": 7274,
         "status": null
       },
       {
         "name": "Yudhbir Gill",
         "party": "BC Green Party",
-        "votes": 560,
+        "votes": 561,
         "status": null
       },
       {
@@ -2004,7 +2004,7 @@
       {
         "name": "Sahib Thind",
         "party": "BC NDP",
-        "votes": 4143,
+        "votes": 4148,
         "status": null
       }
     ]
@@ -2077,78 +2077,78 @@
   },
   {
     "riding": "Surrey South",
-    "reportingPct": 74.4,
+    "reportingPct": 80.5,
     "candidates": [
       {
         "name": "Denis R Hurtubise",
         "party": "Unaffiliated",
-        "votes": 216,
+        "votes": 230,
         "status": null
       },
       {
         "name": "Megan Knight",
         "party": "Conservative Party",
-        "votes": 10644,
+        "votes": 11179,
         "status": null
       },
       {
         "name": "Bill McConnell",
         "party": "BC Green Party",
-        "votes": 817,
+        "votes": 869,
         "status": null
       },
       {
         "name": "Elenore Sturko",
         "party": "CentreBC",
-        "votes": 1780,
+        "votes": 1883,
         "status": null
       },
       {
         "name": "Parik Tahlan",
         "party": "BC NDP",
-        "votes": 3720,
+        "votes": 3907,
         "status": null
       }
     ]
   },
   {
     "riding": "Surrey-White Rock",
-    "reportingPct": 92.0,
+    "reportingPct": 94.3,
     "candidates": [
       {
         "name": "Kevin Diakiw",
         "party": "Independent",
-        "votes": 176,
+        "votes": 177,
         "status": null
       },
       {
         "name": "Trevor Halford",
         "party": "Conservative Party",
-        "votes": 13799,
+        "votes": 13976,
         "status": null
       },
       {
         "name": "Amanda James",
         "party": "OneBC",
-        "votes": 555,
+        "votes": 564,
         "status": null
       },
       {
         "name": "Christine Kinnie",
         "party": "BC Green Party",
-        "votes": 1815,
+        "votes": 1839,
         "status": null
       },
       {
         "name": "Waqas Rana",
         "party": "CentreBC",
-        "votes": 501,
+        "votes": 508,
         "status": null
       },
       {
         "name": "Darryl Walker",
         "party": "BC NDP",
-        "votes": 6876,
+        "votes": 6952,
         "status": null
       }
     ]
@@ -2166,13 +2166,13 @@
       {
         "name": "Deep Sandhu",
         "party": "Conservative Party",
-        "votes": 7121,
+        "votes": 7124,
         "status": null
       },
       {
         "name": "Aman Singh",
         "party": "BC NDP",
-        "votes": 6753,
+        "votes": 6756,
         "status": null
       }
     ]
@@ -2196,19 +2196,19 @@
       {
         "name": "Kyra Philbert",
         "party": "BC Green Party",
-        "votes": 3333,
+        "votes": 3335,
         "status": null
       },
       {
         "name": "Niki Sharma",
         "party": "BC NDP",
-        "votes": 9176,
+        "votes": 9180,
         "status": null
       },
       {
         "name": "Phyllis Tang",
         "party": "Conservative Party",
-        "votes": 4621,
+        "votes": 4626,
         "status": null
       },
       {
@@ -2226,7 +2226,7 @@
       {
         "name": "Mable Elmore",
         "party": "BC NDP",
-        "votes": 7225,
+        "votes": 7226,
         "status": null
       },
       {
@@ -2238,37 +2238,37 @@
       {
         "name": "Aron Lageri",
         "party": "Conservative Party",
-        "votes": 5562,
+        "votes": 5563,
         "status": null
       }
     ]
   },
   {
     "riding": "Vancouver-Langara",
-    "reportingPct": 86.6,
+    "reportingPct": 91.0,
     "candidates": [
       {
         "name": "John Atoyebi",
         "party": "BC Green Party",
-        "votes": 1010,
+        "votes": 1036,
         "status": null
       },
       {
         "name": "Alan Beesley",
         "party": "CentreBC",
-        "votes": 325,
+        "votes": 332,
         "status": null
       },
       {
         "name": "Sunita Dhir",
         "party": "BC NDP",
-        "votes": 4847,
+        "votes": 5017,
         "status": null
       },
       {
         "name": "Jaime Stein",
         "party": "Conservative Party",
-        "votes": 6407,
+        "votes": 6538,
         "status": null
       }
     ]
@@ -2286,7 +2286,7 @@
       {
         "name": "Sarah MacLeod",
         "party": "BC Green Party",
-        "votes": 3407,
+        "votes": 3408,
         "status": null
       },
       {
@@ -2358,7 +2358,7 @@
       {
         "name": "Callista Ryan",
         "party": "BC NDP",
-        "votes": 5254,
+        "votes": 5255,
         "status": null
       }
     ]
@@ -2395,36 +2395,36 @@
   },
   {
     "riding": "Vancouver-South Granville",
-    "reportingPct": 66.7,
+    "reportingPct": 75.3,
     "candidates": [
       {
         "name": "Maria J Cruz",
         "party": "BC Green Party",
-        "votes": 3502,
+        "votes": 3713,
         "status": null
       },
       {
         "name": "Lara Honrado",
         "party": "BC NDP",
-        "votes": 8766,
+        "votes": 9296,
         "status": null
       },
       {
         "name": "Lisa Phillips",
         "party": "Conservative Party",
-        "votes": 5632,
+        "votes": 5909,
         "status": null
       },
       {
         "name": "Colin Smith",
         "party": "CentreBC",
-        "votes": 640,
+        "votes": 677,
         "status": null
       },
       {
         "name": "Salvatore Vetro",
         "party": "OneBC",
-        "votes": 142,
+        "votes": 157,
         "status": null
       }
     ]
@@ -2520,7 +2520,7 @@
       {
         "name": "Kevin Acton",
         "party": "Conservative Party",
-        "votes": 12409,
+        "votes": 12414,
         "status": null
       },
       {
@@ -2532,7 +2532,7 @@
       {
         "name": "Harwinder Sandhu",
         "party": "BC NDP",
-        "votes": 9177,
+        "votes": 9178,
         "status": null
       },
       {
@@ -2550,7 +2550,7 @@
       {
         "name": "Joachim Agou",
         "party": "Conservative Party",
-        "votes": 3188,
+        "votes": 3189,
         "status": null
       },
       {
@@ -2598,19 +2598,19 @@
       {
         "name": "Adam Frank",
         "party": "BC Green Party",
-        "votes": 1844,
+        "votes": 1847,
         "status": null
       },
       {
         "name": "Macklin McCall",
         "party": "Conservative Party",
-        "votes": 14431,
+        "votes": 14459,
         "status": null
       },
       {
         "name": "George Morgan",
         "party": "BC NDP",
-        "votes": 6871,
+        "votes": 6882,
         "status": null
       }
     ]
@@ -2622,7 +2622,7 @@
       {
         "name": "Honieh Barzegari",
         "party": "BC NDP",
-        "votes": 4151,
+        "votes": 4152,
         "status": null
       },
       {
@@ -2634,7 +2634,7 @@
       {
         "name": "Caroline Elliott",
         "party": "Conservative Party",
-        "votes": 13807,
+        "votes": 13809,
         "status": null
       },
       {
@@ -2652,7 +2652,7 @@
       {
         "name": "Ayla Dumais",
         "party": "Conservative Party",
-        "votes": 8468,
+        "votes": 8469,
         "status": null
       },
       {
