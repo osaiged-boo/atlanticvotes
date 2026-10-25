@@ -216,7 +216,7 @@
       {
         "name": "Simon Chandler",
         "party": "Conservative Party",
-        "votes": 8243,
+        "votes": 8244,
         "status": null
       },
       {
@@ -1747,36 +1747,36 @@
   },
   {
     "riding": "Salmon Arm-Shuswap",
-    "reportingPct": 88.9,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "Gloria Morgan",
         "party": "BC NDP",
-        "votes": 7522,
+        "votes": 7906,
         "status": null
       },
       {
         "name": "Barbara Presch",
         "party": "OneBC",
-        "votes": 1374,
+        "votes": 1437,
         "status": null
       },
       {
         "name": "Denise Reimer",
         "party": "CentreBC",
-        "votes": 944,
+        "votes": 1032,
         "status": null
       },
       {
         "name": "Jed Wiebe",
         "party": "BC Green Party",
-        "votes": 2175,
+        "votes": 2312,
         "status": null
       },
       {
         "name": "David L Williams",
         "party": "Conservative Party",
-        "votes": 14606,
+        "votes": 15421,
         "status": null
       }
     ]
