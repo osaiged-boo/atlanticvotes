@@ -216,19 +216,19 @@
       {
         "name": "Simon Chandler",
         "party": "Conservative Party",
-        "votes": 8244,
+        "votes": 8257,
         "status": null
       },
       {
         "name": "Maddy Kennedy-Parrott",
         "party": "BC Green Party",
-        "votes": 1617,
+        "votes": 1618,
         "status": null
       },
       {
         "name": "Janet Routledge",
         "party": "BC NDP",
-        "votes": 7474,
+        "votes": 7478,
         "status": null
       },
       {
@@ -714,13 +714,13 @@
       {
         "name": "Carter Mochinski",
         "party": "BC Green Party",
-        "votes": 1894,
+        "votes": 1823,
         "status": null
       },
       {
         "name": "Pavneet Singh",
         "party": "Conservative Party",
-        "votes": 10566,
+        "votes": 10637,
         "status": null
       },
       {
@@ -1002,7 +1002,7 @@
       {
         "name": "Andrew Mercier",
         "party": "BC NDP",
-        "votes": 6833,
+        "votes": 6834,
         "status": null
       },
       {
@@ -1014,7 +1014,7 @@
       {
         "name": "Jody Toor",
         "party": "Conservative Party",
-        "votes": 9976,
+        "votes": 9978,
         "status": null
       }
     ]
