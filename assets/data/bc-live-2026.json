@@ -864,13 +864,13 @@
       {
         "name": "Stephanie Higginson",
         "party": "BC NDP",
-        "votes": 13329,
+        "votes": 13380,
         "status": null
       },
       {
         "name": "Kris McNichol",
         "party": "Conservative Party",
-        "votes": 13418,
+        "votes": 13367,
         "status": null
       },
       {
@@ -1531,7 +1531,7 @@
   },
   {
     "riding": "Prince George-North Cariboo",
-    "reportingPct": 98.6,
+    "reportingPct": 100.0,
     "candidates": [
       {
         "name": "Denice Bardua",
