@@ -1,0 +1,59 @@
+{
+  "asOf": "2026-10-28T13:49:00Z",
+  "races": [
+    {
+      "id": "gov-az",
+      "status": "unofficial",
+      "reportingPct": null,
+      "reportingLabel": null,
+      "source": "Arizona Department of State (Arizona Secretary of State)",
+      "sourceUrl": "https://app.enhancedvoting.com/cdn/results/Arizona/export-110326GeneralElection.json",
+      "candidates": []
+    },
+    {
+      "id": "gov-ks",
+      "status": "unofficial",
+      "reportingPct": 0.0,
+      "reportingLabel": "0 of 4168 precincts reporting",
+      "source": "Kansas Secretary of State",
+      "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
+      "candidates": []
+    },
+    {
+      "id": "house-ky06",
+      "status": "unofficial",
+      "reportingPct": null,
+      "reportingLabel": null,
+      "source": "Kentucky State Board of Elections",
+      "sourceUrl": "https://vrsws.sos.ky.gov/liveresults/Statewide",
+      "candidates": []
+    },
+    {
+      "id": "house-ny17",
+      "status": "unofficial",
+      "reportingPct": null,
+      "reportingLabel": null,
+      "source": "New York State Board of Elections",
+      "sourceUrl": "https://nyenr.elections.ny.gov/home.aspx",
+      "candidates": []
+    },
+    {
+      "id": "house-pa08",
+      "status": "unofficial",
+      "reportingPct": null,
+      "reportingLabel": null,
+      "source": "Pennsylvania Department of State",
+      "sourceUrl": "https://www.electionreturns.pa.gov/",
+      "candidates": []
+    },
+    {
+      "id": "sen-ks",
+      "status": "unofficial",
+      "reportingPct": 0.0,
+      "reportingLabel": "0 of 4168 precincts reporting",
+      "source": "Kansas Secretary of State",
+      "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
+      "candidates": []
+    }
+  ]
+}

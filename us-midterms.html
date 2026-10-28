@@ -270,7 +270,7 @@ footer p{margin:0 0 8px}
     <ul>
       <li><b>Ratings:</b> Cook Political Report: House October 23, 2026; Senate October 20, 2026; governors October 13 and 23, 2026. Ratings are projections.</li>
       <li><b>Poll-close times:</b> The Green Papers' poll-closing times, all in Eastern Time. Daylight Saving Time ends November 1, 2026, so all states are on standard time.</li>
-      <li><b>Election-night figures (from November 3):</b> state election authorities only &mdash; each race card links to its state's official source once feeds are wired. No Associated Press, Decision Desk HQ, or aggregator data republished.</li>
+      <li><b>Election-night figures (from November 3):</b> state election authorities only &mdash; live vote counts are wired for Arizona, Kansas, Kentucky, New York, and Pennsylvania; other races show candidates and the Cook rating with no numbers until their state feeds verify. No Associated Press, Decision Desk HQ, or aggregator data republished.</li>
       <li><b>Certified results (after November 3):</b> state canvass and certification publications.</li>
       <li><b>Photos in Top races and on race cards:</b> official portraits, public domain (U.S. federal government): Sullivan, Peltola, Hinson, Marshall, Collins, Rogers, Husted, Brown, Tiffany, Bottoms. CC BY-SA 4.0: Talarico (Antonioaesparza), El-Sayed (Conlan Houston). CC BY-SA 3.0: Paxton (Gage Skidmore). CC (Gage Skidmore, attribution required): Lombardo. CC0: Troy Jackson. Copyrighted free use (Iowa General Assembly): Turek. Initials where no verified portrait was found (Hamilton, Crowley, Rick Jackson, Aaron Ford, and every other candidate without one).</li>
     </ul>
@@ -318,15 +318,15 @@ var RACES = [
   {id:"sen-ne", chamber:"Senate", title:"Nebraska \u2014 U.S. Senate", close:"9 p.m. ET", cook:"Likely R", cands:[{n:"Pete Ricketts", p:"R", inc:1}, {n:"Dan Osborn", p:"I"}]},
   {id:"sen-sc", chamber:"Senate", title:"South Carolina \u2014 U.S. Senate", close:"7 p.m. ET", cook:"Lean R", cands:[{n:"Darline Graham", p:"R", inc:1}, {n:"Annie Andrews", p:"D"}]},
   /* House — Cook toss-ups, October 23, 2026 */
-  {id:"house-ca22", chamber:"House", title:"California 22", close:"11 p.m. ET", cook:"Toss-up", cands:[{n:"David Valadao", p:"R", inc:1}, TBD], note:"Mail ballots postmarked by Nov 3 accepted up to 7 days after Election Day; may take days."},
-  {id:"house-fl14", chamber:"House", title:"Florida 14", close:"7 p.m. ET", cook:"Toss-up", cands:[{n:"Kathy Castor", p:"D", inc:1}, TBD]},
-  {id:"house-fl22", chamber:"House", title:"Florida 22 (open, new lines)", close:"7 p.m. ET", cook:"Toss-up", cands:[TBD], note:"Open seat (new lines)."},
+  {id:"house-ca22", chamber:"House", title:"California 22", close:"11 p.m. ET", cook:"Toss-up", cands:[{n:"David Valadao", p:"R", inc:1}, {n:"Randy Villegas", p:"D"}], note:"Mail ballots postmarked by Nov 3 accepted up to 7 days after Election Day; may take days."},
+  {id:"house-fl14", chamber:"House", title:"Florida 14", close:"7 p.m. ET", cook:"Toss-up", cands:[{n:"Kathy Castor", p:"D", inc:1}, {n:"Mike Beltran", p:"R"}]},
+  {id:"house-fl22", chamber:"House", title:"Florida 22 (open, new lines)", close:"7 p.m. ET", cook:"Toss-up", cands:[{n:"Pia Dandiya", p:"D"}, {n:"Casey Askar", p:"R"}], note:"Open seat (new lines)."},
   {id:"house-ia02", chamber:"House", title:"Iowa 2 (open)", close:"9 p.m. ET", cook:"Toss-up", cands:[{n:"Joe Mitchell", p:"R"}, {n:"Lindsay James", p:"D"}], note:"Open seat (R-held)."},
   {id:"house-ky06", chamber:"House", title:"Kentucky 6 (open)", close:"6 p.m. ET", cook:"Toss-up", cands:[{n:"Ralph Alvarado", p:"R"}, {n:"Zach Dembo", p:"D"}], note:"Open seat."},
   {id:"house-mi04", chamber:"House", title:"Michigan 4", close:"8 p.m. ET", cook:"Toss-up", cands:[{n:"Bill Huizenga", p:"R", inc:1}, {n:"Sean McCann", p:"D"}]},
   {id:"house-mi07", chamber:"House", title:"Michigan 7", close:"8 p.m. ET", cook:"Toss-up", cands:[{n:"Tom Barrett", p:"R", inc:1}, {n:"William Lawrence", p:"D"}]},
   {id:"house-mi10", chamber:"House", title:"Michigan 10 (open)", close:"8 p.m. ET", cook:"Toss-up", cands:[{n:"Michael Bouchard", p:"R"}, {n:"Christina Hines", p:"D"}], note:"Open seat (R-held)."},
-  {id:"house-mt01", chamber:"House", title:"Montana 1 (open)", close:"10 p.m. ET", cook:"Toss-up", cands:[TBD], note:"Open seat (R-held)."},
+  {id:"house-mt01", chamber:"House", title:"Montana 1 (open)", close:"10 p.m. ET", cook:"Toss-up", cands:[{n:"Sam Forstag", p:"D"}, {n:"Aaron Flint", p:"R"}], note:"Open seat (R-held)."},
   {id:"house-ny17", chamber:"House", title:"New York 17", close:"9 p.m. ET", cook:"Toss-up", cands:[{n:"Mike Lawler", p:"R", inc:1}, {n:"Cait Conley", p:"D"}]},
   {id:"house-nc01", chamber:"House", title:"North Carolina 1", close:"7:30 p.m. ET", cook:"Toss-up", cands:[{n:"Don Davis", p:"D", inc:1}, {n:"Laurie Buckhout", p:"R"}]},
   {id:"house-oh07", chamber:"House", title:"Ohio 7", close:"7:30 p.m. ET", cook:"Toss-up", cands:[{n:"Max Miller", p:"R", inc:1}, {n:"Brian Poindexter", p:"D"}]},
