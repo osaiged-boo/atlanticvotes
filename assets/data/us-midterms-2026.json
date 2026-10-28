@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-28T19:07:38Z",
+  "asOf": "2026-10-28T19:12:42Z",
   "races": [
     {
       "id": "gov-az",
@@ -13,8 +13,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 81.93378119001919,
-      "reportingLabel": "3415 of 4168 precincts reporting",
+      "reportingPct": 86.92418426103647,
+      "reportingLabel": "3623 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -49,8 +49,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 81.93378119001919,
-      "reportingLabel": "3415 of 4168 precincts reporting",
+      "reportingPct": 86.92418426103647,
+      "reportingLabel": "3623 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
