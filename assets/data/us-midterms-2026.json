@@ -1,15 +1,6 @@
 {
-  "asOf": "2026-10-30T18:17:53Z",
+  "asOf": "2026-11-01T03:39:39Z",
   "races": [
-    {
-      "id": "gov-az",
-      "status": "unofficial",
-      "reportingPct": null,
-      "reportingLabel": null,
-      "source": "Arizona Department of State (Arizona Secretary of State)",
-      "sourceUrl": "https://app.enhancedvoting.com/cdn/results/Arizona/export-110326GeneralElection.json",
-      "candidates": []
-    },
     {
       "id": "gov-ks",
       "status": "unofficial",
