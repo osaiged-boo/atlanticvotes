@@ -1,0 +1,671 @@
+[
+ {
+  "municipality": "Charlottetown",
+  "race": "Mayor",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Philip Brown",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Daniel Cousins",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Anthony Fitzpatrick",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Daniel Mullen",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Mitchell G. Tweel",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Cecil Villard",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Amir Zuccolo",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 1",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Sasha Andric",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Andrea Battison",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Kim Devine",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Matt Pelletier",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 2",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Justin Muttart",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 3",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Norman Beck",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 4",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Ted Kitson",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Ryan Mann",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Andee Morgan",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Kenneth Murnaghan",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Rima Rashed",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 5",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Kevin Ramsay",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Tazul Riad",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 6",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Doug Currie",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Sue Fraser",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 7",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "John McAleer",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 8",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Corey Driscoll",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Trevor V. MacKinnon",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 9",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Dr. Kapil Dev Chauhan",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Julie McCabe",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Jay Patel",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Jaime Tinoco",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Charlottetown",
+  "race": "Ward 10",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Terry Bernard",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Ryan Cooke",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Summerside",
+  "race": "Mayor",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Cory Snow",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Basil Stewart",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Summerside",
+  "race": "Ward 1",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Bruce MacDougall",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Summerside",
+  "race": "Ward 2",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Justin Doiron",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Summerside",
+  "race": "Ward 3",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Nicholas Cameron",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Summerside",
+  "race": "Ward 4",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Pete Peters",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Summerside",
+  "race": "Ward 5",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Tim Hockin",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Ken Trenholm",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Summerside",
+  "race": "Ward 6",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Mark Greenan",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Norma McColeman",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Summerside",
+  "race": "Ward 7",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Bill Martin",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Summerside",
+  "race": "Ward 8",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Carrie Adams",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Cornwall",
+  "race": "Mayor",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Minerva McCourt",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Cornwall",
+  "race": "Open Ward",
+  "seats": 6,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Chantal Batchilder",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Rita Campbell",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Steven Campbell",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Chase Currie",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Corey Frizzell",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Dean Martin",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Cory Stevenson",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Stratford",
+  "race": "Mayor",
+  "seats": 1,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Steve Ogden",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Stratford",
+  "race": "Ward 1",
+  "seats": 2,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Dylan Cooper",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Gordie Cox",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Derek Kronemeyer",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Gail MacDonald",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Stratford",
+  "race": "Ward 2",
+  "seats": 2,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Jeff McEntee",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Patrick Ross",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Stratford",
+  "race": "Ward 3",
+  "seats": 2,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Ron Dowling",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Steve Gallant",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Wilfred MacDonald",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Kevin MacIsaac",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Three Rivers",
+  "race": "Mayor",
+  "seats": 1,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Anne Forrester-Van Donkersgoed",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Janice MacBeth",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Carla Morgan",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Robert Rafuse",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Three Rivers",
+  "race": "Ward 1",
+  "seats": 2,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Charlie Hicken",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Mike Monaghan",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Derek Nicholson",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Three Rivers",
+  "race": "Ward 2",
+  "seats": 2,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Rick Beck",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Brenda MacDougall",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Wayne Spin",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Lori Trainor",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Three Rivers",
+  "race": "Ward 3",
+  "seats": 2,
+  "acclaimed": false,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Kevin Jenkins",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "David McGrath",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Mary Van Den Broek Grant",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ },
+ {
+  "municipality": "Three Rivers",
+  "race": "Ward 4",
+  "seats": 2,
+  "acclaimed": true,
+  "reportingPct": null,
+  "candidates": [
+   {
+    "name": "Gary Hales",
+    "votes": 0,
+    "status": null
+   },
+   {
+    "name": "Cindy MacLean",
+    "votes": 0,
+    "status": null
+   }
+  ]
+ }
+]
