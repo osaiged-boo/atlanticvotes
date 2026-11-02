@@ -191,16 +191,16 @@
   "race": "Ward 8",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": null,
+  "reportingPct": 12.5,
   "candidates": [
    {
     "name": "Corey Driscoll",
-    "votes": 0,
+    "votes": 561,
     "status": null
    },
    {
     "name": "Trevor V. MacKinnon",
-    "votes": 0,
+    "votes": 372,
     "status": null
    }
   ]
@@ -258,16 +258,16 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 45.0,
+  "reportingPct": 50.0,
   "candidates": [
    {
     "name": "Cory Snow",
-    "votes": 2692,
+    "votes": 2893,
     "status": null
    },
    {
     "name": "Basil Stewart",
-    "votes": 930,
+    "votes": 1004,
     "status": null
    }
   ]
