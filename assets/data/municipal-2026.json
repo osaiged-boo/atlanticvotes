@@ -258,16 +258,16 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 25.0,
+  "reportingPct": 45.0,
   "candidates": [
    {
     "name": "Cory Snow",
-    "votes": 2238,
+    "votes": 2692,
     "status": null
    },
    {
     "name": "Basil Stewart",
-    "votes": 788,
+    "votes": 930,
     "status": null
    }
   ]
@@ -601,26 +601,26 @@
   "race": "Ward 2",
   "seats": 2,
   "acclaimed": false,
-  "reportingPct": null,
+  "reportingPct": 25.0,
   "candidates": [
    {
     "name": "Rick Beck",
-    "votes": 0,
+    "votes": 162,
     "status": null
    },
    {
     "name": "Brenda MacDougall",
-    "votes": 0,
+    "votes": 231,
     "status": null
    },
    {
     "name": "Wayne Spin",
-    "votes": 0,
+    "votes": 227,
     "status": null
    },
    {
     "name": "Lori Trainor",
-    "votes": 0,
+    "votes": 153,
     "status": null
    }
   ]
