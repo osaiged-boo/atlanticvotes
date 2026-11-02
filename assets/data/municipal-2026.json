@@ -4,16 +4,16 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 17.7,
+  "reportingPct": 20.3,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 1789,
+    "votes": 1811,
     "status": null
    },
    {
     "name": "Daniel Cousins",
-    "votes": 47,
+    "votes": 50,
     "status": null
    },
    {
@@ -23,22 +23,22 @@
    },
    {
     "name": "Daniel Mullen",
-    "votes": 137,
+    "votes": 144,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 990,
+    "votes": 1005,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 682,
+    "votes": 702,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 2192,
+    "votes": 2235,
     "status": null
    }
   ]
@@ -139,7 +139,7 @@
   "race": "Ward 5",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 25.0,
+  "reportingPct": 37.5,
   "candidates": [
    {
     "name": "Kevin Ramsay",
@@ -258,16 +258,16 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 75.0,
+  "reportingPct": 80.0,
   "candidates": [
    {
     "name": "Cory Snow",
-    "votes": 3546,
+    "votes": 3669,
     "status": null
    },
    {
     "name": "Basil Stewart",
-    "votes": 1245,
+    "votes": 1312,
     "status": null
    }
   ]
