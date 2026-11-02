@@ -258,16 +258,16 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 22.5,
+  "reportingPct": 25.0,
   "candidates": [
    {
     "name": "Cory Snow",
-    "votes": 2195,
+    "votes": 2238,
     "status": null
    },
    {
     "name": "Basil Stewart",
-    "votes": 776,
+    "votes": 788,
     "status": null
    }
   ]
