@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-03T17:08:35Z",
+  "asOf": "2026-11-03T17:12:41Z",
   "races": [
     {
       "id": "gov-az",
@@ -22,8 +22,8 @@
     {
       "id": "house-ca22",
       "status": "unofficial",
-      "reportingPct": null,
-      "reportingLabel": null,
+      "reportingPct": 0.0,
+      "reportingLabel": "0 of 575 precincts reporting",
       "source": "California Secretary of State",
       "sourceUrl": "https://api.sos.ca.gov/returns/us-rep/district/22",
       "candidates": []
