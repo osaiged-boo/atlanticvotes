@@ -107,6 +107,7 @@ tfoot td{font-weight:800;border-top:2px solid var(--ink)}
 .av-row.is-current{background:var(--accent-soft)}
 .av-row.is-current .av-row-title{color:var(--accent)}
 .av-modal-foot{margin-top:22px;font-size:14px;color:var(--muted)}
+.av-us-sep{margin:26px 0 12px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .av-modal-foot a{color:var(--accent)}
 body.av-locked{overflow:hidden}
 /* Footer */
@@ -149,6 +150,8 @@ body.av-locked{overflow:hidden}
       <a class="av-row" href="nb.html" data-province="nb"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">New Brunswick<span class="av-chevron">›</span></span><span class="av-row-desc">October 21, 2024 · Liberal majority, 31 of 49 seats</span></span></a>
       <a class="av-row" href="nl.html" data-province="nl"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">Newfoundland and Labrador<span class="av-chevron">›</span></span><span class="av-row-desc">October 14, 2025 · PC majority, 21 of 40 seats</span></span></a>
     </div>
+    <div class="av-us-sep">Also live tonight</div>
+    <a class="av-row av-us" href="us-midterms.html"><span class="av-row-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><span class="av-row-text"><span class="av-row-title">US midterm elections<span class="av-chevron">›</span></span><span class="av-row-desc">November 3, 2026 · Live results from official state sources</span></span></a>
     <div class="av-modal-foot"><a href="provinces.html">See all provinces</a> &middot; Figures from official elections-agency reports only.</div>
   </div>
 </div>
@@ -167,7 +170,7 @@ body.av-locked{overflow:hidden}
   if(closeBtn) closeBtn.addEventListener('click',close);
   modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
-  modal.querySelectorAll('.av-row').forEach(function(row){
+  modal.querySelectorAll('.av-row:not(.av-us)').forEach(function(row){
     row.addEventListener('click',function(){
       try{ localStorage.setItem(KEY,row.getAttribute('data-province')); }catch(e){}
     });
