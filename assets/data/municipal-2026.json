@@ -4,41 +4,41 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 87.3,
+  "reportingPct": 89.9,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 2959,
+    "votes": 2982,
     "status": null
    },
    {
     "name": "Daniel Cousins",
-    "votes": 85,
+    "votes": 86,
     "status": null
    },
    {
     "name": "Anthony Fitzpatrick",
-    "votes": 71,
+    "votes": 72,
     "status": null
    },
    {
     "name": "Daniel Mullen",
-    "votes": 278,
+    "votes": 281,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 1697,
+    "votes": 1701,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 1436,
+    "votes": 1443,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 4477,
+    "votes": 4513,
     "status": null
    }
   ]
@@ -105,31 +105,31 @@
   "race": "Ward 4",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 87.5,
+  "reportingPct": 100.0,
   "candidates": [
    {
     "name": "Ted Kitson",
-    "votes": 347,
+    "votes": 471,
     "status": null
    },
    {
     "name": "Ryan Mann",
-    "votes": 138,
+    "votes": 173,
     "status": null
    },
    {
     "name": "Andee Morgan",
-    "votes": 218,
+    "votes": 297,
     "status": null
    },
    {
     "name": "Kenneth Murnaghan",
-    "votes": 142,
+    "votes": 180,
     "status": null
    },
    {
     "name": "Rima Rashed",
-    "votes": 177,
+    "votes": 211,
     "status": null
    }
   ]
@@ -162,12 +162,12 @@
   "candidates": [
    {
     "name": "Doug Currie",
-    "votes": 365,
+    "votes": 529,
     "status": null
    },
    {
     "name": "Sue Fraser",
-    "votes": 528,
+    "votes": 785,
     "status": null
    }
   ]
@@ -195,12 +195,12 @@
   "candidates": [
    {
     "name": "Corey Driscoll",
-    "votes": 700,
+    "votes": 1057,
     "status": null
    },
    {
     "name": "Trevor V. MacKinnon",
-    "votes": 445,
+    "votes": 668,
     "status": null
    }
   ]
@@ -243,12 +243,12 @@
   "candidates": [
    {
     "name": "Terry Bernard",
-    "votes": 391,
+    "votes": 471,
     "status": null
    },
    {
     "name": "Ryan Cooke",
-    "votes": 124,
+    "votes": 143,
     "status": null
    }
   ]
