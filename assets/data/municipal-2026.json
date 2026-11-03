@@ -4,41 +4,41 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 51.9,
+  "reportingPct": 60.8,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 2312,
+    "votes": 2442,
     "status": null
    },
    {
     "name": "Daniel Cousins",
-    "votes": 67,
+    "votes": 69,
     "status": null
    },
    {
     "name": "Anthony Fitzpatrick",
-    "votes": 58,
+    "votes": 62,
     "status": null
    },
    {
     "name": "Daniel Mullen",
-    "votes": 212,
+    "votes": 230,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 1339,
+    "votes": 1423,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 1015,
+    "votes": 1090,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 3238,
+    "votes": 3472,
     "status": null
    }
   ]
@@ -48,26 +48,26 @@
   "race": "Ward 1",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 62.5,
+  "reportingPct": 87.5,
   "candidates": [
    {
     "name": "Sasha Andric",
-    "votes": 56,
+    "votes": 99,
     "status": null
    },
    {
     "name": "Andrea Battison",
-    "votes": 46,
+    "votes": 58,
     "status": null
    },
    {
     "name": "Kim Devine",
-    "votes": 275,
+    "votes": 377,
     "status": null
    },
    {
     "name": "Matt Pelletier",
-    "votes": 272,
+    "votes": 408,
     "status": null
    }
   ]
@@ -109,27 +109,27 @@
   "candidates": [
    {
     "name": "Ted Kitson",
-    "votes": 288,
+    "votes": 316,
     "status": null
    },
    {
     "name": "Ryan Mann",
-    "votes": 104,
+    "votes": 126,
     "status": null
    },
    {
     "name": "Andee Morgan",
-    "votes": 140,
+    "votes": 190,
     "status": null
    },
    {
     "name": "Kenneth Murnaghan",
-    "votes": 105,
+    "votes": 127,
     "status": null
    },
    {
     "name": "Rima Rashed",
-    "votes": 136,
+    "votes": 154,
     "status": null
    }
   ]
@@ -139,7 +139,7 @@
   "race": "Ward 5",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 87.5,
+  "reportingPct": 100.0,
   "candidates": [
    {
     "name": "Kevin Ramsay",
@@ -158,7 +158,7 @@
   "race": "Ward 6",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 12.5,
+  "reportingPct": 25.0,
   "candidates": [
    {
     "name": "Doug Currie",
@@ -239,7 +239,7 @@
   "race": "Ward 10",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 62.5,
+  "reportingPct": 75.0,
   "candidates": [
    {
     "name": "Terry Bernard",
@@ -337,12 +337,12 @@
   "candidates": [
    {
     "name": "Tim Hockin",
-    "votes": 210,
+    "votes": 237,
     "status": null
    },
    {
     "name": "Ken Trenholm",
-    "votes": 400,
+    "votes": 433,
     "status": null
    }
   ]
@@ -413,41 +413,41 @@
   "race": "Open Ward",
   "seats": 6,
   "acclaimed": false,
-  "reportingPct": 37.5,
+  "reportingPct": 75.0,
   "candidates": [
    {
     "name": "Chantal Batchilder",
-    "votes": 179,
+    "votes": 402,
     "status": null
    },
    {
     "name": "Rita Campbell",
-    "votes": 175,
+    "votes": 402,
     "status": null
    },
    {
     "name": "Steven Campbell",
-    "votes": 156,
+    "votes": 366,
     "status": null
    },
    {
     "name": "Chase Currie",
-    "votes": 142,
+    "votes": 314,
     "status": null
    },
    {
     "name": "Corey Frizzell",
-    "votes": 153,
+    "votes": 365,
     "status": null
    },
    {
     "name": "Dean Martin",
-    "votes": 121,
+    "votes": 289,
     "status": null
    },
    {
     "name": "Cory Stevenson",
-    "votes": 189,
+    "votes": 457,
     "status": null
    }
   ]
@@ -471,26 +471,26 @@
   "race": "Ward 1",
   "seats": 2,
   "acclaimed": false,
-  "reportingPct": 83.3,
+  "reportingPct": 100.0,
   "candidates": [
    {
     "name": "Dylan Cooper",
-    "votes": 391,
+    "votes": 442,
     "status": null
    },
    {
     "name": "Gordie Cox",
-    "votes": 422,
+    "votes": 477,
     "status": null
    },
    {
     "name": "Derek Kronemeyer",
-    "votes": 288,
+    "votes": 338,
     "status": null
    },
    {
     "name": "Gail MacDonald",
-    "votes": 311,
+    "votes": 359,
     "status": null
    }
   ]
@@ -519,26 +519,26 @@
   "race": "Ward 3",
   "seats": 2,
   "acclaimed": false,
-  "reportingPct": 66.7,
+  "reportingPct": 83.3,
   "candidates": [
    {
     "name": "Ron Dowling",
-    "votes": 296,
+    "votes": 344,
     "status": null
    },
    {
     "name": "Steve Gallant",
-    "votes": 418,
+    "votes": 480,
     "status": null
    },
    {
     "name": "Wilfred MacDonald",
-    "votes": 256,
+    "votes": 320,
     "status": null
    },
    {
     "name": "Kevin MacIsaac",
-    "votes": 116,
+    "votes": 149,
     "status": null
    }
   ]
@@ -581,17 +581,17 @@
   "candidates": [
    {
     "name": "Charlie Hicken",
-    "votes": 256,
+    "votes": 394,
     "status": null
    },
    {
     "name": "Mike Monaghan",
-    "votes": 259,
+    "votes": 364,
     "status": null
    },
    {
     "name": "Derek Nicholson",
-    "votes": 342,
+    "votes": 509,
     "status": null
    }
   ]
@@ -630,7 +630,7 @@
   "race": "Ward 3",
   "seats": 2,
   "acclaimed": false,
-  "reportingPct": 25.0,
+  "reportingPct": 100.0,
   "candidates": [
    {
     "name": "Kevin Jenkins",
