@@ -4,41 +4,41 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 67.1,
+  "reportingPct": 79.7,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 2552,
+    "votes": 2801,
     "status": null
    },
    {
     "name": "Daniel Cousins",
-    "votes": 73,
+    "votes": 80,
     "status": null
    },
    {
     "name": "Anthony Fitzpatrick",
-    "votes": 63,
+    "votes": 68,
     "status": null
    },
    {
     "name": "Daniel Mullen",
-    "votes": 236,
+    "votes": 263,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 1475,
+    "votes": 1597,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 1183,
+    "votes": 1327,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 3694,
+    "votes": 4224,
     "status": null
    }
   ]
@@ -48,26 +48,26 @@
   "race": "Ward 1",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 87.5,
+  "reportingPct": 100.0,
   "candidates": [
    {
     "name": "Sasha Andric",
-    "votes": 115,
+    "votes": 127,
     "status": null
    },
    {
     "name": "Andrea Battison",
-    "votes": 73,
+    "votes": 84,
     "status": null
    },
    {
     "name": "Kim Devine",
-    "votes": 450,
+    "votes": 497,
     "status": null
    },
    {
     "name": "Matt Pelletier",
-    "votes": 490,
+    "votes": 565,
     "status": null
    }
   ]
@@ -158,7 +158,7 @@
   "race": "Ward 6",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 50.0,
+  "reportingPct": 75.0,
   "candidates": [
    {
     "name": "Doug Currie",
@@ -191,7 +191,7 @@
   "race": "Ward 8",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 25.0,
+  "reportingPct": 75.0,
   "candidates": [
    {
     "name": "Corey Driscoll",
@@ -243,12 +243,12 @@
   "candidates": [
    {
     "name": "Terry Bernard",
-    "votes": 345,
+    "votes": 391,
     "status": null
    },
    {
     "name": "Ryan Cooke",
-    "votes": 111,
+    "votes": 124,
     "status": null
    }
   ]
@@ -605,22 +605,22 @@
   "candidates": [
    {
     "name": "Rick Beck",
-    "votes": 162,
+    "votes": 242,
     "status": null
    },
    {
     "name": "Brenda MacDougall",
-    "votes": 231,
+    "votes": 339,
     "status": null
    },
    {
     "name": "Wayne Spin",
-    "votes": 227,
+    "votes": 328,
     "status": null
    },
    {
     "name": "Lori Trainor",
-    "votes": 153,
+    "votes": 223,
     "status": null
    }
   ]
