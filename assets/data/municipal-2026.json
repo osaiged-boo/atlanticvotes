@@ -4,41 +4,41 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 79.7,
+  "reportingPct": 86.1,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 2801,
+    "votes": 2932,
     "status": null
    },
    {
     "name": "Daniel Cousins",
-    "votes": 80,
+    "votes": 85,
     "status": null
    },
    {
     "name": "Anthony Fitzpatrick",
-    "votes": 68,
+    "votes": 70,
     "status": null
    },
    {
     "name": "Daniel Mullen",
-    "votes": 263,
+    "votes": 275,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 1597,
+    "votes": 1676,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 1327,
+    "votes": 1423,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 4224,
+    "votes": 4442,
     "status": null
    }
   ]
@@ -158,7 +158,7 @@
   "race": "Ward 6",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 75.0,
+  "reportingPct": 87.5,
   "candidates": [
    {
     "name": "Doug Currie",
@@ -191,7 +191,7 @@
   "race": "Ward 8",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 75.0,
+  "reportingPct": 100.0,
   "candidates": [
    {
     "name": "Corey Driscoll",
@@ -239,7 +239,7 @@
   "race": "Ward 10",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 75.0,
+  "reportingPct": 87.5,
   "candidates": [
    {
     "name": "Terry Bernard",
@@ -634,17 +634,17 @@
   "candidates": [
    {
     "name": "Kevin Jenkins",
-    "votes": 194,
+    "votes": 298,
     "status": null
    },
    {
     "name": "David McGrath",
-    "votes": 264,
+    "votes": 387,
     "status": null
    },
    {
     "name": "Mary Van Den Broek Grant",
-    "votes": 326,
+    "votes": 485,
     "status": null
    }
   ]
