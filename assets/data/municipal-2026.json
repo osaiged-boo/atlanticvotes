@@ -4,11 +4,11 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 93.7,
+  "reportingPct": 94.9,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 3066,
+    "votes": 3078,
     "status": null
    },
    {
@@ -18,27 +18,27 @@
    },
    {
     "name": "Anthony Fitzpatrick",
-    "votes": 77,
+    "votes": 78,
     "status": null
    },
    {
     "name": "Daniel Mullen",
-    "votes": 289,
+    "votes": 290,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 1759,
+    "votes": 1783,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 1475,
+    "votes": 1484,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 4626,
+    "votes": 4657,
     "status": null
    }
   ]
@@ -210,26 +210,26 @@
   "race": "Ward 9",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 50.0,
+  "reportingPct": 62.5,
   "candidates": [
    {
     "name": "Dr. Kapil Dev Chauhan",
-    "votes": 23,
+    "votes": 27,
     "status": null
    },
    {
     "name": "Julie McCabe",
-    "votes": 123,
+    "votes": 184,
     "status": null
    },
    {
     "name": "Jay Patel",
-    "votes": 26,
+    "votes": 34,
     "status": null
    },
    {
     "name": "Jaime Tinoco",
-    "votes": 19,
+    "votes": 24,
     "status": null
    }
   ]
