@@ -4,41 +4,41 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 98.7,
+  "reportingPct": 100.0,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 3406,
+    "votes": 3580,
     "status": null
    },
    {
     "name": "Daniel Cousins",
-    "votes": 97,
+    "votes": 102,
     "status": null
    },
    {
     "name": "Anthony Fitzpatrick",
-    "votes": 90,
+    "votes": 94,
     "status": null
    },
    {
     "name": "Daniel Mullen",
-    "votes": 322,
+    "votes": 337,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 1958,
+    "votes": 2054,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 1655,
+    "votes": 1738,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 4995,
+    "votes": 5125,
     "status": null
    }
   ]
@@ -214,22 +214,22 @@
   "candidates": [
    {
     "name": "Dr. Kapil Dev Chauhan",
-    "votes": 59,
+    "votes": 128,
     "status": null
    },
    {
     "name": "Julie McCabe",
-    "votes": 424,
+    "votes": 969,
     "status": null
    },
    {
     "name": "Jay Patel",
-    "votes": 85,
+    "votes": 180,
     "status": null
    },
    {
     "name": "Jaime Tinoco",
-    "votes": 60,
+    "votes": 117,
     "status": null
    }
   ]
@@ -239,7 +239,7 @@
   "race": "Ward 10",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 87.5,
+  "reportingPct": 100.0,
   "candidates": [
    {
     "name": "Terry Bernard",
