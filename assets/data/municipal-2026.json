@@ -4,16 +4,16 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 91.1,
+  "reportingPct": 92.4,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 3025,
+    "votes": 3044,
     "status": null
    },
    {
     "name": "Daniel Cousins",
-    "votes": 87,
+    "votes": 88,
     "status": null
    },
    {
@@ -23,22 +23,22 @@
    },
    {
     "name": "Daniel Mullen",
-    "votes": 283,
+    "votes": 286,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 1744,
+    "votes": 1753,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 1460,
+    "votes": 1467,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 4578,
+    "votes": 4599,
     "status": null
    }
   ]
@@ -109,27 +109,27 @@
   "candidates": [
    {
     "name": "Ted Kitson",
-    "votes": 471,
+    "votes": 493,
     "status": null
    },
    {
     "name": "Ryan Mann",
-    "votes": 173,
+    "votes": 188,
     "status": null
    },
    {
     "name": "Andee Morgan",
-    "votes": 297,
+    "votes": 318,
     "status": null
    },
    {
     "name": "Kenneth Murnaghan",
-    "votes": 180,
+    "votes": 192,
     "status": null
    },
    {
     "name": "Rima Rashed",
-    "votes": 211,
+    "votes": 231,
     "status": null
    }
   ]
@@ -143,12 +143,12 @@
   "candidates": [
    {
     "name": "Kevin Ramsay",
-    "votes": 529,
+    "votes": 594,
     "status": null
    },
    {
     "name": "Tazul Riad",
-    "votes": 342,
+    "votes": 362,
     "status": null
    }
   ]
@@ -210,26 +210,26 @@
   "race": "Ward 9",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 25.0,
+  "reportingPct": 37.5,
   "candidates": [
    {
     "name": "Dr. Kapil Dev Chauhan",
-    "votes": 11,
+    "votes": 19,
     "status": null
    },
    {
     "name": "Julie McCabe",
-    "votes": 49,
+    "votes": 83,
     "status": null
    },
    {
     "name": "Jay Patel",
-    "votes": 10,
+    "votes": 16,
     "status": null
    },
    {
     "name": "Jaime Tinoco",
-    "votes": 5,
+    "votes": 13,
     "status": null
    }
   ]
