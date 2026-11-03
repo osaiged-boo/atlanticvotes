@@ -4,41 +4,41 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 20.3,
+  "reportingPct": 21.5,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 1811,
+    "votes": 1830,
     "status": null
    },
    {
     "name": "Daniel Cousins",
-    "votes": 50,
+    "votes": 51,
     "status": null
    },
    {
     "name": "Anthony Fitzpatrick",
-    "votes": 43,
+    "votes": 44,
     "status": null
    },
    {
     "name": "Daniel Mullen",
-    "votes": 144,
+    "votes": 153,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 1005,
+    "votes": 1021,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 702,
+    "votes": 730,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 2235,
+    "votes": 2275,
     "status": null
    }
   ]
@@ -258,16 +258,16 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 80.0,
+  "reportingPct": 85.0,
   "candidates": [
    {
     "name": "Cory Snow",
-    "votes": 3669,
+    "votes": 3780,
     "status": null
    },
    {
     "name": "Basil Stewart",
-    "votes": 1312,
+    "votes": 1331,
     "status": null
    }
   ]
@@ -356,12 +356,12 @@
   "candidates": [
    {
     "name": "Mark Greenan",
-    "votes": 118,
+    "votes": 276,
     "status": null
    },
    {
     "name": "Norma McColeman",
-    "votes": 140,
+    "votes": 293,
     "status": null
    }
   ]
@@ -413,41 +413,41 @@
   "race": "Open Ward",
   "seats": 6,
   "acclaimed": false,
-  "reportingPct": null,
+  "reportingPct": 12.5,
   "candidates": [
    {
     "name": "Chantal Batchilder",
-    "votes": 0,
+    "votes": 94,
     "status": null
    },
    {
     "name": "Rita Campbell",
-    "votes": 0,
+    "votes": 89,
     "status": null
    },
    {
     "name": "Steven Campbell",
-    "votes": 0,
+    "votes": 89,
     "status": null
    },
    {
     "name": "Chase Currie",
-    "votes": 0,
+    "votes": 90,
     "status": null
    },
    {
     "name": "Corey Frizzell",
-    "votes": 0,
+    "votes": 71,
     "status": null
    },
    {
     "name": "Dean Martin",
-    "votes": 0,
+    "votes": 67,
     "status": null
    },
    {
     "name": "Cory Stevenson",
-    "votes": 0,
+    "votes": 95,
     "status": null
    }
   ]
