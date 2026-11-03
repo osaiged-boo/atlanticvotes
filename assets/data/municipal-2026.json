@@ -4,41 +4,41 @@
   "race": "Mayor",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 96.2,
+  "reportingPct": 97.5,
   "candidates": [
    {
     "name": "Philip Brown",
-    "votes": 3110,
+    "votes": 3143,
     "status": null
    },
    {
     "name": "Daniel Cousins",
-    "votes": 91,
+    "votes": 93,
     "status": null
    },
    {
     "name": "Anthony Fitzpatrick",
-    "votes": 79,
+    "votes": 81,
     "status": null
    },
    {
     "name": "Daniel Mullen",
-    "votes": 298,
+    "votes": 304,
     "status": null
    },
    {
     "name": "Mitchell G. Tweel",
-    "votes": 1805,
+    "votes": 1826,
     "status": null
    },
    {
     "name": "Cecil Villard",
-    "votes": 1514,
+    "votes": 1544,
     "status": null
    },
    {
     "name": "Amir Zuccolo",
-    "votes": 4717,
+    "votes": 4764,
     "status": null
    }
   ]
@@ -210,7 +210,7 @@
   "race": "Ward 9",
   "seats": 1,
   "acclaimed": false,
-  "reportingPct": 75.0,
+  "reportingPct": 87.5,
   "candidates": [
    {
     "name": "Dr. Kapil Dev Chauhan",
