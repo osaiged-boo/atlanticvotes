@@ -413,41 +413,41 @@
   "race": "Open Ward",
   "seats": 6,
   "acclaimed": false,
-  "reportingPct": 87.5,
+  "reportingPct": 100.0,
   "candidates": [
    {
     "name": "Chantal Batchilder",
-    "votes": 571,
+    "votes": 1278,
     "status": null
    },
    {
     "name": "Rita Campbell",
-    "votes": 550,
+    "votes": 1240,
     "status": null
    },
    {
     "name": "Steven Campbell",
-    "votes": 511,
+    "votes": 1176,
     "status": null
    },
    {
     "name": "Chase Currie",
-    "votes": 422,
+    "votes": 914,
     "status": null
    },
    {
     "name": "Corey Frizzell",
-    "votes": 515,
+    "votes": 1158,
     "status": null
    },
    {
     "name": "Dean Martin",
-    "votes": 373,
+    "votes": 872,
     "status": null
    },
    {
     "name": "Cory Stevenson",
-    "votes": 638,
+    "votes": 1424,
     "status": null
    }
   ]
