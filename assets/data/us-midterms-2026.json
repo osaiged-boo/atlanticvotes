@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T05:12:52Z",
+  "asOf": "2026-11-04T05:23:06Z",
   "races": [
     {
       "id": "gov-az",
@@ -12,17 +12,17 @@
         {
           "name": "Katie Hobbs (DEM) / John Giles (PND)",
           "party": "D",
-          "votes": 971528
+          "votes": 971683
         },
         {
           "name": "Andy Biggs (REP) / Sine Kerr (REP)",
           "party": "R",
-          "votes": 678771
+          "votes": 678807
         },
         {
           "name": "Risa Lombardo (GRN) / Lisa Castillo (GRN)",
           "party": "G",
-          "votes": 12948
+          "votes": 12949
         },
         {
           "name": "Teri Ann Hourihan (NOL) / Angela Harrolle Mohan (PND)",
@@ -44,8 +44,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 95.22552783109406,
-      "reportingLabel": "3969 of 4168 precincts reporting",
+      "reportingPct": 98.32053742802303,
+      "reportingLabel": "4098 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -120,8 +120,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 95.22552783109406,
-      "reportingLabel": "3969 of 4168 precincts reporting",
+      "reportingPct": 98.32053742802303,
+      "reportingLabel": "4098 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
