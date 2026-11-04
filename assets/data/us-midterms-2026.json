@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T03:37:57Z",
+  "asOf": "2026-11-04T03:43:10Z",
   "races": [
     {
       "id": "gov-az",
@@ -44,8 +44,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 65.54702495201535,
-      "reportingLabel": "2732 of 4168 precincts reporting",
+      "reportingPct": 75.5278310940499,
+      "reportingLabel": "3148 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -109,8 +109,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 73.12859884836853,
-      "reportingLabel": "3048 of 4168 precincts reporting",
+      "reportingPct": 75.5278310940499,
+      "reportingLabel": "3148 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -118,20 +118,20 @@
     {
       "id": "sen-nc",
       "status": "unofficial",
-      "reportingPct": 94.51637471439452,
-      "reportingLabel": "2482 of 2626 precincts reporting",
+      "reportingPct": 94.63061690784463,
+      "reportingLabel": "2485 of 2626 precincts reporting",
       "source": "North Carolina State Board of Elections",
       "sourceUrl": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip",
       "candidates": [
         {
           "name": "Roy Cooper",
           "party": "D",
-          "votes": 1534555
+          "votes": 1537037
         },
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 1247736
+          "votes": 1248828
         }
       ]
     }
