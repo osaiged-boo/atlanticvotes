@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T05:03:05Z",
+  "asOf": "2026-11-04T05:07:50Z",
   "races": [
     {
       "id": "gov-az",
@@ -12,22 +12,22 @@
         {
           "name": "Katie Hobbs (DEM) / John Giles (PND)",
           "party": "D",
-          "votes": 970045
+          "votes": 971528
         },
         {
           "name": "Andy Biggs (REP) / Sine Kerr (REP)",
           "party": "R",
-          "votes": 674687
+          "votes": 678771
         },
         {
           "name": "Risa Lombardo (GRN) / Lisa Castillo (GRN)",
           "party": "G",
-          "votes": 12873
+          "votes": 12948
         },
         {
           "name": "Teri Ann Hourihan (NOL) / Angela Harrolle Mohan (PND)",
           "party": "N",
-          "votes": 12761
+          "votes": 12834
         },
         {
           "name": "Alice Novoa",
@@ -129,20 +129,20 @@
     {
       "id": "sen-nc",
       "status": "unofficial",
-      "reportingPct": 99.27646610814928,
-      "reportingLabel": "2607 of 2626 precincts reporting",
+      "reportingPct": 99.46686976389947,
+      "reportingLabel": "2612 of 2626 precincts reporting",
       "source": "North Carolina State Board of Elections",
       "sourceUrl": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip",
       "candidates": [
         {
           "name": "Roy Cooper",
           "party": "D",
-          "votes": 1634075
+          "votes": 1637243
         },
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 1297829
+          "votes": 1300591
         }
       ]
     }
