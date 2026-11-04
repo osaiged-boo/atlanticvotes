@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T04:47:50Z",
+  "asOf": "2026-11-04T04:52:41Z",
   "races": [
     {
       "id": "gov-az",
@@ -12,22 +12,22 @@
         {
           "name": "Katie Hobbs (DEM) / John Giles (PND)",
           "party": "D",
-          "votes": 968666
+          "votes": 969649
         },
         {
           "name": "Andy Biggs (REP) / Sine Kerr (REP)",
           "party": "R",
-          "votes": 669599
+          "votes": 673830
         },
         {
           "name": "Risa Lombardo (GRN) / Lisa Castillo (GRN)",
           "party": "G",
-          "votes": 12780
+          "votes": 12857
         },
         {
           "name": "Teri Ann Hourihan (NOL) / Angela Harrolle Mohan (PND)",
           "party": "N",
-          "votes": 12679
+          "votes": 12740
         },
         {
           "name": "Alice Novoa",
@@ -44,8 +44,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 91.50671785028791,
-      "reportingLabel": "3814 of 4168 precincts reporting",
+      "reportingPct": 91.74664107485604,
+      "reportingLabel": "3824 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -53,20 +53,20 @@
     {
       "id": "house-ca22",
       "status": "unofficial",
-      "reportingPct": 34.26086956521739,
-      "reportingLabel": "197 of 575 precincts reporting",
+      "reportingPct": 36.869565217391305,
+      "reportingLabel": "212 of 575 precincts reporting",
       "source": "California Secretary of State",
       "sourceUrl": "https://api.sos.ca.gov/returns/us-rep/district/22",
       "candidates": [
         {
           "name": "Randy Villegas",
           "party": "D",
-          "votes": 36827
+          "votes": 40019
         },
         {
           "name": "David G. Valadao",
           "party": "R",
-          "votes": 19756
+          "votes": 21621
         }
       ]
     },
@@ -120,8 +120,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 91.50671785028791,
-      "reportingLabel": "3814 of 4168 precincts reporting",
+      "reportingPct": 91.74664107485604,
+      "reportingLabel": "3824 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
