@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T06:07:45Z",
+  "asOf": "2026-11-04T06:12:54Z",
   "races": [
     {
       "id": "gov-az",
@@ -44,8 +44,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 99.16026871401152,
-      "reportingLabel": "4133 of 4168 precincts reporting",
+      "reportingPct": 99.28023032629558,
+      "reportingLabel": "4138 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -61,12 +61,12 @@
         {
           "name": "Randy Villegas",
           "party": "D",
-          "votes": 40555
+          "votes": 40898
         },
         {
           "name": "David G. Valadao",
           "party": "R",
-          "votes": 21862
+          "votes": 22022
         }
       ]
     },
@@ -120,8 +120,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 99.16026871401152,
-      "reportingLabel": "4133 of 4168 precincts reporting",
+      "reportingPct": 99.28023032629558,
+      "reportingLabel": "4138 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
