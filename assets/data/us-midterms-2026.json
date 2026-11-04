@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T04:08:13Z",
+  "asOf": "2026-11-04T04:13:04Z",
   "races": [
     {
       "id": "gov-az",
@@ -44,8 +44,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 83.25335892514396,
-      "reportingLabel": "3470 of 4168 precincts reporting",
+      "reportingPct": 85.46065259117083,
+      "reportingLabel": "3562 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -53,11 +53,22 @@
     {
       "id": "house-ca22",
       "status": "unofficial",
-      "reportingPct": 0.0,
-      "reportingLabel": "0 of 575 precincts reporting",
+      "reportingPct": 15.652173913043478,
+      "reportingLabel": "90 of 575 precincts reporting",
       "source": "California Secretary of State",
       "sourceUrl": "https://api.sos.ca.gov/returns/us-rep/district/22",
-      "candidates": []
+      "candidates": [
+        {
+          "name": "Randy Villegas",
+          "party": "D",
+          "votes": 10861
+        },
+        {
+          "name": "David G. Valadao",
+          "party": "R",
+          "votes": 7266
+        }
+      ]
     },
     {
       "id": "house-ky06",
@@ -109,8 +120,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 83.25335892514396,
-      "reportingLabel": "3470 of 4168 precincts reporting",
+      "reportingPct": 85.46065259117083,
+      "reportingLabel": "3562 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
