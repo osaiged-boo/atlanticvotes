@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T04:52:41Z",
+  "asOf": "2026-11-04T04:58:10Z",
   "races": [
     {
       "id": "gov-az",
@@ -12,22 +12,22 @@
         {
           "name": "Katie Hobbs (DEM) / John Giles (PND)",
           "party": "D",
-          "votes": 969649
+          "votes": 970045
         },
         {
           "name": "Andy Biggs (REP) / Sine Kerr (REP)",
           "party": "R",
-          "votes": 673830
+          "votes": 674687
         },
         {
           "name": "Risa Lombardo (GRN) / Lisa Castillo (GRN)",
           "party": "G",
-          "votes": 12857
+          "votes": 12873
         },
         {
           "name": "Teri Ann Hourihan (NOL) / Angela Harrolle Mohan (PND)",
           "party": "N",
-          "votes": 12740
+          "votes": 12761
         },
         {
           "name": "Alice Novoa",
@@ -44,8 +44,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 91.74664107485604,
-      "reportingLabel": "3824 of 4168 precincts reporting",
+      "reportingPct": 92.82629558541267,
+      "reportingLabel": "3869 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -120,8 +120,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 91.74664107485604,
-      "reportingLabel": "3824 of 4168 precincts reporting",
+      "reportingPct": 92.82629558541267,
+      "reportingLabel": "3869 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -129,20 +129,20 @@
     {
       "id": "sen-nc",
       "status": "unofficial",
-      "reportingPct": 98.36252856054836,
-      "reportingLabel": "2583 of 2626 precincts reporting",
+      "reportingPct": 99.27646610814928,
+      "reportingLabel": "2607 of 2626 precincts reporting",
       "source": "North Carolina State Board of Elections",
       "sourceUrl": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip",
       "candidates": [
         {
           "name": "Roy Cooper",
           "party": "D",
-          "votes": 1621342
+          "votes": 1634075
         },
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 1290875
+          "votes": 1297829
         }
       ]
     }
