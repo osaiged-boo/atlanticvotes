@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T10:38:10Z",
+  "asOf": "2026-11-04T11:27:55Z",
   "races": [
     {
       "id": "gov-az",
@@ -12,22 +12,22 @@
         {
           "name": "Katie Hobbs (DEM) / John Giles (PND)",
           "party": "D",
-          "votes": 1098452
+          "votes": 1192610
         },
         {
           "name": "Andy Biggs (REP) / Sine Kerr (REP)",
           "party": "R",
-          "votes": 818972
+          "votes": 913069
         },
         {
           "name": "Risa Lombardo (GRN) / Lisa Castillo (GRN)",
           "party": "G",
-          "votes": 16735
+          "votes": 19069
         },
         {
           "name": "Teri Ann Hourihan (NOL) / Angela Harrolle Mohan (PND)",
           "party": "N",
-          "votes": 15724
+          "votes": 17456
         },
         {
           "name": "Alice Novoa",
@@ -53,20 +53,20 @@
     {
       "id": "house-ca22",
       "status": "unofficial",
-      "reportingPct": 83.1304347826087,
-      "reportingLabel": "478 of 575 precincts reporting",
+      "reportingPct": 100.0,
+      "reportingLabel": "575 of 575 precincts reporting",
       "source": "California Secretary of State",
       "sourceUrl": "https://api.sos.ca.gov/returns/us-rep/district/22",
       "candidates": [
         {
           "name": "Randy Villegas",
           "party": "D",
-          "votes": 48821
+          "votes": 54337
         },
         {
           "name": "David G. Valadao",
           "party": "R",
-          "votes": 25627
+          "votes": 27480
         }
       ]
     },
