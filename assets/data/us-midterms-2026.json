@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T09:17:43Z",
+  "asOf": "2026-11-04T09:22:43Z",
   "races": [
     {
       "id": "gov-az",
@@ -90,12 +90,12 @@
         {
           "name": "Don Davis",
           "party": "D",
-          "votes": 95960
+          "votes": 97269
         },
         {
           "name": "Laurie Buckhout",
           "party": "R",
-          "votes": 110469
+          "votes": 110782
         }
       ]
     },
@@ -137,12 +137,12 @@
         {
           "name": "Roy Cooper",
           "party": "D",
-          "votes": 1647305
+          "votes": 1648638
         },
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 1304339
+          "votes": 1304634
         }
       ]
     }
