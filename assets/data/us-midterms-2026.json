@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T02:02:59Z",
+  "asOf": "2026-11-04T02:08:02Z",
   "races": [
     {
       "id": "gov-az",
@@ -13,8 +13,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 3.047024952015355,
-      "reportingLabel": "127 of 4168 precincts reporting",
+      "reportingPct": 5.854126679462572,
+      "reportingLabel": "244 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -40,20 +40,20 @@
     {
       "id": "house-nc01",
       "status": "unofficial",
-      "reportingPct": 50.689655172413794,
-      "reportingLabel": "147 of 290 precincts reporting",
+      "reportingPct": 54.827586206896555,
+      "reportingLabel": "159 of 290 precincts reporting",
       "source": "North Carolina State Board of Elections",
       "sourceUrl": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip",
       "candidates": [
         {
           "name": "Don Davis",
           "party": "D",
-          "votes": 52785
+          "votes": 55750
         },
         {
           "name": "Laurie Buckhout",
           "party": "R",
-          "votes": 58770
+          "votes": 62859
         }
       ]
     },
@@ -78,8 +78,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 3.047024952015355,
-      "reportingLabel": "127 of 4168 precincts reporting",
+      "reportingPct": 5.854126679462572,
+      "reportingLabel": "244 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -87,20 +87,20 @@
     {
       "id": "sen-nc",
       "status": "unofficial",
-      "reportingPct": 65.34653465346534,
-      "reportingLabel": "1716 of 2626 precincts reporting",
+      "reportingPct": 67.55521706016755,
+      "reportingLabel": "1774 of 2626 precincts reporting",
       "source": "North Carolina State Board of Elections",
       "sourceUrl": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip",
       "candidates": [
         {
           "name": "Roy Cooper",
           "party": "D",
-          "votes": 1054286
+          "votes": 1076429
         },
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 787768
+          "votes": 808506
         }
       ]
     }
