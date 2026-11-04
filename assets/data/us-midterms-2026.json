@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T04:42:54Z",
+  "asOf": "2026-11-04T04:47:50Z",
   "races": [
     {
       "id": "gov-az",
@@ -44,8 +44,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 91.1468330134357,
-      "reportingLabel": "3799 of 4168 precincts reporting",
+      "reportingPct": 91.50671785028791,
+      "reportingLabel": "3814 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -53,20 +53,20 @@
     {
       "id": "house-ca22",
       "status": "unofficial",
-      "reportingPct": 15.652173913043478,
-      "reportingLabel": "90 of 575 precincts reporting",
+      "reportingPct": 34.26086956521739,
+      "reportingLabel": "197 of 575 precincts reporting",
       "source": "California Secretary of State",
       "sourceUrl": "https://api.sos.ca.gov/returns/us-rep/district/22",
       "candidates": [
         {
           "name": "Randy Villegas",
           "party": "D",
-          "votes": 10861
+          "votes": 36827
         },
         {
           "name": "David G. Valadao",
           "party": "R",
-          "votes": 7266
+          "votes": 19756
         }
       ]
     },
@@ -90,12 +90,12 @@
         {
           "name": "Don Davis",
           "party": "D",
-          "votes": 93337
+          "votes": 95914
         },
         {
           "name": "Laurie Buckhout",
           "party": "R",
-          "votes": 108949
+          "votes": 110444
         }
       ]
     },
@@ -120,8 +120,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 91.1468330134357,
-      "reportingLabel": "3799 of 4168 precincts reporting",
+      "reportingPct": 91.50671785028791,
+      "reportingLabel": "3814 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -129,20 +129,20 @@
     {
       "id": "sen-nc",
       "status": "unofficial",
-      "reportingPct": 98.28636709824829,
-      "reportingLabel": "2581 of 2626 precincts reporting",
+      "reportingPct": 98.36252856054836,
+      "reportingLabel": "2583 of 2626 precincts reporting",
       "source": "North Carolina State Board of Elections",
       "sourceUrl": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip",
       "candidates": [
         {
           "name": "Roy Cooper",
           "party": "D",
-          "votes": 1615879
+          "votes": 1621342
         },
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 1288672
+          "votes": 1290875
         }
       ]
     }
