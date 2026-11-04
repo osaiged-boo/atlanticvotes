@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T04:13:04Z",
+  "asOf": "2026-11-04T04:17:54Z",
   "races": [
     {
       "id": "gov-az",
@@ -12,22 +12,22 @@
         {
           "name": "Katie Hobbs (DEM) / John Giles (PND)",
           "party": "D",
-          "votes": 956211
+          "votes": 966234
         },
         {
           "name": "Andy Biggs (REP) / Sine Kerr (REP)",
           "party": "R",
-          "votes": 653370
+          "votes": 664811
         },
         {
           "name": "Risa Lombardo (GRN) / Lisa Castillo (GRN)",
           "party": "G",
-          "votes": 12459
+          "votes": 12697
         },
         {
           "name": "Teri Ann Hourihan (NOL) / Angela Harrolle Mohan (PND)",
           "party": "N",
-          "votes": 12349
+          "votes": 12602
         },
         {
           "name": "Alice Novoa",
@@ -44,8 +44,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 85.46065259117083,
-      "reportingLabel": "3562 of 4168 precincts reporting",
+      "reportingPct": 86.51631477927063,
+      "reportingLabel": "3606 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -82,20 +82,20 @@
     {
       "id": "house-nc01",
       "status": "unofficial",
-      "reportingPct": 99.3103448275862,
-      "reportingLabel": "288 of 290 precincts reporting",
+      "reportingPct": 99.65517241379311,
+      "reportingLabel": "289 of 290 precincts reporting",
       "source": "North Carolina State Board of Elections",
       "sourceUrl": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip",
       "candidates": [
         {
           "name": "Don Davis",
           "party": "D",
-          "votes": 93031
+          "votes": 93154
         },
         {
           "name": "Laurie Buckhout",
           "party": "R",
-          "votes": 108803
+          "votes": 108881
         }
       ]
     },
@@ -120,8 +120,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 85.46065259117083,
-      "reportingLabel": "3562 of 4168 precincts reporting",
+      "reportingPct": 86.51631477927063,
+      "reportingLabel": "3606 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -129,20 +129,20 @@
     {
       "id": "sen-nc",
       "status": "unofficial",
-      "reportingPct": 95.77303884234577,
-      "reportingLabel": "2515 of 2626 precincts reporting",
+      "reportingPct": 97.9055597867479,
+      "reportingLabel": "2571 of 2626 precincts reporting",
       "source": "North Carolina State Board of Elections",
       "sourceUrl": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2026_11_03/results_pct_20261103.zip",
       "candidates": [
         {
           "name": "Roy Cooper",
           "party": "D",
-          "votes": 1565319
+          "votes": 1610416
         },
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 1262469
+          "votes": 1284795
         }
       ]
     }
