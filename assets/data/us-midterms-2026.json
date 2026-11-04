@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T05:07:50Z",
+  "asOf": "2026-11-04T05:12:52Z",
   "races": [
     {
       "id": "gov-az",
@@ -44,8 +44,8 @@
     {
       "id": "gov-ks",
       "status": "unofficial",
-      "reportingPct": 93.85796545105566,
-      "reportingLabel": "3912 of 4168 precincts reporting",
+      "reportingPct": 95.22552783109406,
+      "reportingLabel": "3969 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -90,12 +90,12 @@
         {
           "name": "Don Davis",
           "party": "D",
-          "votes": 95914
+          "votes": 95960
         },
         {
           "name": "Laurie Buckhout",
           "party": "R",
-          "votes": 110444
+          "votes": 110469
         }
       ]
     },
@@ -120,8 +120,8 @@
     {
       "id": "sen-ks",
       "status": "unofficial",
-      "reportingPct": 93.85796545105566,
-      "reportingLabel": "3912 of 4168 precincts reporting",
+      "reportingPct": 95.22552783109406,
+      "reportingLabel": "3969 of 4168 precincts reporting",
       "source": "Kansas Secretary of State",
       "sourceUrl": "https://ent.sos.ks.gov/kssos_ent.html",
       "candidates": []
@@ -137,12 +137,12 @@
         {
           "name": "Roy Cooper",
           "party": "D",
-          "votes": 1637243
+          "votes": 1638778
         },
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 1300591
+          "votes": 1301452
         }
       ]
     }
