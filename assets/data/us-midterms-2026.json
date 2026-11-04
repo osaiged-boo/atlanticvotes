@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-04T07:42:45Z",
+  "asOf": "2026-11-04T08:02:45Z",
   "races": [
     {
       "id": "gov-az",
@@ -53,20 +53,20 @@
     {
       "id": "house-ca22",
       "status": "unofficial",
-      "reportingPct": 37.04347826086956,
-      "reportingLabel": "213 of 575 precincts reporting",
+      "reportingPct": 47.30434782608695,
+      "reportingLabel": "272 of 575 precincts reporting",
       "source": "California Secretary of State",
       "sourceUrl": "https://api.sos.ca.gov/returns/us-rep/district/22",
       "candidates": [
         {
           "name": "Randy Villegas",
           "party": "D",
-          "votes": 42350
+          "votes": 43161
         },
         {
           "name": "David G. Valadao",
           "party": "R",
-          "votes": 22791
+          "votes": 23405
         }
       ]
     },
