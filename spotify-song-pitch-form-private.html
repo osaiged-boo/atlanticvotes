@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<meta name="googlebot" content="noindex, nofollow" />
+<link rel="icon" href="data:," />
+<title>Spotify Song Pitch Form — Private</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f3f3ef;
+    --surface:#ffffff;
+    --surface-2:#eceee8;
+    --ink:#101410;
+    --ink-2:#3c443c;
+    --muted:#626a62;
+    --line:#d9dbd2;
+    --green:#1db954;
+    --green-deep:#0f7a37;
+    --green-soft:#e2f5e8;
+    --amber-bg:#fdf0d5;
+    --amber-ink:#7a4b00;
+    --amber-line:#e8c87a;
+    --red:#b3261e;
+    --red-soft:#fbe9e7;
+    --dark-band:#0a1e3f;
+    --dark-band-ink:#eef2ec;
+    --av-navy:#0a1e3f;
+    --av-gold:#e8b93e;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(16,20,16,.06),0 8px 24px rgba(16,20,16,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0c0e0c;
+      --surface:#161916;
+      --surface-2:#1e211e;
+      --ink:#f0f2ee;
+      --ink-2:#c9cec9;
+      --muted:#9aa39a;
+      --line:#2b2f2b;
+      --green-deep:#3ecf6e;
+      --green-soft:#12301d;
+      --amber-bg:#33270d;
+      --amber-ink:#f2cd7e;
+      --amber-line:#6b5518;
+      --red:#f08a84;
+      --red-soft:#3a1714;
+      --dark-band:#061530;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",sans-serif;line-height:1.08;margin:0}
+  a{color:var(--green-deep)}
+  button{font-family:inherit;cursor:pointer}
+  input,select,textarea{font-family:inherit;font-size:16px;color:var(--ink)}
+  :focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:6px}
+
+  /* ---------- Header band ---------- */
+  .band{background:var(--dark-band);color:var(--dark-band-ink);padding:26px 20px 28px;border-bottom:5px solid var(--green)}
+  .av-brand{display:flex;align-items:center;gap:11px;margin-bottom:22px}
+  .av-mark{flex:none;width:40px;height:40px;border-radius:9px;background:#fff;color:var(--av-navy);display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em}
+  .av-word{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px;letter-spacing:.01em;line-height:1.1}
+  .av-word small{display:block;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#9db4d8;margin-top:2px}
+  .band-in{max-width:1120px;margin:0 auto}
+  .band .kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 12px}
+  .band h1{font-size:clamp(32px,5.5vw,50px);font-weight:800;letter-spacing:-.01em;max-width:18ch}
+  .band h1 em{font-style:normal;color:var(--green)}
+  .band .lede{margin:14px 0 0;max-width:64ch;font-size:16.5px;color:#c6cfc4}
+  .band .lede strong{color:#fff}
+  .rule-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .rule-chip{display:inline-flex;align-items:center;gap:7px;border:1px solid #24406e;border-radius:999px;padding:6px 13px;font-size:13.5px;color:#dfe7dd;background:#0e2a57}
+  .rule-chip b{color:var(--green);font-weight:700;white-space:nowrap}
+
+  /* ---------- Layout ---------- */
+  .wrap{max-width:1120px;margin:0 auto;padding:26px 20px 60px;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:26px;align-items:start}
+  @media (max-width:960px){.wrap{grid-template-columns:minmax(0,1fr)}}
+  .col-main{display:flex;flex-direction:column;gap:20px;min-width:0}
+  .col-side{position:sticky;top:18px;display:flex;flex-direction:column;gap:18px}
+  @media (max-width:960px){.col-side{position:static}}
+
+  /* ---------- Cards / steps ---------- */
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 26px 22px}
+  @media (max-width:560px){.card{padding:19px 16px}}
+  .step-head{display:flex;align-items:flex-start;gap:13px;margin-bottom:4px}
+  .step-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:16px;margin-top:2px}
+  .step-head h2{font-size:23px;font-weight:700}
+  .step-head p{margin:4px 0 0;color:var(--muted);font-size:14.5px;max-width:58ch}
+
+  /* ---------- Form fields ---------- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  @media (max-width:640px){.grid2,.grid3{grid-template-columns:1fr}}
+  .field{margin-top:16px}
+  .field label{display:block;font-weight:600;font-size:14.5px;margin-bottom:6px}
+  .field label .req{color:var(--green-deep);font-weight:700}
+  .field .hint{font-size:13px;color:var(--muted);margin:4px 0 0}
+  .field input[type="text"],.field input[type="date"],.field select,.field textarea{
+    width:100%;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;transition:border-color .15s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);outline:none;box-shadow:0 0 0 3px var(--green-soft)}
+  .field textarea{resize:vertical;min-height:74px}
+  .field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+  #dateNote{border-radius:10px;padding:11px 14px;font-size:14.5px;margin-top:14px;border:1px solid var(--line);background:var(--bg);display:none}
+  #dateNote.ok{border-color:var(--green);background:var(--green-soft);display:block}
+  #dateNote.warn{border-color:var(--amber-line);background:var(--amber-bg);color:var(--amber-ink);display:block}
+  #dateNote.bad{border-color:var(--red);background:var(--red-soft);color:var(--red);display:block}
+
+  /* ---------- Chips ---------- */
+  .chip-group{margin-top:18px}
+  .chip-group .cg-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .chip-group .cg-head label{font-weight:600;font-size:14.5px}
+  .cg-count{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted)}
+  .cg-count.full{color:var(--red);font-weight:600}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+  .chip{border:1.5px solid var(--line);background:var(--bg);color:var(--ink-2);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:500;transition:all .12s}
+  .chip:hover{border-color:var(--green)}
+  .chip.on{background:var(--green);border-color:var(--green);color:#07130a;font-weight:700}
+  @media (prefers-color-scheme: dark){.chip.on{color:#04140a}}
+  .chip.custom.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+  .chip-add{display:flex;gap:8px;margin-top:10px}
+  .chip-add input{flex:1;background:var(--bg);border:1.5px dashed var(--line);border-radius:10px;padding:9px 12px;font-size:14.5px;min-width:0}
+  .chip-add input:focus{border-color:var(--green);outline:none}
+  .chip-add button{border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:10px;padding:9px 15px;font-weight:600;font-size:14px}
+  .shake{animation:shake .3s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+  @media (prefers-reduced-motion: reduce){.shake{animation:none}html{scroll-behavior:auto}}
+
+  /* ---------- Radio pills ---------- */
+  .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+  .pill{border:1.5px solid var(--line);background:var(--bg);color:var(--ink-2);border-radius:10px;padding:9px 15px;font-size:14.5px;font-weight:500}
+  .pill.on{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:700}
+
+  /* ---------- Pitch note ---------- */
+  .builder{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px 6px;margin-top:16px}
+  .builder h3{font-size:16.5px;margin-bottom:2px}
+  .builder>p{margin:0;color:var(--muted);font-size:14px}
+  .note-wrap{margin-top:18px}
+  .note-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .note-head label{font-weight:700;font-size:15.5px}
+  #charCount{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted)}
+  #charCount.over{color:var(--red);font-weight:700}
+  #charCount.good{color:var(--green-deep);font-weight:600}
+  #pitchNote{min-height:120px;font-size:16.5px;line-height:1.6;width:100%;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;resize:vertical}
+  #pitchNote:focus{border-color:var(--green);outline:none;box-shadow:0 0 0 3px var(--green-soft)}
+  #pitchNote.over{border-color:var(--red);box-shadow:0 0 0 3px var(--red-soft)}
+  .meter{height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin-top:9px}
+  .meter>i{display:block;height:100%;background:var(--green);width:0%;transition:width .2s}
+  .meter>i.over{background:var(--red)}
+  .note-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+  .btn{border-radius:10px;padding:11px 18px;font-weight:700;font-size:15px;border:1.5px solid transparent;transition:transform .1s}
+  .btn:active{transform:scale(.98)}
+  .btn.primary{background:var(--green);color:#06130a;border-color:var(--green)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn.dark{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .btn.small{padding:8px 13px;font-size:13.5px}
+  #editedFlag{display:none;font-size:13px;color:var(--amber-ink);background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:8px;padding:7px 11px;margin-top:10px}
+
+  /* ---------- Side panel ---------- */
+  .side-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+  .side-card h3{font-size:18px;margin-bottom:4px}
+  .side-card .sub{font-size:13.5px;color:var(--muted);margin:0 0 12px}
+  #sheetPreview{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.65;white-space:pre-wrap;word-break:break-word;max-height:440px;overflow:auto;margin:0}
+  .side-actions{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+  .side-actions .btn{width:100%;text-align:center}
+  #copyToast{display:none;font-size:13.5px;font-weight:600;color:var(--green-deep);text-align:center;margin-top:9px}
+
+  /* ---------- Submit step ---------- */
+  .checks{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+  .checks li{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;color:var(--ink-2)}
+  .checks li .mark{flex:none;width:21px;height:21px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;margin-top:1px;background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
+  .checks li.pass .mark{background:var(--green);border-color:var(--green);color:#07130a}
+  .checks li.pass{color:var(--ink)}
+  .checks li.miss .mark{background:var(--red-soft);border-color:var(--red);color:var(--red)}
+  #submitDone{display:none;border:1px solid var(--green);background:var(--green-soft);border-radius:10px;padding:13px 15px;font-size:14.5px;margin-top:14px}
+  #submitDone b{display:block;margin-bottom:2px}
+  #submitWarn{display:none;border:1px solid var(--amber-line);background:var(--amber-bg);color:var(--amber-ink);border-radius:10px;padding:13px 15px;font-size:14.5px;margin-top:14px}
+  #submitWarn b{display:block;margin-bottom:2px}
+  .submit-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+  .submit-actions .btn{flex:1;min-width:180px;text-align:center}
+  #submitBtn:disabled{opacity:.6;cursor:wait}
+  footer{max-width:1120px;margin:0 auto;padding:0 20px 44px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="band-in">
+    <div class="av-brand">
+      <div class="av-mark" aria-hidden="true">AV</div>
+      <div class="av-word">Atlantic Votes<small>Private form — shared by invitation only</small></div>
+    </div>
+    <p class="kicker">Spotify for Artists · Editorial Playlist Pitch</p>
+    <h1>Fill this in. <em>Pitch on Spotify.</em></h1>
+    <p class="lede">Answer the questions below — each one matches a field in Spotify's own pitch form. When you're done, hit <strong>Submit</strong> at the end: your answers go straight in as a response — no email needed — and you'll have one tightened pitch sheet ready to pitch with in Spotify for Artists, under <strong>Music → Upcoming</strong>.</p>
+    <div class="rule-strip" aria-label="Key rules">
+      <span class="rule-chip"><b>Unreleased only</b> — a live song can't be pitched</span>
+      <span class="rule-chip"><b>7+ days</b> before release — earlier is better</span>
+      <span class="rule-chip"><b>1 song</b> at a time</span>
+      <span class="rule-chip"><b>500 characters</b> max for the pitch note</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <main class="col-main">
+
+    <!-- STEP 1 -->
+    <section class="card" id="step1">
+      <div class="step-head">
+        <div class="step-num">1</div>
+        <div>
+          <h2>The song</h2>
+          <p>The song must already be uploaded to your distributor and showing in Spotify for Artists under Music → Upcoming before you can pitch it.</p>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label for="artistName">Artist name <span class="req">*</span></label>
+          <input type="text" id="artistName" placeholder="e.g. Jake Doe" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="songTitle">Song title <span class="req">*</span></label>
+          <input type="text" id="songTitle" placeholder="The one song you're pitching" autocomplete="off" />
+          <p class="hint">For an EP or album, pick the strongest single track.</p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="releaseDate">Release date <span class="req">*</span></label>
+        <input type="date" id="releaseDate" />
+      </div>
+      <div id="dateNote" role="status"></div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="card" id="step2">
+      <div class="step-head">
+        <div class="step-num">2</div>
+        <div>
+          <h2>Location</h2>
+          <p>Spotify asks for three cities — they help the right local editors find the song.</p>
+        </div>
+      </div>
+      <div class="grid3">
+        <div class="field">
+          <label for="cityHome">Hometown <span class="req">*</span></label>
+          <input type="text" id="cityHome" placeholder="City, Country" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="cityBase">Where you're based now <span class="req">*</span></label>
+          <input type="text" id="cityBase" placeholder="City, Country" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="cityAssoc">City you associate with <span class="req">*</span></label>
+          <input type="text" id="cityAssoc" placeholder="City, Country" autocomplete="off" />
+          <p class="hint">Can be where your sound or your listeners are.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="card" id="step3">
+      <div class="step-head">
+        <div class="step-num">3</div>
+        <div>
+          <h2>The sound</h2>
+          <p>Editors filter pitches by these tags — pick what's accurate, not what's popular.</p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="mainGenre">Main genre <span class="req">*</span></label>
+        <select id="mainGenre">
+          <option value="">Select the closest fit…</option>
+          <option>Afrobeats</option><option>Afropop</option><option>Alternative</option><option>Amapiano</option>
+          <option>Blues</option><option>Classical</option><option>Country</option><option>Electronic / Dance</option>
+          <option>Folk</option><option>Gospel / Christian</option><option>Hip-Hop / Rap</option><option>Indie</option>
+          <option>Jazz</option><option>K-Pop</option><option>Latin</option><option>Metal</option>
+          <option>Pop</option><option>Punk</option><option>R&amp;B / Soul</option><option>Reggae / Dancehall</option>
+          <option>Rock</option><option>World / Traditional</option><option>Other</option>
+        </select>
+      </div>
+
+      <div class="chip-group" data-chips="subgenres" data-max="3">
+        <div class="cg-head"><label>Subgenres</label><span class="cg-count">0 / 3 selected</span></div>
+        <div class="chips"></div>
+        <div class="chip-add"><input type="text" placeholder="Add your own…" aria-label="Add your own subgenre" /><button type="button">Add</button></div>
+      </div>
+
+      <div class="chip-group" data-chips="moods" data-max="2">
+        <div class="cg-head"><label>Moods</label><span class="cg-count">0 / 2 selected</span></div>
+        <div class="chips"></div>
+        <div class="chip-add"><input type="text" placeholder="Add your own…" aria-label="Add your own mood" /><button type="button">Add</button></div>
+      </div>
+
+      <div class="chip-group" data-chips="styles" data-max="2">
+        <div class="cg-head"><label>Song styles</label><span class="cg-count">0 / 2 selected</span></div>
+        <div class="chips"></div>
+        <div class="chip-add"><input type="text" placeholder="Add your own…" aria-label="Add your own style" /><button type="button">Add</button></div>
+      </div>
+
+      <div class="chip-group" data-chips="cultures" data-max="3">
+        <div class="cg-head"><label>Music cultures &amp; language</label><span class="cg-count">0 / 3 selected</span></div>
+        <div class="chips"></div>
+        <div class="chip-add"><input type="text" placeholder="Add a culture or language…" aria-label="Add a culture or language" /><button type="button">Add</button></div>
+        <p class="hint" style="font-size:13px;color:var(--muted);margin:8px 0 0">Include the language of the lyrics, e.g. "English lyrics".</p>
+      </div>
+
+      <div class="chip-group" data-chips="instruments" data-max="99">
+        <div class="cg-head"><label>Instruments in the track</label><span class="cg-count">0 selected</span></div>
+        <div class="chips"></div>
+        <div class="chip-add"><input type="text" placeholder="Add an instrument…" aria-label="Add an instrument" /><button type="button">Add</button></div>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="card" id="step4">
+      <div class="step-head">
+        <div class="step-num">4</div>
+        <div>
+          <h2>About the recording</h2>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label>What kind of track is it?</label>
+          <div class="pillrow" data-pillgroup="recKind">
+            <button type="button" class="pill" data-val="Original">Original</button>
+            <button type="button" class="pill" data-val="Cover">Cover</button>
+            <button type="button" class="pill" data-val="Remix">Remix</button>
+            <button type="button" class="pill" data-val="Instrumental">Instrumental</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>How was it recorded?</label>
+          <div class="pillrow" data-pillgroup="recSetting">
+            <button type="button" class="pill" data-val="Studio recording">Studio</button>
+            <button type="button" class="pill" data-val="Live recording">Live</button>
+          </div>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label>Explicit lyrics?</label>
+          <div class="pillrow" data-pillgroup="explicit">
+            <button type="button" class="pill" data-val="No">No</button>
+            <button type="button" class="pill" data-val="Yes">Yes</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="originalWork">If it's a cover or remix — the original song &amp; artist</label>
+          <input type="text" id="originalWork" placeholder="Original title — original artist" autocomplete="off" />
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section class="card" id="step5">
+      <div class="step-head">
+        <div class="step-num">5</div>
+        <div>
+          <h2>The pitch note</h2>
+          <p>Spotify gives you one description box, 500 characters max. Answer these four questions and the note writes itself — or write it directly in the box below.</p>
+        </div>
+      </div>
+
+      <div class="builder">
+        <h3>Note builder</h3>
+        <p>Short, specific answers. Sound first, story second, plans third.</p>
+        <div class="field">
+          <label for="bSound">1 · How does it sound, in one line?</label>
+          <input type="text" id="bSound" placeholder="e.g. Hazy alt-R&amp;B — warm synths, brushed drums, close vocal" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="bFans">2 · For fans of… (1–2 artists it genuinely sounds like)</label>
+          <input type="text" id="bFans" placeholder="e.g. SZA meets Tems" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="bStory">3 · What's the song about, and who made it with you?</label>
+          <input type="text" id="bStory" placeholder="e.g. Written in one night in Lagos about…; produced by…" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="bPromo">4 · What's planned around the release?</label>
+          <input type="text" id="bPromo" placeholder="e.g. Video out release week; radio premiere; shows in…; last single did … streams" autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="note-wrap">
+        <div class="note-head">
+          <label for="pitchNote">Your pitch note — this is the text that goes into Spotify</label>
+          <span id="charCount">0 / 500 characters</span>
+        </div>
+        <textarea id="pitchNote" maxlength="900" placeholder="Your note builds here as you answer above — or type it directly. Never leave it blank."></textarea>
+        <div class="meter" aria-hidden="true"><i id="meterFill"></i></div>
+        <div id="editedFlag">You've edited the note by hand, so the builder has paused. <button type="button" class="btn ghost small" id="rebuildBtn" style="margin-left:6px">Rebuild from my answers</button></div>
+        <div class="note-actions">
+          <button type="button" class="btn primary" id="copyNoteBtn">Copy the pitch note</button>
+          <button type="button" class="btn ghost" id="tightenBtn">Tighten to fit 500</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 6 -->
+    <section class="card" id="step6">
+      <div class="step-head">
+        <div class="step-num">6</div>
+        <div>
+          <h2>Send it in</h2>
+          <p>When the essentials below are ticked, press Submit. Your answers go straight into the pitch form's responses — no email app, no account, nothing else to open. Your pitch note is tightened to Spotify's 500-character limit before anything is sent.</p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="contactName">Your name and contact <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+        <input type="text" id="contactName" placeholder="Name — email or phone" autocomplete="off" />
+        <p class="hint">Only so we can follow up if anything in your answers is unclear.</p>
+      </div>
+      <ul class="checks" id="checkList"></ul>
+      <div class="submit-actions">
+        <button type="button" class="btn primary" id="submitBtn">Submit my answers</button>
+        <button type="button" class="btn ghost" id="emailBtn">Copy the pitch sheet instead</button>
+      </div>
+      <div id="submitWarn" role="alert"></div>
+      <div id="submitDone" role="status"></div>
+      <p class="hint" style="font-size:13px;color:var(--muted);margin:12px 0 0">If Submit ever fails on your connection, the same questions are in the <a href="https://docs.google.com/forms/d/e/1FAIpQLScpHvppbxOEV5aouhqrnp99TyCC-0UmiLCnJr-fyf93Okk7iA/viewform" target="_blank" rel="noopener">Google Form</a> — answers there land in the same responses.</p>
+    </section>
+
+  </main>
+
+  <!-- SIDE PANEL -->
+  <aside class="col-side">
+    <div class="side-card">
+      <h3>Your Spotify pitch summary</h3>
+      <p class="sub">Everything above, in one block. Copy it and work through Spotify's pitch form with it — the pitch note at the end pastes straight into Spotify's description box.</p>
+      <pre id="sheetPreview">Start filling the form and your summary appears here.</pre>
+      <div class="side-actions">
+        <button type="button" class="btn primary" id="copySheetBtn">Copy the summary</button>
+        <button type="button" class="btn dark" id="downloadBtn">Download as a text file</button>
+      </div>
+      <p id="copyToast">Copied — ready to paste.</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  Atlantic Votes · Based on Spotify's official pitching guidance. Pitching is free and never guarantees a playlist placement — anyone charging for one is a red flag. Nothing you type is kept on this page — your answers are only sent when you press Submit, so submit (or copy the summary) before you close it.
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var on = function(el, ev, fn){ if(el) el.addEventListener(ev, fn); };
+
+  /* ---------- Chip groups ---------- */
+  var CHIP_DATA = {
+    subgenres: ["Alt-R&B","Neo-Soul","Afro-Soul","Bedroom Pop","Dark Pop","Indie Folk","Alt-Pop","Dream Pop","Hyperpop","Lo-Fi","Drill","Boom Bap","Trap","Grime","House","Techno","Amapiano","Highlife","Dancehall","Shoegaze","Alt-Rock","Americana","Singer-Songwriter","Synthwave","Emo","Psychedelic","Jazz Rap","UK Garage"],
+    moods: ["Late-night","Confident","Melancholic","Chill","Energetic","Euphoric","Romantic","Nostalgic","Happy","Empowering","Dark","Peaceful","Hopeful","Sensual","Angsty","Focused","Bittersweet","Defiant"],
+    styles: ["Anthemic","Stripped-back","Acoustic","Cinematic","Groovy","Ethereal","Raw / live feel","Polished pop","Lo-fi","Orchestral","Minimal","Danceable","Storytelling","Experimental","Call-and-response","Falsetto-led"],
+    cultures: ["Nigerian","Ghanaian","South African","Caribbean","African American","Latin American","South Asian","East Asian","Middle Eastern","Francophone","Lusophone","English lyrics","Pidgin English","Yoruba lyrics","Spanish lyrics","Recorded in West Africa","Recorded in the UK","Recorded in Canada","Recorded in the US"],
+    instruments: ["Piano","Acoustic guitar","Electric guitar","Bass guitar","Live drums","808s / drum machine","Analog synths","Live strings","Horns / brass","Saxophone","Violin","Choir / layered vocals","Ukulele","Djembe / hand percussion","Log drum","Talking drum","Banjo","Pedal steel","Organ","Samples"]
+  };
+  var chipState = {};
+  document.querySelectorAll("[data-chips]").forEach(function(group){
+    var key = group.getAttribute("data-chips");
+    var max = parseInt(group.getAttribute("data-max"), 10) || 99;
+    chipState[key] = [];
+    var chipsEl = group.querySelector(".chips");
+    var countEl = group.querySelector(".cg-count");
+    function renderCount(){
+      if(max >= 99){ countEl.textContent = chipState[key].length + " selected"; }
+      else { countEl.textContent = chipState[key].length + " / " + max + " selected"; }
+      countEl.classList.toggle("full", chipState[key].length >= max && max < 99);
+    }
+    function makeChip(label, isCustom){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chip" + (isCustom ? " custom" : ""); b.textContent = label;
+      b.setAttribute("aria-pressed","false");
+      b.addEventListener("click", function(){
+        var idx = chipState[key].indexOf(label);
+        if(idx >= 0){ chipState[key].splice(idx,1); b.classList.remove("on"); b.setAttribute("aria-pressed","false"); }
+        else {
+          if(chipState[key].length >= max){
+            group.classList.remove("shake"); void group.offsetWidth; group.classList.add("shake");
+            countEl.textContent = "Max " + max + " — remove one first";
+            countEl.classList.add("full");
+            return;
+          }
+          chipState[key].push(label); b.classList.add("on"); b.setAttribute("aria-pressed","true");
+        }
+        renderCount(); refresh();
+      });
+      chipsEl.appendChild(b);
+      return b;
+    }
+    (CHIP_DATA[key] || []).forEach(function(label){ makeChip(label, false); });
+    var addInput = group.querySelector(".chip-add input");
+    var addBtn = group.querySelector(".chip-add button");
+    function addCustom(){
+      var v = addInput.value.trim();
+      if(!v) return;
+      if(chipState[key].indexOf(v) >= 0){ addInput.value=""; return; }
+      if(chipState[key].length >= max){
+        group.classList.remove("shake"); void group.offsetWidth; group.classList.add("shake");
+        countEl.textContent = "Max " + max + " — remove one first"; countEl.classList.add("full");
+        return;
+      }
+      var chip = makeChip(v, true);
+      chipState[key].push(v); chip.classList.add("on"); chip.setAttribute("aria-pressed","true");
+      addInput.value = ""; renderCount(); refresh();
+    }
+    on(addBtn, "click", addCustom);
+    on(addInput, "keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); addCustom(); } });
+    renderCount();
+  });
+
+  /* ---------- Pill groups ---------- */
+  var pillState = {};
+  document.querySelectorAll("[data-pillgroup]").forEach(function(group){
+    var key = group.getAttribute("data-pillgroup");
+    pillState[key] = "";
+    group.querySelectorAll(".pill").forEach(function(p){
+      p.addEventListener("click", function(){
+        group.querySelectorAll(".pill").forEach(function(x){ x.classList.remove("on"); });
+        p.classList.add("on"); pillState[key] = p.getAttribute("data-val"); refresh();
+      });
+    });
+  });
+
+  /* ---------- Pitch note builder ---------- */
+  var noteEl = $("pitchNote"), noteEdited = false, composing = false;
+  function sentence(s){ s = (s||"").trim(); if(!s) return ""; s = s.charAt(0).toUpperCase() + s.slice(1); if(!/[.!?]$/.test(s)) s += "."; return s; }
+  function buildNote(){
+    var parts = [];
+    var sound = $("bSound").value.trim(), fans = $("bFans").value.trim();
+    if(sound) parts.push(sentence(sound.replace(/\.*$/,"")));
+    if(fans) parts.push(sentence("For fans of " + fans.replace(/\.*$/,"")));
+    var story = $("bStory").value.trim(); if(story) parts.push(sentence(story));
+    var promo = $("bPromo").value.trim(); if(promo) parts.push(sentence(promo));
+    return parts.join(" ");
+  }
+  function updateNote(fromBuilder){
+    var count = noteEl.value.length;
+    var cc = $("charCount");
+    cc.textContent = count + " / 500 characters";
+    cc.classList.toggle("over", count > 500);
+    cc.classList.toggle("good", count > 0 && count <= 500);
+    var fill = $("meterFill");
+    fill.style.width = Math.min(100, count / 500 * 100) + "%";
+    fill.classList.toggle("over", count > 500);
+    noteEl.classList.toggle("over", count > 500);
+    if(!fromBuilder) refresh();
+  }
+  ["bSound","bFans","bStory","bPromo"].forEach(function(id){
+    on($(id), "input", function(){
+      if(noteEdited) return;
+      composing = true; noteEl.value = buildNote(); composing = false;
+      updateNote(true); refresh();
+    });
+  });
+  on(noteEl, "input", function(){
+    if(!composing && noteEl.value !== buildNote() && buildNote() !== ""){ noteEdited = true; $("editedFlag").style.display = "block"; }
+    updateNote(false);
+  });
+  on($("rebuildBtn"), "click", function(){
+    noteEdited = false; $("editedFlag").style.display = "none";
+    noteEl.value = buildNote(); updateNote(true); refresh();
+  });
+  function tightenNote(){
+    var t = noteEl.value;
+    if(t.length <= 500) return;
+    t = t.replace(/\s+/g, " ").replace(/\b(very|really|just|actually|amazing|incredible|unique|powerful)\s+/gi, "");
+    if(t.length > 500){
+      var cut = t.slice(0, 500);
+      var lastEnd = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("! "), cut.lastIndexOf("? "));
+      t = lastEnd > 200 ? cut.slice(0, lastEnd + 1) : cut.replace(/\s+\S*$/, "") + "…";
+    }
+    noteEl.value = t.trim(); updateNote(false);
+  }
+  on($("tightenBtn"), "click", tightenNote);
+
+  /* ---------- Copy helpers ---------- */
+  function copyText(text, btn, cb){
+    function done(ok){
+      if(ok){
+        var toast = $("copyToast"); toast.style.display = "block";
+        setTimeout(function(){ toast.style.display = "none"; }, 2600);
+        if(btn){ var old = btn.textContent; btn.textContent = "Copied ✓"; setTimeout(function(){ btn.textContent = old; }, 2000); }
+      }
+      if(cb) cb(ok);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ done(true); }).catch(function(){ fallback(); });
+    } else fallback();
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch(e){}
+      document.body.removeChild(ta); done(ok);
+    }
+  }
+  on($("copyNoteBtn"), "click", function(){ if(noteEl.value.trim()) copyText(noteEl.value.trim(), this); });
+
+  /* ---------- Dates ---------- */
+  function parseDate(v){ if(!v) return null; var p = v.split("-"); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function fmt(d){ return d.toLocaleDateString("en-GB", { weekday:"short", day:"numeric", month:"short", year:"numeric" }); }
+  function addDays(d, n){ var x = new Date(d.getTime()); x.setDate(x.getDate() + n); return x; }
+  function today(){ var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+
+  function renderDateNote(){
+    var rel = parseDate($("releaseDate").value);
+    var box = $("dateNote");
+    if(!rel){ box.className = ""; box.innerHTML = ""; return; }
+    var t = today();
+    var daysTo = Math.round((rel - t) / 86400000);
+    var floor = addDays(rel, -7);
+    var ideal = addDays(rel, -21);
+    box.className = "";
+    if(daysTo < 0){
+      box.classList.add("bad");
+      box.innerHTML = "<b>That date has passed.</b> A song that's already out can't be pitched — pick the release date of an upcoming song.";
+    } else if(t > floor){
+      box.classList.add("bad");
+      box.innerHTML = "<b>Less than 7 days to go.</b> Release is in " + daysTo + " day" + (daysTo===1?"":"s") + " — if the song is already in Upcoming, pitch it <b>today</b>. You've missed the guaranteed Release Radar window.";
+    } else if(daysTo <= 14){
+      box.classList.add("warn");
+      box.innerHTML = "<b>Tight but workable.</b> Pitch as soon as the song appears in Upcoming — the last possible day is <b>" + fmt(floor) + "</b>.";
+    } else {
+      box.classList.add("ok");
+      box.innerHTML = "<b>Good timing.</b> Aim to pitch by <b>" + fmt(ideal) + "</b> — the last possible day is <b>" + fmt(floor) + "</b> (7 days before release).";
+    }
+  }
+  on($("releaseDate"), "change", function(){ renderDateNote(); refresh(); });
+
+  /* ---------- Summary ---------- */
+  function val(id){ var el = $(id); return el ? el.value.trim() : ""; }
+  function list(arr){ return arr.length ? arr.join(", ") : "—"; }
+  function buildSheet(){
+    var rel = parseDate($("releaseDate").value);
+    var lines = [];
+    lines.push("SPOTIFY PITCH SUMMARY");
+    lines.push("Pitch at: Spotify for Artists → Music → Upcoming → select the song → Pitch a song");
+    lines.push("");
+    lines.push("SONG");
+    lines.push("Artist: " + (val("artistName") || "—"));
+    lines.push("Song: " + (val("songTitle") || "—"));
+    if(rel){
+      lines.push("Release date: " + fmt(rel));
+      lines.push("Pitch by: " + fmt(addDays(rel,-7)) + " at the latest (7 days before release)");
+    } else {
+      lines.push("Release date: —");
+    }
+    lines.push("");
+    lines.push("LOCATION");
+    lines.push("Hometown: " + (val("cityHome") || "—"));
+    lines.push("Based in: " + (val("cityBase") || "—"));
+    lines.push("City associated with: " + (val("cityAssoc") || "—"));
+    lines.push("");
+    lines.push("SOUND");
+    lines.push("Main genre: " + (val("mainGenre") || "—"));
+    lines.push("Subgenres (max 3): " + list(chipState.subgenres));
+    lines.push("Moods (max 2): " + list(chipState.moods));
+    lines.push("Song styles (max 2): " + list(chipState.styles));
+    lines.push("Music cultures & language (max 3): " + list(chipState.cultures));
+    lines.push("Instruments: " + list(chipState.instruments));
+    lines.push("");
+    lines.push("RECORDING");
+    lines.push("Type: " + (pillState.recKind || "—"));
+    lines.push("Recording: " + (pillState.recSetting || "—"));
+    if(val("originalWork")) lines.push("Original work: " + val("originalWork"));
+    lines.push("Explicit: " + (pillState.explicit || "—"));
+    lines.push("");
+    var note = noteEl.value.trim();
+    lines.push("PITCH NOTE — paste into Spotify's description box (" + note.length + "/500 characters)");
+    lines.push(note || "— (not written yet — never leave this blank)");
+    lines.push("");
+    var checks = getChecks();
+    var passed = checks.filter(function(c){ return c.ok; }).length;
+    lines.push("READY CHECK — " + passed + "/" + checks.length + " complete");
+    checks.forEach(function(c){ lines.push((c.ok ? "[x] " : "[ ] ") + c.label); });
+    return lines.join("\n");
+  }
+  /* ---------- Readiness checks & submit ---------- */
+  function getChecks(){
+    var rel = parseDate($("releaseDate").value);
+    var daysTo = rel ? Math.round((rel - today()) / 86400000) : null;
+    var note = noteEl.value.trim();
+    return [
+      { ok: !!(val("artistName") && val("songTitle")), label: "Artist name and song title filled in" },
+      { ok: !!rel && daysTo >= 7, label: rel ? (daysTo >= 7 ? "Release date gives at least 7 days to pitch" : "Release date is too close — pitching needs 7+ days before release") : "Release date chosen (7+ days out)" },
+      { ok: !!(val("cityHome") && val("cityBase") && val("cityAssoc")), label: "All three cities filled in" },
+      { ok: !!val("mainGenre"), label: "Main genre chosen" },
+      { ok: chipState.subgenres.length >= 1, label: "At least one subgenre picked" },
+      { ok: chipState.moods.length >= 1 && chipState.styles.length >= 1, label: "At least one mood and one song style picked" },
+      { ok: chipState.cultures.length >= 1, label: "Music culture / language picked" },
+      { ok: !!(val("bSound") && val("bStory")), label: "Sound and story written (Step 5, questions 1 and 3)" },
+      { ok: note.length > 0 && note.length <= 500, label: note.length > 500 ? "Pitch note is over 500 characters — Submit will tighten it" : "Pitch note written and within 500 characters" },
+      { ok: !!val("bFans") || /fans of/i.test(note), label: "Similar artists named (\"for fans of…\")" },
+      { ok: !!val("bPromo") || noteEdited, label: "Release plans included (video, radio, shows, last single's numbers)" }
+    ];
+  }
+  function renderChecks(){
+    var list = $("checkList");
+    if(!list) return;
+    list.innerHTML = "";
+    getChecks().forEach(function(c){
+      var li = document.createElement("li");
+      li.className = c.ok ? "pass" : "miss";
+      var mark = document.createElement("span");
+      mark.className = "mark"; mark.textContent = c.ok ? "✓" : "!";
+      li.appendChild(mark);
+      li.appendChild(document.createTextNode(c.label));
+      list.appendChild(li);
+    });
+  }
+  function missingRequired(){
+    var miss = [];
+    if(!(val("artistName") && val("songTitle"))) miss.push("artist name and song title (Step 1)");
+    if(!parseDate($("releaseDate").value)) miss.push("release date (Step 1)");
+    if(!(val("cityHome") && val("cityBase") && val("cityAssoc"))) miss.push("all three cities (Step 2)");
+    if(!val("mainGenre")) miss.push("main genre (Step 3)");
+    if(chipState.subgenres.length < 1) miss.push("at least one subgenre (Step 3)");
+    if(chipState.moods.length < 1) miss.push("at least one mood (Step 3)");
+    if(chipState.styles.length < 1) miss.push("at least one song style (Step 3)");
+    if(chipState.cultures.length < 1) miss.push("music culture / language (Step 3)");
+    if(!val("bSound")) miss.push("what the song sounds like (Step 5, question 1)");
+    if(!val("bStory")) miss.push("the song's story (Step 5, question 3)");
+    if(!val("bFans")) miss.push("similar artists (Step 5, question 2)");
+    if(!noteEl.value.trim()) miss.push("pitch note (Step 5)");
+    return miss;
+  }
+  function showWarn(html){
+    var w = $("submitWarn"); w.innerHTML = html; w.style.display = "block";
+    $("submitDone").style.display = "none";
+    w.scrollIntoView({ behavior:"smooth", block:"nearest" });
+  }
+  function showDone(html){
+    var d = $("submitDone"); d.innerHTML = html; d.style.display = "block";
+    $("submitWarn").style.display = "none";
+    d.scrollIntoView({ behavior:"smooth", block:"nearest" });
+  }
+  function qualityGaps(){
+    return getChecks().filter(function(c){ return !c.ok; }).map(function(c){ return c.label; });
+  }
+  function gate(){
+    tightenNote(); renderChecks();
+    var miss = missingRequired();
+    if(miss.length){
+      showWarn("<b>Not ready to submit yet.</b> Still missing: " + miss.join("; ") + ". Fill those in and submit again — an incomplete pitch can't be submitted.");
+      return false;
+    }
+    return true;
+  }
+  /* ---------- Google Form submission (backend) ----------
+     Answers POST straight to the Google Form's formResponse endpoint, so they
+     land in that form's responses. Field IDs read from the live form:
+     https://docs.google.com/forms/d/e/1FAIpQLScpHvppbxOEV5aouhqrnp99TyCC-0UmiLCnJr-fyf93Okk7iA/viewform
+     Verified at build time: a POST of entry.* fields (date as _year/_month/_day)
+     returns Google's "Your response has been recorded" page, no fbzx needed. */
+  var FORM_RESPONSE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScpHvppbxOEV5aouhqrnp99TyCC-0UmiLCnJr-fyf93Okk7iA/formResponse";
+  var submitted = false, sending = false;
+  function googleRecordingType(){
+    if(pillState.recSetting === "Live recording") return "Live recording";
+    if(pillState.recKind === "Cover") return "Cover";
+    if(pillState.recKind === "Remix") return "Remix";
+    if(pillState.recKind === "Instrumental") return "Instrumental";
+    if(pillState.recKind === "Original" || pillState.recSetting === "Studio recording") return "Original studio recording";
+    return "";
+  }
+  function buildFormParams(){
+    var rel = parseDate($("releaseDate").value);
+    var p = new URLSearchParams();
+    function add(k, v){ if(v) p.append(k, v); }
+    add("entry.524477580", val("artistName"));            /* Artist name */
+    add("entry.557641705", val("songTitle"));               /* Song title */
+    if(rel){                                               /* Release date */
+      p.append("entry.1039911270_year", String(rel.getFullYear()));
+      p.append("entry.1039911270_month", String(rel.getMonth() + 1));
+      p.append("entry.1039911270_day", String(rel.getDate()));
+    }
+    add("entry.1750097338", val("cityHome"));               /* Hometown */
+    add("entry.1162694541", val("cityBase"));               /* Current city */
+    add("entry.762834724", val("cityAssoc"));              /* City you most associate with */
+    add("entry.697354001", val("mainGenre"));             /* Main genre */
+    add("entry.986309359", chipState.subgenres.join(", "));   /* Subgenres — up to 3 */
+    add("entry.1211331590", chipState.moods.join(", "));      /* Moods — up to 2 */
+    add("entry.344958771", chipState.styles.join(", "));     /* Song styles — up to 2 */
+    add("entry.1767262220", chipState.cultures.join(", "));    /* Music cultures / language */
+    add("entry.2093504250", chipState.instruments.join(", ")); /* Instruments featured */
+    add("entry.721119866", googleRecordingType());         /* Recording type */
+    add("entry.1206335348", pillState.explicit || "");      /* Is the song explicit? */
+    add("entry.1909184807", val("bSound"));                /* What does the song sound like? */
+    var story = val("bStory");                             /* What is the song about / story */
+    if(val("originalWork")) story = (story ? story + " " : "") + "Original work: " + val("originalWork") + ".";
+    if(noteEdited && noteEl.value.trim() && noteEl.value.trim() !== buildNote()) story = (story ? story + "\n" : "") + "Pitch note as written: " + noteEl.value.trim();
+    add("entry.703237841", story);
+    add("entry.1167723476", val("bFans"));                  /* Similar artists — for fans of… */
+    add("entry.303222463", val("bPromo"));                 /* Promotion and proof */
+    add("entry.1290478649", val("contactName"));           /* Your name and contact */
+    return p;
+  }
+  on($("submitBtn"), "click", function(){
+    if(sending) return;
+    if(submitted){
+      showDone("<b>Already submitted.</b> Your answers are already in the responses. If you change anything above, you can submit again and the updated answers will be sent as a fresh response.");
+      return;
+    }
+    if(!gate()) return;
+    var btn = $("submitBtn");
+    sending = true; btn.disabled = true; btn.textContent = "Sending…";
+    fetch(FORM_RESPONSE_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: buildFormParams().toString() })
+      .then(function(){
+        sending = false; submitted = true; btn.disabled = false; btn.textContent = "Submitted ✓";
+        var gaps = qualityGaps();
+        var extra = gaps.length ? " One more look — these would make it stronger next time: " + gaps.join("; ") + "." : " Everything on the checklist is ticked.";
+        showDone("<b>Submitted — thank you.</b> Your answers went straight into the pitch form's responses, with your pitch note tightened to " + noteEl.value.trim().length + " characters. They'll be picked up from there, tightened, and pitched to Spotify." + extra);
+      })
+      .catch(function(){
+        sending = false; btn.disabled = false; btn.textContent = "Submit my answers";
+        showWarn("<b>The submission didn't go through</b> — check your connection and press Submit again. If it keeps failing, copy the pitch sheet instead, or use the Google Form link below — answers there land in the same responses.");
+      });
+  });
+  on($("emailBtn"), "click", function(){
+    if(!gate()) return;
+    var btn = this;
+    copyText(buildSheet(), btn, function(ok){
+      if(ok){
+        var gaps = qualityGaps();
+        var extra = gaps.length ? " These would make it stronger: " + gaps.join("; ") + "." : " Everything on the checklist is ticked.";
+        showDone("<b>Pitch sheet copied.</b> Keep it for your records — but still press \"Submit my answers\" above so your answers land in the responses." + extra);
+      } else {
+        showWarn("<b>The copy didn't go through.</b> Use \"Download as a text file\" in the summary panel instead.");
+      }
+    });
+  });
+
+  function refresh(){
+    var anyInput = val("artistName") || val("songTitle") || noteEl.value.trim();
+    $("sheetPreview").textContent = anyInput ? buildSheet() : "Start filling the form and your summary appears here.";
+    renderChecks();
+    if(submitted){ submitted = false; var sb = $("submitBtn"); if(sb) sb.textContent = "Submit my answers"; }
+  }
+  ["artistName","songTitle","mainGenre","cityHome","cityBase","cityAssoc","originalWork","contactName"].forEach(function(id){
+    on($(id), "input", refresh); on($(id), "change", refresh);
+  });
+  on($("copySheetBtn"), "click", function(){ copyText(buildSheet(), this); });
+  on($("downloadBtn"), "click", function(){
+    var name = (val("songTitle") || "spotify-pitch").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "spotify-pitch";
+    var blob = new Blob([buildSheet()], { type:"text/plain;charset=utf-8" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name + "-spotify-pitch.txt";
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 400);
+  });
+
+  renderDateNote();
+  refresh();
+})();
+</script>
+</body>
+</html>
