@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-07T00:42:50Z",
+  "asOf": "2026-11-07T00:57:41Z",
   "races": [
     {
       "id": "gov-az",
@@ -8,38 +8,7 @@
       "reportingLabel": null,
       "source": "Arizona Department of State (Arizona Secretary of State)",
       "sourceUrl": "https://app.enhancedvoting.com/cdn/results/Arizona/export-110326GeneralElection.json",
-      "candidates": [
-        {
-          "name": "Katie Hobbs (DEM) / John Giles (PND)",
-          "party": "D",
-          "votes": 1370789
-        },
-        {
-          "name": "Andy Biggs (REP) / Sine Kerr (REP)",
-          "party": "R",
-          "votes": 1051869
-        },
-        {
-          "name": "Risa Lombardo (GRN) / Lisa Castillo (GRN)",
-          "party": "G",
-          "votes": 23066
-        },
-        {
-          "name": "Teri Ann Hourihan (NOL) / Angela Harrolle Mohan (PND)",
-          "party": "N",
-          "votes": 22012
-        },
-        {
-          "name": "Alice Novoa",
-          "party": "R",
-          "votes": 13
-        },
-        {
-          "name": "Gertritrude Gonzalez",
-          "party": "R",
-          "votes": 7
-        }
-      ]
+      "candidates": []
     },
     {
       "id": "gov-ks",
