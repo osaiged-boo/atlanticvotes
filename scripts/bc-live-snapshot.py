@@ -8,6 +8,16 @@ Sources -- Elections BC only, no other data source:
   * Party view (cross-check only):
     https://results.elections.bc.ca/Results_11684_GE-2026-10-24_Party.html
 
+Final-count format (from Nov 6, 2026): each riding block in the candidate
+view ends with a single-cell "Status | In Progress" row; the ballot-box
+rows and the per-candidate Elected/Leading markers are gone, so
+reportingPct is null and every candidate status is null until Elections BC
+restores them. The party view's per-district table likewise ends with a
+"Status" column ("In Progress") instead of the advance/final ballot-box
+columns. The parser tolerates both the election-night and final-count
+layouts: status rows are skipped, ballot-box columns are read by header
+name when present, and a missing box column simply yields reportingPct null.
+
 Output: a bare JSON array of
   {"riding": str, "reportingPct": float | null,
    "candidates": [{"name": str, "party": str, "votes": int,
@@ -215,6 +225,13 @@ def parse_candidate_table(rows):
                 header_seen = True
             continue
         low = joined.lower()
+        # Final-count layout: a single-cell "Status | ..." row closes each
+        # riding block (e.g. "Status | In Progress"). It is not a riding
+        # and not a candidate -- skip it before the riding-block logic
+        # below, which would otherwise treat its non-empty first cell as
+        # a new riding header and then fail on the missing cells.
+        if low.startswith("status"):
+            continue
         if "ballot boxes" in low:
             if current is None:
                 continue
@@ -271,36 +288,64 @@ def parse_candidate_table(rows):
 
 
 def parse_party_table(rows):
-    """Return {district: {gp, ndp, cp, other, total_valid, adv, final}}."""
+    """Return {district: {gp, ndp, cp, other, total_valid, adv, final}}.
+
+    Columns are located from the header row by name, because the layout
+    changed for the final count: the advance/final ballot-box columns were
+    replaced by a single "Status" column. When a box column is absent the
+    corresponding value is None (reportingPct then stays null).
+    """
     out = {}
-    header_seen = False
+    cols = None
     for row in rows:
         if not row or all(c == "" for c in row):
             continue
         joined = " | ".join(row)
-        if not header_seen:
+        if cols is None:
             if "electoral district" in joined.lower():
-                header_seen = True
+                cols = {}
+                for idx, cell in enumerate(row):
+                    low = cell.lower()
+                    if low == "gp":
+                        cols["gp"] = idx
+                    elif low == "ndp":
+                        cols["ndp"] = idx
+                    elif low == "cp":
+                        cols["cp"] = idx
+                    elif low == "other":
+                        cols["other"] = idx
+                    elif "total valid" in low:
+                        cols["total_valid"] = idx
+                    elif "advance" in low:
+                        cols["adv"] = idx
+                    elif "final" in low:
+                        cols["final"] = idx
+                for key in ("gp", "ndp", "cp", "other", "total_valid"):
+                    if key not in cols:
+                        fail("party table header missing %s column" % key)
             continue
         if len(row) < 6:
             continue
         district = row[0]
         if district == "":
             continue
-        # Columns: 0 district, 1 GP, 2 NDP, 3 CP, 4 Other, 5 Total Valid,
-        # 6 Rejected, 7 Total Considered, 8 Advance boxes, 9 Final boxes.
-        adv = parse_boxes(row[8]) if len(row) > 8 else None
-        fin = parse_boxes(row[9]) if len(row) > 9 else None
+        adv = None
+        fin = None
+        if "adv" in cols and len(row) > cols["adv"]:
+            adv = parse_boxes(row[cols["adv"]])
+        if "final" in cols and len(row) > cols["final"]:
+            fin = parse_boxes(row[cols["final"]])
         out[district] = {
-            "gp": parse_int(row[1], "GP for %s" % district),
-            "ndp": parse_int(row[2], "NDP for %s" % district),
-            "cp": parse_int(row[3], "CP for %s" % district),
-            "other": parse_int(row[4], "Other for %s" % district),
-            "total_valid": parse_int(row[5], "total valid for %s" % district),
+            "gp": parse_int(row[cols["gp"]], "GP for %s" % district),
+            "ndp": parse_int(row[cols["ndp"]], "NDP for %s" % district),
+            "cp": parse_int(row[cols["cp"]], "CP for %s" % district),
+            "other": parse_int(row[cols["other"]], "Other for %s" % district),
+            "total_valid": parse_int(row[cols["total_valid"]],
+                                     "total valid for %s" % district),
             "adv": adv,
             "final": fin,
         }
-    if not header_seen:
+    if cols is None:
         fail("party table header not found")
     return out
 
@@ -341,7 +386,7 @@ def main(argv):
     # Cross-check against the Party view (warnings only, see module docstring).
     party_tables = get_tables(party_html)
     party_rows = find_table(
-        party_tables, ["electoral district", "advance voting"],
+        party_tables, ["electoral district", "total valid votes"],
         "party")
     party = parse_party_table(party_rows)
     for r in ridings:
@@ -375,16 +420,19 @@ def main(argv):
             warn("final-day boxes differ for %s" % r["riding"])
 
     snapshot = []
+    no_boxes = 0
     for r in ridings:
         pct = reporting_pct(r["adv"], r["final"])
         if pct is None:
-            warn("no ballot-box totals for %s; reportingPct null"
-                 % r["riding"])
+            no_boxes += 1
         snapshot.append({
             "riding": r["riding"],
             "reportingPct": pct,
             "candidates": r["candidates"],
         })
+    if no_boxes:
+        warn("no ballot-box totals for %d of %d ridings; reportingPct null"
+             % (no_boxes, len(ridings)))
 
     text = json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n"
     out_dir = os.path.dirname(os.path.abspath(output))
