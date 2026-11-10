@@ -1,0 +1,422 @@
+{
+  "generated_at": "2026-11-10T17:39:43Z",
+  "polls": [
+    {
+      "jurisdiction": "Federal",
+      "label": "FEDERAL",
+      "hashtag": "#cdnpoli",
+      "pollster": "Liaison Strategies",
+      "date": "2026-11-07",
+      "date_label": "Nov 7, 2026",
+      "parties": [
+        {
+          "label": "Liberal",
+          "pct": 44.0,
+          "color": "#d71920"
+        },
+        {
+          "label": "Conservative",
+          "pct": 31.0,
+          "color": "#0033ff"
+        },
+        {
+          "label": "NDP",
+          "pct": 14.0,
+          "color": "#f26522"
+        },
+        {
+          "label": "Bloc",
+          "pct": 5.0,
+          "color": "#00a0d6"
+        },
+        {
+          "label": "Green",
+          "pct": 3.0,
+          "color": "#3d9b50"
+        },
+        {
+          "label": "PPC",
+          "pct": 2.0,
+          "color": "#6b2d90"
+        }
+      ],
+      "leader": "Liberal",
+      "lead": 13.0,
+      "delta": "Lead down 2 from last Liaison poll",
+      "source_url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_46th_Canadian_federal_election",
+      "recent": [
+        {
+          "pollster": "Liaison Strategies",
+          "date": "2026-11-07",
+          "date_label": "Nov 7, 2026",
+          "leader": "Liberal",
+          "lead": 13.0
+        },
+        {
+          "pollster": "Nanos Research",
+          "date": "2026-11-06",
+          "date_label": "Nov 6, 2026",
+          "leader": "Liberal",
+          "lead": 16.500000000000004
+        },
+        {
+          "pollster": "Abacus Data",
+          "date": "2026-11-04",
+          "date_label": "Nov 4, 2026",
+          "leader": "Liberal",
+          "lead": 11.0
+        },
+        {
+          "pollster": "Liaison Strategies",
+          "date": "2026-10-31",
+          "date_label": "Oct 31, 2026",
+          "leader": "Liberal",
+          "lead": 15.0
+        }
+      ]
+    },
+    {
+      "jurisdiction": "PEI",
+      "label": "PEI",
+      "hashtag": "#PEI",
+      "pollster": "Narrative Research",
+      "date": "2026-09-28",
+      "date_label": "Sep 28, 2026",
+      "parties": [
+        {
+          "label": "Green",
+          "pct": 46.0,
+          "color": "#3d9b50"
+        },
+        {
+          "label": "Liberal",
+          "pct": 24.0,
+          "color": "#d71920"
+        },
+        {
+          "label": "PC",
+          "pct": 20.0,
+          "color": "#0033ff"
+        },
+        {
+          "label": "NDP",
+          "pct": 9.0,
+          "color": "#f26522"
+        }
+      ],
+      "leader": "Green",
+      "lead": 22.0,
+      "delta": "Lead down 6 from last Narrative poll",
+      "source_url": "https://en.wikipedia.org/wiki/68th_Prince_Edward_Island_general_election",
+      "recent": [
+        {
+          "pollster": "Narrative Research",
+          "date": "2026-09-28",
+          "date_label": "Sep 28, 2026",
+          "leader": "Green",
+          "lead": 22.0
+        },
+        {
+          "pollster": "Narrative Research",
+          "date": "2026-06-17",
+          "date_label": "Jun 17, 2026",
+          "leader": "Green",
+          "lead": 28.0
+        },
+        {
+          "pollster": "MQO Research",
+          "date": "2026-04-23",
+          "date_label": "Apr 23, 2026",
+          "leader": "Liberal",
+          "lead": 6.0
+        },
+        {
+          "pollster": "Narrative Research",
+          "date": "2026-03-11",
+          "date_label": "Mar 11, 2026",
+          "leader": "Green",
+          "lead": 15.0
+        }
+      ]
+    },
+    {
+      "jurisdiction": "New Brunswick",
+      "label": "NEW BRUNSWICK",
+      "hashtag": "#NB",
+      "pollster": "Narrative Research",
+      "date": "2026-09-28",
+      "date_label": "Sep 28, 2026",
+      "parties": [
+        {
+          "label": "Liberal",
+          "pct": 46.0,
+          "color": "#d71920"
+        },
+        {
+          "label": "PC",
+          "pct": 30.0,
+          "color": "#0033ff"
+        },
+        {
+          "label": "Green",
+          "pct": 13.0,
+          "color": "#3d9b50"
+        },
+        {
+          "label": "NDP",
+          "pct": 7.0,
+          "color": "#f26522"
+        },
+        {
+          "label": "Libertarian",
+          "pct": 3.0,
+          "color": "#c8aa00"
+        },
+        {
+          "label": "Others",
+          "pct": 1.0,
+          "color": "#8c9bb9"
+        }
+      ],
+      "leader": "Liberal",
+      "lead": 16.0,
+      "delta": "Lead up 5 from last Narrative poll",
+      "source_url": "https://en.wikipedia.org/wiki/42nd_New_Brunswick_general_election",
+      "recent": [
+        {
+          "pollster": "Narrative Research",
+          "date": "2026-09-28",
+          "date_label": "Sep 28, 2026",
+          "leader": "Liberal",
+          "lead": 16.0
+        },
+        {
+          "pollster": "Abacus Data",
+          "date": "2026-08-07",
+          "date_label": "Aug 7, 2026",
+          "leader": "Liberal",
+          "lead": 14.0
+        },
+        {
+          "pollster": "Narrative Research",
+          "date": "2026-06-17",
+          "date_label": "Jun 17, 2026",
+          "leader": "Liberal",
+          "lead": 11.0
+        },
+        {
+          "pollster": "Porter O'Brien",
+          "date": "2026-06-03",
+          "date_label": "Jun 3, 2026",
+          "leader": "Liberal",
+          "lead": 4.0
+        }
+      ]
+    },
+    {
+      "jurisdiction": "Alberta",
+      "label": "ALBERTA",
+      "hashtag": "#AB",
+      "pollster": "Mainstreet Research",
+      "date": "2026-10-16",
+      "date_label": "Oct 16, 2026",
+      "parties": [
+        {
+          "label": "UCP",
+          "pct": 43.0,
+          "color": "#003399"
+        },
+        {
+          "label": "NDP",
+          "pct": 43.0,
+          "color": "#f26522"
+        },
+        {
+          "label": "Tory",
+          "pct": 6.0,
+          "color": "#003399"
+        },
+        {
+          "label": "Green",
+          "pct": 3.0,
+          "color": "#3d9b50"
+        },
+        {
+          "label": "WIP",
+          "pct": 3.0,
+          "color": "#808080"
+        },
+        {
+          "label": "Others",
+          "pct": 3.0,
+          "color": "#8c9bb9"
+        }
+      ],
+      "leader": "UCP",
+      "lead": 0.0,
+      "delta": "Lead down 4 from last Mainstreet poll",
+      "source_url": "https://en.wikipedia.org/wiki/32nd_Alberta_general_election",
+      "recent": [
+        {
+          "pollster": "Mainstreet Research",
+          "date": "2026-10-16",
+          "date_label": "Oct 16, 2026",
+          "leader": "UCP",
+          "lead": 0.0
+        },
+        {
+          "pollster": "Pollara",
+          "date": "2026-10-15",
+          "date_label": "Oct 15, 2026",
+          "leader": "NDP",
+          "lead": 4.0
+        },
+        {
+          "pollster": "Abacus Data",
+          "date": "2026-10-13",
+          "date_label": "Oct 13, 2026",
+          "leader": "UCP",
+          "lead": 5.0
+        },
+        {
+          "pollster": "Leger",
+          "date": "2026-10-04",
+          "date_label": "Oct 4, 2026",
+          "leader": "UCP",
+          "lead": 2.0
+        }
+      ]
+    },
+    {
+      "jurisdiction": "Manitoba",
+      "label": "MANITOBA",
+      "hashtag": "#MB",
+      "pollster": "Abacus Data",
+      "date": "2026-09-14",
+      "date_label": "Sep 14, 2026",
+      "parties": [
+        {
+          "label": "NDP",
+          "pct": 60.0,
+          "color": "#f26522"
+        },
+        {
+          "label": "PC",
+          "pct": 29.0,
+          "color": "#0033ff"
+        },
+        {
+          "label": "Liberal",
+          "pct": 7.0,
+          "color": "#d71920"
+        },
+        {
+          "label": "Keystone",
+          "pct": 2.0,
+          "color": "#808080"
+        },
+        {
+          "label": "Green",
+          "pct": 1.0,
+          "color": "#3d9b50"
+        },
+        {
+          "label": "Others",
+          "pct": 1.0,
+          "color": "#8c9bb9"
+        }
+      ],
+      "leader": "NDP",
+      "lead": 31.0,
+      "delta": null,
+      "source_url": "https://en.wikipedia.org/wiki/44th_Manitoba_general_election",
+      "recent": [
+        {
+          "pollster": "Abacus Data",
+          "date": "2026-09-14",
+          "date_label": "Sep 14, 2026",
+          "leader": "NDP",
+          "lead": 31.0
+        },
+        {
+          "pollster": "Probe Research",
+          "date": "2026-06-08",
+          "date_label": "Jun 8, 2026",
+          "leader": "NDP",
+          "lead": 23.0
+        },
+        {
+          "pollster": "Probe Research",
+          "date": "2026-03-17",
+          "date_label": "Mar 17, 2026",
+          "leader": "NDP",
+          "lead": 20.0
+        },
+        {
+          "pollster": "Probe Research",
+          "date": "2025-12-10",
+          "date_label": "Dec 10, 2025",
+          "leader": "NDP",
+          "lead": 21.0
+        }
+      ]
+    },
+    {
+      "jurisdiction": "Newfoundland and Labrador",
+      "label": "NEWFOUNDLAND AND LABRADOR",
+      "hashtag": "#NL",
+      "pollster": "Narrative Research",
+      "date": "2026-09-28",
+      "date_label": "Sep 28, 2026",
+      "parties": [
+        {
+          "label": "Liberal",
+          "pct": 42.0,
+          "color": "#d71920"
+        },
+        {
+          "label": "PC",
+          "pct": 30.0,
+          "color": "#0033ff"
+        },
+        {
+          "label": "NDP",
+          "pct": 25.0,
+          "color": "#f26522"
+        },
+        {
+          "label": "Others",
+          "pct": 3.0,
+          "color": "#8c9bb9"
+        }
+      ],
+      "leader": "Liberal",
+      "lead": 12.0,
+      "delta": "Lead up 11 from last Narrative poll",
+      "source_url": "https://en.wikipedia.org/wiki/53rd_Newfoundland_and_Labrador_general_election",
+      "recent": [
+        {
+          "pollster": "Narrative Research",
+          "date": "2026-09-28",
+          "date_label": "Sep 28, 2026",
+          "leader": "Liberal",
+          "lead": 12.0
+        },
+        {
+          "pollster": "Narrative Research",
+          "date": "2026-06-17",
+          "date_label": "Jun 17, 2026",
+          "leader": "PC",
+          "lead": 1.0
+        },
+        {
+          "pollster": "Angus Reid",
+          "date": "2025-12-01",
+          "date_label": "Dec 1, 2025",
+          "leader": "Liberal",
+          "lead": 1.0
+        }
+      ]
+    }
+  ]
+}

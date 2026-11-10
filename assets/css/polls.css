@@ -1,0 +1,53 @@
+/* Atlantic Votes polls — shared styles for polls.html and the
+   latest-poll slot on pei.html / nb.html / nl.html.
+   Self-contained: every rule here carries its own values, so it works
+   on any site page regardless of that page's local CSS. */
+
+.poll-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+@media(max-width:760px){.poll-grid{grid-template-columns:1fr}}
+
+.poll-card{background:#fff;border:1px solid #dde1d8;border-radius:14px;
+  box-shadow:0 1px 3px rgba(16,24,40,.07),0 8px 24px rgba(16,24,40,.05);
+  overflow:hidden}
+.poll-strip{height:6px}
+.poll-body{padding:20px}
+.poll-kicker{font-size:12px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#5b6773}
+.poll-head{font-family:"Libre Franklin",system-ui,sans-serif;
+  font-size:27px;line-height:1.05;font-weight:900;letter-spacing:-.01em;
+  margin:8px 0 4px;color:#131a22}
+.poll-head .poll-lead-n{font-size:34px}
+.poll-sub{color:#5b6773;font-size:15px;margin:0}
+.poll-chip{display:inline-block;background:#1e293b;color:#e1e4eb;
+  border-radius:999px;padding:6px 14px;font-size:14px;margin-top:12px}
+.poll-bars{margin-top:18px;display:grid;gap:12px}
+.poll-row{display:grid;grid-template-columns:104px 1fr 52px;align-items:center;
+  gap:12px;font-size:15px;color:#131a22}
+.poll-row .poll-pct{text-align:right;color:#5b6773;
+  font-family:"Libre Franklin",system-ui,sans-serif;font-weight:700}
+.poll-track{height:10px;background:#eceee9;border-radius:999px;overflow:hidden}
+.poll-fill{height:100%;border-radius:999px}
+.poll-foot{color:#5b6773;font-size:13px;margin:16px 0 0}
+.poll-foot a{color:#5b6773}
+.poll-recent{margin-top:16px;border-top:1px solid #dde1d8;padding-top:12px}
+.poll-recent summary{cursor:pointer;font-size:14px;font-weight:700;color:#131a22}
+.poll-recent table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+.poll-recent td,.poll-recent th{padding:6px 0;border-bottom:1px solid #eceee9;
+  text-align:left;vertical-align:top}
+.poll-recent td:last-child,.poll-recent th:last-child{text-align:right;white-space:nowrap}
+.poll-recent th{color:#5b6773;font-weight:700}
+.poll-updated{color:#5b6773;font-size:14px;margin:10px 0 0}
+.poll-loading{color:#5b6773}
+
+/* Latest-poll slot on a province page: sits below the results, above
+   the footer — clear of the three fixed ad slots. */
+.poll-slot{background:#fff;border:1px solid #dde1d8;border-radius:14px;
+  box-shadow:0 1px 3px rgba(16,24,40,.07),0 8px 24px rgba(16,24,40,.05);
+  padding:20px;margin:18px 0}
+.poll-slot>h2{font-family:"Libre Franklin",system-ui,sans-serif;
+  font-size:20px;letter-spacing:-.01em;margin:0;color:#131a22}
+.poll-slot-sub{color:#5b6773;font-size:14px;margin:4px 0 14px}
+.poll-slot .poll-card{border:0;box-shadow:none;border-radius:0}
+.poll-slot .poll-body{padding:0}
+.poll-note{margin:14px 0 0;font-size:14px}
+.poll-note a{color:#1b5fb4}

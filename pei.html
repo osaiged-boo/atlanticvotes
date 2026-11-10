@@ -294,6 +294,7 @@ h1,h2,h3,.frank{font-family:var(--serif)}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1653676338184945"
      crossorigin="anonymous"></script>
+<link rel="stylesheet" href="assets/css/polls.css" />
 </head>
 <body>
 <header class="site-header">
@@ -443,7 +444,14 @@ h1,h2,h3,.frank{font-family:var(--serif)}
     </div>
   </section>
 
-  <footer class="site-footer"><div class="container footer-in">
+  
+<section class="poll-slot" id="latest-poll" data-jurisdiction="PEI">
+  <h2>Latest poll</h2>
+  <p class="poll-slot-sub">Polling for the next PEI election · October 4, 2027</p>
+  <div data-poll-body><p class="poll-loading">Loading the latest poll…</p></div>
+  <p class="poll-note"><a href="polls.html">All polls &rarr;</a></p>
+</section>
+<footer class="site-footer"><div class="container footer-in">
   <div class="footer-cols">
     <div><button type="button" data-av-open>Change province</button></div>
     <div><h3>Sources</h3><ul><li><a href="https://www.electionspei.ca">Elections PEI</a></li><li><a href="https://electionsnovascotia.ca">Elections Nova Scotia</a></li><li><a href="https://www.electionsnb.ca">Elections New Brunswick</a></li><li><a href="https://www.elections.gov.nl.ca">Elections NL</a></li></ul></div>
@@ -660,5 +668,6 @@ function mapUnavailable(){
   }).catch(function(){mapUnavailable();});
 })();
 </script>
+<script src="assets/js/latest-poll.js"></script>
 </body>
 </html>

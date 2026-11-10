@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" type="image/png" href="assets/img/av-mark.png" />
+<title>Latest Canadian polls | Atlantic Votes</title>
+<meta name="description" content="The newest federal and provincial polls in Canada — who leads, by how much, and who polled it. Checked every morning." />
+<meta property="og:title" content="Latest Canadian polls | Atlantic Votes" />
+<meta property="og:description" content="The newest federal and provincial polls in Canada — who leads, by how much, and who polled it. Checked every morning." />
+<meta property="og:type" content="website" />
+<link rel="canonical" href="https://atlanticvotes.ca/polls.html" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1653676338184945"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="assets/css/polls.css" />
+<style>
+:root{
+  --bg:#f4f4f0; --surface:#ffffff; --surface2:#eceee9; --ink:#131a22; --muted:#5b6773; --line:#dde1d8;
+  --pc:#1b5fb4; --radius:14px; --shadow:0 1px 3px rgba(16,24,40,.07),0 8px 24px rgba(16,24,40,.05);
+  color-scheme:light;
+}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,Segoe UI,sans-serif;font-size:16px;line-height:1.5}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.utility-bar{border-bottom:1px solid var(--line)}
+.utility-in{display:flex;align-items:center;justify-content:space-between;height:38px}
+.utility-note{font-size:13px;color:var(--muted)}
+.utility-link{font-size:13px;color:var(--ink);text-decoration:none;font-weight:700}
+.main-bar{height:64px;display:flex;align-items:center}
+.main-in{display:flex;align-items:center;justify-content:space-between;width:100%}
+.wordmark{display:inline-flex;align-items:center;gap:9px;font-weight:900;font-size:22px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--pc)}
+.main-nav{display:flex;gap:28px;align-items:center}
+.main-nav a{color:var(--ink);text-decoration:none;font-weight:700;font-size:15px}
+.main-nav a[aria-current="page"]{color:var(--pc)}
+.hero{padding:28px 0 8px}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero h1{font-size:clamp(32px,6vw,58px);line-height:.98;letter-spacing:-.02em;margin:10px 0 12px;font-weight:900;font-family:"Libre Franklin",sans-serif}
+.lede{font-size:18px;color:var(--muted);max-width:760px;margin:0}
+main{padding-bottom:28px}
+.site-footer{border-top:1px solid var(--line);background:#fff;padding:24px 0}
+.footer-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:680px){.footer-cols{grid-template-columns:1fr}}
+.site-footer h3{font-size:14px;margin:0 0 8px;font-family:"Libre Franklin",sans-serif}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer li{margin:4px 0}
+.site-footer a{color:var(--ink)}
+.footer-note{color:var(--muted);font-size:14px}
+.footer-copy{color:var(--muted);font-size:13px;margin:18px 0 0}
+details.sources{margin-top:22px}
+details.sources summary{cursor:pointer;font-weight:700;font-size:15px}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="utility-bar"><div class="container utility-in">
+    <span class="utility-note">Checked every morning</span>
+    <a class="utility-link" href="provinces.html">All provinces</a>
+  </div></div>
+  <div class="main-bar"><div class="container main-in">
+    <a class="wordmark" href="index.html"><img class="av-mark" src="assets/img/av-mark.png" alt="" width="32" height="32" />Atlantic <span>Votes</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="provinces.html">Results</a>
+      <a href="us-midterms.html">US Midterms</a>
+      <a href="polls.html" aria-current="page">Polls</a>
+    </nav>
+  </div></div>
+</header>
+<main>
+  <div class="container">
+    <section class="hero">
+      <div class="kicker">Canadian polls</div>
+      <h1>Latest polls</h1>
+      <p class="lede">The newest poll in each race — who leads, by how much, and who polled it.</p>
+      <p class="poll-updated" id="poll-updated">Checking the latest polls…</p>
+    </section>
+    <div class="poll-grid" id="poll-grid">
+      <p class="poll-loading">Loading the latest polls…</p>
+    </div>
+    <details class="sources"><summary>Sources</summary>
+      <p class="footer-note">Polls are opinion polls, not results. Figures as published in the Wikipedia polling tables for each race; a pollster's own release can show different figures (for example by including undecided voters), so the table page is the source of record here.</p>
+      <ul id="poll-sources"></ul>
+    </details>
+  </div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-cols">
+    <div><h3>Atlantic Votes</h3><ul><li><a href="polls.html">Latest polls</a></li><li><a href="provinces.html">Provincial results</a></li><li><a href="us-midterms.html">US midterms</a></li></ul></div>
+    <div><h3>Polls</h3><ul><li><a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_46th_Canadian_federal_election">Federal polling</a></li><li><a href="https://en.wikipedia.org/wiki/68th_Prince_Edward_Island_general_election">PEI polling</a></li><li><a href="https://en.wikipedia.org/wiki/42nd_New_Brunswick_general_election">New Brunswick polling</a></li><li><a href="https://en.wikipedia.org/wiki/32nd_Alberta_general_election">Alberta polling</a></li></ul></div>
+  </div>
+  <p class="footer-note">Independent tracker, not affiliated with any pollster. Polls are opinion polls, not results.</p>
+  <p class="footer-copy">© 2026 Atlantic Votes · atlanticvotes.ca</p>
+</div></footer>
+<script src="assets/js/latest-poll.js"></script>
+<script>
+(function () {
+  "use strict";
+  var grid = document.getElementById("poll-grid");
+  var updated = document.getElementById("poll-updated");
+  var sources = document.getElementById("poll-sources");
+  function fmtUpdated(iso) {
+    try {
+      return "Last updated " + new Date(iso).toLocaleString("en-CA", {
+        timeZone: "America/Halifax", month: "short", day: "numeric",
+        year: "numeric", hour: "numeric", minute: "2-digit"
+      }) + " (Atlantic time).";
+    } catch (e) { return "Last updated " + iso; }
+  }
+  function render(data) {
+    var list = (data.polls || []).map(function (p) {
+      return '<li><a href="' + p.source_url + '">' + p.label +
+        ' polling table</a></li>';
+    }).join("");
+    if (sources) sources.innerHTML = list;
+    if (updated && data.generated_at) {
+      updated.textContent = fmtUpdated(data.generated_at);
+    }
+  }
+  function refresh() {
+    AVPolls.renderAllInto(grid).then(render).catch(function () {
+      grid.innerHTML = '<p class="poll-loading">Latest polls unavailable ' +
+        'right now.</p>';
+    });
+  }
+  refresh();
+  setInterval(refresh, 60000);
+})();
+</script>
+</body>
+</html>
