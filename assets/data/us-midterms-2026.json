@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-10T20:57:45Z",
+  "asOf": "2026-11-10T21:07:47Z",
   "races": [
     {
       "id": "gov-az",
@@ -137,12 +137,12 @@
         {
           "name": "Roy Cooper",
           "party": "D",
-          "votes": 1654257
+          "votes": 1654516
         },
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 1308045
+          "votes": 1308130
         }
       ]
     }
