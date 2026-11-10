@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-09T22:27:42Z",
+  "asOf": "2026-11-10T00:27:46Z",
   "races": [
     {
       "id": "gov-az",
@@ -12,27 +12,27 @@
         {
           "name": "Katie Hobbs (DEM) / John Giles (PND)",
           "party": "D",
-          "votes": 1418347
+          "votes": 1420112
         },
         {
           "name": "Andy Biggs (REP) / Sine Kerr (REP)",
           "party": "R",
-          "votes": 1084158
+          "votes": 1084895
         },
         {
           "name": "Risa Lombardo (GRN) / Lisa Castillo (GRN)",
           "party": "G",
-          "votes": 24176
+          "votes": 24224
         },
         {
           "name": "Teri Ann Hourihan (NOL) / Angela Harrolle Mohan (PND)",
           "party": "N",
-          "votes": 23181
+          "votes": 23216
         },
         {
           "name": "Alice Novoa",
           "party": "R",
-          "votes": 14
+          "votes": 16
         },
         {
           "name": "Gertritrude Gonzalez",
