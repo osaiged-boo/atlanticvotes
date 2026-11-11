@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-11T00:58:16Z",
+  "asOf": "2026-11-11T01:07:48Z",
   "races": [
     {
       "id": "gov-az",
@@ -61,12 +61,12 @@
         {
           "name": "Randy Villegas",
           "party": "D",
-          "votes": 85736
+          "votes": 91305
         },
         {
           "name": "David G. Valadao",
           "party": "R",
-          "votes": 40618
+          "votes": 43153
         }
       ]
     },
