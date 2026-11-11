@@ -29,23 +29,24 @@ img{max-width:100%}
 .container{max-width:640px;margin:0 auto;padding:0 16px}
 /* ---------- header: utility bar stacks on phones, never wraps mid-phrase ---------- */
 .site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.site-header .container{padding-left:12px;padding-right:12px}
 .utility-bar{border-bottom:1px solid var(--line)}
-.utility-in{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding-top:8px;padding-bottom:8px}
-.utility-note{font-size:13px;color:var(--muted);line-height:1.4}
+.utility-in{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding-top:6px;padding-bottom:6px}
+.utility-note{font-size:12px;color:var(--muted);line-height:1.4}
 .utility-note .u-part{display:block}
 .utility-note .u-sep{display:none}
-.utility-link{font-size:13px;color:var(--muted);text-decoration:none;min-height:24px}
+.utility-link{font-size:12px;color:var(--muted);text-decoration:none;min-height:24px;white-space:nowrap}
 .utility-link:hover{color:var(--accent)}
 @media (min-width:641px){
   .utility-in{flex-direction:row;align-items:center;justify-content:space-between}
   .utility-note .u-part{display:inline}
   .utility-note .u-sep{display:inline}
 }
-.main-in{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding-top:8px;padding-bottom:8px}
-.wordmark{display:inline-flex;align-items:center;gap:9px;font-weight:900;font-size:22px;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}.wordmark .av-mark{width:32px;height:32px;flex:none}
+.main-in{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:60px;padding-top:0;padding-bottom:0}
+.wordmark{display:inline-flex;align-items:center;gap:7px;font-weight:900;font-size:18px;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap;flex:none}.wordmark .av-mark{width:26px;height:26px;flex:none}
 .wordmark span{color:var(--accent)}
 .main-nav{display:flex;gap:4px;align-items:center}
-.main-nav button{background:none;border:0;font:inherit;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;min-height:44px;padding:10px 10px;border-radius:8px}
+.main-nav button{background:none;border:0;font:inherit;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;min-height:44px;padding:8px 6px;border-radius:8px;white-space:nowrap}
 .main-nav button:hover{color:var(--accent)}
 /* ---------- sample banner + hero ---------- */
 .sample-banner{background:#fff7ed;border:1px solid #fdba74;border-radius:12px;padding:14px 16px;margin:20px 0 0}

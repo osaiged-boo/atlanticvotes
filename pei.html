@@ -173,18 +173,19 @@ a{color:var(--accent)}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 /* Sticky two-bar header */
 .site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.site-header .container{padding-left:12px;padding-right:12px}
 .utility-bar{border-bottom:1px solid var(--line)}
-.utility-in{display:flex;align-items:center;justify-content:space-between;height:38px}
-.province-switcher{border:0;background:none;font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--ink);padding:0;display:flex;align-items:center;gap:6px}
+.utility-in{display:flex;align-items:center;justify-content:space-between;height:30px;gap:12px}
+.province-switcher{border:0;background:none;font:inherit;font-size:12px;font-weight:700;cursor:pointer;color:var(--ink);padding:0;display:flex;align-items:center;gap:6px;white-space:nowrap}
 .province-switcher .caret{color:var(--accent);font-size:12px}
 .province-switcher:hover{color:var(--accent)}
-.utility-link{font-size:14px;color:var(--muted);text-decoration:none}
+.utility-link{font-size:12px;color:var(--accent);text-decoration:none;font-weight:700;white-space:nowrap}
 .utility-link:hover{color:var(--accent)}
-.main-in{display:flex;align-items:center;justify-content:space-between;height:72px}
-.wordmark{display:inline-flex;align-items:center;gap:9px;font-weight:900;font-size:22px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}.wordmark .av-mark{width:32px;height:32px;flex:none}
+.main-in{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.wordmark{display:inline-flex;align-items:center;gap:7px;font-weight:900;font-size:18px;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap;flex:none}.wordmark .av-mark{width:26px;height:26px;flex:none}
 .wordmark span{color:var(--accent)}
-.main-nav{display:flex;gap:28px;align-items:center}
-.main-nav a,.main-nav button{font:inherit;font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:0}
+.main-nav{display:flex;gap:12px;align-items:center;flex:none}
+.main-nav a,.main-nav button{font:inherit;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:0;white-space:nowrap}
 .main-nav a:hover,.main-nav button:hover{color:var(--accent)}
 .main-nav a[aria-current="page"]{color:var(--accent)}
 /* Hero + sections */
