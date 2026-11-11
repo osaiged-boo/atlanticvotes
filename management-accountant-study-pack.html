@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Management Accountant Study Pack — LSBU REQ12812</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --surface2:#f0ede6; --ink:#14201c; --muted:#5b6b66; --line:#ddd8cc;
+  --teal:#0e5a4d; --teal2:#0a443a; --gold:#c98a1a; --gold-bg:#fdf3dc; --teal-bg:#e6f2ee;
+  --chip:#eef1ee; --red:#b42318; --radius:16px;
+  --shadow:0 6px 24px rgba(20,32,28,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#101613; --surface:#18201c; --surface2:#1f2a24; --ink:#edf2ee; --muted:#a8bab2; --line:#2c3a33; --teal:#3ec9a7; --teal2:#3ec9a7; --gold:#e9b44c; --gold-bg:#2a2415; --teal-bg:#17382f; --chip:#223028; --shadow:0 6px 24px rgba(0,0,0,.35);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px}
+a{color:var(--teal)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 18px 64px}
+/* Hero */
+.hero{background:var(--teal2);color:#fff;border-radius:0 0 28px 28px;padding:28px 18px 30px;margin:0 -18px 22px}
+@media(prefers-color-scheme:dark){.hero{background:#0d2f28}}
+.hero-inner{max-width:1024px;margin:0 auto}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:700}
+.hero h1{font-family:Fraunces,serif;font-size:42px;line-height:.95;margin:10px 0 10px;letter-spacing:-.02em}
+.hero h1 em{color:#f2c14e;font-style:normal}
+.hero p{max-width:680px;opacity:.92;margin:0;font-size:17px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.fact{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:8px 12px;border-radius:999px;font-size:13.5px;font-weight:600}
+.fact b{color:#f2c14e}
+/* Nav */
+.nav{position:sticky;top:10px;z-index:20;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;box-shadow:var(--shadow)}
+.nav::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;text-decoration:none;color:var(--ink);font-weight:600;font-size:13.5px;padding:10px 14px;border-radius:999px;min-height:40px;display:flex;align-items:center}
+.nav a:hover{background:var(--chip)}
+.searchbar{margin:16px 0 0;display:flex;gap:8px;flex-wrap:wrap}
+.searchbar input{flex:1;min-width:220px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:15px;min-height:48px}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:12px 16px;border-radius:12px;font-weight:700;cursor:pointer;min-height:48px}
+.btn.primary{background:var(--teal);color:#fff;border-color:var(--teal)}
+/* Sections */
+section{margin-top:34px;scroll-margin-top:76px}
+h2{font-family:Fraunces,serif;font-size:30px;line-height:1.05;margin:0 0 6px;letter-spacing:-.02em}
+h2 span{color:var(--teal)}
+.sub{color:var(--muted);margin:0 0 16px;max-width:760px}
+h3{font-size:18px;margin:22px 0 8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.grid2,.grid3{grid-template-columns:1fr}.hero h1{font-size:36px}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card h3{margin-top:0}
+.card p{margin:6px 0}
+.tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;padding:4px 8px;border-radius:999px;background:var(--teal-bg);color:var(--teal)}
+.tag.gold{background:var(--gold-bg);color:#7a5200}
+@media(prefers-color-scheme:dark){.tag.gold{color:var(--gold)}}
+ul.tight{margin:8px 0 0 18px;padding:0} ul.tight li{margin:4px 0}
+.kpi{display:flex;gap:12px;flex-wrap:wrap}
+.kpi div{flex:1;min-width:140px;background:var(--surface2);border-radius:12px;padding:14px}
+.kpi b{font-size:22px;display:block;line-height:1}
+.kpi span{font-size:13px;color:var(--muted)}
+/* Accordion Q&A */
+.qa{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden}
+.qa button.q{width:100%;text-align:left;background:none;border:none;color:var(--ink);padding:16px 18px;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;font-size:16px;font-weight:700;line-height:1.4;min-height:52px}
+.qa button.q small{display:block;font-weight:600;color:var(--muted);font-size:12.5px;margin-top:3px;letter-spacing:.04em;text-transform:uppercase}
+.qa .a{display:none;padding:0 18px 18px;border-top:1px solid var(--line)}
+.qa.open .a{display:block}
+.qa .a p:first-child{margin-top:14px}
+.chevron{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--chip);display:grid;place-items:center;font-size:18px}
+.star{background:var(--surface2);border-radius:10px;padding:12px 14px;margin:12px 0;font-size:14.5px}
+.star b{color:var(--teal)}
+.tip{border-left:4px solid var(--gold);background:var(--gold-bg);padding:12px 14px;border-radius:0 12px 12px 0;margin:12px 0;font-size:14.5px}
+.warn{border-left:4px solid var(--red);background:#fef2f2;padding:12px 14px;border-radius:0 12px 12px 0;margin:12px 0;font-size:14.5px}
+@media(prefers-color-scheme:dark){.warn{background:#2a1818}}
+/* Tables */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:620px}
+th{text-align:left;background:var(--surface2);padding:11px 12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+td{padding:11px 12px;border-top:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700;white-space:nowrap}
+code,.mono{font-family:"JetBrains Mono",monospace;font-size:13px;background:var(--chip);padding:2px 6px;border-radius:6px;white-space:nowrap}
+/* Glossary */
+.gloss{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){.gloss{grid-template-columns:1fr}}
+.gitem{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.gitem b{color:var(--teal);display:block}
+.gitem p{margin:4px 0 0;font-size:14.5px;color:var(--muted)}
+/* Steps */
+.steps{counter-reset:s;display:grid;gap:10px}
+.step{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.step::before{counter-increment:s;content:counter(s);width:36px;height:36px;flex-shrink:0;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800}
+.step h4{margin:2px 0 4px}.step p{margin:0;color:var(--muted);font-size:14.5px}
+.checklist{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.checklist li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.checklist li::before{content:"☐";font-size:18px;line-height:1.2;color:var(--teal)}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+.hidden{display:none!important}
+.print-note{font-size:13px;color:var(--muted)}
+@media print{.nav,.searchbar{display:none} .qa .a{display:block!important} body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">For any candidate applying • London South Bank University • REQ12812 • Candidate Pack Oct 2026</div>
+    <h1>Management Accountant<br><em>Study Pack</em></h1>
+    <p>Everything you need to walk in confident: what this exact job actually does, every likely interview question with strong sample answers, plain-English definitions, and step-by-step software know-how — built from the real job description, not generic advice. Made to be shared: whoever is applying can pick it up and use it as-is.</p>
+    <div class="facts">
+      <span class="fact">For <b>any candidate</b></span>
+      <span class="fact">Grade <b>7</b></span>
+      <span class="fact">£39,560 – £46,970 <b>+ London Weighting</b></span>
+      <span class="fact">Fixed term to <b>Feb 2028</b> • Maternity cover</span>
+      <span class="fact"><b>Mostly remote</b> — max 2 days/month on site</span>
+      <span class="fact">Reports to <b>Head of Financial Reporting &amp; Analysis</b></span>
+      <span class="fact">Team: <b>Finance &amp; Management Information (FMI)</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Study pack sections">
+  <a href="#role">1 · The Role</a><a href="#questions">2 · Interview Q&amp;A</a><a href="#behavioural">3 · Behavioural</a>
+  <a href="#glossary">4 · Glossary</a><a href="#software">5 · Software &amp; Excel</a><a href="#returns">6 · TRAC / AFR / HEBCI</a>
+  <a href="#scenarios">7 · Test Scenarios</a><a href="#plan">8 · 7-Day Plan</a>
+</nav>
+
+<div class="searchbar">
+  <input id="search" type="search" placeholder="Search questions, definitions, Excel functions… e.g. TRAC, forecast, VLOOKUP, variance" aria-label="Search the study pack">
+  <button class="btn" onclick="expandAll()">Expand all answers</button>
+  <button class="btn" onclick="collapseAll()">Collapse all</button>
+</div>
+<p class="print-note">Tip: use search to filter instantly. To save a copy, use your browser's Print → Save as PDF. Sample answers are templates written the way you'd say them in the room — always swap in your own real examples, numbers and employers.</p>
+
+<!-- 1 ROLE -->
+<section id="role">
+  <h2>1 · The role, <span>decoded</span></h2>
+  <p class="sub">This is not a general management accountant job. Read the job description closely and a very specific picture emerges — and the panel will test you for exactly this.</p>
+  <div class="grid2">
+    <div class="card"><span class="tag">What the job really is</span>
+      <h3>A reporting, returns &amp; forecasting-support role</h3>
+      <p>The role sits in Financial Performance / FMI, supporting Finance Business Partners (FBPs) and senior managers — not owning one school's budget yourself. The core loop is:</p>
+      <ul class="tight"><li><b>Regulatory returns</b> for the Office for Students (OfS): TRAC, Annual Financial Return (AFR), HEBCI</li><li><b>Monthly forecasting process</b> — preparing data, GL postings and templates so FBPs forecast consistently</li><li><b>Reports for budget holders</b> — maintaining and improving a suite of reports</li><li><b>Ad hoc analysis</b> — pulling data from multiple systems, reconciling it, explaining it clearly</li><li><b>Training colleagues</b> in data analysis and spreading best practice</li></ul>
+    </div>
+    <div class="card"><span class="tag gold">What will decide the interview</span>
+      <h3>The 5 things the panel is scoring</h3>
+      <ul class="tight"><li><b>1. Excel &amp; data confidence</b> (Criterion G) — intermediate/advanced, provable with examples</li><li><b>2. Reconciliation mindset</b> (F) — can you join messy data from different sources and prove it ties back?</li><li><b>3. Forecasting &amp; modelling</b> (B + C) — budgets, forecasts, variance, assumptions</li><li><b>4. Partnering style</b> (D) — supportive, collegiate, clear with non-finance colleagues</li><li><b>5. Process discipline</b> (E) — clear process notes, audit trail, repeatability for a maternity-cover handover</li></ul>
+      <div class="tip"><b>Maternity-cover angle:</b> Say it out loud — “I document as I go, so cover is seamless and the return to the post-holder is clean.” Panels hiring cover worry about continuity. Remove that worry in minute one.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>LSBU in 60 seconds — how to use this in “Why LSBU?”</h3>
+    <div class="kpi">
+      <div><b>17,000+</b><span>students, 2,000 staff, 130+ countries</span></div>
+      <div><b>LSBU Group</b><span>University + South Bank Colleges + South Bank Academies</span></div>
+      <div><b>Elephant &amp; Castle</b><span>Central London campus</span></div>
+      <div><b>“Connecting”</b><span>New group strategy — good jobs for all learners, skills-led</span></div>
+    </div>
+    <p style="margin-top:12px">The mission to remember: <b>challenge social and economic inequalities through applied education, insight and partnership.</b> Ranked highly for Reducing Inequalities (THE Impact Rankings) and graduates are among the highest-paid of London modern universities (LEO). FMI provides corporate financial advice, decision support to Schools and Professional Services Group (PSG), financial operations, reporting, risk management coordination and Financial Regulations.</p>
+    <p><b>Perfect “Why LSBU?” line:</b> “I want to do management accounting where the numbers directly support access and student outcomes — not just a bottom line. LSBU Group’s integrated model, from academies and colleges through to the university, makes the finance work more interesting too, because I see the full learner pathway in the finances.”</p>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>Person specification A–H — evidence checklist</h3>
+    <div class="tablewrap"><table>
+      <tr><th>Criterion</th><th>What to evidence</th><th>Have a concrete example of…</th></tr>
+      <tr><td>A — Nearly qualified</td><td>Final stages ICAEW / ACCA / CIMA / CIPFA or equivalent</td><td>Papers remaining, expected completion date, study plan around FTC</td></tr>
+      <tr><td>B — Modelling &amp; analysis</td><td>A model I built or maintained</td><td>Forecast model, business case, sensitivity / scenario table</td></tr>
+      <tr><td>C — Mgmt accounting</td><td>Budgeting + forecasting cycle</td><td>Month-end forecast, budget round, variance commentary</td></tr>
+      <tr><td>D — Partnering</td><td>Times I worked with non-finance colleagues</td><td>Explaining a variance to a budget holder who disagreed</td></tr>
+      <tr><td>E — Process docs</td><td>Clear, detailed documentation</td><td>A procedure note / checklist I wrote that someone else successfully followed</td></tr>
+      <tr><td>F — Reconciling sources</td><td>Analysis across systems</td><td>How I tied GL to student / HR / payroll data and found the break</td></tr>
+      <tr><td>G — Excel</td><td>Intermediate / advanced</td><td>PivotTables, XLOOKUP, Power Query, conditional logic — live examples</td></tr>
+      <tr><td>H — Technical accounting</td><td>Developing technical skills</td><td>Accruals, prepayments, capital vs revenue, FRS 102 basics</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- 2 QUESTIONS -->
+<section id="questions">
+  <h2>2 · Technical interview questions <span>&amp; sample answers</span></h2>
+  <p class="sub">Tap any question to open a strong sample answer. Adapt the bracketed parts to your real experience — never recite word-for-word. Interviewers reward specifics: system names, volumes, deadlines, outcomes.</p>
+  <div id="qa-list"></div>
+</section>
+
+<!-- 3 BEHAVIOURAL -->
+<section id="behavioural">
+  <h2>3 · Behavioural questions <span>— use STAR</span></h2>
+  <p class="sub">LSBU uses its Behaviour Framework alongside the Career Pathways (this role: Organisational Services family). Even when a question sounds technical, weave in <i>how</i> you worked: collaborative, clear, inclusive, reliable.</p>
+  <div class="card"><h3>The STAR formula — 2 minutes per answer</h3>
+    <div class="star"><b>S</b>ituation (20 sec) → <b>T</b>ask — your responsibility (20 sec) → <b>A</b>ction — what <i>you</i> did, step by step (60 sec) → <b>R</b>esult — numbers, deadline met, what you learned (20 sec). End with: “I’d bring that same approach here by…” to link back to LSBU.</div>
+  </div>
+  <div id="behaviour-list"></div>
+
+  <h3>Questions to ask them (pick 3 — always ask some)</h3>
+  <div class="grid2">
+    <div class="card"><ul class="tight">
+      <li>“What does the monthly forecasting timetable look like, and where do FBPs find it hardest to forecast consistently?”</li>
+      <li>“Which systems feed TRAC and the AFR here, and how much of that process is already automated?”</li>
+      <li>“What handover is in place from the post-holder, and what would success look like in the first three months of the cover?”</li>
+    </ul></div>
+    <div class="card"><ul class="tight">
+      <li>“Which reports do budget holders rely on most — and which ones does the team most want to improve?”</li>
+      <li>“How is staff-time survey data for TRAC collected at LSBU, and what response rates do you typically get?”</li>
+      <li>“What training in data analysis would you most like this role to deliver to the wider team?”</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- 4 GLOSSARY -->
+<section id="glossary">
+  <h2>4 · Definitions <span>— plain English, interview-ready</span></h2>
+  <p class="sub">Learn these well enough to define each in one sentence without jargon, then give an example. That is exactly how you'll need to explain them to budget holders.</p>
+  <div class="gloss" id="gloss-list"></div>
+</section>
+
+<!-- 5 SOFTWARE -->
+<section id="software">
+  <h2>5 · Software &amp; Excel <span>— how to actually use it</span></h2>
+  <p class="sub">Criterion G says intermediate/advanced Excel. Expect a practical test or probing follow-ups. LSBU’s exact finance system isn’t named in the pack — so show transferable fluency: Excel + Power Query/Power BI + any ERP (Unit4/Agresso is common in UK universities, alongside Oracle and SAP). Never claim a system you haven’t used; say “I’ve used [X]; the principles — chart of accounts, cost centres, journals, reporting — transfer directly, and I pick up new ERPs quickly by…”</p>
+
+  <h3>Excel — the functions that will come up</h3>
+  <p class="sub" style="margin-bottom:10px">The examples are written the way you'd say them in the interview — swap in your own.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Function / Tool</th><th>What it does</th><th>An interview example to give</th></tr>
+    <tr><td><code>XLOOKUP</code></td><td>Looks up a value and returns a match — modern, safer replacement for VLOOKUP</td><td>“I used XLOOKUP to pull cost-centre names into a GL download so budget holders saw names, not just codes.” <span class="mono">=XLOOKUP(A2, Codes!A:A, Codes!B:B, “Not found”)</span></td></tr>
+    <tr><td><code>VLOOKUP / HLOOKUP</code></td><td>Classic lookup — still in legacy templates</td><td>Know its limits: it only looks right, breaks when columns are inserted — that’s why XLOOKUP/INDEX-MATCH is preferred</td></tr>
+    <tr><td><code>INDEX + MATCH</code></td><td>Flexible two-way lookup, works in any direction</td><td><span class="mono">=INDEX(B:B, MATCH(A2, A:A, 0))</span></td></tr>
+    <tr><td><code>SUMIFS / COUNTIFS</code></td><td>Sums/counts with multiple conditions</td><td>“Total spend for one school, one month, staff costs only — without filtering the raw data.” <span class="mono">=SUMIFS(Amount, School, “ENG”, Month, 6)</span></td></tr>
+    <tr><td><code>IF / IFERROR / IFS</code></td><td>Conditional logic and clean error handling</td><td>Flag variances over threshold: <span class="mono">=IF(ABS(var)&gt;5000,“Review”,“OK”)</span></td></tr>
+    <tr><td>PivotTables</td><td>Summarise thousands of rows in seconds, grouped by school / cost centre / account</td><td>Insert a PivotTable → drag fields → Value Field Settings → add slicers for month/school. Refresh after new data.</td></tr>
+    <tr><td>Power Query</td><td>Cleans and merges data from multiple files/systems repeatably (Get Data)</td><td>Data → Get Data → From Folder/File → transform (split, unpivot, merge) → Load. Next month: just Refresh. <i>This is the single best skill for this role — make sure to mention it.</i></td></tr>
+    <tr><td>Conditional Formatting</td><td>Colour scales / data bars / icon sets to highlight variances</td><td>“I RAG-rate variances so budget holders see the exceptions first.”</td></tr>
+    <tr><td>Data Validation</td><td>Dropdown lists and input controls in templates</td><td>Data → Validation → List. Stops FBPs typing free-text months/codes that break formulas.</td></tr>
+    <tr><td>Charts</td><td>Bar/column for variance, line for trend, waterfall for bridge</td><td>Always label axes, show £ and %, one message per chart.</td></tr>
+  </table></div>
+  <p><b>Shortcuts worth knowing:</b> <code>Ctrl+Shift+L</code> filters · <code>Alt+=</code> AutoSum · <code>Ctrl+T</code> make Table (structured references, auto-expands) · <code>F4</code> lock reference ($) · <code>Ctrl+`</code> show formulas for checking · <code>Ctrl+Page Up/Down</code> move sheets.</p>
+
+  <div class="grid2">
+    <div class="card"><span class="tag">Finance systems (ERP)</span><h3>Unit4 (Agresso) / Oracle / SAP — the shared logic</h3>
+      <ul class="tight"><li><b>General Ledger (GL):</b> the master record of all transactions, coded by account + cost centre + project</li><li><b>Chart of accounts:</b> the coding structure — get this right and reporting is easy; get it wrong and everything is a workaround</li><li><b>Journals:</b> manual postings (accruals, corrections, recharges) — always with narrative, evidence and approver</li><li><b>Purchase to pay:</b> requisition → PO → goods receipt → invoice → payment</li><li><b>Reporting:</b> run reports by period/cost centre, export to Excel for analysis — never alter the source export; work on a copy and keep the raw file</li></ul>
+      <p><b>Safe interview line:</b> “Whichever ERP LSBU uses, my routine is the same: understand the coding structure first, reconcile my extract back to the GL control total, then analyse.”</p>
+    </div>
+    <div class="card"><span class="tag">Analysis &amp; reporting tools</span><h3>Power BI, Power Query &amp; templates</h3>
+      <ul class="tight"><li><b>Power Query</b> (in Excel &amp; Power BI): repeatable cleaning/merging — ideal for combining GL + HR + student data for TRAC</li><li><b>Power BI:</b> interactive dashboards — measures (DAX e.g. <code>SUM</code>, <code>CALCULATE</code>), slicers by school/month, scheduled refresh</li><li><b>Forecasting templates:</b> lock formula cells, colour inputs (one consistent colour = “type here”), include instructions tab, version + date in filename</li><li><b>Version control:</b> <span class="mono">2026-27_Forecast_SchoolName_v3_2026-11-11.xlsx</span> — never “final_FINAL.xlsx”</li></ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px"><h3>Golden rules of good financial modelling</h3>
+    <ul class="tight"><li><b>Separate inputs, calculations and outputs</b> — assumptions on one tab, clearly labelled, never hard-coded inside formulas</li><li><b>One formula per row/column, copied consistently</b> — so errors are visible</li><li><b>Checks that must equal zero / agree to source</b> — put them at the top, conditionally formatted red if they fail</li><li><b>No hard-coded numbers in formulas</b> — link to the assumption cell so sensitivity is instant</li><li><b>Document:</b> purpose, owner, date, sources, key assumptions — on the first tab</li></ul>
+  </div>
+</section>
+
+<!-- 6 RETURNS -->
+<section id="returns">
+  <h2>6 · The OfS returns <span>— TRAC, AFR &amp; HEBCI in depth</span></h2>
+  <p class="sub">This is the most distinctive part of the job. Even basic, accurate fluency here will set you apart — most generic candidates won’t know these at all.</p>
+  <div class="grid3">
+    <div class="card"><span class="tag">Return 1</span><h3>TRAC</h3><p><b>Transparent Approach to Costing.</b> The sector-standard method UK providers use to calculate the full economic cost of teaching, research and other activities.</p><ul class="tight"><li>Allocates academic staff time (via time surveys / TAS) and support costs across activities</li><li>Adjusts financial statements to full economic cost (e.g. infrastructure adjustments)</li><li>Produces TRAC(T) for teaching — used in OfS funding and fee decisions</li><li>The role's part: staff-time surveying, checking data from other systems, supporting the calculations</li></ul></div>
+    <div class="card"><span class="tag">Return 2</span><h3>Annual Financial Return (AFR)</h3><p>The OfS’s main annual collection of financial and student data from providers — the successor to the old HEFCE/HESA Finance Statistics Return in OfS terms.</p><ul class="tight"><li>Covers income, expenditure, balance sheet, cash flow, student numbers and forecasts</li><li>Must reconcile to the audited financial statements — any difference needs explaining</li><li>Used by OfS to monitor financial sustainability and condition of registration</li></ul></div>
+    <div class="card"><span class="tag">Return 3</span><h3>HEBCI</h3><p><b>Higher Education Business &amp; Community Interaction</b> survey.</p><ul class="tight"><li>Captures income and activity from knowledge exchange: consultancy, contract research, CPD, facilities hire, spin-outs, community engagement</li><li>Feeds the Knowledge Exchange Framework (KEF) narrative</li><li>Data often sits outside finance — in research/enterprise teams — so chasing, definitions and evidence matter</li></ul></div>
+  </div>
+  <div class="warn"><b>Accuracy point for the interview:</b> Don’t bluff submission dates or guidance versions — they change. Say: “I’d work to the current OfS/HESA guidance and timetable for that year, build a checklist from it, and reconcile every return back to the audited statements and GL before sign-off.” That answer is always correct.</div>
+  <div class="card"><h3>How a good returns process runs — how to describe it</h3>
+    <div class="steps">
+      <div class="step"><div><h4>Plan from the guidance</h4><p>Read the current OfS guidance, build a timetable with owners and deadlines, and flag the data you'll need from HR, student records, research &amp; enterprise early.</p></div></div>
+      <div class="step"><div><h4>Collect &amp; survey</h4><p>Run staff-time surveys for TRAC with clear comms and reminders, and chase HEBCI data from non-finance teams with definitions in plain English.</p></div></div>
+      <div class="step"><div><h4>Reconcile everything</h4><p>Tie totals to the GL / audited statements, compare to the prior year, and investigate movements beyond an agreed threshold.</p></div></div>
+      <div class="step"><div><h4>Review, sign-off &amp; document</h4><p>Get a senior review, keep documented checks and an audit trail, submit on time — then write the process note while it’s fresh for next year (and for cover).</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 SCENARIOS -->
+<section id="scenarios">
+  <h2>7 · Likely test scenarios <span>— practise these out loud</span></h2>
+  <p class="sub">Finance interviews at this level often include a short Excel task or a “talk me through this table” exercise. Rehearse the method, not just the answer.</p>
+  <div class="grid2">
+    <div class="card"><span class="tag gold">Scenario A</span><h3>“This school is £180k overspent. Walk us through it.”</h3><p><b>The method:</b> 1) Confirm the numbers tie to the GL. 2) Split the variance: volume vs price vs timing vs one-off. 3) Staff vs non-staff. 4) Ask: is it forecast to continue or reverse? 5) Identify what action is needed — and who owns it.</p><p><b>Say:</b> “An overspend isn’t automatically bad — if student numbers and income are ahead too, the net position may be fine. I’d always show income and expenditure together.”</p></div>
+    <div class="card"><span class="tag gold">Scenario B</span><h3>Excel task: messy GL download</h3><p><b>The method:</b> Keep the raw data untouched → make a clean copy (trim, consistent codes) → build a PivotTable by cost centre/account → run SUMIFS checks back to the raw total → highlight the top 5 variances → write a one-paragraph commentary: what, why, so what, next step.</p><p>If you get stuck on a function, narrate your logic — panels score method and checks, not just the final cell.</p></div>
+    <div class="card"><span class="tag gold">Scenario C</span><h3>“Two systems disagree by £42k. What do you do?”</h3><p><b>The method:</b> Define what each system should contain → compare at transaction level → categorise the breaks (timing, missing, duplicate, coding) → quantify each → correct at source where possible → document everything. Never “plug” the difference.</p></div>
+    <div class="card"><span class="tag gold">Scenario D</span><h3>“A budget holder says your report is wrong.”</h3><p><b>The method:</b> Stay collegiate → walk through it together line by line → often it’s commitments/accruals timing or a coding difference → if they’re right, fix it and thank them; if the report is right, explain with evidence → follow up in writing. This tests Criterion D directly.</p></div>
+  </div>
+</section>
+
+<!-- 8 PLAN -->
+<section id="plan">
+  <h2>8 · 7-day study plan <span>&amp; interview-day checklist</span></h2>
+  <div class="grid2">
+    <div class="card"><h3>Your 7 days, about 1 hour a day</h3><ul class="tight">
+      <li><b>Day 1:</b> Read Sections 1 + 6. Be able to explain TRAC, AFR and HEBCI in 30 seconds each.</li>
+      <li><b>Day 2:</b> Work through Technical Q&amp;A 1–8. Write your real numbers into two answers.</li>
+      <li><b>Day 3:</b> Excel drills — build a PivotTable, XLOOKUP and SUMIFS from sample data. Practise Power Query Refresh.</li>
+      <li><b>Day 4:</b> Work through Technical Q&amp;A 9–end + the glossary. Test yourself: define 10 terms out loud.</li>
+      <li><b>Day 5:</b> Behavioural — write your 4 STAR stories (partnering, deadline, error found, difficult colleague) and time them to 2 minutes.</li>
+      <li><b>Day 6:</b> Practise Scenarios A–D out loud. Prepare your 3 questions to ask them.</li>
+      <li><b>Day 7:</b> Do a mock interview start-to-finish. Print this pack. Get an early night.</li>
+    </ul></div>
+    <div class="card"><h3>Your first 30–60–90 days — if they ask</h3><ul class="tight">
+      <li><b>30:</b> Learn the systems, coding and timetables; read last year’s returns + process notes; meet the FBPs and budget holders; make no changes yet — listen first.</li>
+      <li><b>60:</b> Own the monthly forecast cycle end-to-end; deliver your first returns tasks; spot one report/template improvement and agree it with your manager.</li>
+      <li><b>90:</b> Be the confident owner of the process; documentation fully up to date for cover continuity; deliver a short data-analysis training session to the team.</li>
+    </ul></div>
+  </div>
+  <h3>Interview-day checklist</h3>
+  <ul class="checklist">
+    <li>You can say “Why LSBU, why this role, why now” in 90 seconds — with the LSBU mission and Group model in it</li>
+    <li>You have 4 STAR stories ready, each with a number or clear outcome</li>
+    <li>You can define TRAC, AFR, HEBCI, accrual, variance and full economic cost without notes</li>
+    <li>You can name 5 Excel tools and give a real example of each</li>
+    <li>You know your qualification status precisely: papers passed, papers remaining, target completion date</li>
+    <li>You have 3 questions to ask the panel (see Section 3)</li>
+    <li>For a remote interview: you've tested the link, camera at eye level, water and a printed copy of this pack beside you — and a pen for the scenario task</li>
+  </ul>
+
+  <footer>
+    <p><b>Source:</b> Built from the official Candidate Pack for Management Accountant (Maternity Cover), REQ12812, London South Bank University, Finance and Management Information, October 2026 — Grade 7, £39,560–£46,970 excl. London Weighting, fixed term to February 2028. Salary, dates and criteria are as published in that pack. OfS return guidance changes annually — always check the current OfS/HESA guidance before a real submission.</p>
+    <p>Ese — I put this pack together for you because I know you can do this job. If you've worked through it, you've got this — preparation is already half the interview. Walk in, stay specific, show your workings, and be yourself. Go and get it. I'm rooting for you. 💚 — Osaretin</p>
+  </footer>
+</section>
+</div>
+
+<script>
+var QA = [
+["Tell me about yourself / Why this role?","Opener • 90 seconds","<p><strong>Sample:</strong> “I’m [your name], a part-qualified [ACCA/CIMA — insert yours] accountant in the final stages of qualifying, with experience in management accounting — budgeting, forecasting, month-end and variance analysis — most recently at [employer]. My strongest area is data: I build Excel/Power Query reporting that reconciles back to the ledger and that non-finance managers actually use. I’m applying for this role because it brings together exactly that mix — regulatory returns, forecasting and business partnering — and because LSBU Group’s mission and integrated structure make the work meaningful.”</p><p><em>Structure: present (current role + qualification stage) → past (best relevant achievement with a number) → future (why LSBU, why this role).</em></p>"],
+["What is management accounting — and how is it different from financial accounting?","Core definition","<p><strong>Sample:</strong> “Financial accounting looks backwards: it records what happened and reports it externally in statutory statements, to set standards, for auditors and regulators. Management accounting looks forwards and inwards: budgets, forecasts, costings and analysis that help managers decide — what to fund, where we’re off track, what happens if numbers change. This role is mostly management accounting, but the AFR/TRAC link to the audited statements is why strong technical accounting underneath still matters.”</p>"],
+["Walk me through a monthly forecasting process you’ve run.","Criterion C • Core task","<p><strong>Sample:</strong> “At month-end I’d start from year-to-date actuals agreed to the GL, then work with budget holders on the forecast for the rest of the year: known commitments, staffing changes, student-number-driven income, and one-offs removed. I maintain a consistent template — actuals pre-populated, forecast cells clearly marked as inputs, formulas locked — so every FBP forecasts the same way. Then I consolidate, sense-check movements against run-rate and prior forecast, challenge outliers, and produce variance commentary: what changed, why, and whether it affects the full-year outturn.”</p><div class='tip'><b>Key phrases:</b> YTD actuals + forecast = <b>outturn</b>. Forecast ≠ budget: budget is the original plan; forecast is the latest honest view.</div>"],
+["How do you build a budget from scratch?","Criterion C","<p><strong>Sample:</strong> “Start with the planning assumptions — student numbers, fee levels, pay award, inflation — agreed at group level so everyone builds on the same basis. Then build bottom-up with budget holders: staffing establishment first (usually the largest cost in a university), then non-staff lines driven by activity. Layer in capital separately from revenue. I then reconcile bottom-up to the top-down target, document every assumption, and phase the budget by month — not just twelfths — so variances in-year are meaningful.”</p>"],
+["Explain variance analysis. What do you do with a large adverse variance?","Criterion B/C","<p><strong>Sample:</strong> “Variance is actual vs budget (or forecast). I split it before I explain it: is it <b>timing</b> (will reverse), <b>volume</b> (more students/activity), <b>price/rate</b> (pay award, price increase), or a genuine <b>overspend/one-off</b>? Then I quantify each piece, talk to the budget holder, and report it as: headline number, cause, full-year impact, and action. A large in-month variance that’s pure timing needs a sentence; a small recurring one that compounds all year needs escalation.”</p>"],
+["What is an accrual? What is a prepayment? Give examples.","Criterion H • Technical","<p><strong>Sample:</strong> “An <b>accrual</b> is a cost incurred but not yet invoiced — e.g. agency staff worked in March, invoice arrives in April; we accrue so March bears the cost. A <b>prepayment</b> is paid in advance — e.g. an annual software licence paid in April covering 12 months; we prepay and release 1/12 each month. Both exist because of the matching concept: costs and income belong in the period they relate to, not when cash moves. Journals reverse or release in the following periods, with a clear audit trail.”</p>"],
+["Capital vs revenue expenditure — what’s the difference and why does it matter here?","Criterion H","<p><strong>Sample:</strong> “Revenue expenditure is day-to-day running cost, charged to the income statement in the year — salaries, consumables. Capital expenditure creates or improves an asset used over several years — a building refurbishment, major equipment — so it sits on the balance sheet and is depreciated over its useful life. It matters here because the role covers recurrent <i>and</i> capital programmes, the funding and approval routes differ, and miscoding distorts both the in-year position and the AFR.”</p>"],
+["How would you reconcile data from two different systems that don’t agree?","Criterion F • They will ask this","<p><strong>Sample:</strong> “First I define exactly what each extract is supposed to contain — same period, same population, same definitions — because most ‘disagreements’ start as definition differences. Then I agree control totals, drop to transaction level, and categorise every break: timing, missing item, duplicate, or coding difference. I quantify each category so the unexplained remainder shrinks to zero or a trivial, understood amount. I fix at source where I can, journal only what’s genuinely a finance correction, and I document the reconciliation so anyone can re-perform it.” Never plug a difference to make it balance.</p>"],
+["Describe a financial model you built. How did you make it reliable?","Criterion B","<p><strong>Sample:</strong> “I built [e.g. a staffing forecast model] with inputs, calculations and outputs on separate tabs. Assumptions — pay award, vacancy factor, on-costs — sat in one place and every formula linked to them, so we could flex scenarios instantly. I added check cells that had to agree back to payroll/GL totals, protected formula cells, and a one-page instructions/assumptions tab. Reliability came from those checks, from one consistent formula per row, and from a second person sense-checking the outputs against run-rate before it went to managers.”</p>"],
+["What Excel level are you really at? Give examples.","Criterion G • Be specific","<p><strong>Sample:</strong> “Intermediate-to-advanced, and I use it daily for analysis, not just presentation. PivotTables for summarising GL downloads; XLOOKUP and INDEX-MATCH for enriching data with cost-centre and account names; SUMIFS for conditional totals; IF/IFERROR logic to flag exceptions. Increasingly I use Power Query to automate the repetitive part — combining monthly files from different systems into one clean table that refreshes, which removes manual copy-paste errors. I also build templates with data validation dropdowns and protected formulas so other people can use them safely.”</p><p><em>If you don’t know Power Query yet, learn the basics in Section 5 before the interview — it’s the highest-value hour you can spend.</em></p>"],
+["What do you know about TRAC?","Role-specific • Section 6","<p><strong>Sample:</strong> “TRAC — the Transparent Approach to Costing — is the standard method UK universities use to work out the full economic cost of teaching, research and other activities. It relies on academic time allocation — surveys of how staff split their time — plus cost allocation and adjustments to move from financial-statement figures to full economic cost. TRAC(T) in particular informs teaching funding and fees. In this role I’d support the data side: running the time surveys, validating data from other systems, and making sure the underlying figures reconcile.”</p>"],
+["What are the AFR and HEBCI, and why do they matter?","Role-specific • Section 6","<p><strong>Sample:</strong> “The Annual Financial Return is the OfS’s annual financial and student data collection — it has to reconcile to the audited financial statements and it’s how the OfS monitors providers’ financial sustainability. HEBCI — Higher Education Business and Community Interaction — captures knowledge-exchange activity and income: consultancy, contract research, CPD, spin-outs. It matters because it evidences the university’s economic and community impact, and its data often lives with enterprise and research teams rather than finance, so clear definitions and good chasing matter.”</p>"],
+["How do you explain a complex finance issue to a non-finance budget holder?","Criterion D","<p><strong>Sample:</strong> “Start with their world, not mine: ‘You have £X left for the rest of the year if spending continues at this rate’ means more than a variance table. I use one clear visual, plain words — no acronyms without explaining them — and I separate ‘this needs a decision’ from ‘this is just timing.’ Then I check understanding by asking what decision they need to make, and I follow up with a short written summary. My test is: could they repeat the position accurately to their own manager?”</p>"],
+["How do you prioritise when everything is due in the same week — e.g. forecast deadline and a return deadline?","Delivery","<p><strong>Sample:</strong> “I work backwards from the hard external deadlines first — OfS submissions don’t move — then sequence the internal work that feeds them. I keep a live checklist with owners and status, flag risks to my manager early rather than at the deadline, and I’m honest about trade-offs: ‘If we do X first, Y lands a day later — which matters more?’ In practice, good templates and starting data collection early mean the clash rarely becomes a crisis.”</p>"],
+["Tell me about a process you documented or improved.","Criterion E","<p><strong>Sample (STAR):</strong> “<b>S:</b> Our month-end [process] depended on one person’s memory and took [X days]. <b>T:</b> I was asked to make it repeatable. <b>A:</b> I mapped each step, wrote a checklist with screenshots, file paths, control totals and ‘what good looks like’ at each stage, and built the checks into the template itself. <b>R:</b> A colleague ran it unaided the next month and we cut [time/errors]. That documentation habit is exactly what I’d bring to a maternity-cover role, where continuity is the point.”</p>"],
+["What are the key income and cost drivers for a university?","Sector knowledge • Impresses","<p><strong>Sample:</strong> “Income: tuition fees — home fees are regulated, international fees are market-driven and volatile — plus OfS/research council grants, research contracts, and other income like residences, catering and knowledge exchange. Costs: staff costs dominate (typically well over half of expenditure), including pensions — USS/Teachers’/Local Government schemes matter — then estates, IT and depreciation. Key risks to name: student recruitment shortfalls, pay awards above plan, energy/estates costs, and pension valuation changes.”</p>"],
+["What is full economic costing (fEC)?","Technical / TRAC link","<p><strong>Sample:</strong> “fEC is the full cost of an activity including all direct costs plus a fair share of indirect costs and estates, plus infrastructure adjustments — not just the cash directly spent on it. Research funders use fEC as the basis for costing grants (UKRI typically pays 80% of fEC). TRAC is the methodology that produces those cost rates.”</p>"],
+["How do you check your own work before it goes to a senior manager?","Accuracy","<p><strong>Sample:</strong> “Three layers: <b>mechanical</b> — totals agree to source, checks equal zero, no #REFs or hard-coded overrides; <b>reasonableness</b> — does the movement make sense vs last month and last year, and can I explain the top three drivers?; <b>reader</b> — I re-read it as the recipient: is the headline first, are £ and % consistent, is the ‘so what’ explicit? If I can’t explain a number, it doesn’t go out.”</p>"],
+["What would you do in your first month in this role?","Judgement • See 30-60-90","<p><strong>Sample:</strong> “Listen and learn before changing anything. I’d read last year’s TRAC/AFR/HEBCI submissions and process notes, learn the GL coding structure and reporting calendar, meet the FBPs and key data owners in HR, student records and enterprise, and understand the handover from the post-holder. By the end of month one I want to be able to run the monthly forecast data process supervised — and have a clear, agreed list of priorities with my manager.”</p>"],
+["Why a fixed-term / maternity-cover role? Why now?","Motivation • Answer positively","<p><strong>Sample:</strong> “Because the content is exactly where I want to specialise — returns, forecasting and analysis — and a cover role is a concentrated way to own a full annual cycle: forecast rounds, year-end and the OfS returns. I’m in the final stages of qualifying, so the breadth here directly supports that too. I’m fully committed to the term to February 2028 and to leaving documentation and a handover better than I found them.” Never apologise for the FTC — frame it as a deliberate choice.</p>"]
+];
+var BEHAVIOUR=[
+["Tell me about a time you worked with a difficult or unresponsive colleague to get data you needed.","Partnering • Criterion D","<p><strong>Sample STAR:</strong> <b>S:</b> A department hadn’t returned data I needed for a deadline. <b>T:</b> I needed complete, accurate data without damaging the relationship. <b>A:</b> I visited/spoke rather than sending a third chasing email, explained <i>why</i> it mattered and what ‘good’ looked like with an example, offered a simpler template, and agreed a specific time. <b>R:</b> Data arrived complete, and they used the template unprompted next time. <em>Lesson: most ‘difficult’ is actually ‘busy and unclear on the ask.’</em></p>"],
+["Describe a time you found an error — yours or someone else’s. What did you do?","Integrity & accuracy","<p><strong>Answer shape:</strong> I found it via a check/reconciliation → I quantified the impact → I told my manager promptly and factually (no blame) → I corrected it at source + fixed the process so it can’t recur → I documented it. Panels want to hear my honesty, my speed, and a process fix — not perfection.</p>"],
+["Give an example of improving how a team works with data.","Training • Responsibility 6","<p><strong>Answer shape:</strong> I noticed colleagues doing a manual, error-prone step (e.g. copy-pasting, VLOOKUPs breaking) → I showed/taught them a better method (PivotTable, Power Query, template) in a short session with a one-page guide → I measured the result: time saved, errors down, the team adopting it. This directly mirrors my training duty in this job.</p>"],
+["Tell me about working to a tight, immovable deadline.","Delivery under pressure","<p><strong>Answer shape:</strong> External deadline (audit, submission, board) → I planned backwards, made early data requests, held daily check-ins → a problem arose → I reprioritised/escalated early → I delivered on time. I end with what I now do routinely (my checklists, early flags) because of it.</p>"],
+["Describe a time you had to challenge a manager’s numbers or assumptions.","Challenge with respect","<p><strong>Answer shape:</strong> A forecast/budget assumption didn’t match the evidence (run-rate, commitments) → I brought data, not opinion → I framed it as risk + options (‘at current run-rate this overspends by £X; here are two ways back’) → I agreed a revised forecast/action. I emphasise: supportive and collegiate, evidence-led — LSBU’s exact wording in Criterion D.</p>"],
+["How do you demonstrate inclusivity and LSBU’s values in finance work?","Values • LSBU Behaviour Framework","<p><strong>Sample:</strong> “In practice: reports that are accessible — plain English, clear visuals, no unexplained jargon — so every budget holder, whatever their finance background, can genuinely use them; patience and respect in training; and remembering the purpose — our analysis supports students and access, including students the sector hasn’t always served well. That mission is a reason I want to work at LSBU specifically, not just in university finance generally.”</p>"]
+];
+var GLOSS=[
+["Accrual","A cost (or income) recognised in the period it relates to, even if the invoice/cash hasn't moved yet."],
+["Prepayment","Paid in advance — recognised gradually over the periods it covers (e.g. annual licence ÷ 12)."],
+["Budget","The original agreed plan for the year, by school/department and account code."],
+["Forecast","The latest updated estimate of the full-year outcome, based on actuals + expected remainder."],
+["Outturn","Forecast full-year result: year-to-date actuals + forecast for the rest of the year."],
+["Variance","Difference between actual and budget/forecast. Adverse = worse than plan; Favourable = better."],
+["General Ledger (GL)","The master accounting record — every transaction, coded by account, cost centre and project."],
+["Cost Centre","The unit a cost belongs to (a school, team or project) — the basis of budget-holder reporting."],
+["Journal","A manual accounting entry (accrual, correction, recharge) — needs narrative, evidence and approval."],
+["Reconciliation","Proving two records agree (e.g. report vs GL) and explaining/clearing every difference. No plugs."],
+["TRAC","Transparent Approach to Costing — sector method for full economic cost of teaching/research/other."],
+["fEC","Full Economic Cost — direct costs + indirect + estates + infrastructure adjustments."],
+["AFR","Annual Financial Return — OfS annual financial + student data collection; ties to audited statements."],
+["HEBCI","Higher Ed Business & Community Interaction survey — knowledge-exchange income and activity."],
+["OfS","Office for Students — the regulator for higher education in England."],
+["FRS 102 / SORP","UK accounting standard / the FE-HE Statement of Recommended Practice governing university accounts."],
+["Depreciation","Spreading a capital asset's cost over its useful life as an annual charge."],
+["Capital Expenditure (Capex)","Spend creating/improving a long-life asset — balance sheet, then depreciated."],
+["Revenue Expenditure","Day-to-day running costs charged to the year — salaries, consumables, services."],
+["Commitment / PO","A purchase order raised but not yet invoiced — committed spend budget holders must count."],
+["Run-Rate","Current rate of spending/income — used to project: 'if this continues, the year ends at £X.'"],
+["Sensitivity Analysis","Testing how results change if a key assumption moves — e.g. student numbers ±5%."],
+["Business Case","A structured proposal for investment: costs, benefits, options, risks and appraisal (e.g. payback/NPV)."],
+["Financial Regulations","The university's binding rules on spending authority, procurement and financial control — FMI maintains them at LSBU."]
+];
+function qaHTML(item){
+  return '<div class="qa searchable"><button class="q" onclick="this.parentElement.classList.toggle(\'open\')"><span>'+item[0]+'<small>'+item[1]+'</small></span><span class="chevron">+</span></button><div class="a">'+item[2]+'</div></div>';
+}
+document.getElementById('qa-list').innerHTML = QA.map(qaHTML).join('');
+document.getElementById('behaviour-list').innerHTML = BEHAVIOUR.map(qaHTML).join('');
+document.getElementById('gloss-list').innerHTML = GLOSS.map(function(g){return '<div class="gitem searchable"><b>'+g[0]+'</b><p>'+g[1]+'</p></div>'}).join('');
+function expandAll(){document.querySelectorAll('.qa').forEach(function(e){e.classList.add('open')})}
+function collapseAll(){document.querySelectorAll('.qa').forEach(function(e){e.classList.remove('open')})}
+document.getElementById('search').addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase();
+  document.querySelectorAll('.searchable').forEach(function(el){
+    var hit=!q||el.textContent.toLowerCase().indexOf(q)>-1;
+    el.classList.toggle('hidden',!hit);
+    if(q&&hit&&el.classList.contains('qa')) el.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
