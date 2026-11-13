@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T14:41:21Z",
+  "generated_at": "2026-11-13T14:41:25Z",
   "polls": [
     {
       "jurisdiction": "Federal",
@@ -67,11 +67,11 @@
           "lead": 11.0
         },
         {
-          "pollster": "Liaison Strategies",
-          "date": "2026-10-31",
-          "date_label": "Oct 31, 2026",
+          "pollster": "Research Co",
+          "date": "2026-11-04",
+          "date_label": "Nov 4, 2026",
           "leader": "Liberal",
-          "lead": 15.0
+          "lead": 19.0
         }
       ]
     },
