@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-13T14:38:10Z",
+  "asOf": "2026-11-13T14:43:14Z",
   "races": [
     {
       "id": "gov-az",
@@ -142,7 +142,7 @@
         {
           "name": "Michael Whatley",
           "party": "R",
-          "votes": 1310624
+          "votes": 1310625
         }
       ]
     }
