@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-13T18:27:46Z",
+  "asOf": "2026-11-13T18:33:09Z",
   "races": [
     {
       "id": "gov-az",
@@ -12,12 +12,12 @@
         {
           "name": "Katie Hobbs (DEM) / John Giles (PND)",
           "party": "D",
-          "votes": 1434813
+          "votes": 1434822
         },
         {
           "name": "Andy Biggs (REP) / Sine Kerr (REP)",
           "party": "R",
-          "votes": 1094388
+          "votes": 1094391
         },
         {
           "name": "Risa Lombardo (GRN) / Lisa Castillo (GRN)",
