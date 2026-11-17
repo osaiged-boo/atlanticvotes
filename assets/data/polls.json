@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-11-13T14:41:25Z",
+  "generated_at": "2026-11-17T14:41:33Z",
   "polls": [
     {
       "jurisdiction": "Federal",
       "label": "FEDERAL",
       "hashtag": "#cdnpoli",
       "pollster": "Liaison Strategies",
-      "date": "2026-11-07",
-      "date_label": "Nov 7, 2026",
+      "date": "2026-11-14",
+      "date_label": "Nov 14, 2026",
       "parties": [
         {
           "label": "Liberal",
-          "pct": 44.0,
+          "pct": 45.0,
           "color": "#d71920"
         },
         {
           "label": "Conservative",
-          "pct": 31.0,
+          "pct": 30.0,
           "color": "#0033ff"
         },
         {
@@ -26,12 +26,12 @@
         },
         {
           "label": "Bloc",
-          "pct": 5.0,
+          "pct": 6.0,
           "color": "#00a0d6"
         },
         {
           "label": "Green",
-          "pct": 3.0,
+          "pct": 2.0,
           "color": "#3d9b50"
         },
         {
@@ -41,10 +41,24 @@
         }
       ],
       "leader": "Liberal",
-      "lead": 13.0,
-      "delta": "Lead down 2 from last Liaison poll",
+      "lead": 15.0,
+      "delta": "Lead up 2 from last Liaison poll",
       "source_url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_46th_Canadian_federal_election",
       "recent": [
+        {
+          "pollster": "Liaison Strategies",
+          "date": "2026-11-14",
+          "date_label": "Nov 14, 2026",
+          "leader": "Liberal",
+          "lead": 15.0
+        },
+        {
+          "pollster": "Ipsos",
+          "date": "2026-11-12",
+          "date_label": "Nov 12, 2026",
+          "leader": "Liberal",
+          "lead": 10.0
+        },
         {
           "pollster": "Liaison Strategies",
           "date": "2026-11-07",
@@ -58,20 +72,6 @@
           "date_label": "Nov 6, 2026",
           "leader": "Liberal",
           "lead": 16.500000000000004
-        },
-        {
-          "pollster": "Abacus Data",
-          "date": "2026-11-04",
-          "date_label": "Nov 4, 2026",
-          "leader": "Liberal",
-          "lead": 11.0
-        },
-        {
-          "pollster": "Research Co",
-          "date": "2026-11-04",
-          "date_label": "Nov 4, 2026",
-          "leader": "Liberal",
-          "lead": 19.0
         }
       ]
     },
