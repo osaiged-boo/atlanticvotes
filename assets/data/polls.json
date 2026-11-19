@@ -1,50 +1,52 @@
 {
-  "generated_at": "2026-11-18T14:41:27Z",
+  "generated_at": "2026-11-19T14:41:25Z",
   "polls": [
     {
       "jurisdiction": "Federal",
       "label": "FEDERAL",
       "hashtag": "#cdnpoli",
-      "pollster": "Liaison Strategies",
-      "date": "2026-11-14",
-      "date_label": "Nov 14, 2026",
+      "pollster": "L\u00e9ger",
+      "date": "2026-11-16",
+      "date_label": "Nov 16, 2026",
       "parties": [
         {
           "label": "Liberal",
-          "pct": 45.0,
+          "pct": 47.0,
           "color": "#d71920"
         },
         {
           "label": "Conservative",
-          "pct": 30.0,
+          "pct": 36.0,
           "color": "#0033ff"
         },
         {
-          "label": "NDP",
-          "pct": 14.0,
-          "color": "#f26522"
-        },
-        {
           "label": "Bloc",
-          "pct": 6.0,
+          "pct": 7.0,
           "color": "#00a0d6"
         },
         {
-          "label": "Green",
-          "pct": 2.0,
-          "color": "#3d9b50"
+          "label": "NDP",
+          "pct": 6.0,
+          "color": "#f26522"
         },
         {
-          "label": "PPC",
-          "pct": 2.0,
-          "color": "#6b2d90"
+          "label": "Green",
+          "pct": 3.0,
+          "color": "#3d9b50"
         }
       ],
       "leader": "Liberal",
-      "lead": 15.0,
-      "delta": "Lead up 2 from last Liaison poll",
+      "lead": 11.0,
+      "delta": "Lead down 4 from last L\u00e9ger poll",
       "source_url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_46th_Canadian_federal_election",
       "recent": [
+        {
+          "pollster": "L\u00e9ger",
+          "date": "2026-11-16",
+          "date_label": "Nov 16, 2026",
+          "leader": "Liberal",
+          "lead": 11.0
+        },
         {
           "pollster": "Liaison Strategies",
           "date": "2026-11-14",
@@ -65,13 +67,6 @@
           "date_label": "Nov 12, 2026",
           "leader": "Liberal",
           "lead": 10.0
-        },
-        {
-          "pollster": "Liaison Strategies",
-          "date": "2026-11-07",
-          "date_label": "Nov 7, 2026",
-          "leader": "Liberal",
-          "lead": 13.0
         }
       ]
     },
