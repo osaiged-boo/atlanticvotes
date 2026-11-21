@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T14:41:25Z",
+  "generated_at": "2026-11-21T14:41:22Z",
   "polls": [
     {
       "jurisdiction": "Federal",
@@ -138,46 +138,48 @@
       "jurisdiction": "New Brunswick",
       "label": "NEW BRUNSWICK",
       "hashtag": "#NB",
-      "pollster": "Narrative Research",
-      "date": "2026-09-28",
-      "date_label": "Sep 28, 2026",
+      "pollster": "Abacus Data",
+      "date": "2026-11-10",
+      "date_label": "Nov 10, 2026",
       "parties": [
         {
           "label": "Liberal",
-          "pct": 46.0,
+          "pct": 44.0,
           "color": "#d71920"
         },
         {
           "label": "PC",
-          "pct": 30.0,
+          "pct": 32.0,
           "color": "#0033ff"
         },
         {
           "label": "Green",
-          "pct": 13.0,
+          "pct": 16.0,
           "color": "#3d9b50"
         },
         {
           "label": "NDP",
-          "pct": 7.0,
+          "pct": 4.0,
           "color": "#f26522"
         },
         {
-          "label": "Libertarian",
-          "pct": 3.0,
-          "color": "#c8aa00"
-        },
-        {
           "label": "Others",
-          "pct": 1.0,
+          "pct": 4.0,
           "color": "#8c9bb9"
         }
       ],
       "leader": "Liberal",
-      "lead": 16.0,
-      "delta": "Lead up 5 from last Narrative poll",
+      "lead": 12.0,
+      "delta": "Lead down 2 from last Abacus poll",
       "source_url": "https://en.wikipedia.org/wiki/42nd_New_Brunswick_general_election",
       "recent": [
+        {
+          "pollster": "Abacus Data",
+          "date": "2026-11-10",
+          "date_label": "Nov 10, 2026",
+          "leader": "Liberal",
+          "lead": 12.0
+        },
         {
           "pollster": "Narrative Research",
           "date": "2026-09-28",
@@ -198,13 +200,6 @@
           "date_label": "Jun 17, 2026",
           "leader": "Liberal",
           "lead": 11.0
-        },
-        {
-          "pollster": "Porter O'Brien",
-          "date": "2026-06-03",
-          "date_label": "Jun 3, 2026",
-          "leader": "Liberal",
-          "lead": 4.0
         }
       ]
     },
