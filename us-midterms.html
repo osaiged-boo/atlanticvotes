@@ -293,6 +293,7 @@ footer p{margin:0 0 8px}
   </footer>
 </main>
 
+<script src="assets/js/animated-counter.js"></script>
 <script>
 "use strict";
 var FEED_URL = "assets/data/us-midterms-2026.json";
@@ -463,7 +464,7 @@ function candRow(c, votes, share, tag){
   var dot = meta ? '<span class="party-dot" style="background:' + meta.color + '"></span>' : "";
   var name = c.p ? esc(c.n) + (c.inc ? " (incumbent)" : "") : '<span class="cand-tbd">To be confirmed</span>';
   var party = meta ? meta.label : "";
-  var nums = (votes === undefined || votes === null) ? "" : '<span class="cand-nums"><b>' + fmt(votes) + "</b> &middot; " + share.toFixed(1) + "%" + (tag ? ' <span class="tag ' + (tag === "Projected" ? "proj" : "") + '">' + tag + "</span>" : "") + "</span>";
+  var nums = (votes === undefined || votes === null) ? "" : '<span class="cand-nums"><b>' + fmt(votes) + "</b> &middot; " + '<span class="cand-share">' + share.toFixed(1) + "%</span>" + (tag ? ' <span class="tag ' + (tag === "Projected" ? "proj" : "") + '">' + tag + "</span>" : "") + "</span>";
   var bar = (votes === undefined || votes === null || !meta) ? "" : '<div class="cand-bar"><i style="width:' + Math.max(0, Math.min(100, share)) + '%;background:' + meta.color + '"></i></div>';
   return '<div class="cand"><div class="cand-head"><b>' + dot + name + '</b><span class="pty">' + party + "</span></div>" + (nums ? '<div style="text-align:right">' + nums + "</div>" + bar : "") + "</div>";
 }
@@ -513,13 +514,60 @@ function applyFeed(data){
     var cert = fr.status === "certified" ? ' <span class="tag cert">Certified</span>' : "";
     var src = fr.source ? ("Source: " + (fr.sourceUrl ? '<a href="' + esc(fr.sourceUrl) + '" target="_blank" rel="noopener">' + esc(fr.source) + "</a>" : esc(fr.source))) : "Source: state authority (link pending)";
     var rep = fr.reportingLabel ? esc(fr.reportingLabel) : (fr.reportingPct !== null && fr.reportingPct !== undefined ? fmt(fr.reportingPct) + "% reporting" : "Reporting share not published");
+    /* Remember the candidate vote numbers currently on screen so a refresh
+       can animate from the old value to the new one. First poll has nothing
+       remembered, so it shows the values as-is. */
+    var prevLive = {};
+    if (window.AVCount) {
+      slot.querySelectorAll(".cand").forEach(function(cand){
+        var nameEl = cand.querySelector(".cand-head b");
+        var votesEl = cand.querySelector(".cand-nums b");
+        var shareEl = cand.querySelector(".cand-share");
+        if (!nameEl || !votesEl) return;
+        var key = nameEl.textContent.replace(/\s*\(incumbent\)\s*$/, "");
+        var v = AVCount.parseNum(votesEl.textContent);
+        if (v === null) return;
+        prevLive[key] = {
+          votes: v,
+          share: shareEl ? AVCount.parseNum(shareEl.textContent) : null
+        };
+      });
+    }
     slot.innerHTML = '<p class="report">Unofficial votes' + cert + " &middot; " + rep + " &middot; " + src + (fr.sourceAsOf ? " &middot; " + esc(fr.sourceAsOf) : "") + "</p>" + rows;
     slot.classList.add("on");
+    if (window.AVCount) {
+      slot.querySelectorAll(".cand").forEach(function(cand){
+        var nameEl = cand.querySelector(".cand-head b");
+        var votesEl = cand.querySelector(".cand-nums b");
+        if (!nameEl || !votesEl) return;
+        var key = nameEl.textContent.replace(/\s*\(incumbent\)\s*$/, "");
+        var prev = prevLive[key];
+        if (!prev) return;
+        var cur = AVCount.parseNum(votesEl.textContent);
+        if (cur !== null && cur !== prev.votes) AVCount.setNumberFrom(votesEl, prev.votes, cur);
+        var shareEl = cand.querySelector(".cand-share");
+        if (shareEl && prev.share !== null) {
+          var curShare = AVCount.parseNum(shareEl.textContent);
+          if (curShare !== null && curShare !== prev.share) AVCount.setNumberFrom(shareEl, prev.share, curShare, { decimals: 1, kind: "pct" });
+        }
+        var barEl = cand.querySelector(".cand-bar i");
+        if (barEl && prev.share !== null) {
+          var curW = parseFloat(barEl.style.width) || 0;
+          if (Math.abs(curW - prev.share) > 0.05) AVCount.setWidth(barEl, prev.share, curW);
+        }
+      });
+    }
   });
   document.getElementById("live-dot").classList.remove("awaiting");
   document.getElementById("live-status-text").textContent = "Live \u2014 unofficial results";
   document.getElementById("live-meta").innerHTML = "Votes and reporting shares are unofficial, from state authorities." + (data.asOf ? " Snapshot: <b>" + esc(data.asOf) + "</b>." : "");
-  document.getElementById("live-sub").textContent = reporting + " of " + RACES.length + " tracked races reporting \u00b7 " + fmt(countedTotal) + " votes counted (unofficial).";
+  var liveSub = document.getElementById("live-sub");
+  var prevTotalEl = document.getElementById("live-votes-total");
+  var prevTotal = (window.AVCount && prevTotalEl) ? AVCount.parseNum(prevTotalEl.textContent) : null;
+  liveSub.innerHTML = reporting + " of " + RACES.length + " tracked races reporting \u00b7 <span id=\"live-votes-total\">" + fmt(countedTotal) + "</span> votes counted (unofficial).";
+  if (window.AVCount && prevTotal !== null && prevTotal !== countedTotal) {
+    AVCount.setNumberFrom(document.getElementById("live-votes-total"), prevTotal, countedTotal);
+  }
   var empty = document.getElementById("live-empty");
   if (empty) empty.style.display = "none";
 }
