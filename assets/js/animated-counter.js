@@ -56,10 +56,26 @@
       el.style.width = toPct + "%";
       return;
     }
-    el.style.transition = "width " + DUR + "ms cubic-bezier(0.22, 1, 0.36, 1)";
-    el.style.width = fromPct + "%";
-    void el.offsetWidth; /* force reflow so the transition runs from fromPct */
-    el.style.width = toPct + "%";
+    /* Drive the width on the same clock and easing as the numbers (the old
+       CSS transition ran on a different curve and finished well ahead of
+       the count-up, so the bars looked already full while numbers were
+       still rising). */
+    if (el._avRaf) cancelAnimationFrame(el._avRaf);
+    var start = null;
+    function frame(ts) {
+      if (start === null) start = ts;
+      var p = Math.min(1, (ts - start) / DUR);
+      var v = fromPct + (toPct - fromPct) * easeOutCubic(p);
+      el.style.transition = "";
+      el.style.width = v + "%";
+      if (p < 1) {
+        el._avRaf = requestAnimationFrame(frame);
+      } else {
+        el._avRaf = null;
+        el.style.width = toPct + "%";
+      }
+    }
+    el._avRaf = requestAnimationFrame(frame);
   }
 
   window.AVCount = {
