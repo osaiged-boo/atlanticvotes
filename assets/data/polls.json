@@ -1,45 +1,64 @@
 {
-  "generated_at": "2026-11-21T14:41:22Z",
+  "generated_at": "2026-11-24T14:41:33Z",
   "polls": [
     {
       "jurisdiction": "Federal",
       "label": "FEDERAL",
       "hashtag": "#cdnpoli",
-      "pollster": "L\u00e9ger",
-      "date": "2026-11-16",
-      "date_label": "Nov 16, 2026",
+      "pollster": "Liaison Strategies",
+      "date": "2026-11-21",
+      "date_label": "Nov 21, 2026",
       "parties": [
         {
           "label": "Liberal",
-          "pct": 47.0,
+          "pct": 41.0,
           "color": "#d71920"
         },
         {
           "label": "Conservative",
-          "pct": 36.0,
+          "pct": 32.0,
           "color": "#0033ff"
         },
         {
-          "label": "Bloc",
-          "pct": 7.0,
-          "color": "#00a0d6"
-        },
-        {
           "label": "NDP",
-          "pct": 6.0,
+          "pct": 15.0,
           "color": "#f26522"
         },
         {
+          "label": "Bloc",
+          "pct": 6.0,
+          "color": "#00a0d6"
+        },
+        {
           "label": "Green",
-          "pct": 3.0,
+          "pct": 2.0,
           "color": "#3d9b50"
+        },
+        {
+          "label": "PPC",
+          "pct": 2.0,
+          "color": "#6b2d90"
         }
       ],
       "leader": "Liberal",
-      "lead": 11.0,
-      "delta": "Lead down 4 from last L\u00e9ger poll",
+      "lead": 9.0,
+      "delta": "Lead down 6 from last Liaison poll",
       "source_url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_46th_Canadian_federal_election",
       "recent": [
+        {
+          "pollster": "Liaison Strategies",
+          "date": "2026-11-21",
+          "date_label": "Nov 21, 2026",
+          "leader": "Liberal",
+          "lead": 9.0
+        },
+        {
+          "pollster": "Abacus Data",
+          "date": "2026-11-18",
+          "date_label": "Nov 18, 2026",
+          "leader": "Liberal",
+          "lead": 10.0
+        },
         {
           "pollster": "L\u00e9ger",
           "date": "2026-11-16",
@@ -53,20 +72,6 @@
           "date_label": "Nov 14, 2026",
           "leader": "Liberal",
           "lead": 15.0
-        },
-        {
-          "pollster": "Nanos Research",
-          "date": "2026-11-13",
-          "date_label": "Nov 13, 2026",
-          "leader": "Liberal",
-          "lead": 16.799999999999997
-        },
-        {
-          "pollster": "Ipsos",
-          "date": "2026-11-12",
-          "date_label": "Nov 12, 2026",
-          "leader": "Liberal",
-          "lead": 10.0
         }
       ]
     },
