@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T14:41:33Z",
+  "generated_at": "2026-11-25T14:41:21Z",
   "polls": [
     {
       "jurisdiction": "Federal",
@@ -53,6 +53,13 @@
           "lead": 9.0
         },
         {
+          "pollster": "Nanos Research",
+          "date": "2026-11-20",
+          "date_label": "Nov 20, 2026",
+          "leader": "Liberal",
+          "lead": 15.2
+        },
+        {
           "pollster": "Abacus Data",
           "date": "2026-11-18",
           "date_label": "Nov 18, 2026",
@@ -65,13 +72,6 @@
           "date_label": "Nov 16, 2026",
           "leader": "Liberal",
           "lead": 11.0
-        },
-        {
-          "pollster": "Liaison Strategies",
-          "date": "2026-11-14",
-          "date_label": "Nov 14, 2026",
-          "leader": "Liberal",
-          "lead": 15.0
         }
       ]
     },
