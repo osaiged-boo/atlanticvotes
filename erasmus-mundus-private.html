@@ -153,9 +153,9 @@ html,body{overflow-x:clip}
 .wrap{overflow-x:clip}
 .ticker{max-width:100%;contain:layout paint}
 .hero>*{position:relative;z-index:1}
-.orb{position:absolute;width:340px;height:340px;right:-70px;top:-40px;z-index:0;border-radius:42% 58% 63% 37%/45% 42% 58% 55%;background:radial-gradient(circle at 32% 30%,#9CC2FF,#3B82F6 45%,#1D4ED8 78%);filter:blur(2px);opacity:.5;animation:morph 11s ease-in-out infinite}
+.orb{position:absolute;width:340px;height:340px;right:-70px;top:-40px;z-index:0;border-radius:42% 58% 63% 37%/45% 42% 58% 55%;background:radial-gradient(circle at 32% 30%,#9CC2FF,#3B82F6 45%,#1D4ED8 78%);opacity:.5;animation:morph 11s ease-in-out infinite;will-change:transform}
 .orb.o2{width:190px;height:190px;right:auto;left:-60px;top:auto;bottom:-70px;background:radial-gradient(circle at 32% 30%,#FFC59E,var(--org) 55%,#C22E00 85%);opacity:.45;animation-duration:14s;animation-direction:reverse}
-@keyframes morph{0%,100%{border-radius:42% 58% 63% 37%/45% 42% 58% 55%;transform:rotate(0deg) scale(1)}33%{border-radius:63% 37% 41% 59%/38% 61% 39% 62%;transform:rotate(24deg) scale(1.07)}66%{border-radius:37% 63% 56% 44%/61% 35% 65% 39%;transform:rotate(-14deg) scale(.95)}}
+@keyframes morph{0%,100%{transform:rotate(0deg) scale(1)}33%{transform:rotate(24deg) scale(1.07)}66%{transform:rotate(-14deg) scale(.95)}}
 /* stats → animated counters */
 .stat{background:#141416;border:1px solid #2A2A2F;border-radius:20px;position:relative;overflow:hidden;transition:.3s}
 .stat::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--org),transparent)}
@@ -605,6 +605,31 @@ body.nav-docked .wrap{max-width:1320px !important;transform:none !important}
   .card{transition:none}
 }
 </style>
+<style id="final-fix">
+/* ============ FINAL FIX — search↔country correlation, truly hover-only rail, smoothness ============ */
+/* --- side rail past the hero: COMPLETELY hidden (no dots, no strip, no edge hint) until the pointer reaches the left edge, then it slides in --- */
+#railTrigger{width:24px}
+@media(min-width:1150px){
+  .rail{opacity:0 !important;transform:translate(-24px,-50%) !important;pointer-events:none !important;visibility:hidden;
+    transition:opacity .34s cubic-bezier(.22,.9,.28,1),transform .38s cubic-bezier(.22,.9,.28,1),width .38s cubic-bezier(.22,.9,.28,1),box-shadow .38s cubic-bezier(.22,.9,.28,1),visibility 0s linear .4s !important}
+  body.rail-open .rail,.rail:hover,.rail:focus-within{opacity:1 !important;transform:translate(0,-50%) !important;pointer-events:auto !important;visibility:visible;
+    transition:opacity .3s cubic-bezier(.22,.9,.28,1),transform .38s cubic-bezier(.22,.9,.28,1),width .38s cubic-bezier(.22,.9,.28,1),box-shadow .38s cubic-bezier(.22,.9,.28,1),visibility 0s !important;
+    box-shadow:0 22px 48px rgba(0,0,0,.62)}
+  .rail::after{display:none !important}
+  .rail a span{opacity:1 !important;transform:none !important;background:none !important;border:none !important;padding:0 !important;transition:none !important}
+}
+/* --- country panel flash when a search syncs the Countries section to the searched country --- */
+.country-panel.sync-flash{animation:syncFlash 2.2s cubic-bezier(.22,.9,.28,1)}
+@keyframes syncFlash{0%,55%{border-color:var(--org);box-shadow:0 0 0 2px var(--org),0 18px 40px rgba(255,77,0,.22)}100%{border-color:#333338;box-shadow:0 10px 26px rgba(0,0,0,.35)}}
+/* --- smoothness: the always-animating pieces stay on the compositor --- */
+.orb{will-change:transform}
+.ticker .track{will-change:transform}
+#pbar{will-change:transform}
+@media (prefers-reduced-motion: reduce){
+  .country-panel.sync-flash{animation:none}
+  .rail{transition:none !important}
+}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -667,7 +692,7 @@ body.nav-docked .wrap{max-width:1320px !important;transform:none !important}
 
   <section class="section rv" id="search">
     <h2>Search the guide</h2>
-    <p class="sub">Type a course, a country, or a question — “Ireland”, “IMIM”, “vaccines”, “no IELTS test”. It searches all 6 courses and 12 country settlement plans on this page, then answers from the sources it found. Tap any result to jump to it.</p>
+    <p class="sub">Type a course, a country, or a question — “UK”, “Ireland”, “IMIM”, “vaccines”, “no IELTS test”. Searching a country shows that country's own settlement plan first, and the Countries section below switches to the same country. Tap any result to jump to it.</p>
     <div class="ws" id="ws">
       <form class="ws-bar" id="wsForm" role="search">
         <span class="ws-globe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span>
@@ -676,6 +701,7 @@ body.nav-docked .wrap{max-width:1320px !important;transform:none !important}
         <button class="ws-go" type="submit">Search</button>
       </form>
       <div class="ws-chips" aria-label="Try a search">
+        <button class="ws-chip" type="button" data-q="UK">UK</button>
         <button class="ws-chip" type="button" data-q="Ireland">Ireland</button>
         <button class="ws-chip" type="button" data-q="IMIM">IMIM</button>
         <button class="ws-chip" type="button" data-q="vaccines">Vaccines</button>
@@ -941,8 +967,9 @@ renderGrid(); renderDetail(); renderCountries();
 var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* scroll progress */
 var pbar=document.getElementById('pbar');
-function updBar(){var h=document.documentElement;var max=h.scrollHeight-h.clientHeight;var p=max>0?(h.scrollTop/max):0;pbar.style.transform='scaleX('+p+')';}
-window.addEventListener('scroll',updBar,{passive:true}); updBar();
+var barTick=false;
+function updBar(){barTick=false;var h=document.documentElement;var max=h.scrollHeight-h.clientHeight;var p=max>0?(h.scrollTop/max):0;pbar.style.transform='scaleX('+p+')';}
+window.addEventListener('scroll',function(){if(!barTick){barTick=true;requestAnimationFrame(updBar);}},{passive:true}); updBar();
 /* duplicate ticker for a seamless loop */
 var tt=document.getElementById('tickerTrack'); if(tt){tt.innerHTML+=tt.innerHTML;}
 /* reveal on scroll + runway bars */
@@ -975,7 +1002,8 @@ var secObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isI
 ['search','courses','countries','compare','actions','scholarship'].forEach(function(id){var s=document.getElementById(id);if(s)secObs.observe(s);});
 var heroEl=document.querySelector('.hero'); if(heroEl){heroEl.id='topsec';var hObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('[data-sec]').forEach(function(a){a.classList.toggle('on',a.getAttribute('data-sec')==='top');});}});},{rootMargin:'-38% 0px -55% 0px'});hObs.observe(heroEl);}
 /* card spotlight follows the pointer */
-document.addEventListener('pointermove',function(e){var c=e.target.closest?e.target.closest('.card'):null;if(!c)return;var r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});
+var spotTick=false,spotEvt=null;
+document.addEventListener('pointermove',function(e){spotEvt=e;if(spotTick)return;spotTick=true;requestAnimationFrame(function(){spotTick=false;var ev=spotEvt;if(!ev||!ev.target||!ev.target.closest)return;var c=ev.target.closest('.card');if(!c)return;var r=c.getBoundingClientRect();c.style.setProperty('--mx',((ev.clientX-r.left)/r.width*100)+'%');c.style.setProperty('--my',((ev.clientY-r.top)/r.height*100)+'%');});},{passive:true});
 /* toasts */
 var toastBox=document.getElementById('toasts');
 function toast(title,body,mark){
@@ -1005,35 +1033,91 @@ var form=document.getElementById('wsForm'), input=document.getElementById('wsInp
 if(!form||!window.COURSES) return;
 var CIRC=100.5, COLORS=['#FF4D00','#2F7CF6','#1F9D63','#B7791F','#7C5CD6','#0E7C86','#C2431B','#3E63DD'];
 function findCourse(id){for(var i=0;i<COURSES.length;i++) if(COURSES[i].id===id) return COURSES[i]; return null;}
+/* --- matching helpers: whole words + country aliases, so a country search can never borrow another country's plan --- */
+function normQ(q){ return (q||'').toLowerCase().replace(/[\u2019']/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim(); }
+function wordSet(str){ var set={}, parts=(str||'').toLowerCase().split(/[^a-z0-9]+/); for(var i=0;i<parts.length;i++){ if(parts[i]) set[parts[i]]=1; } return set; }
+var COUNTRY_ALIASES={
+  'uk':'United Kingdom','united kingdom':'United Kingdom','great britain':'United Kingdom','britain':'United Kingdom','england':'United Kingdom','scotland':'United Kingdom','wales':'United Kingdom','northern ireland':'United Kingdom','british':'United Kingdom',
+  'holland':'Netherlands','nederland':'Netherlands','the netherlands':'Netherlands','netherlands':'Netherlands','dutch':'Netherlands',
+  'ireland':'Ireland','eire':'Ireland','republic of ireland':'Ireland','irish':'Ireland',
+  'germany':'Germany','deutschland':'Germany','german':'Germany',
+  'france':'France','french':'France',
+  'spain':'Spain','espana':'Spain','spanish':'Spain',
+  'belgium':'Belgium','belgian':'Belgium',
+  'sweden':'Sweden','swedish':'Sweden',
+  'estonia':'Estonia','estonian':'Estonia',
+  'italy':'Italy','italia':'Italy','italian':'Italy',
+  'poland':'Poland','polish':'Poland',
+  'cyprus':'Cyprus','cypriot':'Cyprus'
+};
+var NOT_COVERED={'usa':1,'us':1,'america':1,'united states':1,'united states of america':1};
+var FILLER={settlement:1,settle:1,settling:1,post:1,study:1,studies:1,visa:1,permit:1,permits:1,residence:1,residency:1,resident:1,work:1,working:1,job:1,jobs:1,stay:1,staying:1,live:1,living:1,move:1,moving:1,plan:1,plans:1,guide:1,after:1,graduation:1,graduate:1,graduates:1,graduating:1,in:1,to:1,the:1,for:1,and:1,of:1,on:1,long:1,term:1,rights:1,route:1,options:1,country:1};
+function resolveCountry(q){
+  var nq=normQ(q); if(!nq) return null;
+  if(COUNTRY_ALIASES[nq]) return COUNTRY_ALIASES[nq];
+  var keys=Object.keys(COUNTRY_ALIASES).sort(function(a,b){return b.length-a.length;});
+  var padded=' '+nq+' ';
+  for(var i=0;i<keys.length;i++){ if(padded.indexOf(' '+keys[i]+' ')>-1) return COUNTRY_ALIASES[keys[i]]; }
+  var toks=nq.split(' ').filter(function(t){return !FILLER[t];});
+  if(toks.length && COUNTRY_ALIASES[toks.join(' ')]) return COUNTRY_ALIASES[toks.join(' ')];
+  return null;
+}
+function isNotCoveredQuery(q){
+  var nq=normQ(q); if(!nq) return false;
+  if(NOT_COVERED[nq]) return true;
+  var toks=nq.split(' ').filter(function(t){return !FILLER[t];});
+  return toks.length>0 && !!NOT_COVERED[toks.join(' ')];
+}
+var lastCountryMatch=null, lastNotCovered=false;
 function buildSources(){
   var src=[];
   COURSES.forEach(function(c,i){
+    var nh=(c.code+' '+c.full).toLowerCase();
+    var hy=(c.code+' '+c.full+' '+c.focus+' '+c.grade+' '+c.english+' '+c.who+' '+c.route.join(' ')+' '+c.settleBest+' deadline '+c.deadline).toLowerCase();
     src.push({kind:'course',ref:c.id,name:c.code,title:c.code,sub:c.full,snippet:c.focus,
       letter:c.code.charAt(0),color:COLORS[i%COLORS.length],
-      nameHay:(c.code+' '+c.full).toLowerCase(),
-      hay:(c.code+' '+c.full+' '+c.focus+' '+c.grade+' '+c.english+' '+c.who+' '+c.route.join(' ')+' '+c.settleBest+' deadline '+c.deadline).toLowerCase()});
+      nameHay:nh,hay:hy,nameWords:wordSet(nh),words:wordSet(hy),route:c.route.slice()});
   });
   Object.keys(COUNTRIES).forEach(function(k,i){
     var d=COUNTRIES[k];
+    var nh=k.toLowerCase();
+    var hy=(k+' settlement settle stay work permit residence long-term '+d.stay+' '+d.work+' '+d.next+' '+d.pr+' '+d.verdict+' '+d.lang).toLowerCase();
     src.push({kind:'country',ref:k,name:k,title:k,sub:'Post-study settlement plan',snippet:d.verdict,
       letter:k.charAt(0),color:COLORS[(i+3)%COLORS.length],
-      nameHay:k.toLowerCase(),
-      hay:(k+' settlement settle stay work permit residence long-term '+d.stay+' '+d.work+' '+d.next+' '+d.pr+' '+d.verdict+' '+d.lang).toLowerCase()});
+      nameHay:nh,hay:hy,nameWords:wordSet(nh),words:wordSet(hy),route:null});
   });
   return src;
 }
 var SOURCES=buildSources();
 function runQuery(q){
-  var toks=q.toLowerCase().split(/[^a-z0-9+.]+/).filter(function(t){return t.length>0;});
+  lastCountryMatch=resolveCountry(q);
+  lastNotCovered=!lastCountryMatch && isNotCoveredQuery(q);
+  if(lastNotCovered) return [];
+  var nq=normQ(q);
+  var toks=nq.split(' ').filter(function(t){return t.length>0;});
   var scored=SOURCES.map(function(s,ord){
+    /* Exact country intent: that country wins outright, and only courses whose route actually
+       includes it may follow — passing mentions (e.g. "UK" in an English-test rule) count for nothing. */
+    if(lastCountryMatch){
+      if(s.kind==='country') return {s:s,sc:(s.ref===lastCountryMatch?1000:-1000),ord:ord};
+      return {s:s,sc:(s.route && s.route.indexOf(lastCountryMatch)>-1 ? 100 : -1000),ord:ord};
+    }
     var sc=0;
-    toks.forEach(function(t){ if(s.nameHay.indexOf(t)>-1) sc+=4; if(s.hay.indexOf(t)>-1) sc+=1; });
-    if(s.nameHay===q.toLowerCase()) sc+=6;
-    if((q.toLowerCase().indexOf('ielts')>-1||q.toLowerCase().indexOf('moi')>-1)&&s.kind==='course'&&s.ref==='live') sc+=5;
-    if(q.toLowerCase().indexOf('eligible')>-1||q.indexOf('2.2')>-1){ if(s.kind==='course'){var c=findCourse(s.ref); if(c&&c.status==='eligible') sc+=3;} }
+    toks.forEach(function(t){
+      if(t.length<2) return;
+      if(s.nameWords[t]) sc+=10;
+      else if(s.words[t]) sc+=2;
+    });
+    if(s.nameHay===nq) sc+=6;
+    if((nq.indexOf('ielts')>-1||nq.indexOf('moi')>-1)&&s.kind==='course'&&s.ref==='live') sc+=5;
+    if((nq.indexOf('eligible')>-1||nq.indexOf('2.2')>-1)&&s.kind==='course'){var c=findCourse(s.ref); if(c&&c.status==='eligible') sc+=3;}
     return {s:s,sc:sc,ord:ord};
   }).filter(function(r){return r.sc>0;});
   scored.sort(function(a,b){return b.sc-a.sc||a.ord-b.ord;});
+  if(lastCountryMatch){
+    scored=scored.filter(function(r){return !(r.s.kind==='country'&&r.s.ref!==lastCountryMatch);});
+    for(var i=0;i<scored.length;i++){ if(scored[i].s.kind==='country'){ if(i>0){ var top=scored.splice(i,1)[0]; scored.unshift(top); } break; } }
+  }
   return scored;
 }
 function favHTML(s,round){return '<span class="ws-fav" style="background:'+s.color+(round?';border-radius:50%':'')+'">'+s.letter+'</span>';}
@@ -1048,7 +1132,28 @@ function skelHTML(){return '<div class="ws-card ws-skel" aria-hidden="true"><spa
 function oneSent(str){ if(!str) return ''; var p=str.split('. '); var s=p[0]; if(s.charAt(s.length-1)!=='.') s+='.'; return s; }
 function buildAnswer(q,results){
   var segs=[];
-  if(!results.length){ segs.push({t:'No matches in this guide for \u201C'+q+'\u201D. Try a course code like IMIM or LIVE_Innov, a country like Ireland or Germany, or a topic like vaccines, IELTS or settlement.'}); return segs; }
+  if(lastNotCovered){ segs.push({t:'The United States is not one of the 12 settlement countries covered in this guide, so there is no US settlement plan here \u2014 and no other country has been substituted. The countries covered are Ireland, Spain, Germany, Netherlands, France, Belgium, Sweden, Estonia, Italy, the United Kingdom, Poland and Cyprus. Search one of those names to see its own plan.'}); return segs; }
+  if(!results.length){ segs.push({t:'No matches in this guide for \u201C'+q+'\u201D. Try a course code like IMIM or LIVE_Innov, a country like UK, Ireland or Germany, or a topic like vaccines, IELTS or settlement.'}); return segs; }
+  if(lastCountryMatch){
+    var d=COUNTRIES[lastCountryMatch], top=null;
+    for(var i=0;i<results.length;i++){ if(results[i].s.kind==='country'){ top=results[i]; break; } }
+    segs.push({t:lastCountryMatch+' \u2014 '+oneSent(d.verdict)+' Post-study stay: '+d.stay+'.'});
+    if(top) segs.push({cite:results.indexOf(top),s:top.s});
+    var routed=results.filter(function(r){return r.s.kind==='course';});
+    if(routed.length){
+      segs.push({t:' Courses that can take you there: '});
+      routed.slice(0,2).forEach(function(r,idx){
+        if(idx>0) segs.push({t:' '});
+        var c=findCourse(r.s.ref);
+        segs.push({t:r.s.name+' \u2014 '+oneSent(c.focus)+' Deadline '+c.deadline+'.'});
+        segs.push({cite:results.indexOf(r),s:r.s});
+      });
+      if(routed.length>2) segs.push({t:' Plus '+(routed.length-2)+' more in the cards above.'});
+    } else {
+      segs.push({t:' No course in this shortlist routes through '+lastCountryMatch+', so the plan above is the full picture for it.'});
+    }
+    return segs;
+  }
   segs.push({t:'For \u201C'+q+'\u201D, the strongest matches in this guide: '});
   results.slice(0,3).forEach(function(r,idx){
     var s=r.s;
@@ -1084,15 +1189,22 @@ function typeAnswer(segs){
   },12);
 }
 var seq=0, curResults=[];
+function flashCountryPanel(){
+  var p=document.getElementById('countryPanel'); if(!p) return;
+  p.classList.remove('sync-flash'); void p.offsetWidth; p.classList.add('sync-flash');
+  setTimeout(function(){ p.classList.remove('sync-flash'); },2400);
+}
 function openSource(s){
   if(!s) return;
   if(s.kind==='course'){ selectedId=s.ref; renderGrid(); renderDetail(); var d=document.getElementById('detail'); if(d) d.scrollIntoView({behavior:RM2?'auto':'smooth',block:'start'}); }
-  else { selCountry=s.ref; renderCountries(); var csec=document.getElementById('countries'); if(csec) csec.scrollIntoView({behavior:RM2?'auto':'smooth',block:'start'}); }
+  else { selCountry=s.ref; renderCountries(); flashCountryPanel(); var csec=document.getElementById('countries'); if(csec) csec.scrollIntoView({behavior:RM2?'auto':'smooth',block:'start'}); }
 }
 function runSearch(raw){
   var q=(raw||'').trim(); if(!q){ input.focus(); return; }
   var my=++seq; stopTyping();
   curResults=runQuery(q);
+  /* keep search and the Countries section in sync: a country search switches the panel below to that same country */
+  if(lastCountryMatch && COUNTRIES[lastCountryMatch]){ selCountry=lastCountryMatch; renderCountries(); flashCountryPanel(); }
   out.hidden=false; wsBody.classList.remove('ws-collapsed'); statusBtn.classList.remove('closed'); statusBtn.setAttribute('aria-expanded','true');
   label.textContent='Searching \u201C'+q+'\u201D'; label.classList.add('shimmer');
   avatarsEl.innerHTML=''; ansEl.innerHTML='';
@@ -1123,7 +1235,9 @@ function runSearch(raw){
         cardsEl.appendChild(tile);
       }
       if(!curResults.length){
-        cardsEl.innerHTML='<div class="ws-empty">No matches across the 6 courses and 12 country plans. Try \u201CIreland\u201D, \u201CIMIM\u201D, \u201Cvaccines\u201D or \u201CIELTS\u201D.</div>';
+        cardsEl.innerHTML=lastNotCovered
+          ? '<div class="ws-empty">The United States is not one of the 12 settlement countries in this guide \u2014 no other country has been substituted. Try \u201CUK\u201D, \u201CIreland\u201D or \u201CGermany\u201D.</div>'
+          : '<div class="ws-empty">No matches across the 6 courses and 12 country plans. Try \u201CUK\u201D, \u201CGermany\u201D, \u201CIMIM\u201D, \u201Cvaccines\u201D or \u201CIELTS\u201D.</div>';
       }
       setTimeout(function(){
         if(my!==seq) return;
@@ -1136,9 +1250,8 @@ function runSearch(raw){
   }
   setTimeout(function(){ reveal(0); }, RM2?0:300);
 }
-var interacted=false;
-form.addEventListener('submit',function(e){ e.preventDefault(); interacted=true; runSearch(input.value); });
-document.querySelectorAll('.ws-chip').forEach(function(ch){ ch.addEventListener('click',function(){ interacted=true; input.value=this.getAttribute('data-q'); runSearch(input.value); }); });
+form.addEventListener('submit',function(e){ e.preventDefault(); runSearch(input.value); });
+document.querySelectorAll('.ws-chip').forEach(function(ch){ ch.addEventListener('click',function(){ input.value=this.getAttribute('data-q'); runSearch(input.value); }); });
 statusBtn.addEventListener('click',function(){
   var collapsed=wsBody.classList.toggle('ws-collapsed');
   statusBtn.classList.toggle('closed',collapsed);
@@ -1160,7 +1273,7 @@ ansEl.addEventListener('click',function(e){
   var t=e.target.closest?e.target.closest('[data-open]'):null;
   if(t) openSource(curResults[+t.getAttribute('data-open')].s);
 });
-setTimeout(function(){ if(!interacted){ input.value='Ireland'; runSearch('Ireland'); } },900);
+/* No auto-played search: results stay empty until the user searches, and every search fully replaces the previous one (seq guard + stopTyping at the top of runSearch). */
 })();
 </script>
 <script>
