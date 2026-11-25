@@ -314,6 +314,163 @@ footer{border-color:var(--line);color:#71717A}
   .ws-go:hover,.ws-card:hover,.ws-chip:hover{transform:none}
 }
 </style>
+<style id="spread-fix">
+/* ============ SPREAD FIX — wider layout, real breathing room, no overlaps ============ */
+html{scroll-padding-top:132px}
+.wrap{max-width:1320px;padding:0 clamp(20px,4vw,44px) 96px}
+section[id],.section{scroll-margin-top:128px}
+#detail,#countryPanel{scroll-margin-top:128px}
+/* --- top nav gets its own clear band; nothing slides underneath it --- */
+.pillnav{top:16px}
+.hero{padding-top:128px;gap:28px}
+@media(min-width:860px){.hero{gap:48px;padding-top:140px}}
+.hero p.lead{line-height:1.65}
+.profile{padding:22px;margin-top:24px}
+.profile-grid{gap:14px 20px;margin-top:14px}
+.stats{gap:16px;margin:32px 0 8px}
+.stat{padding:22px}
+.ticker{margin:28px 0 8px;padding:13px 0}
+.notice{padding:18px 20px;line-height:1.65;margin-top:20px}
+/* --- every section starts clearly separated from the one above --- */
+.section{margin-top:88px}
+.section h2{margin-bottom:12px;line-height:1.12}
+.section p.sub{margin-bottom:26px;line-height:1.65}
+#courses{margin-top:96px}
+footer{margin-top:72px;padding-top:24px;line-height:1.6}
+/* --- side rail: removed until the viewport is wide enough to hold it clear of the content --- */
+.rail{display:none !important}
+@media(min-width:1600px){
+  .rail{display:flex !important;left:30px}
+  .rail a span{background:rgba(20,20,22,.9);border:1px solid #2C2C31;border-radius:999px;padding:5px 11px}
+}
+/* --- search block: centred, wider, status pill on its own row clear of the nav --- */
+.ws{max-width:920px;margin:8px auto 0}
+.ws-bar{padding:8px 8px 8px 20px}
+.ws-chips{gap:10px;margin-top:16px}
+.ws-chip{padding:9px 16px}
+.ws-out{margin-top:34px;position:relative;z-index:1}
+.ws-status{padding:8px 16px 8px 8px;max-width:100%;margin:0}
+.ws-body{padding-top:4px}
+/* --- result cards: 2 across, wider, taller, titles wrap instead of truncating --- */
+.ws-cards{grid-template-columns:1fr;gap:16px;margin-top:20px}
+@media(min-width:640px){.ws-cards{grid-template-columns:repeat(2,1fr)}}
+.ws-card{padding:20px;min-height:0;gap:8px;border-radius:18px}
+.ws-ctitle{display:block;-webkit-line-clamp:unset;-webkit-box-orient:unset;overflow:visible;font-size:16.5px;line-height:1.35}
+.ws-csub{display:block;-webkit-line-clamp:unset;-webkit-box-orient:unset;overflow:visible;font-size:13.5px;line-height:1.5}
+.ws-crow{padding-top:10px}
+.ws-more{justify-content:center;min-height:120px}
+/* --- typed answer: comfortable reading measure, centred, looser leading --- */
+.ws-answer{max-width:68ch;margin:30px auto 0;font-size:16px;line-height:1.85}
+.ws-cite{white-space:nowrap;margin:1px 3px;line-height:1.4}
+/* --- course cards, detail, countries, table: more air everywhere --- */
+.filters{gap:10px;margin:20px 0 26px}
+.grid{gap:22px}
+.card{padding:26px}
+.card p{line-height:1.6}
+.meta{gap:9px;margin-top:14px}
+.detail{padding:30px;margin-top:30px}
+.detail h4{margin:28px 0 10px}
+.two{gap:22px}
+.box{padding:20px}
+.box p{line-height:1.65}
+.steps{gap:14px;margin-top:14px}
+.step{padding:17px}
+.step p{line-height:1.6}
+.country-grid{gap:10px}
+.country-btn{padding:11px 16px}
+.country-panel{padding:28px;margin-top:22px}
+.country-panel h3{margin-bottom:6px}
+.kv{gap:14px;margin-top:18px}
+.kv div{padding:17px;line-height:1.6}
+.table th,.table td{padding:15px 16px;line-height:1.55}
+.timeline{gap:22px;margin-top:20px}
+.tl{gap:16px}
+.tl p{line-height:1.65;margin-top:4px}
+@media(max-width:640px){
+  html{scroll-padding-top:150px}
+  section[id],.section{scroll-margin-top:148px}
+  .hero{padding-top:150px}
+  .section{margin-top:60px}
+  #courses{margin-top:68px}
+  .detail{padding:22px}
+  .country-panel{padding:22px}
+  .ws-answer{margin-top:24px}
+}
+@media (prefers-reduced-motion: reduce){
+  .ws-card:hover,.card:hover{transform:none}
+}
+</style>
+<style id="uniform-fix">
+/* ============ UNIFORM SYSTEM — one rhythm for every section, top to bottom ============ */
+:root{
+  --u-section:88px;        /* gap before every section */
+  --u-gap:20px;             /* gap inside every grid */
+  --u-pad-panel:28px;       /* large panels: detail, country panel */
+  --u-pad-card:24px;        /* cards: course, stat, profile, box, search result */
+  --u-pad-tile:18px;        /* small tiles: steps, kv cells */
+  --u-r-panel:22px; --u-r-card:20px; --u-r-tile:16px;
+  --u-measure:68ch;         /* one reading line-length everywhere */
+  --u-body:15px; --u-lh:1.65;
+}
+/* container + section rhythm — hero stack included, no exceptions */
+.section{margin-top:var(--u-section)}
+#courses{margin-top:var(--u-section)}
+.section h2{font-size:36px;margin:0 0 12px;line-height:1.12}
+.section p.sub{max-width:var(--u-measure);margin:0 0 26px;font-size:var(--u-body);line-height:var(--u-lh)}
+.hero{padding-bottom:0}
+.stats{margin:40px 0 0;gap:var(--u-gap)}
+.ticker{margin:var(--u-gap) 0 0}
+.notice{margin-top:var(--u-gap);padding:20px 24px;font-size:var(--u-body);line-height:var(--u-lh);border-radius:var(--u-r-card)}
+/* one card padding, one radius, one grid gap */
+.profile,.stat,.card,.box,.ws-card{padding:var(--u-pad-card);border-radius:var(--u-r-card)}
+.detail,.country-panel{padding:var(--u-pad-panel);border-radius:var(--u-r-panel);margin-top:26px}
+.step,.kv div{padding:var(--u-pad-tile);border-radius:var(--u-r-tile)}
+.grid,.two,.steps,.kv,.ws-cards{gap:var(--u-gap)}
+.steps,.kv{margin-top:18px}
+.hero-img{border-radius:var(--u-r-panel)}
+.hero-img .caption{padding:14px 18px;line-height:1.55}
+/* one heading scale: panel titles match, card titles match */
+.detail h3,.country-panel h3{font-size:27px;line-height:1.15;margin:0 0 8px}
+#scholarship .box h3{font-size:27px !important;line-height:1.15;margin:0 0 14px}
+.card h3{font-size:23px;line-height:1.2}
+.detail h4{font-size:12.5px;margin:26px 0 10px}
+.box h4{font-size:12.5px;margin:22px 0 8px}
+/* one text size + leading for body copy in every panel */
+.hero p.lead{font-size:18px;line-height:var(--u-lh);max-width:var(--u-measure)}
+.card p,.box p,.step p,.tl p,.detail p,.detail li,.country-panel p,.profile-grid,.small{font-size:var(--u-body);line-height:var(--u-lh)}
+.detail ul{margin-top:8px}
+.detail li{margin:6px 0}
+.ws-answer{font-size:16px}
+.notice strong{white-space:nowrap}
+/* pills + filter chips: identical padding and size in every section */
+.chip,.country-btn,.ws-chip{padding:10px 16px;font-size:14px;line-height:1.3}
+.filters,.country-grid{gap:10px}
+.filters{margin:0 0 26px}
+.btn{padding:12px 20px;font-size:15px}
+/* comparison table matches the same padding/leading as the panels */
+.table{border-radius:var(--u-r-card);font-size:14.5px}
+.table th,.table td{padding:16px 18px;line-height:1.6}
+/* action plan rows align to the same gap rhythm */
+.timeline{gap:24px;margin-top:6px}
+.tl{gap:16px;align-items:flex-start}
+.tl p{margin-top:4px;max-width:var(--u-measure)}
+/* scholarship two-up: image and summary box get the same height behaviour + padding */
+#scholarship .two{align-items:stretch}
+#scholarship .box{display:flex;flex-direction:column;gap:12px}
+#scholarship .box p{margin:0}
+footer{margin-top:var(--u-section)}
+/* phone: same system, one step smaller — nothing keeps desktop padding */
+@media(max-width:640px){
+  :root{--u-section:60px;--u-pad-panel:22px;--u-pad-card:20px;--u-pad-tile:16px;--u-gap:16px}
+  .section h2{font-size:29px}
+  .detail h3,.country-panel h3,#scholarship .box h3{font-size:24px}
+  .card h3{font-size:21px}
+  .stats{margin-top:32px}
+  .table th,.table td{padding:12px 14px}
+  .notice{padding:18px 20px}
+  .notice strong{white-space:normal}
+}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
