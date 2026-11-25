@@ -555,6 +555,56 @@ section[id],.section,#detail,#countryPanel{scroll-margin-top:100px}
   .pillnav,.rail,.wrap{transition:none}
 }
 </style>
+<style id="smooth-fix">
+/* ============ SMOOTH FIX — hover-only rail, eased everything, counters / ring / skeleton polish ============ */
+:root{--ease-smooth:cubic-bezier(.22,.9,.28,1)}
+/* content NEVER moves for the nav: no width change, no sideways shift, ever */
+.wrap{transition:none !important}
+body.nav-docked .wrap{max-width:1320px !important;transform:none !important}
+/* top pill glides away instead of snapping */
+.pillnav{transition:opacity .38s var(--ease-smooth),transform .38s var(--ease-smooth)}
+/* ---- side rail: hidden at the top, slim collapsed strip once docked, full rail only on hover ---- */
+#railTrigger{position:fixed;left:0;top:0;bottom:0;width:30px;z-index:74;display:none}
+@media(min-width:1150px){
+  body.nav-docked #railTrigger{display:block}
+  .rail{width:52px !important;left:16px;padding:8px;border-radius:18px;overflow:hidden;
+    transition:width .38s var(--ease-smooth),opacity .38s var(--ease-smooth),transform .38s var(--ease-smooth),box-shadow .38s var(--ease-smooth);
+    opacity:0;transform:translate(-12px,-50%);pointer-events:none}
+  body.nav-docked .rail{opacity:1;transform:translate(0,-50%);pointer-events:auto}
+  .rail a{justify-content:flex-start;padding:10px 12px;gap:11px;border-radius:12px}
+  .rail a i{flex:0 0 9px}
+  .rail a span{opacity:0 !important;transform:translateX(-6px) !important;white-space:nowrap;
+    transition:opacity .22s ease,transform .32s var(--ease-smooth) !important;background:none !important;border:none !important;padding:0 !important}
+  body.rail-open .rail,.rail:hover,.rail:focus-within{width:176px !important;box-shadow:0 22px 48px rgba(0,0,0,.62)}
+  body.rail-open .rail a span,.rail:hover a span,.rail:focus-within a span{opacity:1 !important;transform:none !important;transition-delay:.07s !important}
+  /* slim orange edge hint on the collapsed strip, so the rail is discoverable */
+  .rail::after{content:"";position:absolute;right:0;top:20px;bottom:20px;width:3px;border-radius:99px;background:linear-gradient(180deg,transparent,var(--org),transparent);opacity:.75;transition:opacity .3s}
+  body.rail-open .rail::after,.rail:hover::after{opacity:0}
+}
+@media(max-width:1149px){#railTrigger{display:none !important}}
+/* counters: tabular figures so digits don't jitter sideways while counting */
+.count{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+/* section reveal: a touch slower and eased, fade + rise together */
+.rv.in{animation:riseS .85s var(--ease-smooth) both}
+@keyframes riseS{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+/* runway bars glide, matching the counters' easing */
+.runway i{transition:width 1.25s var(--ease-smooth)}
+/* search progress ring + skeleton: smoother shimmer, cards resolve with a soft crossfade */
+.ws-ringfg{will-change:stroke-dashoffset}
+.ws-skel{transition:opacity .28s ease}
+.ws-skel .sk{animation-duration:1.35s}
+.ws-card{animation:wsCardInS .5s var(--ease-smooth) both}
+@keyframes wsCardInS{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+/* course cards: transform eased for the subtle tilt (JS-driven, pointer-fine only) */
+.card{transition:transform .35s var(--ease-smooth),border-color .3s,box-shadow .3s}
+@media (prefers-reduced-motion: reduce){
+  .rail,.pillnav{transition:none !important}
+  .rv.in{animation:none}
+  .ws-card{animation:none}
+  .runway i{transition:none}
+  .card{transition:none}
+}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -566,6 +616,7 @@ section[id],.section,#detail,#countryPanel{scroll-margin-top:100px}
   <a href="#compare" data-sec="compare">Compare</a><span class="dotsep"></span>
   <a href="#actions" data-sec="actions">Action plan</a>
 </nav>
+<div id="railTrigger" aria-hidden="true"></div>
 <aside class="rail" aria-label="On this page">
   <a href="#top" data-sec="top"><i></i><span>Overview</span></a>
   <a href="#search" data-sec="search"><i></i><span>Search</span></a>
@@ -897,10 +948,28 @@ var tt=document.getElementById('tickerTrack'); if(tt){tt.innerHTML+=tt.innerHTML
 /* reveal on scroll + runway bars */
 var rvObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('.runway i').forEach(function(b){b.style.width=b.getAttribute('data-w')+'%';});rvObs.unobserve(e.target);}});},{threshold:.08});
 document.querySelectorAll('.rv').forEach(function(el){rvObs.observe(el);});
-/* animated counters */
+/* animated counters — library Animated Counters: ease-out, once per load, only when scrolled into view */
 function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
-var cObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;cObs.unobserve(e.target);var el=e.target,to=+el.getAttribute('data-to'),pre=el.getAttribute('data-pre')||'';if(RM){el.textContent=pre+fmt(to);return;}var t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1500,1);var ease=1-Math.pow(1-p,3);el.textContent=pre+fmt(Math.round(to*ease));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});},{threshold:.4});
-document.querySelectorAll('.count').forEach(function(el){cObs.observe(el);});
+function runCount(el){
+  if(el.getAttribute('data-counted'))return; el.setAttribute('data-counted','1');
+  var to=+el.getAttribute('data-to'),pre=el.getAttribute('data-pre')||'';
+  if(RM||!to){el.textContent=pre+fmt(to);return;}
+  var dur=1750,t0=null;
+  el.textContent=pre+'0';
+  function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var ease=p>=1?1:1-Math.pow(2,-10*p);el.textContent=pre+fmt(Math.round(to*ease));if(p<1)requestAnimationFrame(step);else el.textContent=pre+fmt(to);}
+  requestAnimationFrame(step);
+  setTimeout(function(){el.textContent=pre+fmt(to);},dur+600);
+}
+var countEls=document.querySelectorAll('.count');
+function finalCountText(el){return (el.getAttribute('data-pre')||'')+fmt(+el.getAttribute('data-to'));}
+countEls.forEach(function(el){el.textContent=finalCountText(el);});
+if('IntersectionObserver' in window && !RM){
+  var cObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cObs.unobserve(e.target);runCount(e.target);}});},{threshold:.15,rootMargin:'0px'});
+  countEls.forEach(function(el){cObs.observe(el);});
+  setTimeout(function(){countEls.forEach(function(el){if(!el.getAttribute('data-counted')){el.textContent=finalCountText(el);}});},2000);
+}else{
+  countEls.forEach(function(el){el.setAttribute('data-counted','1');el.textContent=finalCountText(el);});
+}
 /* rail + pill nav active section */
 var secObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id||'top';document.querySelectorAll('[data-sec]').forEach(function(a){a.classList.toggle('on',a.getAttribute('data-sec')===id);});}});},{rootMargin:'-38% 0px -55% 0px'});
 ['search','courses','countries','compare','actions','scholarship'].forEach(function(id){var s=document.getElementById(id);if(s)secObs.observe(s);});
@@ -1029,16 +1098,16 @@ function runSearch(raw){
   avatarsEl.innerHTML=''; ansEl.innerHTML='';
   ring.style.strokeDashoffset=CIRC;
   cardsEl.innerHTML=skelHTML()+skelHTML()+skelHTML();
-  var dur=RM2?0:1150, t0=null;
+  var dur=RM2?0:1250, t0=null;
   if(RM2){ ring.style.strokeDashoffset=0; }
-  else { (function anim(ts){ if(my!==seq) return; if(!t0) t0=ts; var p=Math.min((ts-t0)/dur,1); ring.style.strokeDashoffset=(CIRC*(1-p)).toFixed(1); if(p<1) requestAnimationFrame(anim); })(performance.now()); }
+  else { (function anim(ts){ if(my!==seq) return; if(!t0) t0=ts; var p=Math.min((ts-t0)/dur,1); var eased=1-Math.pow(1-p,3); ring.style.strokeDashoffset=(CIRC*(1-eased)).toFixed(1); if(p<1) requestAnimationFrame(anim); })(performance.now()); }
   var revealCount=Math.min(curResults.length,3);
   function reveal(i){
     if(my!==seq) return;
     if(i<revealCount){
       var skels=cardsEl.querySelectorAll('.ws-skel');
       var tmp=document.createElement('div'); tmp.innerHTML=cardHTML(curResults[i],i);
-      var card=tmp.firstChild;
+      var card=tmp.firstChild; card.style.animationDelay=(i*70)+'ms';
       if(skels.length) cardsEl.replaceChild(card,skels[0]); else cardsEl.appendChild(card);
       if(avatarsEl.children.length<5){ var av=document.createElement('span'); av.className='ws-av'; av.style.background=curResults[i].s.color; av.textContent=curResults[i].s.letter; avatarsEl.appendChild(av); }
       setTimeout(function(){ reveal(i+1); }, RM2?0:200);
@@ -1095,21 +1164,71 @@ setTimeout(function(){ if(!interacted){ input.value='Ireland'; runSearch('Irelan
 })();
 </script>
 <script>
-/* ===== Nav docking: top pill at the top of the page, side rail past the hero ===== */
+/* ===== Nav: top pill at the top; past the hero a slim rail strip that expands only on hover ===== */
 (function(){
   var hero=document.querySelector('.hero');
+  var rail=document.querySelector('.rail');
+  var trigger=document.getElementById('railTrigger');
   var mq=window.matchMedia('(min-width:1150px)');
-  var ticking=false;
+  var ticking=false, hoverTrigger=false, hoverRail=false;
+  function syncOpen(){ document.body.classList.toggle('rail-open', hoverTrigger||hoverRail); }
   function upd(){
     ticking=false;
-    if(!mq.matches || !hero){ document.body.classList.remove('nav-docked'); return; }
+    if(!mq.matches || !hero){ document.body.classList.remove('nav-docked'); document.body.classList.remove('rail-open'); hoverTrigger=false; hoverRail=false; return; }
     var heroBottom=hero.offsetTop + hero.offsetHeight - 120;
-    document.body.classList.toggle('nav-docked', window.scrollY > heroBottom);
+    var docked=window.scrollY > heroBottom;
+    document.body.classList.toggle('nav-docked', docked);
+    if(!docked){ document.body.classList.remove('rail-open'); hoverTrigger=false; hoverRail=false; }
   }
   window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } },{passive:true});
   window.addEventListener('resize',upd);
   if(mq.addEventListener) mq.addEventListener('change',upd);
+  if(trigger){
+    trigger.addEventListener('mouseenter',function(){ hoverTrigger=true; syncOpen(); });
+    trigger.addEventListener('mouseleave',function(){ hoverTrigger=false; setTimeout(syncOpen,60); });
+  }
+  if(rail){
+    rail.addEventListener('mouseenter',function(){ hoverRail=true; syncOpen(); });
+    rail.addEventListener('mouseleave',function(){ hoverRail=false; setTimeout(syncOpen,60); });
+    rail.addEventListener('focusin',function(){ document.body.classList.add('rail-open'); });
+    rail.addEventListener('focusout',function(){ if(!hoverTrigger&&!hoverRail) document.body.classList.remove('rail-open'); });
+  }
+  /* hovering anywhere in the far-left edge band also opens it, so the target is generous */
+  var mxTick=false;
+  document.addEventListener('mousemove',function(e){
+    if(mxTick) return; mxTick=true;
+    requestAnimationFrame(function(){
+      mxTick=false;
+      if(!mq.matches || !document.body.classList.contains('nav-docked')) return;
+      if(e.clientX<=26){ hoverTrigger=true; syncOpen(); }
+      else if(e.clientX>200 && !hoverRail){ hoverTrigger=false; syncOpen(); }
+    });
+  },{passive:true});
   upd();
+})();
+</script>
+<script>
+/* ===== Subtle tilt for course cards — library Tilt Card, kept gentle; pointer-fine devices only ===== */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  var gridEl=document.getElementById('courseGrid'); if(!gridEl) return;
+  var raf=null, cur=null, rx=0, ry=0;
+  function apply(){ raf=null; if(cur){ cur.style.transform='perspective(900px) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg) translateY(-4px)'; } }
+  gridEl.addEventListener('pointermove',function(e){
+    var c=e.target.closest?e.target.closest('.card'):null;
+    if(cur&&cur!==c){ cur.style.transform=''; }
+    cur=c; if(!c) return;
+    var r=c.getBoundingClientRect();
+    ry=((e.clientX-r.left)/r.width-.5)*5;
+    rx=-((e.clientY-r.top)/r.height-.5)*5;
+    if(!raf) raf=requestAnimationFrame(apply);
+  });
+  gridEl.addEventListener('pointerleave',function(){ if(cur){ cur.style.transform=''; cur=null; } });
+  gridEl.addEventListener('pointerout',function(e){
+    var c=e.target.closest?e.target.closest('.card'):null;
+    if(c && !c.contains(e.relatedTarget)){ c.style.transform=''; if(cur===c) cur=null; }
+  });
 })();
 </script>
 </body>
