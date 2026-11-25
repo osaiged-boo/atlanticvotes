@@ -243,11 +243,83 @@ footer{border-color:var(--line);color:#71717A}
   .card,.stat,.step{transition:none}
 }
 </style>
+<style id="websearch">
+/* ============ WEB SEARCH — animated search over this guide (Rare UI pattern, rebuilt) ============ */
+.ws{max-width:760px}
+.ws-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ws-bar{display:flex;align-items:center;gap:10px;background:#141416;border:1px solid #2C2C31;border-radius:999px;padding:6px 6px 6px 18px;box-shadow:0 14px 34px rgba(0,0,0,.4);transition:border-color .25s}
+.ws-bar:focus-within{border-color:var(--org)}
+.ws-globe{width:22px;height:22px;flex:0 0 22px;color:var(--org2);display:grid;place-items:center}
+.ws-globe svg{width:22px;height:22px}
+.ws-bar input{flex:1;min-width:0;background:none;border:none;outline:none;color:#FAFAF8;font:inherit;font-size:16px;font-weight:600}
+.ws-bar input::placeholder{color:#71717A;font-weight:500}
+.ws-bar input::-webkit-search-cancel-button{display:none}
+.ws-go{background:var(--org);color:#fff;border:none;border-radius:999px;padding:0 22px;font-weight:800;font-size:15px;box-shadow:0 8px 20px rgba(255,77,0,.35);transition:.25s}
+.ws-go:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(255,77,0,.45)}
+.ws-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.ws-chip{background:#141416;border:1px solid #2C2C31;color:#C9C9CF;border-radius:999px;padding:8px 14px;font-weight:700;font-size:13.5px;transition:.25s}
+.ws-chip:hover{border-color:var(--org);color:#fff;transform:translateY(-1px)}
+.ws-out{margin-top:18px}
+.ws-out[hidden]{display:none}
+.ws-status{display:flex;align-items:center;gap:10px;background:#1C1C1F;border:1px solid #2C2C31;border-radius:999px;padding:6px 14px 6px 7px;color:#FAFAF8;font-weight:700;font-size:14px;max-width:100%;text-align:left;transition:border-color .25s}
+.ws-status:hover{border-color:#45454D}
+.ws-ringwrap{position:relative;width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center}
+.ws-ringsvg{position:absolute;inset:0;width:30px;height:30px;transform:rotate(-90deg)}
+.ws-ringsvg circle{fill:none;stroke-width:2.5}
+.ws-ringbg{stroke:#333338}
+.ws-ringfg{stroke:var(--org);stroke-linecap:round;stroke-dasharray:100.5;stroke-dashoffset:100.5}
+.ws-ringglobe{width:16px;height:16px;color:#D7D7DC;display:grid;place-items:center}
+.ws-ringglobe svg{width:16px;height:16px}
+.ws-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ws-label.shimmer{background:linear-gradient(100deg,#8B8B93 40%,#FFFFFF 50%,#8B8B93 60%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:wsShim 1.1s linear infinite}
+@keyframes wsShim{to{background-position:-200% 0}}
+.ws-avatars{display:flex;align-items:center;margin-left:2px}
+.ws-av{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:9.5px;font-weight:800;color:#fff;border:2px solid #1C1C1F;margin-left:-6px;flex:0 0 20px;animation:wsAvIn .35s cubic-bezier(.2,.9,.3,1.3)}
+.ws-av:first-child{margin-left:0}
+@keyframes wsAvIn{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+.ws-chev{margin-left:auto;width:16px;height:16px;flex:0 0 16px;color:#8B8B93;transition:transform .3s;display:grid;place-items:center}
+.ws-chev svg{width:14px;height:14px}
+.ws-status.closed .ws-chev{transform:rotate(180deg)}
+.ws-body{overflow:hidden}
+.ws-body.ws-collapsed{display:none}
+.ws-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+@media(min-width:700px){.ws-cards{grid-template-columns:repeat(4,1fr)}}
+.ws-card{background:#1B1B1E;border:1px solid #2A2A2F;border-radius:14px;padding:12px;text-align:left;color:var(--ink);display:flex;flex-direction:column;gap:5px;min-height:104px;width:100%;transition:border-color .25s,transform .25s;animation:wsCardIn .4s cubic-bezier(.2,.7,.2,1)}
+.ws-card:hover{border-color:var(--org);transform:translateY(-2px)}
+@keyframes wsCardIn{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+.ws-ctitle{font-weight:800;font-size:14px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ws-csub{font-size:12px;color:var(--muted);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ws-crow{display:flex;align-items:center;gap:6px;margin-top:auto;padding-top:6px;font-size:12px;color:var(--muted)}
+.ws-fav{width:18px;height:18px;border-radius:6px;display:grid;place-items:center;font-size:10px;font-weight:800;color:#fff;flex:0 0 18px}
+.ws-idx{margin-left:auto;color:#71717A;font-weight:700}
+.ws-more{align-items:flex-start;justify-content:center;gap:10px}
+.ws-avatars-lg .ws-av{width:26px;height:26px;font-size:11px;border-color:#1B1B1E;margin-left:-8px}
+.ws-avatars-lg .ws-av:first-child{margin-left:0}
+.ws-moretext{font-weight:800;font-size:13.5px}
+.ws-skel{pointer-events:none;gap:9px}
+.ws-skel .sk{display:block;border-radius:6px;background:linear-gradient(100deg,#232327 40%,#2E2E33 50%,#232327 60%);background-size:200% 100%;animation:wsShim 1.2s linear infinite}
+.ws-skel .sk.a{height:13px;width:88%}
+.ws-skel .sk.b{height:13px;width:64%}
+.ws-skel .sk.c{height:18px;width:46%;margin-top:auto}
+.ws-empty{grid-column:1/-1;background:#1B1B1E;border:1px dashed #3A3A41;border-radius:14px;padding:16px;font-size:14.5px;color:var(--muted)}
+.ws-answer{margin:16px 0 0;font-size:15.5px;line-height:1.7;color:#E7E7EA;max-width:680px}
+.ws-answer:empty{margin:0}
+.ws-cite{display:inline-flex;align-items:center;gap:5px;background:#26262B;border:1px solid #34343A;border-radius:999px;padding:2px 9px 2px 3px;margin:0 2px;font-size:12.5px;font-weight:700;color:#E7E7EA;vertical-align:baseline;min-height:26px;transition:.2s}
+.ws-cite:hover{border-color:var(--org);color:#fff}
+.ws-cite .ws-fav{width:16px;height:16px;font-size:9px;border-radius:50%}
+.ws-cite sup{color:var(--org2);font-size:10px;font-weight:800}
+@media (prefers-reduced-motion: reduce){
+  .ws-label.shimmer,.ws-skel .sk{animation:none}
+  .ws-card,.ws-av{animation:none}
+  .ws-go:hover,.ws-card:hover,.ws-chip:hover{transform:none}
+}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
 <nav class="pillnav" aria-label="Page sections">
   <a href="#top" data-sec="top">Overview</a><span class="dotsep"></span>
+  <a href="#search" data-sec="search">Search</a><span class="dotsep"></span>
   <a href="#courses" data-sec="courses">Courses</a><span class="dotsep"></span>
   <a href="#countries" data-sec="countries">Countries</a><span class="dotsep"></span>
   <a href="#compare" data-sec="compare">Compare</a><span class="dotsep"></span>
@@ -255,6 +327,7 @@ footer{border-color:var(--line);color:#71717A}
 </nav>
 <aside class="rail" aria-label="On this page">
   <a href="#top" data-sec="top"><i></i><span>Overview</span></a>
+  <a href="#search" data-sec="search"><i></i><span>Search</span></a>
   <a href="#courses" data-sec="courses"><i></i><span>Courses</span></a>
   <a href="#countries" data-sec="countries"><i></i><span>Countries</span></a>
   <a href="#compare" data-sec="compare"><i></i><span>Compare</span></a>
@@ -299,6 +372,42 @@ footer{border-color:var(--line);color:#71717A}
   </div>
 
   <div class="notice"><strong>How settlement really works on Erasmus Mundus:</strong> You study in 2–3 countries, but your post-study right to stay is usually tied to the country where you finish and where your diploma is issued — not every country you visited. The smart move is to choose your <em>final</em> semester in the country you most want to settle in, and confirm that with the consortium before you accept a mobility track.</div>
+
+  <section class="section rv" id="search">
+    <h2>Search the guide</h2>
+    <p class="sub">Type a course, a country, or a question — “Ireland”, “IMIM”, “vaccines”, “no IELTS test”. It searches all 6 courses and 12 country settlement plans on this page, then answers from the sources it found. Tap any result to jump to it.</p>
+    <div class="ws" id="ws">
+      <form class="ws-bar" id="wsForm" role="search">
+        <span class="ws-globe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span>
+        <label class="ws-sr" for="wsInput">Search courses and countries</label>
+        <input id="wsInput" type="search" autocomplete="off" placeholder="Search courses, countries, requirements…" />
+        <button class="ws-go" type="submit">Search</button>
+      </form>
+      <div class="ws-chips" aria-label="Try a search">
+        <button class="ws-chip" type="button" data-q="Ireland">Ireland</button>
+        <button class="ws-chip" type="button" data-q="IMIM">IMIM</button>
+        <button class="ws-chip" type="button" data-q="vaccines">Vaccines</button>
+        <button class="ws-chip" type="button" data-q="no IELTS test">No IELTS test</button>
+        <button class="ws-chip" type="button" data-q="Germany settlement">Germany settlement</button>
+        <button class="ws-chip" type="button" data-q="public health">Public health</button>
+      </div>
+      <div class="ws-out" id="wsOut" hidden>
+        <button class="ws-status" id="wsStatus" type="button" aria-expanded="true" aria-controls="wsBody">
+          <span class="ws-ringwrap" aria-hidden="true">
+            <svg class="ws-ringsvg" viewBox="0 0 36 36"><circle class="ws-ringbg" cx="18" cy="18" r="16"/><circle class="ws-ringfg" id="wsRing" cx="18" cy="18" r="16"/></svg>
+            <span class="ws-ringglobe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span>
+          </span>
+          <span class="ws-label" id="wsLabel">Searching the guide</span>
+          <span class="ws-avatars" id="wsAvatars" aria-hidden="true"></span>
+          <span class="ws-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></span>
+        </button>
+        <div class="ws-body" id="wsBody">
+          <div class="ws-cards" id="wsCards"></div>
+          <p class="ws-answer" id="wsAnswer" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section rv" id="courses">
     <h2>Tap a course for requirements + settlement plan</h2>
@@ -535,7 +644,7 @@ var cObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIn
 document.querySelectorAll('.count').forEach(function(el){cObs.observe(el);});
 /* rail + pill nav active section */
 var secObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id||'top';document.querySelectorAll('[data-sec]').forEach(function(a){a.classList.toggle('on',a.getAttribute('data-sec')===id);});}});},{rootMargin:'-38% 0px -55% 0px'});
-['courses','countries','compare','actions','scholarship'].forEach(function(id){var s=document.getElementById(id);if(s)secObs.observe(s);});
+['search','courses','countries','compare','actions','scholarship'].forEach(function(id){var s=document.getElementById(id);if(s)secObs.observe(s);});
 var heroEl=document.querySelector('.hero'); if(heroEl){heroEl.id='topsec';var hObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('[data-sec]').forEach(function(a){a.classList.toggle('on',a.getAttribute('data-sec')==='top');});}});},{rootMargin:'-38% 0px -55% 0px'});hObs.observe(heroEl);}
 /* card spotlight follows the pointer */
 document.addEventListener('pointermove',function(e){var c=e.target.closest?e.target.closest('.card'):null;if(!c)return;var r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});
@@ -555,6 +664,176 @@ var COURSE_TOAST={live:'Best overall fit — and the only course that accepts an
 document.getElementById('courseGrid').addEventListener('click',function(e){var c=e.target.closest('.card');if(!c)return;var id=c.getAttribute('data-id');var name=c.querySelector('h3')?c.querySelector('h3').textContent:'';toast(name,COURSE_TOAST[id]||'Requirements and settlement plan are open below.','↗');});
 document.getElementById('countryGrid').addEventListener('click',function(e){var b=e.target.closest('.country-btn');if(!b)return;var k=b.getAttribute('data-c');toast(k,COUNTRIES[k].stay,'◉');});
 setTimeout(function(){toast('3 of 6 courses are open to a 2.2','LIVE_Innov is the best overall fit — and the only one that waives IELTS with an MOI letter. IMIM closes first, on 4 Jan 2027.','✦');},1100);
+</script>
+<script>
+/* ===== Web Search component: animated search over COURSES + COUNTRIES ===== */
+(function(){
+var RM2 = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var form=document.getElementById('wsForm'), input=document.getElementById('wsInput'),
+    out=document.getElementById('wsOut'), statusBtn=document.getElementById('wsStatus'),
+    label=document.getElementById('wsLabel'), avatarsEl=document.getElementById('wsAvatars'),
+    ring=document.getElementById('wsRing'), wsBody=document.getElementById('wsBody'),
+    cardsEl=document.getElementById('wsCards'), ansEl=document.getElementById('wsAnswer');
+if(!form||!window.COURSES) return;
+var CIRC=100.5, COLORS=['#FF4D00','#2F7CF6','#1F9D63','#B7791F','#7C5CD6','#0E7C86','#C2431B','#3E63DD'];
+function findCourse(id){for(var i=0;i<COURSES.length;i++) if(COURSES[i].id===id) return COURSES[i]; return null;}
+function buildSources(){
+  var src=[];
+  COURSES.forEach(function(c,i){
+    src.push({kind:'course',ref:c.id,name:c.code,title:c.code,sub:c.full,snippet:c.focus,
+      letter:c.code.charAt(0),color:COLORS[i%COLORS.length],
+      nameHay:(c.code+' '+c.full).toLowerCase(),
+      hay:(c.code+' '+c.full+' '+c.focus+' '+c.grade+' '+c.english+' '+c.who+' '+c.route.join(' ')+' '+c.settleBest+' deadline '+c.deadline).toLowerCase()});
+  });
+  Object.keys(COUNTRIES).forEach(function(k,i){
+    var d=COUNTRIES[k];
+    src.push({kind:'country',ref:k,name:k,title:k,sub:'Post-study settlement plan',snippet:d.verdict,
+      letter:k.charAt(0),color:COLORS[(i+3)%COLORS.length],
+      nameHay:k.toLowerCase(),
+      hay:(k+' settlement settle stay work permit residence long-term '+d.stay+' '+d.work+' '+d.next+' '+d.pr+' '+d.verdict+' '+d.lang).toLowerCase()});
+  });
+  return src;
+}
+var SOURCES=buildSources();
+function runQuery(q){
+  var toks=q.toLowerCase().split(/[^a-z0-9+.]+/).filter(function(t){return t.length>0;});
+  var scored=SOURCES.map(function(s,ord){
+    var sc=0;
+    toks.forEach(function(t){ if(s.nameHay.indexOf(t)>-1) sc+=4; if(s.hay.indexOf(t)>-1) sc+=1; });
+    if(s.nameHay===q.toLowerCase()) sc+=6;
+    if((q.toLowerCase().indexOf('ielts')>-1||q.toLowerCase().indexOf('moi')>-1)&&s.kind==='course'&&s.ref==='live') sc+=5;
+    if(q.toLowerCase().indexOf('eligible')>-1||q.indexOf('2.2')>-1){ if(s.kind==='course'){var c=findCourse(s.ref); if(c&&c.status==='eligible') sc+=3;} }
+    return {s:s,sc:sc,ord:ord};
+  }).filter(function(r){return r.sc>0;});
+  scored.sort(function(a,b){return b.sc-a.sc||a.ord-b.ord;});
+  return scored;
+}
+function favHTML(s,round){return '<span class="ws-fav" style="background:'+s.color+(round?';border-radius:50%':'')+'">'+s.letter+'</span>';}
+function cardHTML(r,i){
+  var s=r.s;
+  return '<button class="ws-card" type="button" data-open="'+i+'" aria-label="Open '+s.name+'">'
+    +'<span class="ws-ctitle">'+s.title+'</span>'
+    +'<span class="ws-csub">'+s.sub+'</span>'
+    +'<span class="ws-crow">'+favHTML(s)+'<span>'+(s.kind==='course'?'Course':'Country plan')+'</span><span class="ws-idx">'+(i+1)+'</span></span></button>';
+}
+function skelHTML(){return '<div class="ws-card ws-skel" aria-hidden="true"><span class="sk a"></span><span class="sk b"></span><span class="sk c"></span></div>';}
+function oneSent(str){ if(!str) return ''; var p=str.split('. '); var s=p[0]; if(s.charAt(s.length-1)!=='.') s+='.'; return s; }
+function buildAnswer(q,results){
+  var segs=[];
+  if(!results.length){ segs.push({t:'No matches in this guide for \u201C'+q+'\u201D. Try a course code like IMIM or LIVE_Innov, a country like Ireland or Germany, or a topic like vaccines, IELTS or settlement.'}); return segs; }
+  segs.push({t:'For \u201C'+q+'\u201D, the strongest matches in this guide: '});
+  results.slice(0,3).forEach(function(r,idx){
+    var s=r.s;
+    if(idx>0) segs.push({t:' '});
+    if(s.kind==='course'){ var c=findCourse(s.ref); segs.push({t:s.name+' \u2014 '+oneSent(c.focus)+' Deadline '+c.deadline+'; best settlement finish: '+c.settleBest+'.'}); }
+    else { var d=COUNTRIES[s.ref]; segs.push({t:s.name+' \u2014 '+oneSent(d.verdict)+' Post-study stay: '+d.stay+'.'}); }
+    segs.push({cite:idx,s:s});
+  });
+  if(results.length>3) segs.push({t:' Plus '+(results.length-3)+' more source'+(results.length-3>1?'s':'')+' in the cards above.'});
+  return segs;
+}
+var typeTimer=null;
+function stopTyping(){ if(typeTimer){clearInterval(typeTimer); typeTimer=null;} }
+function makeCite(seg){
+  var b=document.createElement('button'); b.type='button'; b.className='ws-cite'; b.setAttribute('data-open',seg.cite);
+  b.setAttribute('aria-label','Open source '+(seg.cite+1)+': '+seg.s.name);
+  b.innerHTML=favHTML(seg.s,true)+'<span>'+seg.s.name+'</span><sup>'+(seg.cite+1)+'</sup>';
+  return b;
+}
+function typeAnswer(segs){
+  stopTyping(); ansEl.innerHTML='';
+  if(RM2){ segs.forEach(function(seg){ if(seg.cite!==undefined) ansEl.appendChild(makeCite(seg)); else ansEl.appendChild(document.createTextNode(seg.t)); }); return; }
+  var si=0, ci=0, node=null;
+  typeTimer=setInterval(function(){
+    for(var n=0;n<3;n++){
+      if(si>=segs.length){ stopTyping(); return; }
+      var seg=segs[si];
+      if(seg.cite!==undefined){ ansEl.appendChild(makeCite(seg)); si++; ci=0; node=null; continue; }
+      if(!node){ node=document.createTextNode(''); ansEl.appendChild(node); }
+      if(ci<seg.t.length){ node.textContent+=seg.t.charAt(ci); ci++; }
+      if(ci>=seg.t.length){ si++; ci=0; node=null; }
+    }
+  },12);
+}
+var seq=0, curResults=[];
+function openSource(s){
+  if(!s) return;
+  if(s.kind==='course'){ selectedId=s.ref; renderGrid(); renderDetail(); var d=document.getElementById('detail'); if(d) d.scrollIntoView({behavior:RM2?'auto':'smooth',block:'start'}); }
+  else { selCountry=s.ref; renderCountries(); var csec=document.getElementById('countries'); if(csec) csec.scrollIntoView({behavior:RM2?'auto':'smooth',block:'start'}); }
+}
+function runSearch(raw){
+  var q=(raw||'').trim(); if(!q){ input.focus(); return; }
+  var my=++seq; stopTyping();
+  curResults=runQuery(q);
+  out.hidden=false; wsBody.classList.remove('ws-collapsed'); statusBtn.classList.remove('closed'); statusBtn.setAttribute('aria-expanded','true');
+  label.textContent='Searching \u201C'+q+'\u201D'; label.classList.add('shimmer');
+  avatarsEl.innerHTML=''; ansEl.innerHTML='';
+  ring.style.strokeDashoffset=CIRC;
+  cardsEl.innerHTML=skelHTML()+skelHTML()+skelHTML();
+  var dur=RM2?0:1150, t0=null;
+  if(RM2){ ring.style.strokeDashoffset=0; }
+  else { (function anim(ts){ if(my!==seq) return; if(!t0) t0=ts; var p=Math.min((ts-t0)/dur,1); ring.style.strokeDashoffset=(CIRC*(1-p)).toFixed(1); if(p<1) requestAnimationFrame(anim); })(performance.now()); }
+  var revealCount=Math.min(curResults.length,3);
+  function reveal(i){
+    if(my!==seq) return;
+    if(i<revealCount){
+      var skels=cardsEl.querySelectorAll('.ws-skel');
+      var tmp=document.createElement('div'); tmp.innerHTML=cardHTML(curResults[i],i);
+      var card=tmp.firstChild;
+      if(skels.length) cardsEl.replaceChild(card,skels[0]); else cardsEl.appendChild(card);
+      if(avatarsEl.children.length<5){ var av=document.createElement('span'); av.className='ws-av'; av.style.background=curResults[i].s.color; av.textContent=curResults[i].s.letter; avatarsEl.appendChild(av); }
+      setTimeout(function(){ reveal(i+1); }, RM2?0:200);
+    } else {
+      /* clear leftover skeletons, add the "more sources" tile */
+      cardsEl.querySelectorAll('.ws-skel').forEach(function(sk){ sk.remove(); });
+      if(curResults.length>3){
+        var rest=curResults.length-3;
+        var stack=curResults.slice(3,6).map(function(r){return '<span class="ws-av" style="background:'+r.s.color+'">'+r.s.letter+'</span>';}).join('');
+        var tile=document.createElement('button'); tile.type='button'; tile.className='ws-card ws-more'; tile.id='wsMore';
+        tile.setAttribute('aria-label','Show '+rest+' more sources');
+        tile.innerHTML='<span class="ws-avatars ws-avatars-lg">'+stack+'</span><span class="ws-moretext">'+rest+' more source'+(rest>1?'s':'')+'</span>';
+        cardsEl.appendChild(tile);
+      }
+      if(!curResults.length){
+        cardsEl.innerHTML='<div class="ws-empty">No matches across the 6 courses and 12 country plans. Try \u201CIreland\u201D, \u201CIMIM\u201D, \u201Cvaccines\u201D or \u201CIELTS\u201D.</div>';
+      }
+      setTimeout(function(){
+        if(my!==seq) return;
+        label.classList.remove('shimmer');
+        label.textContent='Searched '+SOURCES.length+' sources'+(curResults.length?' \u00B7 '+curResults.length+' match'+(curResults.length>1?'es':''):' \u00B7 no matches');
+        ring.style.strokeDashoffset=0;
+        typeAnswer(buildAnswer(q,curResults));
+      }, RM2?0:250);
+    }
+  }
+  setTimeout(function(){ reveal(0); }, RM2?0:300);
+}
+var interacted=false;
+form.addEventListener('submit',function(e){ e.preventDefault(); interacted=true; runSearch(input.value); });
+document.querySelectorAll('.ws-chip').forEach(function(ch){ ch.addEventListener('click',function(){ interacted=true; input.value=this.getAttribute('data-q'); runSearch(input.value); }); });
+statusBtn.addEventListener('click',function(){
+  var collapsed=wsBody.classList.toggle('ws-collapsed');
+  statusBtn.classList.toggle('closed',collapsed);
+  statusBtn.setAttribute('aria-expanded',collapsed?'false':'true');
+});
+cardsEl.addEventListener('click',function(e){
+  var more=e.target.closest?e.target.closest('#wsMore'):null;
+  if(more){
+    var frag=document.createElement('div');
+    var html=''; for(var i=3;i<curResults.length;i++) html+=cardHTML(curResults[i],i);
+    frag.innerHTML=html;
+    while(frag.firstChild) cardsEl.appendChild(frag.firstChild);
+    more.remove(); return;
+  }
+  var t=e.target.closest?e.target.closest('[data-open]'):null;
+  if(t) openSource(curResults[+t.getAttribute('data-open')].s);
+});
+ansEl.addEventListener('click',function(e){
+  var t=e.target.closest?e.target.closest('[data-open]'):null;
+  if(t) openSource(curResults[+t.getAttribute('data-open')].s);
+});
+setTimeout(function(){ if(!interacted){ input.value='Ireland'; runSearch('Ireland'); } },900);
+})();
 </script>
 </body>
 </html>
