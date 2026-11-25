@@ -471,6 +471,90 @@ footer{margin-top:var(--u-section)}
   .notice strong{white-space:normal}
 }
 </style>
+<style id="fix-all">
+/* ============ FIX-ALL — nav docking, balanced cards, tighter rhythm, footer ============ */
+/* 3 — tighter, still uniform section gaps (was 88px, felt stretched) */
+:root{--u-section:60px}
+.stats{margin-top:28px}
+.ticker{margin-top:16px}
+/* 1 — headings always land clear of the fixed top nav */
+html{scroll-padding-top:104px}
+section[id],.section,#detail,#countryPanel{scroll-margin-top:100px}
+/* 7 — hero blobs kept fully inside the viewport, softer */
+.orb{right:8px;top:-4px;width:300px;height:300px;opacity:.36}
+.orb.o2{right:auto;left:8px;top:auto;bottom:-44px;width:168px;height:168px;opacity:.32}
+/* 2 — equal-height cards everywhere: backgrounds fill, no dead page-coloured gaps */
+.grid,.stats,.kv,.steps,.two,.ws-cards{align-items:stretch}
+.stat{display:flex;flex-direction:column;height:100%}
+.card{height:100%}
+.box{height:100%;display:flex;flex-direction:column}
+.box ul{margin-bottom:0}
+.kv div{height:100%}
+.step{height:100%}
+.ws-card{height:100%}
+.ws-more{min-height:0;height:100%;align-items:center;justify-content:center;text-align:center;gap:12px}
+#scholarship .hero-img{display:flex;flex-direction:column;height:100%}
+#scholarship .hero-img img{flex:1;min-height:0}
+#scholarship .box{height:100%}
+/* 4 — search reads as ONE unit: heading, intro, box, chips, results, answer share one column */
+#search{max-width:960px;margin-left:auto;margin-right:auto;width:100%}
+#search .ws{max-width:none;margin:0}
+#search p.sub{max-width:none}
+.ws-answer{max-width:none;margin:22px 0 0;background:#141416;border:1px solid #2A2A2F;border-radius:18px;padding:20px 22px;font-size:15.5px;line-height:1.8}
+.ws-answer:empty{margin:0;padding:0;border:none;background:none}
+/* 5 — action plan uses the full width: two-up tiles, last item spans both columns */
+#actions .timeline{display:grid;grid-template-columns:1fr;gap:16px;margin-top:6px}
+#actions .tl{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px;height:100%}
+#actions .tl p{max-width:none}
+@media(min-width:820px){
+  #actions .timeline{grid-template-columns:1fr 1fr}
+  #actions .tl:last-child{grid-column:1/-1}
+}
+/* 6 — a real footer that closes the page */
+.site-footer{margin-top:var(--u-section);border-top:1px solid var(--line);padding:40px 0 10px}
+.sf-top{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
+.sf-brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:21px;color:#fff;letter-spacing:-.01em}
+.sf-brand span{color:var(--org)}
+.sf-tag{color:var(--muted);font-size:14.5px;line-height:1.65;max-width:52ch;margin:8px 0 0}
+.sf-nav{display:flex;flex-wrap:wrap;gap:6px 18px;max-width:340px}
+.sf-nav a{color:#C9C9CF;text-decoration:none;font-weight:700;font-size:14px;padding:6px 0}
+.sf-nav a:hover{color:var(--org2)}
+.sf-base{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-start;margin-top:30px;padding-top:22px;border-top:1px solid #222227}
+.sf-base p{color:#71717A;font-size:13px;line-height:1.65;max-width:78ch;margin:0}
+.sf-up{flex:0 0 auto;background:#1C1C1F;border:1px solid #2C2C31;color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;border-radius:999px;padding:10px 16px}
+.sf-up:hover{border-color:var(--org)}
+/* ============ NAV: top pill at the top → docks to a left side rail past the hero ============ */
+.pillnav{transition:opacity .45s ease,transform .45s ease}
+.wrap{transition:max-width .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)}
+.rail{transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+@media(min-width:1150px){
+  .rail{display:flex !important;left:24px;top:50%;width:152px;flex-direction:column;gap:4px;
+    background:rgba(18,18,20,.9);backdrop-filter:blur(14px);border:1px solid #2C2C31;border-radius:20px;
+    padding:10px;box-shadow:0 16px 38px rgba(0,0,0,.5);
+    opacity:0;transform:translate(-14px,-50%);pointer-events:none}
+  .rail a{gap:9px;padding:9px 11px;border-radius:12px;font-size:11.5px;color:#A9A9B2}
+  .rail a span{opacity:1;transform:none;background:none;border:none;padding:0}
+  .rail a:hover{background:#26262B;color:#fff}
+  .rail a.on{background:var(--org);color:#fff}
+  .rail a.on i{background:#fff;box-shadow:none;transform:none}
+  body.nav-docked .rail{opacity:1;transform:translate(0,-50%);pointer-events:auto}
+  body.nav-docked .pillnav{opacity:0;transform:translate(-50%,-18px);pointer-events:none}
+  body.nav-docked .wrap{max-width:min(1160px,calc(100vw - 200px));transform:translateX(34px)}
+}
+@media(max-width:1149px){
+  .rail{display:none !important}
+}
+@media(max-width:640px){
+  html{scroll-padding-top:150px}
+  section[id],.section{scroll-margin-top:146px}
+  :root{--u-section:44px}
+  .ws-answer{padding:16px 18px}
+  .sf-nav{max-width:none}
+}
+@media (prefers-reduced-motion: reduce){
+  .pillnav,.rail,.wrap{transition:none}
+}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -626,12 +710,30 @@ footer{margin-top:var(--u-section)}
         <p>That €1,400 has to cover travel, visa, installation and living costs — there is no separate travel grant. Budget for the first month in each new country: deposits and registration often land before the next instalment.</p>
         <p><b>Not everyone selected gets a scholarship.</b> IDOHNext, for example, awards only a few per intake to top-ranked students among those selected. Always check whether an offer is scholarship or self-funded before accepting.</p>
         <p class="small">This is a starting shortlist, not immigration advice. Visa and residence rules change — verify deadlines on the consortium site and settlement rules on the official immigration site of the country you plan to finish in.</p>
+        <p style="margin-top:auto;padding-top:16px"><a class="btn" href="#actions">See what to do now →</a></p>
       </div>
     </div>
   </section>
 
-  <footer>
-    Sources for course rules: consortium sites linked in each course detail. Settlement summaries checked Nov 2026 against official and government guidance, including the Netherlands Business.gov.nl orientation-year page. Deadlines shown are scholarship deadlines for Sep 2027 entry.
+  <footer class="site-footer">
+    <div class="sf-top">
+      <div>
+        <div class="sf-brand">Erasmus Mundus <span>·</span> Courses &amp; Settlement</div>
+        <p class="sf-tag">Six courses checked against a Nigerian Medical Laboratory 2.2 profile — entry rules, deadlines, and the settlement route for every country on the journey, in one place.</p>
+      </div>
+      <nav class="sf-nav" aria-label="Footer sections">
+        <a href="#top">Overview</a>
+        <a href="#search">Search</a>
+        <a href="#courses">Courses</a>
+        <a href="#countries">Countries</a>
+        <a href="#compare">Compare</a>
+        <a href="#actions">Action plan</a>
+      </nav>
+    </div>
+    <div class="sf-base">
+      <p>Sources for course rules: consortium sites linked in each course detail. Settlement summaries checked Nov 2026 against official and government guidance, including the Netherlands Business.gov.nl orientation-year page. Deadlines shown are scholarship deadlines for Sep 2027 entry. This guide is a starting shortlist, not immigration advice — verify deadlines and residence rules on the official sites before you rely on them.</p>
+      <a class="sf-up" href="#top">Back to top ↑</a>
+    </div>
   </footer>
 </div>
 
@@ -990,6 +1092,24 @@ ansEl.addEventListener('click',function(e){
   if(t) openSource(curResults[+t.getAttribute('data-open')].s);
 });
 setTimeout(function(){ if(!interacted){ input.value='Ireland'; runSearch('Ireland'); } },900);
+})();
+</script>
+<script>
+/* ===== Nav docking: top pill at the top of the page, side rail past the hero ===== */
+(function(){
+  var hero=document.querySelector('.hero');
+  var mq=window.matchMedia('(min-width:1150px)');
+  var ticking=false;
+  function upd(){
+    ticking=false;
+    if(!mq.matches || !hero){ document.body.classList.remove('nav-docked'); return; }
+    var heroBottom=hero.offsetTop + hero.offsetHeight - 120;
+    document.body.classList.toggle('nav-docked', window.scrollY > heroBottom);
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } },{passive:true});
+  window.addEventListener('resize',upd);
+  if(mq.addEventListener) mq.addEventListener('change',upd);
+  upd();
 })();
 </script>
 </body>
