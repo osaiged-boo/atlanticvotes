@@ -19,39 +19,19 @@ h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:1.05;margin:0;
 a{color:var(--org2)} button{font:inherit;cursor:pointer}
 #scrollProgress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--org);z-index:80}
 .wrap{max-width:1020px;margin:0 auto;padding:0 18px 56px}
-.hero{padding:36px 0 4px;position:relative;overflow:hidden}
-@media(min-width:860px){.hero{padding-top:44px}}
+.hero{padding:52px 0 8px;position:relative;overflow:hidden;text-align:center}
+@media(min-width:860px){.hero{padding-top:72px}}
 .hero>*{position:relative;z-index:1}
-.orb{position:absolute;z-index:0;width:360px;height:360px;right:-70px;top:-50px;pointer-events:none;background:radial-gradient(circle at 35% 35%,rgba(255,122,41,.45),rgba(255,77,0,.16) 58%,transparent 72%);filter:blur(8px);border-radius:42% 58% 63% 37%/45% 42% 58% 55%;animation:orbMorph 14s ease-in-out infinite alternate}
+.orb{position:absolute;z-index:0;width:380px;height:380px;left:50%;margin-left:-190px;top:-120px;pointer-events:none;background:radial-gradient(circle at 35% 35%,rgba(255,122,41,.40),rgba(255,77,0,.14) 58%,transparent 72%);filter:blur(8px);border-radius:42% 58% 63% 37%/45% 42% 58% 55%;animation:orbMorph 14s ease-in-out infinite alternate}
 @keyframes orbMorph{from{transform:translate(0,0) scale(1) rotate(0deg);border-radius:42% 58% 63% 37%/45% 42% 58% 55%}to{transform:translate(-26px,20px) scale(1.09) rotate(14deg);border-radius:58% 42% 37% 63%/55% 58% 42% 45%}}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#1C1C1F;border:1px solid #2C2C31;border-radius:999px;padding:7px 13px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--org2)}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--org)}
-.hero h1{font-size:42px;margin:16px 0 12px;max-width:760px}
-@media(min-width:860px){.hero h1{font-size:58px}}
+.hero h1{font-size:44px;margin:18px auto 12px;max-width:720px}
+@media(min-width:860px){.hero h1{font-size:62px}}
 .hero h1 em{font-style:normal;color:var(--org)}
-.hero p{color:var(--muted);font-size:17.5px;margin:0;max-width:620px}
-.scholarship{margin-top:18px;display:inline-flex;flex-wrap:wrap;gap:8px 14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:14.5px}
-.scholarship b{color:#fff;font-size:16px}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
-@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
-.stat b{font-family:"Bricolage Grotesque",sans-serif;font-size:24px;display:block;line-height:1.1}
-.stat span{color:var(--muted);font-size:13px;font-weight:600}
-.stepper{display:flex;flex-wrap:wrap;gap:8px 4px;margin-top:22px;align-items:center}
-.sp{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#71717A}
-.sp .dot{width:26px;height:26px;border-radius:50%;border:1px solid #3A3A40;display:grid;place-items:center;font-size:13px;background:var(--surface2);color:var(--muted);flex:0 0 26px}
-.sp.active{color:var(--ink)}
-.sp.active .dot{background:var(--org);border-color:var(--org);color:#fff}
-.sp.done{color:var(--muted)}
-.sp.done .dot{background:#2B1409;border-color:#4A2410;color:var(--org2)}
-.sp-line{flex:1 1 18px;height:1px;background:#2C2C31;min-width:14px}
-.step{margin-top:38px}
-.step-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
-.step-num{width:34px;height:34px;flex:0 0 34px;border-radius:50%;background:var(--org);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;align-self:center}
-.step h2{font-size:30px}
-.step p.sub{color:var(--muted);margin:0 0 16px 46px;max-width:640px}
-@media(max-width:560px){.step p.sub{margin-left:0}}
-.search-box{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid #3A3A40;border-radius:999px;padding:6px 6px 6px 12px;transition:border-color .2s,box-shadow .2s}
+.hero p.lede{color:var(--muted);font-size:17.5px;margin:0 auto;max-width:600px}
+.hero p.lede b{color:var(--ink)}
+.search-box{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid #3A3A40;border-radius:999px;padding:6px 6px 6px 12px;transition:border-color .2s,box-shadow .2s;max-width:680px;margin:28px auto 0;text-align:left}
 .search-box:focus-within{border-color:var(--org);box-shadow:0 0 0 1px var(--org)}
 .globe-wrap{position:relative;width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;color:var(--org2)}
 .globe-wrap svg.globe{position:relative;z-index:1}
@@ -64,36 +44,57 @@ a{color:var(--org2)} button{font:inherit;cursor:pointer}
 .search-box input::placeholder{color:#71717A;font-weight:500}
 .search-clear{flex:0 0 auto;background:var(--surface2);border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:9px 14px;font-size:14px;font-weight:700}
 .search-clear:hover{color:var(--ink);border-color:#45454D}
-.search-status{margin-top:10px;font-size:14px;min-height:20px}
+.search-status{margin-top:12px;font-size:14px;min-height:20px}
 .shimmer{font-weight:800;background:linear-gradient(90deg,#71717A,#FAFAF8,#71717A);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 1.2s linear infinite}
 @keyframes shim{to{background-position:-200% 0}}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
 .chips span{font-size:13.5px;color:var(--muted);font-weight:600;align-self:center}
 .chip{background:#1E1E21;border:1px solid #2E2E33;color:var(--ink);border-radius:999px;padding:6px 13px;font-size:13.5px;font-weight:700;transition:.2s}
 .chip:hover{border-color:var(--org);color:var(--org2)}
+.terms{margin:22px auto 0;font-size:14px;color:var(--muted);max-width:640px}
+.terms b{color:var(--ink)}
+.stepper{display:flex;flex-wrap:wrap;gap:8px 4px;margin-top:30px;align-items:center;justify-content:center}
+.sp{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#71717A}
+.sp .dot{width:26px;height:26px;border-radius:50%;border:1px solid #3A3A40;display:grid;place-items:center;font-size:13px;background:var(--surface2);color:var(--muted);flex:0 0 26px}
+.sp.active{color:var(--ink)}
+.sp.active .dot{background:var(--org);border-color:var(--org);color:#fff}
+.sp.done{color:var(--muted)}
+.sp.done .dot{background:#2B1409;border-color:#4A2410;color:var(--org2)}
+.sp-line{flex:0 1 26px;height:1px;background:#2C2C31;min-width:14px}
+.step{margin-top:38px}
+.step-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.step-num{width:34px;height:34px;flex:0 0 34px;border-radius:50%;background:var(--org);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;align-self:center}
+.step h2{font-size:30px}
+.step p.sub{color:var(--muted);margin:0 0 16px 46px;max-width:680px}
+@media(max-width:560px){.step p.sub{margin-left:0}}
 .results-meta{font-size:14px;color:var(--muted);font-weight:600;margin:18px 0 10px}
 .course-grid{display:grid;gap:12px}
 @media(min-width:760px){.course-grid{grid-template-columns:1fr 1fr}}
 .skeleton-grid{display:grid;gap:12px}
 @media(min-width:760px){.skeleton-grid{grid-template-columns:1fr 1fr}}
-.skel{height:122px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(90deg,#141416,#1E1E21,#141416);background-size:200% 100%;animation:shimBg 1.1s linear infinite}
+.skel{height:104px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(90deg,#141416,#1E1E21,#141416);background-size:200% 100%;animation:shimBg 1.1s linear infinite}
 @keyframes shimBg{to{background-position:-200% 0}}
-.course-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:left;color:var(--ink);width:100%;transition:.2s}
+.course-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:left;color:var(--ink);width:100%;transition:.2s;height:100%}
 .course-card:hover{border-color:#45454D;transform:translateY(-2px)}
 .course-card.active{border-color:var(--org);box-shadow:0 0 0 1px var(--org)}
 .course-card .code{font-size:13px;letter-spacing:.07em;text-transform:uppercase;font-weight:800;color:var(--org2)}
-.course-card h3{font-size:20px;margin:6px 0 4px;line-height:1.2}
+.course-card h3{font-size:19px;margin:6px 0 4px;line-height:1.25}
 .course-card .desc{color:var(--muted);font-size:14.5px;margin:0}
-.course-item{display:flex;flex-direction:column}
-.course-item .course-card{flex:1}
-.apply-box{margin-top:8px;background:#171310;border:1px solid #3A2A18;border-radius:14px;padding:12px 14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pill{font-size:13px;background:#1E1E21;border:1px solid #2E2E33;padding:6px 9px;border-radius:999px;font-weight:700}
+.pill.deadline{color:#FF9E57;border-color:#4A2410;background:#2B1409}
+.pill.newb{color:#FFB224;border-color:#3A2A18;background:#1F1808}
+.pill.verified{color:#9BE29B;border-color:#23401F;background:#101C0E}
+.pill.source{color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed #333338;border-radius:18px;padding:20px;color:var(--muted);font-size:15px}
+.apply-box{margin-top:14px;background:#171310;border:1px solid #3A2A18;border-radius:14px;padding:14px 16px}
 .apply-box .apply-kicker{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--org2);margin-bottom:8px}
 .apply-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .apply-btn{display:inline-flex;align-items:center;gap:6px;background:var(--org);color:#fff;text-decoration:none;font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:999px;line-height:1;white-space:nowrap}
 .apply-btn:hover{background:#FF6A1A;color:#fff}
 .how-btn{display:inline-flex;align-items:center;background:transparent;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;padding:9px 14px;border-radius:999px;border:1px solid #45454D;line-height:1;white-space:nowrap}
 .how-btn:hover{border-color:var(--org);color:var(--org2)}
-.apply-when{font-size:13px;color:var(--muted);font-weight:600;width:100%}
+.apply-when{font-size:13px;color:var(--muted);font-weight:600}
 .apply-honest{font-size:13.5px;color:#EDE6DA;margin:9px 0 0;line-height:1.45}
 .where-apply{margin-top:18px;background:#1C1C1F;border:1px solid #333338;border-radius:16px;padding:18px}
 .where-apply h4{font-family:"Bricolage Grotesque",sans-serif;font-size:22px;margin:0 0 4px;line-height:1.1}
@@ -113,12 +114,6 @@ a{color:var(--org2)} button{font:inherit;cursor:pointer}
 .school-card.active{border-color:var(--org);box-shadow:0 0 0 1px var(--org)}
 .school-card .school{font-size:13px;letter-spacing:.07em;text-transform:uppercase;font-weight:800;color:var(--org2)}
 .school-card h3{font-size:20px;margin:6px 0 4px;line-height:1.2}
-.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.pill{font-size:13px;background:#1E1E21;border:1px solid #2E2E33;padding:6px 9px;border-radius:999px;font-weight:700}
-.pill.deadline{color:#FF9E57;border-color:#4A2410;background:#2B1409}
-.pill.year{color:#FFB224;border-color:#3A2A18;background:#1F1808}
-.pill.source{color:var(--muted)}
-.empty{background:var(--surface);border:1px dashed #333338;border-radius:18px;padding:20px;color:var(--muted);font-size:15px}
 .panel{background:var(--surface);border:1px solid #333338;border-radius:22px;padding:22px}
 .panel h3{font-size:28px;margin-bottom:4px}
 .panel .context{color:var(--muted);margin:0 0 16px}
@@ -132,9 +127,12 @@ a{color:var(--org2)} button{font:inherit;cursor:pointer}
 .faq-a p{margin:0;font-size:14.5px;color:#D8D8DE}
 .honest{margin-top:16px;background:#171310;border:1px solid #3A2A18;border-radius:14px;padding:14px 16px;font-size:14.5px;color:#EDE6DA}
 .honest strong{color:var(--org2)}
+.checksite{background:var(--surface);border:1px dashed #3A3A40;border-radius:18px;padding:20px}
+.checksite h3{font-size:22px;margin-bottom:6px}
+.checksite p{color:var(--muted);margin:0 0 14px;font-size:15px}
 .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);background:#1C1C1F;border:1px solid #3A3A40;color:var(--ink);padding:11px 18px;border-radius:999px;font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:90;max-width:calc(100vw - 32px);text-align:center;box-shadow:0 12px 32px rgba(0,0,0,.45)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-footer{margin-top:40px;font-size:13px;color:#71717A;border-top:1px solid var(--line);padding-top:16px}
+footer{margin-top:44px;font-size:13px;color:#71717A;border-top:1px solid var(--line);padding-top:16px}
 footer p{margin:0 0 8px}
 .hidden{display:none}
 @media(prefers-reduced-motion:reduce){.orb{animation:none}.shimmer{animation:none;color:var(--muted)}.skel{animation:none}html{scroll-behavior:auto}}
@@ -146,49 +144,42 @@ footer p{margin:0 0 8px}
   <section class="hero">
     <div class="orb" aria-hidden="true"></div>
     <div class="eyebrow">Erasmus Mundus • Sep 2027 intake</div>
-    <h1>Find your <em>Erasmus MSc.</em><br>Search a course.<br>See where it&rsquo;s offered.<br>See how you can <em>settle.</em></h1>
-    <p>Search the 6 Erasmus Mundus MSc courses. Pick one, and you will only see the countries and schools where that course is actually taught — then the settlement plan for the country you pick.</p>
-    <div class="scholarship"><b>€1,400 / month</b><span>scholarship for up to 24 months • No tuition • Insurance covered • 6 courses</span></div>
-    <div class="stats" id="statsRow" aria-label="Scholarship in numbers">
-      <div class="stat"><b class="count" data-target="1400" data-prefix="€">€1,400</b><span>per month</span></div>
-      <div class="stat"><b class="count" data-target="33600" data-prefix="€">€33,600</b><span>maximum over 24 months</span></div>
-      <div class="stat"><b class="count" data-target="6">6</b><span>courses</span></div>
-      <div class="stat"><b class="count" data-target="12">12</b><span>countries</span></div>
-    </div>
-    <nav class="stepper" id="stepper" aria-label="Your progress through the steps">
-      <div class="sp active" data-sp="1"><span class="dot">1</span>Search</div><div class="sp-line" aria-hidden="true"></div>
-      <div class="sp" data-sp="2"><span class="dot">2</span>Country</div><div class="sp-line" aria-hidden="true"></div>
-      <div class="sp" data-sp="3"><span class="dot">3</span>School</div><div class="sp-line" aria-hidden="true"></div>
-      <div class="sp" data-sp="4"><span class="dot">4</span>Settlement</div>
-    </nav>
-  </section>
-
-  <!-- 1. SEARCH THE COURSE -->
-  <section class="step" id="step-search">
-    <div class="step-head"><div class="step-num">1</div><h2>Search the course</h2></div>
-    <p class="sub">Search by course name or subject — for example medicine, vaccines, public health, infectious diseases or membrane biology.</p>
+    <h1>Search <em><span class="count" data-target="189">189</span> Erasmus Mundus</em> master&rsquo;s courses.</h1>
+    <p class="lede">One search across the full official catalogue. Pick a course and see <b>where it&rsquo;s offered</b>, <b>which schools teach it</b>, the <b>settlement plan</b> for that country, and <b>how to apply</b>.</p>
     <div class="search-box" id="searchBox">
       <span class="globe-wrap" aria-hidden="true">
         <svg class="ring" width="38" height="38" viewBox="0 0 38 38"><circle class="track" cx="19" cy="19" r="16"/><circle class="prog" cx="19" cy="19" r="16"/></svg>
         <svg class="globe" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
       </span>
-      <input type="search" id="searchInput" placeholder="Search Erasmus courses…" autocomplete="off" aria-label="Search Erasmus Mundus courses" />
+      <input type="search" id="searchInput" placeholder="Search courses — try “vaccines”, “quantum”, “law”…" autocomplete="off" aria-label="Search Erasmus Mundus courses" />
       <button type="button" class="search-clear hidden" id="searchClear">Clear</button>
     </div>
-    <div class="search-status hidden" id="searchStatus" aria-live="polite"><span class="shimmer">Searching the 6 courses…</span></div>
+    <div class="search-status hidden" id="searchStatus" aria-live="polite"><span class="shimmer">Searching 189 programmes…</span></div>
     <div class="chips" id="chipRow">
       <span>Try:</span>
       <button type="button" class="chip" data-q="medicine">medicine</button>
       <button type="button" class="chip" data-q="vaccines">vaccines</button>
       <button type="button" class="chip" data-q="public health">public health</button>
-      <button type="button" class="chip" data-q="infectious">infectious</button>
-      <button type="button" class="chip" data-q="membrane">membrane</button>
-      <button type="button" class="chip" data-q="disasters">disasters</button>
+      <button type="button" class="chip" data-q="quantum">quantum</button>
+      <button type="button" class="chip" data-q="artificial intelligence">artificial intelligence</button>
+      <button type="button" class="chip" data-q="law">law</button>
     </div>
+    <p class="terms">Scholarship: <b>€1,400 / month</b> for up to <b>24 months</b> (€33,600 for a 2-year master) • <b>tuition covered</b> for scholarship holders • courses run 1–2 years (60–120 ECTS). Some listed programmes may no longer offer scholarships — always check the official programme site.</p>
+    <nav class="stepper hidden" id="stepper" aria-label="Your progress through the steps">
+      <div class="sp active" data-sp="1"><span class="dot">1</span>Search</div><div class="sp-line" aria-hidden="true"></div>
+      <div class="sp" data-sp="2"><span class="dot">2</span>Country</div><div class="sp-line" aria-hidden="true"></div>
+      <div class="sp" data-sp="3"><span class="dot">3</span>School</div><div class="sp-line" aria-hidden="true"></div>
+      <div class="sp" data-sp="4"><span class="dot">4</span>Settlement</div><div class="sp-line" aria-hidden="true"></div>
+      <div class="sp" data-sp="5"><span class="dot">5</span>Apply</div>
+    </nav>
+  </section>
+
+  <!-- SEARCH RESULTS (hidden until a search runs) -->
+  <section class="step hidden" id="step-results">
     <p class="results-meta" id="resultsMeta"></p>
     <div class="skeleton-grid hidden" id="skeletonGrid" aria-hidden="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
     <div class="course-grid" id="courseGrid"></div>
-    <div class="empty hidden" id="courseEmpty">No Erasmus Mundus course here matches that search. Try a subject like <b>medicine</b>, <b>vaccines</b>, <b>public health</b>, <b>infectious</b> or <b>membrane</b> — this search covers courses only, not countries or schools.</div>
+    <div class="empty hidden" id="courseEmpty">No Erasmus Mundus programme matches that search. Try a subject word — <b>medicine</b>, <b>law</b>, <b>data</b>, <b>environment</b>, <b>engineering</b> — or a programme acronym like <b>IMIM</b> or <b>EDISS</b>.</div>
   </section>
 
   <!-- 2. COUNTRIES THAT OFFER THE COURSE -->
@@ -196,6 +187,7 @@ footer p{margin:0 0 8px}
     <div class="step-head"><div class="step-num">2</div><h2 id="countryTitle">Where it&rsquo;s offered</h2></div>
     <p class="sub" id="countrySub"></p>
     <div class="country-grid" id="countryGrid"></div>
+    <div id="countryCheck"></div>
   </section>
 
   <!-- 3. SCHOOLS -->
@@ -203,6 +195,7 @@ footer p{margin:0 0 8px}
     <div class="step-head"><div class="step-num">3</div><h2 id="schoolTitle">Schools</h2></div>
     <p class="sub" id="schoolSub"></p>
     <div class="school-grid" id="schoolGrid"></div>
+    <div id="schoolCheck"></div>
   </section>
 
   <!-- 4. SETTLEMENT PLAN -->
@@ -212,29 +205,43 @@ footer p{margin:0 0 8px}
     <div id="settlePanel"></div>
   </section>
 
+  <!-- 5. HOW TO APPLY -->
+  <section class="step hidden" id="step-apply">
+    <div class="step-head"><div class="step-num">5</div><h2>How to apply</h2></div>
+    <p class="sub" id="applySub"></p>
+    <div id="applyPanel"></div>
+  </section>
+
   <footer>
-    <p>Course, school and deadline facts from the Erasmus Mundus consortium sites for the September 2027 intake. Settlement summaries checked November 2026 — always confirm on the official immigration site of the country you plan to finish in before you rely on them. This is general information, not immigration advice.</p>
+    <p>Programme list: the official EACEA Erasmus Mundus Catalogue (189 programmes, checked 26 November 2026) — <a href="https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en" target="_blank" rel="noopener">eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue</a>. There is no central application: you apply on each programme&rsquo;s own website. The catalogue warns that some listed programmes may no longer offer scholarships, as their funding period may be ending — confirm scholarship availability on the programme&rsquo;s official site. Deadlines are shown only where verified on an official programme site; everywhere else, check the official site. Settlement summaries checked November 2026 — always confirm on the official immigration site of the country you plan to finish in. This is general information, not immigration advice.</p>
     <p>Design elements inspired by <a href="https://rareui.com" target="_blank" rel="noopener">Rare UI (rareui.com)</a> — search, step, counter, FAQ, toast, scroll progress and orb patterns adapted in this page&rsquo;s own style.</p>
   </footer>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
 <script>
-var DEADLINES = {
-  "IMIM":"4 Jan 2027",
-  "LIVE_Innov":"20 Jan 2027",
-  "Europubhealth+":"8 Jan 2027",
-  "MemBioMed":"28 Feb 2027",
-  "IDOHNext":"15 Jan 2027",
-  "EMPHID":"31 Dec 2026"
+var CATALOGUE_URL = "https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en";
+var EC_SELECTION_URL = "https://erasmus-plus.ec.europa.eu/resources-and-tools/documents-and-guidelines/erasmus-mundus-joint-masters-projects-selected-under-2026-erasmus-call-for-proposals";
+var CAT = [{"n": 1, "name": "Quantum Technologies and Engineering Erasmus Mundus Master Plus (QuanTEEM plus)", "acr": "QuanTEEM plus", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325739", "new": true}, {"n": 2, "name": "EU-CONEXUS Joint Master Programme in Marine Biotechnology: Learning Community (JMPMB Community)", "acr": "JMPMB Community", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325655", "new": true}, {"n": 3, "name": "Erasmus Mundus Joint Master Degree in Advanced Microscopy with Artificial Intelligence (MICROSCOM)", "acr": "MICROSCOM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325643", "new": true}, {"n": 4, "name": "Innovative Bioinspired Materials for Sustainable Applications (IBISA)", "acr": "IBISA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325640", "new": true}, {"n": 5, "name": "Joint MSc Water Vulnerability Engineering in Spatial Sciences (WAVES)", "acr": "WAVES", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325634", "new": true}, {"n": 6, "name": "European Master in Law, Data and Artificial Intelligence (EMILDAI)", "acr": "EMILDAI", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325623", "new": true}, {"n": 7, "name": "Joint International Master in Semiconductor ChipS Integration and Innovation (SSI2)", "acr": "SSI2", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325610", "new": true}, {"n": 8, "name": "Master in Nuclear Decommissioning and Environmental Remediation (MINDER)", "acr": "MINDER", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325571", "new": true}, {"n": 9, "name": "European Master in Migration and Intercultural Relations (EMMIR)", "acr": "EMMIR", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325467", "new": true}, {"n": 10, "name": "Responsible Leadership in Cultural and Religious Heritage (RELIC)", "acr": "RELIC", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325458", "new": true}, {"n": 11, "name": "Master of Science in Geospatial Technologies (GeoTech)", "acr": "GeoTech", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325360", "new": true}, {"n": 12, "name": "Applied Biodiversity Management and Resilient Ecosystem Transitions (BIOVERTE)", "acr": "BIOVERTE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325306", "new": true}, {"n": 13, "name": "Erasmus Mundus Joint Master in Economics of Globalisation and European Integration (EGEI)", "acr": "EGEI", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325276", "new": true}, {"n": 14, "name": "Master in Infectious Diseases and One Health-IDOHNext (IDOH Next)", "acr": "IDOH Next", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325204", "new": true}, {"n": 15, "name": "Erasmus Mundus Joint Master in Food Innovation and Product Design (FIPDes)", "acr": "FIPDes", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101325186", "new": true}, {"n": 16, "name": "European master in Advanced Solid Mechanics (STRAINS)", "acr": "STRAINS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101324508", "new": true}, {"n": 17, "name": "Chemical Nano-Engineering (CNE)", "acr": "CNE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101324404", "new": true}, {"n": 18, "name": "Navigating AI Business Transformation in the EU (NavigAIte EU)", "acr": "NavigAIte EU", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101323042", "new": true}, {"n": 19, "name": "sustainable ocean services and Marine EnviRonment (sosMER)", "acr": "sosMER", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101314713", "new": true}, {"n": 20, "name": "Erasmus Mundus Joint Master in Multilingualism and Cultural Diversity (MultiDiverse)", "acr": "MultiDiverse", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241136", "new": false}, {"n": 21, "name": "Law and Gender, Intersectionality and Diversity (LAWGID)", "acr": "LAWGID", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101240350", "new": false}, {"n": 22, "name": "International Master in Contemporary Challenges in the World of Work (WOCC)", "acr": "WOCC", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241106", "new": false}, {"n": 23, "name": "InterCultural Leadership in Digital Era International Master (CLIDE)", "acr": "CLIDE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241178", "new": false}, {"n": 24, "name": "Erasmus Mundus Joint Master in Sustainable Transportation and Electric Power Systems (EMJM STEPS)", "acr": "EMJM STEPS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241082", "new": false}, {"n": 25, "name": "European Politics and Society: Václav Havel Joint Master Degree (EPS)", "acr": "EPS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241064", "new": false}, {"n": 26, "name": "Erasmus Mundus Joint Master in Insects as Solutions for a Sustainable Future (ISSF)", "acr": "ISSF", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101239077", "new": false}, {"n": 27, "name": "Renewable Energy and Sustainable COnstruction, RESCO (RESCO)", "acr": "RESCO", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101238875", "new": false}, {"n": 28, "name": "Erasmus Mundus Joint Master Degree in Sports Ethics and Integrity (MAiSI)", "acr": "MAiSI", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101238589", "new": false}, {"n": 29, "name": "Erasmus Mundus Masters in Journalism, Media and Globalisation (Mundus Journalism) (EMMA)", "acr": "EMMA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101234513", "new": false}, {"n": 30, "name": "European Masters in Earthen Architecture and Construction (TERRA)", "acr": "TERRA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241190", "new": false}, {"n": 31, "name": "Transfers-Fluids-Materials Aeronautical Sustainable Applications (TFMASA)", "acr": "TFMASA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101240181", "new": false}, {"n": 32, "name": "Erasmus Mundus Joint Master Programme on the Engineering of Data-intensive Intelligent Software Systems (EDISS)", "acr": "EDISS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101238940", "new": false}, {"n": 33, "name": "Radiation and its Effects on MicroElectronics and Photonics Technologies (RADMEP)", "acr": "RADMEP", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101238766", "new": false}, {"n": 34, "name": "Bio and Pharmaceutical Materials Science (BIOPHAM)", "acr": "BIOPHAM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241095", "new": false}, {"n": 35, "name": "Master's Programme in Cybersecurity and Assurance (CYBERSURE)", "acr": "CYBERSURE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241135", "new": false}, {"n": 36, "name": "Data Engineering and Artificial Intelligence (DEAI)", "acr": "DEAI", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241133", "new": false}, {"n": 37, "name": "Renewable Energy in the Marine environment (REM Plus Plus)", "acr": "REM Plus Plus", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101239651", "new": false}, {"n": 38, "name": "Sustainable Catalysis (SuCat)", "acr": "SuCat", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101238854", "new": false}, {"n": 39, "name": "International Law of Security, Peace and Sustainable Development (ILSPSD)", "acr": "ILSPSD", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101238242", "new": false}, {"n": 40, "name": "International Master in Transnational Migrations (MITRA)", "acr": "MITRA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241222", "new": false}, {"n": 41, "name": "Engineering for Environmental Sustainability and International Cooperation (EESIC)", "acr": "EESIC", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101240871", "new": false}, {"n": 42, "name": "Joint master in Applied security and defense - Networks for Unified Strategies (JANUS)", "acr": "JANUS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241310", "new": false}, {"n": 43, "name": "Large Scale Accelerators and Lasers (LASCALA)", "acr": "LASCALA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241086", "new": false}, {"n": 44, "name": "NOHA Erasmus Mundus Joint Master in International Humanitarian Action (NOHA)", "acr": "NOHA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101240600", "new": false}, {"n": 45, "name": "Teaching, designing, managing, foreign Language learning for a Multicultural and inclusive Environment [title truncated in catalogue view] (TELME)", "acr": "TELME", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101239299", "new": false}, {"n": 46, "name": "Data Science of Human Multimodal Communication: European and International Joint Masters Degree (MULTICOM)", "acr": "MULTICOM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101238231", "new": false}, {"n": 47, "name": "Theatre in Social, Participatory Art, Community and Educational contexts (Theatre SPACEs)", "acr": "Theatre SPACEs", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241068", "new": false}, {"n": 48, "name": "Joint European Master Degree in Nuclear Physics (NucPhys)", "acr": "NucPhys", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101239847", "new": false}, {"n": 49, "name": "European Master in Biological and Chemical Engineering for a Sustainable Bioeconomy (Bioceb)", "acr": "Bioceb", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101239726", "new": false}, {"n": 50, "name": "DocNomadsPlus, Joint Master in Documentary Filmmaking (DocNomadsPlus)", "acr": "DocNomadsPlus", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101239524", "new": false}, {"n": 51, "name": "Erasmus Mundus Joint Master Programme in Neuroscience (Neurasmus)", "acr": "Neurasmus", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101239924", "new": false}, {"n": 52, "name": "Geo-Information Science and Earth Observation for Environmental Modelling and Management (GEM)", "acr": "GEM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101240661", "new": false}, {"n": 53, "name": "Interdisciplinary Mathematics (InterMaths)", "acr": "InterMaths", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101240735", "new": false}, {"n": 54, "name": "International Master in Security, Intelligence and Strategic Studies (IMSISS)", "acr": "IMSISS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241097", "new": false}, {"n": 55, "name": "Choreomundus – Erasmus Mundus Master in Dance and Movement as Practical Knowledge and Heritage (CHOREOMUNDUS)", "acr": "CHOREOMUNDUS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101241246", "new": false}, {"n": 56, "name": "European Master's in Clinical Linguistics 25 (EMCL-25)", "acr": "EMCL-25", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101239448", "new": false}, {"n": 57, "name": "Master of Science in European Forestry (MSc EF)", "acr": "MSc EF", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101239159", "new": false}, {"n": 58, "name": "Excellence in Analytical Chemistry (EACH)", "acr": "EACH", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101235187", "new": false}, {"n": 59, "name": "European Master in Animal Biodiversity and Genomics (EMABG)", "acr": "EMABG", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101179080", "new": false}, {"n": 60, "name": "RESOUND - Joint Master of Arts in Sound Design for Media Arts (RESOUND)", "acr": "RESOUND", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180273", "new": false}, {"n": 61, "name": "EMJM ENVIRONMENTAL CONTAMINATION AND TOXICOLOGY + ONE HEALTH (ECTPLUS ONE HEALTH)", "acr": "ECTPLUS ONE HEALTH", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180052", "new": false}, {"n": 62, "name": "International Master in Quaternary and Prehistory (IMQP)", "acr": "IMQP", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101177274", "new": false}, {"n": 63, "name": "Europubhealth+│European Master in Public Health (EPH Plus)", "acr": "EPH Plus", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180119", "new": false}, {"n": 64, "name": "European Master in Linguistic Data Science (EMLDS)", "acr": "EMLDS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180353", "new": false}, {"n": 65, "name": "Education, Migration, and Diversity (EDU_MIG)", "acr": "EDU_MIG", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180007", "new": false}, {"n": 66, "name": "Master International en Sciences de l'Education Inclusive (MISEI)", "acr": "MISEI", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180418", "new": false}, {"n": 67, "name": "Erasmus Mundus Master Course in Mechatronics (EU4M)", "acr": "EU4M", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180050", "new": false}, {"n": 68, "name": "Digital Creativity Art&Science European Master (DIGICREA)", "acr": "DIGICREA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180274", "new": false}, {"n": 69, "name": "Mathematical Modelling, Simulation and Data Science for Industrial and Societal Challenges (MATHS-DISC)", "acr": "MATHS-DISC", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180080", "new": false}, {"n": 70, "name": "International Master degree on the biology of Ageing (IMAgein)", "acr": "IMAgein", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180342", "new": false}, {"n": 71, "name": "Leading International Vaccinology Education for Innovation (LIVE_Innov)", "acr": "LIVE_Innov", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101172104", "new": false}, {"n": 72, "name": "Greening Energy Market and Finance (GrEnFIn)", "acr": "GrEnFIn", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101179940", "new": false}, {"n": 73, "name": "Global Markets, Local Creativities (GLOCAL)", "acr": "GLOCAL", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101177425", "new": false}, {"n": 74, "name": "Erasmus Mundus Master in European Environmental Economics and Policy (M3EP)", "acr": "M3EP", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180000", "new": false}, {"n": 75, "name": "Health and Wellbeing across the Lifespan (HYGIEIA)", "acr": "HYGIEIA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180030", "new": false}, {"n": 76, "name": "Erasmus Mundus - Master of Science in Imaging and Light in Extended Reality (IMLEX)", "acr": "IMLEX", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101179938", "new": false}, {"n": 77, "name": "Economic POlicies for the Global bifurcation - Joint Master (EPOG-JM)", "acr": "EPOG-JM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101179922", "new": false}, {"n": 78, "name": "Intelligent Photonics for Security Reliability Sustainability and Safety (iPSRS)", "acr": "iPSRS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180354", "new": false}, {"n": 79, "name": "Coordinated Humanitarian Response, Health and Displacement (HumanResponse)", "acr": "HumanResponse", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180512", "new": false}, {"n": 80, "name": "MASTER IN INTELLECTUAL PROPERTY AND DATA LAW (MIPDaL)", "acr": "MIPDaL", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180094", "new": false}, {"n": 81, "name": "Response_Able Futures; A European Joint Masters in Design and Care (ResponseAbleFutures)", "acr": "ResponseAbleFutures", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180493", "new": false}, {"n": 82, "name": "EUropean master on COntrol of Renewable Energy systems (EU-CORE)", "acr": "EU-CORE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180476", "new": false}, {"n": 83, "name": "Erasmus Mundus Joint Master in Cutting-Edge Technologies for Sustainable Agriculture (SUSTAGRI)", "acr": "SUSTAGRI", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180446", "new": false}, {"n": 84, "name": "Erasmus Mundus Joint Master's programme in Surface, Electro, Radiation, and Photo-chemistry (SERP)", "acr": "SERP", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180445", "new": false}, {"n": 85, "name": "Theoretical Chemistry and Computational Modeling (TCCM)", "acr": "TCCM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180348", "new": false}, {"n": 86, "name": "Social Psychology of Transformation: Understanding and Mastering Social Change (SPOT)", "acr": "SPOT", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180302", "new": false}, {"n": 87, "name": "Research and Innovation in Higher Education (MARIHE)", "acr": "MARIHE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180266", "new": false}, {"n": 88, "name": "From Membrane Biology to Neuroscience and Experimental Medicine (MemBioMed)", "acr": "MemBioMed", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180228", "new": false}, {"n": 89, "name": "Electric vehicle PropulsIon & COntrol Plus (E-PiCo Plus)", "acr": "E-PiCo Plus", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180198", "new": false}, {"n": 90, "name": "International Master's in Advanced Research in Criminology (IMARC)", "acr": "IMARC", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180177", "new": false}, {"n": 91, "name": "Decentralised Smart Energy Systems 2.0 (DENSYS 2.0)", "acr": "DENSYS 2.0", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180112", "new": false}, {"n": 92, "name": "International Master in Innovative Medicine (IMIM)", "acr": "IMIM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180032", "new": false}, {"n": 93, "name": "Mechanics of Sustainable Materials and Structures (MS2)", "acr": "MS2", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101178091", "new": false}, {"n": 94, "name": "Erasmus Mundus Joint Master in Global Change Ecology and Biodiversity Management (GLOBE)", "acr": "GLOBE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101180104", "new": false}, {"n": 95, "name": "EMerald Master in Georesources Engineering (EMerald)", "acr": "EMerald", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127887", "new": false}, {"n": 96, "name": "FilmMemory - Joint Master of Arts in European Film Heritage, History and Cultures (FilmMemory)", "acr": "FilmMemory", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127690", "new": false}, {"n": 97, "name": "MSc in Smart Cities and Communities (SMACCs)", "acr": "SMACCs", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128215", "new": false}, {"n": 98, "name": "European Master For Industry in Microwave Electronics and Photonics (EMIMEP)", "acr": "EMIMEP", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128187", "new": false}, {"n": 99, "name": "Multiphase Systems for Sustainable Engineering (MULTIPHASE)", "acr": "MULTIPHASE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128275", "new": false}, {"n": 100, "name": "Safe and Reliable Nuclear Applications (SARENA)", "acr": "SARENA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128167", "new": false}, {"n": 101, "name": "Education Policies for Global Development (GLOBED)", "acr": "GLOBED", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128259", "new": false}, {"n": 102, "name": "Communications Engineering and Data Science (CoDaS)", "acr": "CoDaS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128281", "new": false}, {"n": 103, "name": "Erasmus Mundus Masters Program in Public Policy (MUNDUS MAPP)", "acr": "MUNDUS MAPP", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128240", "new": false}, {"n": 104, "name": "PlantHealth - European Master Degree in PLANT HEALTH IN SUSTAINABLE CROPPING SYSTEMS (PLANTHEALTH3)", "acr": "PLANTHEALTH3", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128273", "new": false}, {"n": 105, "name": "Erasmus Mundus Joint Master in Physiology and Medicine of Humans in Space and Extreme Environment (SpaceMed)", "acr": "SpaceMed", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127568", "new": false}, {"n": 106, "name": "Erasmus Mundus Joint Master Programme in Imaging (IMAGING)", "acr": "IMAGING", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128227", "new": false}, {"n": 107, "name": "International Masters in Risk Assessment and Management of Civil Infrastructures (NORISK)", "acr": "NORISK", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128171", "new": false}, {"n": 108, "name": "Interdisciplinarity in Materials for Energy Storage and Conversion (i-MESC)", "acr": "i-MESC", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128159", "new": false}, {"n": 109, "name": "Erasmus Mundus Master in 'Global Studies' (EMGS)", "acr": "EMGS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127959", "new": false}, {"n": 110, "name": "European Master of Science in Skin Health and Care (EMOTION)", "acr": "EMOTION", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128127", "new": false}, {"n": 111, "name": "Image Processing and Computer Vision ai (IPCVai)", "acr": "IPCVai", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127924", "new": false}, {"n": 112, "name": "Master Erasmus Mundus in Lexicography (EMJM-EMLex)", "acr": "EMJM-EMLex", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101126545", "new": false}, {"n": 113, "name": "Groundwater and Global Change - Impacts and Adaptation (GroundwatCh)", "acr": "GroundwatCh", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127390", "new": false}, {"n": 114, "name": "Children's Literature, Media and Cultural Entrepreneurship (CLMCE)", "acr": "CLMCE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101126726", "new": false}, {"n": 115, "name": "Erasmus Mundus Joint Master Redesigning the Post-Industrial City (RePIC)", "acr": "RePIC", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128126", "new": false}, {"n": 116, "name": "RE_PLAY: EUROPEAN JOINT MASTERS IN GAMES (RE_PLAY)", "acr": "RE_PLAY", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128161", "new": false}, {"n": 117, "name": "Joint Master's in Nanomaterials for Green and Digital Transitions (GREENANO)", "acr": "GREENANO", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127545", "new": false}, {"n": 118, "name": "Erasmus Mundus Joint Master Degree on Public Health in Disaster (EMPHID)", "acr": "EMPHID", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128198", "new": false}, {"n": 119, "name": "International Master in Advanced Design of Sustainable Ships and Offshore Structures (EMSHIP)", "acr": "EMSHIP", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128183", "new": false}, {"n": 120, "name": "EUROPHOTONICS (EUROPHOTONICS)", "acr": "EUROPHOTONICS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128124", "new": false}, {"n": 121, "name": "Sustainable Information Technologies for Societies Joint Masters (SITeS-JM)", "acr": "SITeS-JM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127953", "new": false}, {"n": 122, "name": "Sustainable Forest and Nature Management (SUFONAMA)", "acr": "SUFONAMA", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127220", "new": false}, {"n": 123, "name": "International Master in Soils and Global Change (IMSOGLO)", "acr": "IMSOGLO", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101126802", "new": false}, {"n": 124, "name": "Flood Risk Management (FLOODRisk)", "acr": "FLOODRisk", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101127982", "new": false}, {"n": 125, "name": "European Master in Sustainable Systems Engineering (EMSSE)", "acr": "EMSSE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128119", "new": false}, {"n": 126, "name": "European Master on Embedded Intelligence Nanosystems Engineering – from Nanoscale Technologies to Ub[iquitous… title truncated] (EMINENT)", "acr": "EMINENT", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128051", "new": false}, {"n": 127, "name": "Copernicus Master in Digital Earth (CDE)", "acr": "CDE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128006", "new": false}, {"n": 128, "name": "International Master on Wine Tourism Transitions and Innovations (WINTOUR)", "acr": "WINTOUR", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101128149", "new": false}, {"n": 129, "name": "Manufacturing 4.0 by intElligent and susTAinable technologies - META 4.0 (META 4.0)", "acr": "META 4.0", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082643", "new": false}, {"n": 130, "name": "Human Diseases Models Morphological Phenotyping (MorphoPHEN)", "acr": "MorphoPHEN", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082155", "new": false}, {"n": 131, "name": "Erasmus Mundus Master in Biomedical Engineering (EMMBIOME)", "acr": "EMMBIOME", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082688", "new": false}, {"n": 132, "name": "Euro-Asian Joint Master Programme in Medical Technology and Healthcare Business (EMMaH)", "acr": "EMMaH", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101081786", "new": false}, {"n": 133, "name": "Hydrogen Systems and Enabling Technologies (HySET)", "acr": "HySET", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082651", "new": false}, {"n": 134, "name": "Master of Science (MSc) in Global Environment and Development (MERGED)", "acr": "MERGED", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082117", "new": false}, {"n": 135, "name": "Erasmus Mundus Joint Master In Artificial Intelligence (EMAI)", "acr": "EMAI", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082433", "new": false}, {"n": 136, "name": "EMJM AQUACULTURE, ENVIRONMENT AND SOCIETY – STAR (EMJM ACES-STAR)", "acr": "EMJM ACES-STAR", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101080968", "new": false}, {"n": 137, "name": "International Master of Advanced Methods in Particle Physics (IMAPP)", "acr": "IMAPP", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101081341", "new": false}, {"n": 138, "name": "Master in Materials Science powEred by Large-Scale Facilities (MaMaSELF)", "acr": "MaMaSELF", "url": null, "new": false}, {"n": 139, "name": "Architectural and Urban Contemporary Heritage (ARURCOHE)", "acr": "ARURCOHE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101081182", "new": false}, {"n": 140, "name": "Masters degree in Environmental Sciences, Policy and Management (MESPOM)", "acr": "MESPOM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082211", "new": false}, {"n": 141, "name": "Master in Membrane Engineering for Sustainable Development (MESD)", "acr": "MESD", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101081874", "new": false}, {"n": 142, "name": "EMJM in Global Forestry (GLOFOR)", "acr": "GLOFOR", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082420", "new": false}, {"n": 143, "name": "Joint Master Programme in Resilience in Educational Contexts (FLOURISH)", "acr": "FLOURISH", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082428", "new": false}, {"n": 144, "name": "Erasmus Mundus Joint Master on \"Climate Change and Diversity: Sustainable Territorial Development\" (CCD-STeDe)", "acr": "CCD-STeDe", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082398", "new": false}, {"n": 145, "name": "ERASMUS MUNDUS JOINT MASTER in ARCHAEOLOGICAl MATERIALS SCIENCE (ARCHMAT)", "acr": "ARCHMAT", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082567", "new": false}, {"n": 146, "name": "Master of Applied Cybersecurity (CyberMACS)", "acr": "CyberMACS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082683", "new": false}, {"n": 147, "name": "European Master in Law and Economics (EMLE)", "acr": "EMLE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082393", "new": false}, {"n": 148, "name": "Functional Advanced Materials Engineering with Artificial Intelligence for Sustainability (FAMEAIS)", "acr": "FAMEAIS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082749", "new": false}, {"n": 149, "name": "Global MINDS European Master in the Psychology of Global Mobility, Inclusion and Diversity in Societ[ies — title truncated] (Global-MINDS)", "acr": "Global-MINDS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082707", "new": false}, {"n": 150, "name": "Public Sector Innovation and eGovernance (PIONEER)", "acr": "PIONEER", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082574", "new": false}, {"n": 151, "name": "International Master in Technology and Management for Circular Economy (IMATEC)", "acr": "IMATEC", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082436", "new": false}, {"n": 152, "name": "Joint Master's Degree Programme in Service Design Strategies and Innovations (SDSI)", "acr": "SDSI", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082388", "new": false}, {"n": 153, "name": "Education in Museums and Heritage (EDUMaH)", "acr": "EDUMaH", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082003", "new": false}, {"n": 154, "name": "International Master in Brain and Data Science (NeuroData)", "acr": "NeuroData", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101081356", "new": false}, {"n": 155, "name": "Religious Diversity in a Globalised World (ReD Global)", "acr": "ReD Global", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101082417", "new": false}, {"n": 156, "name": "International Master of Science in Fire Safety Engineering (IMFSE)", "acr": "IMFSE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101081748", "new": false}, {"n": 157, "name": "Erasmus Mundus Joint Master in Planetary Geosciences (GeoPlaNet)", "acr": "GeoPlaNet", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101081552", "new": false}, {"n": 158, "name": "Managing Art and Cultural Heritage in Global Markets (MAGMa)", "acr": "MAGMa", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101081731", "new": false}, {"n": 159, "name": "Governance & Administration of Leisure and Sports International Master (GOALS)", "acr": "GOALS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050239", "new": false}, {"n": 160, "name": "Coastal Hazards – Risks, Climate Change Impacts and Adaptation (COASTHazar)", "acr": "COASTHazar", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050331", "new": false}, {"n": 161, "name": "Master of Science in Coastal and Marine Engineering and Management (CoMEM+)", "acr": "CoMEM+", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050462", "new": false}, {"n": 162, "name": "Cartography - Mapping for a sustainable world (CARTO)", "acr": "CARTO", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050459", "new": false}, {"n": 163, "name": "Erasmus Mundus Joint Master in Sustainable Mineral and Metal Processing Engineering (PROMISE)", "acr": "PROMISE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050446", "new": false}, {"n": 164, "name": "Islands and Sustainability (ISLANDS)", "acr": "ISLANDS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050349", "new": false}, {"n": 165, "name": "Sustainable Biomass and Bioproducts Engineering (Sus2BioEng)", "acr": "Sus2BioEng", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050789", "new": false}, {"n": 166, "name": "Sustainability in Agriculture, Food Production and Food Technology in the Danube Region - Danube Agr[iculture — title truncated] (DAFM)", "acr": "DAFM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050466", "new": false}, {"n": 167, "name": "ChEMoinformaticsplus - Artificial Intelligence in Chemistry (ChEMoinformaticsplus)", "acr": "ChEMoinformaticsplus", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050809", "new": false}, {"n": 168, "name": "Transnational German Studies Erasmus Mundus Joint Master (TNGS EMJM)", "acr": "TNGS EMJM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050810", "new": false}, {"n": 169, "name": "QUAntum Research Master-level Education Network (QUARMEN)", "acr": "QUARMEN", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050997", "new": false}, {"n": 170, "name": "Master Degree in Sustainable Design, Construction and Management of the Built Environment (MBUILD)", "acr": "MBUILD", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101051004", "new": false}, {"n": 171, "name": "Master in Astrophysics and Space Science (MASS)", "acr": "MASS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101050044", "new": false}, {"n": 172, "name": "Master Program in Advanced Materials Innovative Recycling AMIR EM (AMIR-EM)", "acr": "AMIR-EM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101049867", "new": false}, {"n": 173, "name": "International Master in Sustainable Drug Discovery (S-DISCO)", "acr": "S-DISCO", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101049847", "new": false}, {"n": 174, "name": "Erasmus Mundus Joint Master in Cybersecurity (CYBERUS)", "acr": "CYBERUS", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101049712", "new": false}, {"n": 175, "name": "European Master in Dynamics of Renewables-based Power Systems (DREAM)", "acr": "DREAM", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101049647", "new": false}, {"n": 176, "name": "Erasmus Mundus Master Impact Entrepreneurship (EMMIE)", "acr": "EMMIE", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101049277", "new": false}, {"n": 177, "name": "International Masters in Environmental Technology and Engineering – Consolidation phase (IMETE-C)", "acr": "IMETE-C", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101049150", "new": false}, {"n": 178, "name": "European Master in Advanced Structural Analysis and Design using Composite Materials (FRP++)", "acr": "FRP++", "url": "https://erasmus-plus.ec.europa.eu/projects/search/details/101048961", "new": false}, {"n": 179, "name": "International Master of Science in Rural Development (IMRD)", "acr": "IMRD", "url": null, "new": false}, {"n": 180, "name": "JAPAN-EUROPE MASTER ON ADVANCED ROBOTICS (JEMARO)", "acr": "JEMARO", "url": null, "new": false}, {"n": 181, "name": "Infectious Diseases and One Health (IDOH+)", "acr": "IDOH+", "url": null, "new": false}, {"n": 182, "name": "Mediterranean Forestry and Natural Resources Management (MEDfOR)", "acr": "MEDfOR", "url": null, "new": false}, {"n": 183, "name": "Erasmus Mundus Master's Degree in Women's and Gender Studies (GEMMA)", "acr": "GEMMA", "url": null, "new": false}, {"n": 184, "name": "Nanomedicine for Drug Delivery (NANOMED)", "acr": "NANOMED", "url": null, "new": false}, {"n": 185, "name": "Models and Methods of Quantitative Economics (QEM2018)", "acr": "QEM2018", "url": null, "new": false}, {"n": 186, "name": "Erasmus Mundus Master Nanoscience and Nanotechnology (EMMNano)", "acr": "EMMNano", "url": null, "new": false}, {"n": 187, "name": "Erasmus Mundus Joint Master Degree in Tropical Biodiversity and Ecosystems (TROPIMUNDO)", "acr": "TROPIMUNDO", "url": null, "new": false}, {"n": 188, "name": "Cultures Littéraires Européennes - CLE (CLE)", "acr": "CLE", "url": null, "new": false}, {"n": 189, "name": "European Master in Building Information Modelling (BIM A+)", "acr": "BIM A+", "url": null, "new": false}];
+var UP = [{"name": "Advanced Materials Science and Engineering", "acr": "AMASE", "coord": "Saarland University", "country": "Germany"}, {"name": "HVDC and Converter-based Power Systems Engineering", "acr": "DCMAPS", "coord": "Universitat Politècnica de Catalunya", "country": "Spain"}, {"name": "Smart LightWave Technologies for 6G Telecom Systems", "acr": "SMARTLight", "coord": "Aston University", "country": "United Kingdom"}, {"name": "Smart Chemical Engineering for Sustainable Development", "acr": "Smart SustainChemE", "coord": "University of Lorraine", "country": "France"}, {"name": "System-level, Sustainable and AI-aided Structural Design", "acr": "S3AID", "coord": "Budapest University of Technology and Economics", "country": "Hungary"}, {"name": "Management and Engineering of Environment and Energy for a Sustainable Future", "acr": "ME3-4S", "coord": "Institut Mines-Télécom", "country": "France"}, {"name": "Future Leaders in Logistics, Environmental and Efficient Transportation", "acr": "M-FLEET", "coord": "University of Pau and the Adour Region", "country": "France"}, {"name": "Medical Image Analysis", "acr": "MAIA", "coord": "University of Girona", "country": "Spain"}, {"name": "Waves, Acoustics, Vibrations, Engineering and Sound", "acr": "WAVES Plus", "coord": "University of Coimbra", "country": "Portugal"}, {"name": "Urban Climate and Sustainability Plus", "acr": "MUrCS Plus", "coord": "Glasgow Caledonian University", "country": "United Kingdom"}, {"name": "Quantitative Biodiversity", "acr": "QuBiD", "coord": "University of Warsaw", "country": "Poland"}, {"name": "Economic Policies for New Global Cooperation and Alliances", "acr": "GLOBAL COOP", "coord": "State University of Campinas", "country": "Brazil"}, {"name": "Global Development Policy", "acr": "GLODEP", "coord": "Palacký University Olomouc", "country": "Czechia"}, {"name": "Euroculture: European Politics, Culture and Society in a Global Context", "acr": "", "coord": "University of Groningen", "country": "Netherlands"}, {"name": "Techniques, Heritage and Territories of Industry", "acr": "TPTI", "coord": "Paris 1 Panthéon-Sorbonne University", "country": "France"}, {"name": "European Master's in Sexology", "acr": "EMSEX", "coord": "COFAC", "country": "Portugal"}, {"name": "European Master in Animation", "acr": "RE:ANIMA", "coord": "COFAC", "country": "Portugal"}, {"name": "Cyberspace, Behaviour and e-Therapy", "acr": "CYBER", "coord": "COFAC", "country": "Portugal"}];
+
+/* ---- The 6 fully verified courses (unchanged facts) ---- */
+var DEADLINES = {"IMIM":"4 Jan 2027","LIVE_Innov":"20 Jan 2027","Europubhealth+":"8 Jan 2027","MemBioMed":"28 Feb 2027","IDOHNext":"15 Jan 2027","EMPHID":"31 Dec 2026"};
+var FULL = {"IMIM":"International Master in Innovative Medicine","LIVE_Innov":"Leading International Vaccinology Education","Europubhealth+":"European Master in Public Health","MemBioMed":"From Membrane Biology to Neuroscience & Experimental Medicine","IDOHNext":"Infectious Diseases and One Health","EMPHID":"Public Health in Disasters"};
+var VDESC = {
+  "IMIM":"Translational biomedical research — turning lab discoveries into innovative medicines and therapies.",
+  "IDOHNext":"Infectious diseases and One Health — human, animal and environmental health studied together.",
+  "LIVE_Innov":"Vaccinology — immunology, vaccine development and the vaccine industry, from lab to public programmes.",
+  "MemBioMed":"Membrane biology, neuroscience and experimental medicine — cell biology at the research frontier.",
+  "Europubhealth+":"European public health — health policy, prevention and health systems, with a foundation year then a specialisation.",
+  "EMPHID":"Public health in disasters — emergency response, humanitarian health and disaster risk reduction."
 };
-var FULL = {
-  "IMIM":"International Master in Innovative Medicine",
-  "LIVE_Innov":"Leading International Vaccinology Education",
-  "Europubhealth+":"European Master in Public Health",
-  "MemBioMed":"From Membrane Biology to Neuroscience & Experimental Medicine",
-  "IDOHNext":"Infectious Diseases and One Health",
-  "EMPHID":"Public Health in Disasters"
+var VKEYS = {
+  "IMIM":"medicine innovative biomedical translational research laboratory therapy drug discovery clinical",
+  "IDOHNext":"infectious diseases one health zoonoses microbiology veterinary epidemiology pathogens",
+  "LIVE_Innov":"vaccines vaccinology vaccine immunology infectious public health immunisation",
+  "MemBioMed":"membrane biology neuroscience experimental medicine cell biology brain neurology imaging microscopy",
+  "Europubhealth+":"public health policy epidemiology prevention health systems europe",
+  "EMPHID":"public health disasters disaster emergency humanitarian crisis response relief"
 };
 var APPLY = {
   "IMIM":{url:"https://www.innovativemedicine.eu/", label:"Apply on the official IMIM site", when:"Applications open 25 Nov 2026 • Deadline 4 Jan 2027"},
@@ -244,89 +251,30 @@ var APPLY = {
   "Europubhealth+":{url:"https://emundus.izp.cm-uj.krakow.pl/", label:"Apply on the official portal", when:"Scholarship deadline 8 Jan 2027, 1:00pm CET", how:"https://www.europubhealth.org/application-procedure/"},
   "EMPHID":{url:"https://masterpublichealthdisasters.eu/", label:"Apply on the official EMPHID programme site", when:"Deadline 31 Dec 2026"}
 };
-function applyBoxHTML(code, compact){
-  var a = APPLY[code];
-  if(!a) return '';
-  var how = a.how ? '<a class="how-btn" href="'+a.how+'" target="_blank" rel="noopener">How to apply</a>' : '';
-  return '<div class="apply-box"><div class="apply-kicker">Where to apply</div>'
-    + '<div class="apply-actions"><a class="apply-btn" href="'+a.url+'" target="_blank" rel="noopener">Apply here →</a>'+how
-    + '<span class="apply-when">'+a.label+' • '+a.when+'</span></div>'
-    + '<p class="apply-honest">You apply to the consortium, not to one school — one application covers the whole course.</p></div>';
-}
-function whereApplyHTML(code){
-  var a = APPLY[code];
-  if(!a) return '';
-  var how = a.how ? '<a class="how-btn" href="'+a.how+'" target="_blank" rel="noopener">How to apply</a>' : '';
-  return '<div class="where-apply"><h4>Where to apply</h4>'
-    + '<p class="wa-sub">'+FULL[code]+' ('+code+') — '+a.label+'. '+a.when+'.</p>'
-    + '<div class="apply-actions"><a class="apply-btn" href="'+a.url+'" target="_blank" rel="noopener">Apply here →</a>'+how+'</div>'
-    + '<p class="apply-honest">You apply to the consortium, not to one school — one application covers the whole course.</p></div>';
-}
-
-/* The 6 courses — searched by name, full title, description and subject keywords */
-var COURSES = [
-  {code:"IMIM", desc:"Translational biomedical research — turning lab discoveries into innovative medicines and therapies.", keys:"medicine innovative medicine biomedical translational research laboratory therapy therapies drug discovery clinical"},
-  {code:"IDOHNext", desc:"Infectious diseases and One Health — human, animal and environmental health studied together.", keys:"infectious infectious diseases one health zoonoses zoonotic microbiology veterinary epidemiology pathogens"},
-  {code:"LIVE_Innov", desc:"Vaccinology — immunology, vaccine development and the vaccine industry, from lab to public programmes.", keys:"vaccines vaccinology vaccine immunology infectious public health immunisation"},
-  {code:"MemBioMed", desc:"Membrane biology, neuroscience and experimental medicine — cell biology at the research frontier.", keys:"membrane biology neuroscience experimental medicine cell biology brain neurology imaging microscopy"},
-  {code:"Europubhealth+", desc:"European public health — health policy, prevention and health systems, with a foundation year then a specialisation.", keys:"public health health policy epidemiology prevention health systems europe"},
-  {code:"EMPHID", desc:"Public health in disasters — emergency response, humanitarian health and disaster risk reduction.", keys:"public health disasters disaster emergency humanitarian crisis response relief"}
-];
-
-/* Schools by country — only where the course actually has a partner university */
-var SCHOOLS = {
-  "Netherlands":[
-    {school:"University of Groningen", course:"IMIM"},
-    {school:"Europubhealth+ partner university — Netherlands", course:"Europubhealth+", year:"Year 2 specialisation only"}
-  ],
-  "Germany":[
-    {school:"Heidelberg University", course:"IMIM"},
-    {school:"Hannover Medical School", course:"IDOHNext"},
-    {school:"Osnabrück University", course:"MemBioMed"}
-  ],
-  "France":[
-    {school:"Université de Tours", course:"IDOHNext"},
-    {school:"Université Claude Bernard Lyon 1", course:"LIVE_Innov"},
-    {school:"Université Jean Monnet", course:"LIVE_Innov"},
-    {school:"Université Côte d'Azur, Nice", course:"MemBioMed"},
-    {school:"Europubhealth+ partner university — France", course:"Europubhealth+", year:"Year 2 specialisation only"}
-  ],
-  "Spain":[
-    {school:"Universitat Autònoma de Barcelona", course:"IDOHNext"},
-    {school:"Universitat Autònoma de Barcelona", course:"LIVE_Innov"},
-    {school:"Universitat de Barcelona", course:"LIVE_Innov"},
-    {school:"University of Granada", course:"Europubhealth+", year:"Year 1 foundation"},
-    {school:"Europubhealth+ partner university — Spain", course:"Europubhealth+", year:"Year 2 specialisation only"},
-    {school:"Universidad de Oviedo", course:"EMPHID"}
-  ],
-  "Sweden":[
-    {school:"Uppsala University", course:"IMIM"},
-    {school:"Karolinska Institutet", course:"EMPHID"}
-  ],
-  "Estonia":[
-    {school:"University of Tartu", course:"IMIM"}
-  ],
-  "Belgium":[
-    {school:"Universiteit Antwerpen", course:"LIVE_Innov"},
-    {school:"University of Liège", course:"Europubhealth+", year:"Year 1 foundation"}
-  ],
-  "Italy":[
-    {school:"University of Genoa", course:"MemBioMed"}
-  ],
-  "Ireland":[
-    {school:"University College Dublin", course:"Europubhealth+", year:"Year 1 foundation"}
-  ],
-  "United Kingdom":[
-    {school:"University of Sheffield", course:"Europubhealth+", year:"Year 1 foundation"}
-  ],
-  "Poland":[
-    {school:"Europubhealth+ partner university — Poland (Krakow)", course:"Europubhealth+", year:"Year 2 specialisation only"}
-  ],
-  "Cyprus":[
-    {school:"University of Nicosia", course:"EMPHID"}
-  ]
+/* Catalogue number -> verified course code */
+var VERIFIED_BY_N = {92:"IMIM", 14:"IDOHNext", 71:"LIVE_Innov", 88:"MemBioMed", 63:"Europubhealth+", 118:"EMPHID"};
+/* Deadlines verified on official programme sites (research, 26 Nov 2026) */
+var DV_BY_N = {
+  103:{deadline:"1 Dec 2026, 23:59 CET", site:"https://www.mundusmapp.org/financial-aid/", sitelabel:"Mundus MAPP official site — financial aid & application", note:"Scholarship / financial-aid deadline. Self-funded deadlines are later (15 Apr 2027 non-EU/EEA, 1 Jul 2027 EU/EEA)."},
+  32:{deadline:"12 Jan 2027, 15:00 Helsinki time", site:"https://www.master-ediss.eu/admission/", sitelabel:"EDISS official site — admission", note:"Intake 7 (2027–2029). Round opened 16 Nov 2026; studies start August 2027."},
+  113:{deadline:"3 Jan 2027 (partner countries) / 7 Feb 2027 (programme countries), 23:59 Dutch time", site:"https://www.groundwatermaster.eu/scholarships", sitelabel:"GroundwatCh official site — scholarships", note:"2027 is the last intake in its 2024–2027 grant window. Late applications are considered for admission only, not scholarship."}
 };
+var EUROCULTURE_DV = {deadline:"15 Jan 2027", site:"https://www.euroculturemaster.eu/application-procedure", sitelabel:"Euroculture official site — application procedure", note:"Scholarship deadline; applications opened 15 Oct 2026. Self-funded recommended deadlines: 1 May 2027 (non-EU/EEA) / 1 June 2027 (EU/EEA)."};
 
+var SCHOOLS = {
+  "Netherlands":[{school:"University of Groningen", course:"IMIM"},{school:"Europubhealth+ partner university — Netherlands", course:"Europubhealth+", year:"Year 2 specialisation only"}],
+  "Germany":[{school:"Heidelberg University", course:"IMIM"},{school:"Hannover Medical School", course:"IDOHNext"},{school:"Osnabrück University", course:"MemBioMed"}],
+  "France":[{school:"Université de Tours", course:"IDOHNext"},{school:"Université Claude Bernard Lyon 1", course:"LIVE_Innov"},{school:"Université Jean Monnet", course:"LIVE_Innov"},{school:"Université Côte d'Azur, Nice", course:"MemBioMed"},{school:"Europubhealth+ partner university — France", course:"Europubhealth+", year:"Year 2 specialisation only"}],
+  "Spain":[{school:"Universitat Autònoma de Barcelona", course:"IDOHNext"},{school:"Universitat Autònoma de Barcelona", course:"LIVE_Innov"},{school:"Universitat de Barcelona", course:"LIVE_Innov"},{school:"University of Granada", course:"Europubhealth+", year:"Year 1 foundation"},{school:"Europubhealth+ partner university — Spain", course:"Europubhealth+", year:"Year 2 specialisation only"},{school:"Universidad de Oviedo", course:"EMPHID"}],
+  "Sweden":[{school:"Uppsala University", course:"IMIM"},{school:"Karolinska Institutet", course:"EMPHID"}],
+  "Estonia":[{school:"University of Tartu", course:"IMIM"}],
+  "Belgium":[{school:"Universiteit Antwerpen", course:"LIVE_Innov"},{school:"University of Liège", course:"Europubhealth+", year:"Year 1 foundation"}],
+  "Italy":[{school:"University of Genoa", course:"MemBioMed"}],
+  "Ireland":[{school:"University College Dublin", course:"Europubhealth+", year:"Year 1 foundation"}],
+  "United Kingdom":[{school:"University of Sheffield", course:"Europubhealth+", year:"Year 1 foundation"}],
+  "Poland":[{school:"Europubhealth+ partner university — Poland (Krakow)", course:"Europubhealth+", year:"Year 2 specialisation only"}],
+  "Cyprus":[{school:"University of Nicosia", course:"EMPHID"}]
+};
 var SETTLEMENT = {
   "Netherlands":{stay:"12 months — Orientation Year (zoekjaar). Apply within 3 years of graduating.", work:"Yes — unrestricted. Work for any employer, freelance or start a business, no work permit needed during the Orientation Year.", next:"Highly Skilled Migrant permit via a recognised sponsor. Orientation-year holders get the reduced salary criterion: €3,122 gross/month in 2026.", pr:"Permanent residence after 5 years continuous legal residence — the Orientation Year counts. Civic integration requirements apply."},
   "Germany":{stay:"Up to 18 months — residence permit to look for a job after studying (§20 Residence Act).", work:"Yes — unrestricted work while you search.", next:"Skilled Worker permit or EU Blue Card, once you have a qualified job matching your degree, plus health insurance and secured livelihood.", pr:"Settlement permit after 4 years as a skilled worker — faster for Blue Card holders (27 months, or 21 with B1 German). Citizenship generally after 5 years."},
@@ -341,23 +289,30 @@ var SETTLEMENT = {
   "Poland":{stay:"Graduates of full-time studies in Poland can apply for a temporary residence permit to look for work / start a business.", work:"Yes — graduates of Polish higher education are exempt from needing a separate work permit. Employers can hire them without one.", next:"Temporary residence for employment / business once you have work, or the graduate job-search residence as a bridge.", pr:"EU long-term residence after 5 years legal residence, with a Polish language requirement."},
   "Cyprus":{stay:"No dedicated long post-study scheme comparable to Ireland or Germany.", work:"Staying to work normally requires an employer-sponsored employment permit — the employer applies and the role is tied to that employer.", next:"General employment permit via an employer in Cyprus.", pr:"Long-term residence after 5 years legal residence under EU long-term residence rules."}
 };
-
-/* Countries that offer a given course — derived strictly from SCHOOLS, in listed order */
 function countriesForCourse(code){
   var out = [];
   Object.keys(SCHOOLS).forEach(function(country){
-    SCHOOLS[country].forEach(function(s){
-      if(s.course === code && out.indexOf(country) === -1) out.push(country);
-    });
+    SCHOOLS[country].forEach(function(s){ if(s.course === code && out.indexOf(country) === -1) out.push(country); });
   });
   return out;
 }
-/* Schools for one course in one country — both filters always applied together */
 function schoolsFor(course, country){
   return (SCHOOLS[country] || []).filter(function(s){ return s.course === course; });
 }
 
-var selCourse = null;
+/* ---- Unified searchable entries: 189 catalogue + 18 upcoming ---- */
+var ENTRIES = [];
+CAT.forEach(function(it){
+  var vcode = VERIFIED_BY_N[it.n] || null;
+  ENTRIES.push({id:"cat"+it.n, n:it.n, name:it.name, acr:it.acr, url:it.url, isNew:!!it["new"], upcoming:false, vcode:vcode, dv:DV_BY_N[it.n] || null,
+    keys: vcode ? VKEYS[vcode] : ""});
+});
+UP.forEach(function(u, i){
+  ENTRIES.push({id:"up"+i, n:null, name:u.name + (u.acr ? " (" + u.acr + ")" : ""), acr:u.acr, url:null, isNew:true, upcoming:true, coord:u.coord, country:u.country, vcode:null,
+    dv: (u.name.indexOf("Euroculture") === 0) ? EUROCULTURE_DV : null, keys:""});
+});
+
+var sel = null; /* selected entry */
 var selCountry = null;
 var selSchoolIdx = null;
 
@@ -369,209 +324,230 @@ var skeletonGrid = document.getElementById('skeletonGrid');
 var courseGrid = document.getElementById('courseGrid');
 var courseEmpty = document.getElementById('courseEmpty');
 var resultsMeta = document.getElementById('resultsMeta');
+var stepper = document.getElementById('stepper');
+var stepResults = document.getElementById('step-results');
 var stepCountry = document.getElementById('step-country');
 var stepSchool = document.getElementById('step-school');
 var stepSettle = document.getElementById('step-settle');
+var stepApply = document.getElementById('step-apply');
 var countryGrid = document.getElementById('countryGrid');
+var countryCheck = document.getElementById('countryCheck');
 var schoolGrid = document.getElementById('schoolGrid');
+var schoolCheck = document.getElementById('schoolCheck');
 var settlePanel = document.getElementById('settlePanel');
+var applyPanel = document.getElementById('applyPanel');
 var toastEl = document.getElementById('toast');
-var toastTimer = null;
-var searchTimer = null;
+var toastTimer = null, searchTimer = null;
 
-/* --- Scroll progress (library: Scroll Progress) --- */
+/* Scroll progress (Rare UI: Scroll Progress) */
 var scrollBar = document.getElementById('scrollProgress');
 function updateScrollProgress(){
   var h = document.documentElement;
   var max = h.scrollHeight - h.clientHeight;
-  var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-  scrollBar.style.width = pct + '%';
+  scrollBar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
 }
 window.addEventListener('scroll', updateScrollProgress, {passive:true});
 updateScrollProgress();
 
-/* --- Step player (library: Step player) --- */
+/* Step player (Rare UI: Step player) */
 function setStep(n){
-  document.querySelectorAll('#stepper .sp').forEach(function(el){
+  stepper.querySelectorAll('.sp').forEach(function(el){
     var s = parseInt(el.getAttribute('data-sp'), 10);
     el.classList.toggle('active', s === n);
     el.classList.toggle('done', s < n);
     el.querySelector('.dot').textContent = s < n ? '✓' : String(s);
   });
 }
-
-/* --- Toast (library: Toast) --- */
+/* Toast (Rare UI: Toast) */
 function showToast(msg){
   toastEl.textContent = msg;
   toastEl.classList.add('show');
   if(toastTimer) clearTimeout(toastTimer);
   toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2600);
 }
-
-/* --- Animated counters (library: Animated counter) ---
-   Final values are in the HTML by default, so the numbers are never €0.
-   When the stats scroll into view they count up once, always ending on
-   the exact final value; a fallback timer restores the finals regardless. */
-function fmtCount(el, val){
-  var prefix = el.getAttribute('data-prefix') || '';
-  return prefix + val.toLocaleString('en-GB');
-}
-function runCounters(){
+/* Animated counter (Rare UI: Animated counter) — hero 189 */
+(function(){
+  var el = document.querySelector('.count');
+  if(!el) return;
+  var target = parseInt(el.getAttribute('data-target'), 10);
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('.count').forEach(function(el){
-    var target = parseInt(el.getAttribute('data-target'), 10);
-    if(reduce || !target){ el.textContent = fmtCount(el, target || 0); return; }
-    var start = Math.round(target * 0.55);
-    var t0 = null, dur = 900;
-    function tick(ts){
-      if(!t0) t0 = ts;
-      var p = Math.min(1, (ts - t0) / dur);
-      var val = Math.round(start + (target - start) * (1 - Math.pow(1 - p, 3)));
-      el.textContent = fmtCount(el, val);
-      if(p < 1) requestAnimationFrame(tick); else el.textContent = fmtCount(el, target);
-    }
-    requestAnimationFrame(tick);
-    setTimeout(function(){ el.textContent = fmtCount(el, target); }, 1600);
-  });
-}
-var countersDone = false;
-if('IntersectionObserver' in window){
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting && !countersDone){ countersDone = true; runCounters(); io.disconnect(); }
-    });
-  }, {threshold: 0.3});
-  var statsRow = document.getElementById('statsRow');
-  if(statsRow) io.observe(statsRow);
-  setTimeout(function(){ if(!countersDone){ countersDone = true; runCounters(); } }, 2500);
-} else { runCounters(); }
+  if(reduce || !target){ el.textContent = String(target); return; }
+  var start = Math.round(target * 0.55), t0 = null, dur = 900;
+  function tick(ts){
+    if(!t0) t0 = ts;
+    var p = Math.min(1, (ts - t0) / dur);
+    el.textContent = String(Math.round(start + (target - start) * (1 - Math.pow(1 - p, 3))));
+    if(p < 1) requestAnimationFrame(tick); else el.textContent = String(target);
+  }
+  requestAnimationFrame(tick);
+  setTimeout(function(){ el.textContent = String(target); }, 1600);
+})();
 
-function courseMatches(c, q){
-  if(!q) return 0;
-  var hay = (c.code + ' ' + FULL[c.code] + ' ' + c.desc + ' ' + c.keys).toLowerCase();
-  var score = 0;
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+function entryHay(e){ return (e.name + ' ' + (e.acr||'') + ' ' + (e.keys||'') + ' ' + (e.coord||'')).toLowerCase(); }
+function entryScore(e, q){
+  var hay = entryHay(e), score = 0;
+  if(e.acr && e.acr.toLowerCase() === q) score += 40;
   if(hay.indexOf(q) !== -1) score += 10;
-  if(c.code.toLowerCase() === q) score += 20;
-  q.split(/\s+/).forEach(function(w){
-    if(w && hay.indexOf(w) !== -1) score += 3;
-  });
+  q.split(/\s+/).forEach(function(w){ if(w && hay.indexOf(w) !== -1) score += 3; });
   return score;
 }
-
-function renderCourses(){
+function badgesHTML(e){
+  var b = '';
+  if(e.vcode) b += '<span class="pill verified">Countries, schools & settlement verified</span><span class="pill deadline">Deadline: ' + DEADLINES[e.vcode] + '</span>';
+  else if(e.dv) b += '<span class="pill deadline">Deadline: ' + esc(e.dv.deadline) + '</span>';
+  if(e.upcoming) b += '<span class="pill newb">New for 2027 — not yet in the live catalogue</span>';
+  else if(e.isNew) b += '<span class="pill newb">New for Sep 2027</span>';
+  if(!e.vcode && !e.dv) b += '<span class="pill source">Deadline: check official site</span>';
+  return b;
+}
+function renderResults(){
   var q = searchInput.value.trim().toLowerCase();
   searchClear.classList.toggle('hidden', !q);
-  var scored = COURSES.map(function(c){ return {c:c, score: courseMatches(c, q)}; });
-  var list = q ? scored.filter(function(x){ return x.score > 0; }).sort(function(a,b){ return b.score - a.score; }) : scored;
-  resultsMeta.textContent = q
-    ? (list.length === 1 ? '1 course matches “' + searchInput.value.trim() + '”' : list.length + ' courses match “' + searchInput.value.trim() + '”')
-    : 'All 6 courses — tap one to see where it is offered.';
-  courseEmpty.classList.toggle('hidden', list.length > 0);
-  courseGrid.innerHTML = list.map(function(x){
-    var c = x.c;
-    var n = countriesForCourse(c.code).length;
-    return '<div class="course-item"><button class="course-card'+(c.code===selCourse?' active':'')+'" data-course="'+c.code+'">'
-      + '<div class="code">'+c.code+'</div>'
-      + '<h3>'+FULL[c.code]+'</h3>'
-      + '<p class="desc">'+c.desc+'</p>'
-      + '<div class="meta"><span class="pill deadline">Deadline: '+DEADLINES[c.code]+'</span>'
-      + '<span class="pill">Offered in '+n+(n===1?' country':' countries')+'</span>'
-      + '<span class="pill source">Source: Erasmus Mundus consortium</span></div></button>'
-      + applyBoxHTML(c.code, true)
-      + '</div>';
+  if(!q){
+    stepResults.classList.add('hidden');
+    stepper.classList.add('hidden');
+    return;
+  }
+  stepper.classList.remove('hidden');
+  stepResults.classList.remove('hidden');
+  var scored = ENTRIES.map(function(e){ return {e:e, score:entryScore(e, q)}; })
+    .filter(function(x){ return x.score > 0; })
+    .sort(function(a,b){ return b.score - a.score; });
+  var total = scored.length, shown = scored.slice(0, 60);
+  resultsMeta.textContent = total === 0 ? '' :
+    (total === 1 ? '1 programme matches “' + searchInput.value.trim() + '”' : total + ' programmes match “' + searchInput.value.trim() + '”') +
+    (total > shown.length ? ' — showing the first ' + shown.length + ', refine your search to narrow it down' : '') +
+    '. Tap one to see where it is offered and how to apply.';
+  courseEmpty.classList.toggle('hidden', total > 0);
+  courseGrid.innerHTML = shown.map(function(x){
+    var e = x.e;
+    return '<button class="course-card' + (sel && sel.id === e.id ? ' active' : '') + '" data-id="' + e.id + '">'
+      + '<div class="code">' + esc(e.acr || 'Erasmus Mundus') + '</div>'
+      + '<h3>' + esc(e.name) + '</h3>'
+      + (e.vcode ? '<p class="desc">' + VDESC[e.vcode] + '</p>' : (e.upcoming ? '<p class="desc">Coordinated by ' + esc(e.coord) + ' (' + esc(e.country) + '). One of 37 programmes newly selected in July 2026 for the September 2027 intake.</p>' : ''))
+      + '<div class="meta">' + badgesHTML(e) + '</div></button>';
   }).join('');
   courseGrid.querySelectorAll('.course-card').forEach(function(btn){
     btn.addEventListener('click', function(){
-      selCourse = this.getAttribute('data-course');
-      selCountry = null;
-      selSchoolIdx = null;
-      renderCourses();
-      renderCountries();
-      stepSchool.classList.add('hidden');
-      stepSettle.classList.add('hidden');
-      setStep(2);
-      var n = countriesForCourse(selCourse).length;
-      showToast(selCourse + ' selected — ' + n + (n===1 ? ' country offers' : ' countries offer') + ' it');
-      stepCountry.scrollIntoView({behavior:'smooth', block:'start'});
+      var id = this.getAttribute('data-id');
+      sel = ENTRIES.filter(function(e){ return e.id === id; })[0] || null;
+      selCountry = null; selSchoolIdx = null;
+      renderResults();
+      renderCourseFlow();
     });
   });
 }
 
-function renderCountries(){
-  if(!selCourse){ stepCountry.classList.add('hidden'); return; }
+function officialLinkHTML(e){
+  if(e.upcoming) return '<a class="apply-btn" href="' + EC_SELECTION_URL + '" target="_blank" rel="noopener">Official EC list of 2026 selections →</a>';
+  if(e.url) return '<a class="apply-btn" href="' + e.url + '" target="_blank" rel="noopener">Erasmus+ project overview →</a>';
+  return '<a class="apply-btn" href="' + CATALOGUE_URL + '" target="_blank" rel="noopener">Find it in the official catalogue →</a>';
+}
+function checkSiteHTML(e, what){
+  return '<div class="checksite"><h3>' + what + ' — check the official programme site</h3>'
+    + '<p>The partner universities and countries for ' + esc(e.name) + ' are listed on the programme&rsquo;s official site and its Erasmus+ project-overview page — they are not published in the catalogue list, so they are not guessed here.</p>'
+    + '<div class="apply-actions">' + officialLinkHTML(e)
+    + '<a class="how-btn" href="' + CATALOGUE_URL + '" target="_blank" rel="noopener">Official EACEA catalogue</a></div></div>';
+}
+
+function renderCourseFlow(){
+  if(!sel){ [stepCountry, stepSchool, stepSettle, stepApply].forEach(function(s){ s.classList.add('hidden'); }); return; }
+  renderApply();
+  if(sel.vcode){ renderVerifiedCountries(); setStep(2); }
+  else {
+    stepCountry.classList.remove('hidden');
+    document.getElementById('countryTitle').textContent = 'Where it\u2019s offered';
+    document.getElementById('countrySub').textContent = sel.name + ' — partner countries are confirmed on the official programme site.';
+    countryGrid.innerHTML = '';
+    countryCheck.innerHTML = checkSiteHTML(sel, 'Countries and schools');
+    stepSchool.classList.add('hidden');
+    stepSettle.classList.remove('hidden');
+    document.getElementById('settleSub').textContent = 'A settlement plan is based on a country — and this programme\u2019s countries are confirmed on its official site first.';
+    settlePanel.innerHTML = '<div class="honest"><strong>No settlement plan shown yet:</strong> a settlement plan only applies to a country this programme actually offers. Once you confirm the partner countries on the official programme site, the plan for that country is what matters — finish in the country where you want to settle, and confirm the post-study rules on that country\u2019s official immigration site.</div>';
+    setStep(2);
+    showToast((sel.acr || sel.name) + ' selected — partner list is on the official site');
+    stepCountry.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+
+function renderVerifiedCountries(){
+  var code = sel.vcode;
   stepCountry.classList.remove('hidden');
-  document.getElementById('countryTitle').textContent = 'Where ' + selCourse + ' is offered';
-  document.getElementById('countrySub').textContent = 'Only the countries where ' + selCourse + ' — ' + FULL[selCourse] + ' — has a partner university. No other countries.';
-  var countries = countriesForCourse(selCourse);
+  countryCheck.innerHTML = '';
+  document.getElementById('countryTitle').textContent = 'Where ' + code + ' is offered';
+  document.getElementById('countrySub').textContent = 'Only the countries where ' + code + ' — ' + FULL[code] + ' — has a partner university. No other countries.';
+  var countries = countriesForCourse(code);
   countryGrid.innerHTML = countries.map(function(name){
-    var n = schoolsFor(selCourse, name).length;
-    var label = n === 1 ? '1 school for this course' : n + ' schools for this course';
-    return '<button class="country-card'+(name===selCountry?' active':'')+'" data-country="'+name+'"><h3>'+name+'</h3><span>'+label+'</span></button>';
+    var n = schoolsFor(code, name).length;
+    return '<button class="country-card' + (name === selCountry ? ' active' : '') + '" data-country="' + name + '"><h3>' + name + '</h3><span>' + (n === 1 ? '1 school for this course' : n + ' schools for this course') + '</span></button>';
   }).join('');
   countryGrid.querySelectorAll('.country-card').forEach(function(btn){
     btn.addEventListener('click', function(){
       selCountry = this.getAttribute('data-country');
       selSchoolIdx = null;
-      renderCountries();
-      renderSchools();
+      renderVerifiedCountries();
+      renderVerifiedSchools();
       stepSettle.classList.add('hidden');
       setStep(3);
       showToast(selCountry + ' selected');
       stepSchool.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
+  showToast(code + ' selected — ' + countries.length + ' countries offer it');
+  stepCountry.scrollIntoView({behavior:'smooth', block:'start'});
 }
-
-function renderSchools(){
-  if(!selCourse || !selCountry){ stepSchool.classList.add('hidden'); return; }
+function renderVerifiedSchools(){
+  var code = sel.vcode;
+  if(!selCountry){ stepSchool.classList.add('hidden'); return; }
   stepSchool.classList.remove('hidden');
-  document.getElementById('schoolTitle').textContent = selCourse + ' in ' + selCountry;
-  document.getElementById('schoolSub').textContent = 'Only schools in ' + selCountry + ' that offer ' + selCourse + '. Tap one to see the settlement plan for ' + selCountry + '.';
-  var list = schoolsFor(selCourse, selCountry);
+  schoolCheck.innerHTML = '';
+  document.getElementById('schoolTitle').textContent = code + ' in ' + selCountry;
+  document.getElementById('schoolSub').textContent = 'Only schools in ' + selCountry + ' that offer ' + code + '. Tap one to see the settlement plan for ' + selCountry + '.';
+  var list = schoolsFor(code, selCountry);
   schoolGrid.innerHTML = list.map(function(s, i){
-    return '<button class="school-card'+(i===selSchoolIdx?' active':'')+'" data-idx="'+i+'">'
-      + '<div class="school">'+s.school+'</div>'
-      + '<h3>'+s.course+' — '+FULL[s.course]+'</h3>'
-      + '<div class="meta"><span class="pill deadline">Deadline: '+DEADLINES[s.course]+'</span>'
-      + (s.year ? '<span class="pill year">'+s.year+'</span>' : '<span class="pill">2 years • 120 ECTS</span>')
+    return '<button class="school-card' + (i === selSchoolIdx ? ' active' : '') + '" data-idx="' + i + '">'
+      + '<div class="school">' + esc(s.school) + '</div>'
+      + '<h3>' + s.course + ' — ' + FULL[s.course] + '</h3>'
+      + '<div class="meta"><span class="pill deadline">Deadline: ' + DEADLINES[s.course] + '</span>'
+      + (s.year ? '<span class="pill newb">' + s.year + '</span>' : '<span class="pill">2 years • 120 ECTS</span>')
       + '</div></button>';
   }).join('');
   schoolGrid.querySelectorAll('.school-card').forEach(function(btn){
     btn.addEventListener('click', function(){
       selSchoolIdx = parseInt(this.getAttribute('data-idx'), 10);
-      renderSchools();
+      renderVerifiedSchools();
       renderSettlement();
       setStep(4);
-      var s = schoolsFor(selCourse, selCountry)[selSchoolIdx];
+      var s = schoolsFor(code, selCountry)[selSchoolIdx];
       showToast(s.school + ' — settlement plan for ' + selCountry);
       stepSettle.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
 }
-
-/* Settlement as expandable FAQ rows (library: FAQ) */
+/* Settlement as expandable FAQ rows (Rare UI: FAQ) */
 function faqItem(label, text, open){
-  return '<div class="faq-item'+(open?' open':'')+'">'
-    + '<button type="button" class="faq-q" aria-expanded="'+(open?'true':'false')+'"><span>'+label+'</span><span class="chev" aria-hidden="true">+</span></button>'
-    + '<div class="faq-a'+(open?'':' hidden')+'"><p>'+text+'</p></div></div>';
+  return '<div class="faq-item' + (open ? ' open' : '') + '">'
+    + '<button type="button" class="faq-q" aria-expanded="' + (open ? 'true' : 'false') + '"><span>' + label + '</span><span class="chev" aria-hidden="true">+</span></button>'
+    + '<div class="faq-a' + (open ? '' : ' hidden') + '"><p>' + text + '</p></div></div>';
 }
 function renderSettlement(){
-  if(!selCourse || !selCountry || selSchoolIdx === null){ stepSettle.classList.add('hidden'); return; }
-  var s = schoolsFor(selCourse, selCountry)[selSchoolIdx];
+  var code = sel.vcode;
+  if(!selCountry || selSchoolIdx === null){ stepSettle.classList.add('hidden'); return; }
+  var s = schoolsFor(code, selCountry)[selSchoolIdx];
   if(!s){ stepSettle.classList.add('hidden'); return; }
   var d = SETTLEMENT[selCountry];
   stepSettle.classList.remove('hidden');
   document.getElementById('settleSub').textContent = s.course + ' at ' + s.school + ' — what happens after you graduate in ' + selCountry + '. Tap a row to expand it.';
-  settlePanel.innerHTML = '<article class="panel"><h3>'+selCountry+' — after your MSc</h3>'
-    + '<p class="context">'+s.school+' • '+s.course+' • Scholarship deadline '+DEADLINES[s.course]+'</p>'
+  settlePanel.innerHTML = '<article class="panel"><h3>' + selCountry + ' — after your MSc</h3>'
+    + '<p class="context">' + esc(s.school) + ' • ' + s.course + ' • Scholarship deadline ' + DEADLINES[s.course] + '</p>'
     + '<div class="faq">'
     + faqItem('How long you can stay', d.stay, true)
     + faqItem('Can you work?', d.work, false)
     + faqItem('What permit comes next', d.next, false)
     + faqItem('Path to long-term residence', d.pr, false)
     + '</div>'
-    + whereApplyHTML(s.course)
-    + '<div class="honest"><strong>Important:</strong> This settlement plan applies to the country where you finish and hold your student permit at graduation — not to every country you visit during the Erasmus mobility. If you want to settle in '+selCountry+', plan to finish there and confirm your final placement with the consortium before you accept a mobility track.</div>'
+    + '<div class="honest"><strong>Important:</strong> This settlement plan applies to the country where you finish and hold your student permit at graduation — not to every country you visit during the Erasmus mobility. If you want to settle in ' + selCountry + ', plan to finish there and confirm your final placement with the consortium before you accept a mobility track.</div>'
     + '</article>';
   settlePanel.querySelectorAll('.faq-item').forEach(function(item){
     var q = item.querySelector('.faq-q');
@@ -584,21 +560,45 @@ function renderSettlement(){
   });
 }
 
-/* Web Search behaviour (library: Web Search): on typing, show the globe
-   progress ring, the shimmering "Searching…" label and skeleton cards,
-   then resolve into the real course cards. Courses only. */
+/* Step 5 — How to apply, for every selected course */
+function renderApply(){
+  stepApply.classList.remove('hidden');
+  document.getElementById('applySub').textContent = 'How to apply for ' + sel.name + '. There is no central Erasmus application — you apply to the programme itself.';
+  if(sel.vcode){
+    var a = APPLY[sel.vcode];
+    var how = a.how ? '<a class="how-btn" href="' + a.how + '" target="_blank" rel="noopener">How to apply</a>' : '';
+    applyPanel.innerHTML = '<div class="where-apply"><h4>Where to apply</h4>'
+      + '<p class="wa-sub">' + FULL[sel.vcode] + ' (' + sel.vcode + ') — ' + a.label + '. ' + a.when + '.</p>'
+      + '<div class="apply-actions"><a class="apply-btn" href="' + a.url + '" target="_blank" rel="noopener">Apply here →</a>' + how + '</div>'
+      + '<p class="apply-honest">You apply to the consortium, not to one school — one application covers the whole course.</p></div>';
+  } else if(sel.dv){
+    var d = sel.dv;
+    applyPanel.innerHTML = '<div class="where-apply"><h4>Where to apply</h4>'
+      + '<p class="wa-sub">' + esc(sel.name) + ' — scholarship deadline verified on the official programme site: <b>' + esc(d.deadline) + '</b>. ' + esc(d.note) + '</p>'
+      + '<div class="apply-actions"><a class="apply-btn" href="' + d.site + '" target="_blank" rel="noopener">Apply on the official site →</a>' + officialLinkHTML(sel) + '</div>'
+      + '<p class="apply-honest">You apply to the consortium, not to one school — one application covers the whole course.</p></div>';
+  } else {
+    applyPanel.innerHTML = '<div class="where-apply"><h4>Where to apply</h4>'
+      + '<p class="wa-sub">' + esc(sel.name) + ' — <b>Deadline: check official site.</b> Most Erasmus Mundus applications fall between October and January for courses starting the following academic year, and each programme sets its own deadline on its own website. The catalogue also warns that some listed programmes may no longer offer scholarships — confirm on the official site.</p>'
+      + '<div class="apply-actions">' + officialLinkHTML(sel) + '<a class="how-btn" href="' + CATALOGUE_URL + '" target="_blank" rel="noopener">Official EACEA catalogue</a></div>'
+      + '<p class="apply-honest">You apply to the consortium, not to one school — one application covers the whole course. The programme&rsquo;s own website is reached from its catalogue entry / project-overview page.</p></div>';
+  }
+}
+
+/* Web Search behaviour (Rare UI: Web Search): nothing shows until a search
+   runs — globe progress ring, shimmer label and skeleton cards, then results. */
 function handleSearchInput(){
-  selCourse = null;
-  selCountry = null;
-  selSchoolIdx = null;
-  stepCountry.classList.add('hidden');
-  stepSchool.classList.add('hidden');
-  stepSettle.classList.add('hidden');
+  sel = null; selCountry = null; selSchoolIdx = null;
+  [stepCountry, stepSchool, stepSettle, stepApply].forEach(function(s){ s.classList.add('hidden'); });
   setStep(1);
-  searchClear.classList.toggle('hidden', !searchInput.value.trim());
+  var q = searchInput.value.trim();
+  searchClear.classList.toggle('hidden', !q);
+  if(!q){ stepResults.classList.add('hidden'); stepper.classList.add('hidden'); return; }
+  stepper.classList.remove('hidden');
+  stepResults.classList.remove('hidden');
   if(searchTimer) clearTimeout(searchTimer);
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){ renderCourses(); return; }
+  if(reduce){ renderResults(); return; }
   searchBox.classList.add('is-searching');
   searchStatus.classList.remove('hidden');
   courseGrid.classList.add('hidden');
@@ -610,7 +610,7 @@ function handleSearchInput(){
     searchStatus.classList.add('hidden');
     skeletonGrid.classList.add('hidden');
     courseGrid.classList.remove('hidden');
-    renderCourses();
+    renderResults();
   }, 380);
 }
 searchInput.addEventListener('input', handleSearchInput);
@@ -626,9 +626,7 @@ document.getElementById('chipRow').querySelectorAll('.chip').forEach(function(ch
     searchInput.focus();
   });
 });
-
 setStep(1);
-renderCourses();
 </script>
 </body>
 </html>
