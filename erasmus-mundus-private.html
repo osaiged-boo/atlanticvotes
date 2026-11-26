@@ -84,6 +84,20 @@ a{color:var(--org2)} button{font:inherit;cursor:pointer}
 .course-card .code{font-size:13px;letter-spacing:.07em;text-transform:uppercase;font-weight:800;color:var(--org2)}
 .course-card h3{font-size:20px;margin:6px 0 4px;line-height:1.2}
 .course-card .desc{color:var(--muted);font-size:14.5px;margin:0}
+.course-item{display:flex;flex-direction:column}
+.course-item .course-card{flex:1}
+.apply-box{margin-top:8px;background:#171310;border:1px solid #3A2A18;border-radius:14px;padding:12px 14px}
+.apply-box .apply-kicker{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--org2);margin-bottom:8px}
+.apply-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.apply-btn{display:inline-flex;align-items:center;gap:6px;background:var(--org);color:#fff;text-decoration:none;font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:999px;line-height:1;white-space:nowrap}
+.apply-btn:hover{background:#FF6A1A;color:#fff}
+.how-btn{display:inline-flex;align-items:center;background:transparent;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;padding:9px 14px;border-radius:999px;border:1px solid #45454D;line-height:1;white-space:nowrap}
+.how-btn:hover{border-color:var(--org);color:var(--org2)}
+.apply-when{font-size:13px;color:var(--muted);font-weight:600;width:100%}
+.apply-honest{font-size:13.5px;color:#EDE6DA;margin:9px 0 0;line-height:1.45}
+.where-apply{margin-top:18px;background:#1C1C1F;border:1px solid #333338;border-radius:16px;padding:18px}
+.where-apply h4{font-family:"Bricolage Grotesque",sans-serif;font-size:22px;margin:0 0 4px;line-height:1.1}
+.where-apply .wa-sub{color:var(--muted);font-size:14.5px;margin:0 0 14px}
 .country-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 @media(min-width:700px){.country-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:960px){.country-grid{grid-template-columns:repeat(4,1fr)}}
@@ -222,6 +236,32 @@ var FULL = {
   "IDOHNext":"Infectious Diseases and One Health",
   "EMPHID":"Public Health in Disasters"
 };
+var APPLY = {
+  "IMIM":{url:"https://www.innovativemedicine.eu/", label:"Apply on the official IMIM site", when:"Applications open 25 Nov 2026 • Deadline 4 Jan 2027"},
+  "IDOHNext":{url:"https://applications.infectious-diseases-one-health.eu/", label:"Apply on the official IDOHNext portal", when:"Opens 1 Dec 2026 • Deadline 15 Jan 2027"},
+  "LIVE_Innov":{url:"https://masterlive-vaccinology.eu/", label:"Apply on the official LIVE site", when:"Deadline 20 Jan 2027"},
+  "MemBioMed":{url:"https://cotedazur-master-membiomed.tchooz.app/membiomed-2027-2029", label:"Apply on the official MemBioMed portal", when:"Opens 1 Dec 2026 • Deadline 28 Feb 2027 for partner countries"},
+  "Europubhealth+":{url:"https://emundus.izp.cm-uj.krakow.pl/", label:"Apply on the official portal", when:"Scholarship deadline 8 Jan 2027, 1:00pm CET", how:"https://www.europubhealth.org/application-procedure/"},
+  "EMPHID":{url:"https://masterpublichealthdisasters.eu/", label:"Apply on the official EMPHID programme site", when:"Deadline 31 Dec 2026"}
+};
+function applyBoxHTML(code, compact){
+  var a = APPLY[code];
+  if(!a) return '';
+  var how = a.how ? '<a class="how-btn" href="'+a.how+'" target="_blank" rel="noopener">How to apply</a>' : '';
+  return '<div class="apply-box"><div class="apply-kicker">Where to apply</div>'
+    + '<div class="apply-actions"><a class="apply-btn" href="'+a.url+'" target="_blank" rel="noopener">Apply here →</a>'+how
+    + '<span class="apply-when">'+a.label+' • '+a.when+'</span></div>'
+    + '<p class="apply-honest">You apply to the consortium, not to one school — one application covers the whole course.</p></div>';
+}
+function whereApplyHTML(code){
+  var a = APPLY[code];
+  if(!a) return '';
+  var how = a.how ? '<a class="how-btn" href="'+a.how+'" target="_blank" rel="noopener">How to apply</a>' : '';
+  return '<div class="where-apply"><h4>Where to apply</h4>'
+    + '<p class="wa-sub">'+FULL[code]+' ('+code+') — '+a.label+'. '+a.when+'.</p>'
+    + '<div class="apply-actions"><a class="apply-btn" href="'+a.url+'" target="_blank" rel="noopener">Apply here →</a>'+how+'</div>'
+    + '<p class="apply-honest">You apply to the consortium, not to one school — one application covers the whole course.</p></div>';
+}
 
 /* The 6 courses — searched by name, full title, description and subject keywords */
 var COURSES = [
@@ -430,13 +470,15 @@ function renderCourses(){
   courseGrid.innerHTML = list.map(function(x){
     var c = x.c;
     var n = countriesForCourse(c.code).length;
-    return '<button class="course-card'+(c.code===selCourse?' active':'')+'" data-course="'+c.code+'">'
+    return '<div class="course-item"><button class="course-card'+(c.code===selCourse?' active':'')+'" data-course="'+c.code+'">'
       + '<div class="code">'+c.code+'</div>'
       + '<h3>'+FULL[c.code]+'</h3>'
       + '<p class="desc">'+c.desc+'</p>'
       + '<div class="meta"><span class="pill deadline">Deadline: '+DEADLINES[c.code]+'</span>'
       + '<span class="pill">Offered in '+n+(n===1?' country':' countries')+'</span>'
-      + '<span class="pill source">Source: Erasmus Mundus consortium</span></div></button>';
+      + '<span class="pill source">Source: Erasmus Mundus consortium</span></div></button>'
+      + applyBoxHTML(c.code, true)
+      + '</div>';
   }).join('');
   courseGrid.querySelectorAll('.course-card').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -528,6 +570,7 @@ function renderSettlement(){
     + faqItem('What permit comes next', d.next, false)
     + faqItem('Path to long-term residence', d.pr, false)
     + '</div>'
+    + whereApplyHTML(s.course)
     + '<div class="honest"><strong>Important:</strong> This settlement plan applies to the country where you finish and hold your student permit at graduation — not to every country you visit during the Erasmus mobility. If you want to settle in '+selCountry+', plan to finish there and confirm your final placement with the consortium before you accept a mobility track.</div>'
     + '</article>';
   settlePanel.querySelectorAll('.faq-item').forEach(function(item){
