@@ -14,12 +14,16 @@
 <style>
 :root{--bg:#0A0A0B;--surface:#141416;--surface2:#1C1C1F;--ink:#FAFAF8;--muted:#A9A9B2;--line:#27272C;--org:#FF4D00;--org2:#FF7A29;--amber:#FFB224}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;line-height:1.55;background-image:radial-gradient(900px 480px at 85% -60px,rgba(255,77,0,.13),transparent 60%)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;line-height:1.55}
 h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:1.05;margin:0;letter-spacing:-.015em}
 a{color:var(--org2)} button{font:inherit;cursor:pointer}
+#scrollProgress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--org);z-index:80}
 .wrap{max-width:1020px;margin:0 auto;padding:0 18px 56px}
-.hero{padding:36px 0 4px}
+.hero{padding:36px 0 4px;position:relative;overflow:hidden}
 @media(min-width:860px){.hero{padding-top:44px}}
+.hero>*{position:relative;z-index:1}
+.orb{position:absolute;z-index:0;width:360px;height:360px;right:-70px;top:-50px;pointer-events:none;background:radial-gradient(circle at 35% 35%,rgba(255,122,41,.45),rgba(255,77,0,.16) 58%,transparent 72%);filter:blur(8px);border-radius:42% 58% 63% 37%/45% 42% 58% 55%;animation:orbMorph 14s ease-in-out infinite alternate}
+@keyframes orbMorph{from{transform:translate(0,0) scale(1) rotate(0deg);border-radius:42% 58% 63% 37%/45% 42% 58% 55%}to{transform:translate(-26px,20px) scale(1.09) rotate(14deg);border-radius:58% 42% 37% 63%/55% 58% 42% 45%}}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#1C1C1F;border:1px solid #2C2C31;border-radius:999px;padding:7px 13px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--org2)}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--org)}
 .hero h1{font-size:42px;margin:16px 0 12px;max-width:760px}
@@ -28,19 +32,41 @@ a{color:var(--org2)} button{font:inherit;cursor:pointer}
 .hero p{color:var(--muted);font-size:17.5px;margin:0;max-width:620px}
 .scholarship{margin-top:18px;display:inline-flex;flex-wrap:wrap;gap:8px 14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:14.5px}
 .scholarship b{color:#fff;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.stat b{font-family:"Bricolage Grotesque",sans-serif;font-size:24px;display:block;line-height:1.1}
+.stat span{color:var(--muted);font-size:13px;font-weight:600}
+.stepper{display:flex;flex-wrap:wrap;gap:8px 4px;margin-top:22px;align-items:center}
+.sp{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#71717A}
+.sp .dot{width:26px;height:26px;border-radius:50%;border:1px solid #3A3A40;display:grid;place-items:center;font-size:13px;background:var(--surface2);color:var(--muted);flex:0 0 26px}
+.sp.active{color:var(--ink)}
+.sp.active .dot{background:var(--org);border-color:var(--org);color:#fff}
+.sp.done{color:var(--muted)}
+.sp.done .dot{background:#2B1409;border-color:#4A2410;color:var(--org2)}
+.sp-line{flex:1 1 18px;height:1px;background:#2C2C31;min-width:14px}
 .step{margin-top:38px}
 .step-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
 .step-num{width:34px;height:34px;flex:0 0 34px;border-radius:50%;background:var(--org);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;align-self:center}
 .step h2{font-size:30px}
 .step p.sub{color:var(--muted);margin:0 0 16px 46px;max-width:640px}
 @media(max-width:560px){.step p.sub{margin-left:0}}
-.search-box{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid #3A3A40;border-radius:18px;padding:6px 6px 6px 20px;transition:.2s}
+.search-box{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid #3A3A40;border-radius:999px;padding:6px 6px 6px 12px;transition:border-color .2s,box-shadow .2s}
 .search-box:focus-within{border-color:var(--org);box-shadow:0 0 0 1px var(--org)}
-.search-box svg{flex:0 0 22px;color:var(--org2)}
+.globe-wrap{position:relative;width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;color:var(--org2)}
+.globe-wrap svg.globe{position:relative;z-index:1}
+.globe-wrap svg.ring{position:absolute;inset:0;transform:rotate(-90deg)}
+.globe-wrap svg.ring circle{fill:none;stroke-width:2.5}
+.globe-wrap svg.ring .track{stroke:#2E2E33}
+.globe-wrap svg.ring .prog{stroke:var(--org);stroke-dasharray:100.5;stroke-dashoffset:100.5;transition:stroke-dashoffset .5s ease}
+.search-box.is-searching svg.ring .prog{stroke-dashoffset:18}
 .search-box input{flex:1;min-width:0;background:none;border:none;outline:none;color:var(--ink);font:inherit;font-size:18px;font-weight:600;padding:12px 0}
 .search-box input::placeholder{color:#71717A;font-weight:500}
-.search-clear{flex:0 0 auto;background:var(--surface2);border:1px solid var(--line);color:var(--muted);border-radius:12px;padding:9px 14px;font-size:14px;font-weight:700}
+.search-clear{flex:0 0 auto;background:var(--surface2);border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:9px 14px;font-size:14px;font-weight:700}
 .search-clear:hover{color:var(--ink);border-color:#45454D}
+.search-status{margin-top:10px;font-size:14px;min-height:20px}
+.shimmer{font-weight:800;background:linear-gradient(90deg,#71717A,#FAFAF8,#71717A);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 1.2s linear infinite}
+@keyframes shim{to{background-position:-200% 0}}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .chips span{font-size:13.5px;color:var(--muted);font-weight:600;align-self:center}
 .chip{background:#1E1E21;border:1px solid #2E2E33;color:var(--ink);border-radius:999px;padding:6px 13px;font-size:13.5px;font-weight:700;transition:.2s}
@@ -48,6 +74,10 @@ a{color:var(--org2)} button{font:inherit;cursor:pointer}
 .results-meta{font-size:14px;color:var(--muted);font-weight:600;margin:18px 0 10px}
 .course-grid{display:grid;gap:12px}
 @media(min-width:760px){.course-grid{grid-template-columns:1fr 1fr}}
+.skeleton-grid{display:grid;gap:12px}
+@media(min-width:760px){.skeleton-grid{grid-template-columns:1fr 1fr}}
+.skel{height:122px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(90deg,#141416,#1E1E21,#141416);background-size:200% 100%;animation:shimBg 1.1s linear infinite}
+@keyframes shimBg{to{background-position:-200% 0}}
 .course-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:left;color:var(--ink);width:100%;transition:.2s}
 .course-card:hover{border-color:#45454D;transform:translateY(-2px)}
 .course-card.active{border-color:var(--org);box-shadow:0 0 0 1px var(--org)}
@@ -73,39 +103,65 @@ a{color:var(--org2)} button{font:inherit;cursor:pointer}
 .pill{font-size:13px;background:#1E1E21;border:1px solid #2E2E33;padding:6px 9px;border-radius:999px;font-weight:700}
 .pill.deadline{color:#FF9E57;border-color:#4A2410;background:#2B1409}
 .pill.year{color:#FFB224;border-color:#3A2A18;background:#1F1808}
+.pill.source{color:var(--muted)}
 .empty{background:var(--surface);border:1px dashed #333338;border-radius:18px;padding:20px;color:var(--muted);font-size:15px}
 .panel{background:var(--surface);border:1px solid #333338;border-radius:22px;padding:22px}
 .panel h3{font-size:28px;margin-bottom:4px}
 .panel .context{color:var(--muted);margin:0 0 16px}
-.kv{display:grid;gap:10px}
-@media(min-width:760px){.kv{grid-template-columns:1fr 1fr}}
-.kv div{background:#19191C;border:1px solid #2A2A2F;border-radius:16px;padding:14px}
-.kv b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;color:var(--org2);margin-bottom:5px}
-.kv p{margin:0;font-size:14.5px}
+.faq{border:1px solid #2A2A2F;border-radius:16px;overflow:hidden}
+.faq-item{background:#19191C}
+.faq-item+.faq-item{border-top:1px solid #2A2A2F}
+.faq-q{width:100%;background:none;border:none;color:var(--ink);text-align:left;padding:15px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:800;font-size:15px}
+.faq-q .chev{color:var(--org2);font-size:20px;line-height:1;transition:transform .2s;flex:0 0 auto}
+.faq-item.open .faq-q .chev{transform:rotate(45deg)}
+.faq-a{padding:0 16px 16px}
+.faq-a p{margin:0;font-size:14.5px;color:#D8D8DE}
 .honest{margin-top:16px;background:#171310;border:1px solid #3A2A18;border-radius:14px;padding:14px 16px;font-size:14.5px;color:#EDE6DA}
 .honest strong{color:var(--org2)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);background:#1C1C1F;border:1px solid #3A3A40;color:var(--ink);padding:11px 18px;border-radius:999px;font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:90;max-width:calc(100vw - 32px);text-align:center;box-shadow:0 12px 32px rgba(0,0,0,.45)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 footer{margin-top:40px;font-size:13px;color:#71717A;border-top:1px solid var(--line);padding-top:16px}
+footer p{margin:0 0 8px}
 .hidden{display:none}
+@media(prefers-reduced-motion:reduce){.orb{animation:none}.shimmer{animation:none;color:var(--muted)}.skel{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<div id="scrollProgress" aria-hidden="true"></div>
 <div class="wrap">
   <section class="hero">
+    <div class="orb" aria-hidden="true"></div>
     <div class="eyebrow">Erasmus Mundus • Sep 2027 intake</div>
     <h1>Find your <em>Erasmus MSc.</em><br>Search a course.<br>See where it&rsquo;s offered.<br>See how you can <em>settle.</em></h1>
     <p>Search the 6 Erasmus Mundus MSc courses. Pick one, and you will only see the countries and schools where that course is actually taught — then the settlement plan for the country you pick.</p>
     <div class="scholarship"><b>€1,400 / month</b><span>scholarship for up to 24 months • No tuition • Insurance covered • 6 courses</span></div>
+    <div class="stats" id="statsRow" aria-label="Scholarship in numbers">
+      <div class="stat"><b class="count" data-target="1400" data-prefix="€">€1,400</b><span>per month</span></div>
+      <div class="stat"><b class="count" data-target="33600" data-prefix="€">€33,600</b><span>maximum over 24 months</span></div>
+      <div class="stat"><b class="count" data-target="6">6</b><span>courses</span></div>
+      <div class="stat"><b class="count" data-target="12">12</b><span>countries</span></div>
+    </div>
+    <nav class="stepper" id="stepper" aria-label="Your progress through the steps">
+      <div class="sp active" data-sp="1"><span class="dot">1</span>Search</div><div class="sp-line" aria-hidden="true"></div>
+      <div class="sp" data-sp="2"><span class="dot">2</span>Country</div><div class="sp-line" aria-hidden="true"></div>
+      <div class="sp" data-sp="3"><span class="dot">3</span>School</div><div class="sp-line" aria-hidden="true"></div>
+      <div class="sp" data-sp="4"><span class="dot">4</span>Settlement</div>
+    </nav>
   </section>
 
   <!-- 1. SEARCH THE COURSE -->
   <section class="step" id="step-search">
     <div class="step-head"><div class="step-num">1</div><h2>Search the course</h2></div>
     <p class="sub">Search by course name or subject — for example medicine, vaccines, public health, infectious diseases or membrane biology.</p>
-    <div class="search-box">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.8-3.8"/></svg>
+    <div class="search-box" id="searchBox">
+      <span class="globe-wrap" aria-hidden="true">
+        <svg class="ring" width="38" height="38" viewBox="0 0 38 38"><circle class="track" cx="19" cy="19" r="16"/><circle class="prog" cx="19" cy="19" r="16"/></svg>
+        <svg class="globe" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+      </span>
       <input type="search" id="searchInput" placeholder="Search Erasmus courses…" autocomplete="off" aria-label="Search Erasmus Mundus courses" />
       <button type="button" class="search-clear hidden" id="searchClear">Clear</button>
     </div>
+    <div class="search-status hidden" id="searchStatus" aria-live="polite"><span class="shimmer">Searching the 6 courses…</span></div>
     <div class="chips" id="chipRow">
       <span>Try:</span>
       <button type="button" class="chip" data-q="medicine">medicine</button>
@@ -116,6 +172,7 @@ footer{margin-top:40px;font-size:13px;color:#71717A;border-top:1px solid var(--l
       <button type="button" class="chip" data-q="disasters">disasters</button>
     </div>
     <p class="results-meta" id="resultsMeta"></p>
+    <div class="skeleton-grid hidden" id="skeletonGrid" aria-hidden="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
     <div class="course-grid" id="courseGrid"></div>
     <div class="empty hidden" id="courseEmpty">No Erasmus Mundus course here matches that search. Try a subject like <b>medicine</b>, <b>vaccines</b>, <b>public health</b>, <b>infectious</b> or <b>membrane</b> — this search covers courses only, not countries or schools.</div>
   </section>
@@ -141,8 +198,12 @@ footer{margin-top:40px;font-size:13px;color:#71717A;border-top:1px solid var(--l
     <div id="settlePanel"></div>
   </section>
 
-  <footer>Course, school and deadline facts from the Erasmus Mundus consortium sites for the September 2027 intake. Settlement summaries checked November 2026 — always confirm on the official immigration site of the country you plan to finish in before you rely on them. This is general information, not immigration advice.</footer>
+  <footer>
+    <p>Course, school and deadline facts from the Erasmus Mundus consortium sites for the September 2027 intake. Settlement summaries checked November 2026 — always confirm on the official immigration site of the country you plan to finish in before you rely on them. This is general information, not immigration advice.</p>
+    <p>Design elements inspired by <a href="https://rareui.com" target="_blank" rel="noopener">Rare UI (rareui.com)</a> — search, step, counter, FAQ, toast, scroll progress and orb patterns adapted in this page&rsquo;s own style.</p>
+  </footer>
 </div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 var DEADLINES = {
@@ -261,7 +322,10 @@ var selCountry = null;
 var selSchoolIdx = null;
 
 var searchInput = document.getElementById('searchInput');
+var searchBox = document.getElementById('searchBox');
 var searchClear = document.getElementById('searchClear');
+var searchStatus = document.getElementById('searchStatus');
+var skeletonGrid = document.getElementById('skeletonGrid');
 var courseGrid = document.getElementById('courseGrid');
 var courseEmpty = document.getElementById('courseEmpty');
 var resultsMeta = document.getElementById('resultsMeta');
@@ -271,6 +335,76 @@ var stepSettle = document.getElementById('step-settle');
 var countryGrid = document.getElementById('countryGrid');
 var schoolGrid = document.getElementById('schoolGrid');
 var settlePanel = document.getElementById('settlePanel');
+var toastEl = document.getElementById('toast');
+var toastTimer = null;
+var searchTimer = null;
+
+/* --- Scroll progress (library: Scroll Progress) --- */
+var scrollBar = document.getElementById('scrollProgress');
+function updateScrollProgress(){
+  var h = document.documentElement;
+  var max = h.scrollHeight - h.clientHeight;
+  var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+  scrollBar.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateScrollProgress, {passive:true});
+updateScrollProgress();
+
+/* --- Step player (library: Step player) --- */
+function setStep(n){
+  document.querySelectorAll('#stepper .sp').forEach(function(el){
+    var s = parseInt(el.getAttribute('data-sp'), 10);
+    el.classList.toggle('active', s === n);
+    el.classList.toggle('done', s < n);
+    el.querySelector('.dot').textContent = s < n ? '✓' : String(s);
+  });
+}
+
+/* --- Toast (library: Toast) --- */
+function showToast(msg){
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  if(toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2600);
+}
+
+/* --- Animated counters (library: Animated counter) ---
+   Final values are in the HTML by default, so the numbers are never €0.
+   When the stats scroll into view they count up once, always ending on
+   the exact final value; a fallback timer restores the finals regardless. */
+function fmtCount(el, val){
+  var prefix = el.getAttribute('data-prefix') || '';
+  return prefix + val.toLocaleString('en-GB');
+}
+function runCounters(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.count').forEach(function(el){
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    if(reduce || !target){ el.textContent = fmtCount(el, target || 0); return; }
+    var start = Math.round(target * 0.55);
+    var t0 = null, dur = 900;
+    function tick(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur);
+      var val = Math.round(start + (target - start) * (1 - Math.pow(1 - p, 3)));
+      el.textContent = fmtCount(el, val);
+      if(p < 1) requestAnimationFrame(tick); else el.textContent = fmtCount(el, target);
+    }
+    requestAnimationFrame(tick);
+    setTimeout(function(){ el.textContent = fmtCount(el, target); }, 1600);
+  });
+}
+var countersDone = false;
+if('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !countersDone){ countersDone = true; runCounters(); io.disconnect(); }
+    });
+  }, {threshold: 0.3});
+  var statsRow = document.getElementById('statsRow');
+  if(statsRow) io.observe(statsRow);
+  setTimeout(function(){ if(!countersDone){ countersDone = true; runCounters(); } }, 2500);
+} else { runCounters(); }
 
 function courseMatches(c, q){
   if(!q) return 0;
@@ -301,7 +435,8 @@ function renderCourses(){
       + '<h3>'+FULL[c.code]+'</h3>'
       + '<p class="desc">'+c.desc+'</p>'
       + '<div class="meta"><span class="pill deadline">Deadline: '+DEADLINES[c.code]+'</span>'
-      + '<span class="pill">Offered in '+n+(n===1?' country':' countries')+'</span></div></button>';
+      + '<span class="pill">Offered in '+n+(n===1?' country':' countries')+'</span>'
+      + '<span class="pill source">Source: Erasmus Mundus consortium</span></div></button>';
   }).join('');
   courseGrid.querySelectorAll('.course-card').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -312,6 +447,9 @@ function renderCourses(){
       renderCountries();
       stepSchool.classList.add('hidden');
       stepSettle.classList.add('hidden');
+      setStep(2);
+      var n = countriesForCourse(selCourse).length;
+      showToast(selCourse + ' selected — ' + n + (n===1 ? ' country offers' : ' countries offer') + ' it');
       stepCountry.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
@@ -335,6 +473,8 @@ function renderCountries(){
       renderCountries();
       renderSchools();
       stepSettle.classList.add('hidden');
+      setStep(3);
+      showToast(selCountry + ' selected');
       stepSchool.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
@@ -359,54 +499,92 @@ function renderSchools(){
       selSchoolIdx = parseInt(this.getAttribute('data-idx'), 10);
       renderSchools();
       renderSettlement();
+      setStep(4);
+      var s = schoolsFor(selCourse, selCountry)[selSchoolIdx];
+      showToast(s.school + ' — settlement plan for ' + selCountry);
       stepSettle.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
 }
 
+/* Settlement as expandable FAQ rows (library: FAQ) */
+function faqItem(label, text, open){
+  return '<div class="faq-item'+(open?' open':'')+'">'
+    + '<button type="button" class="faq-q" aria-expanded="'+(open?'true':'false')+'"><span>'+label+'</span><span class="chev" aria-hidden="true">+</span></button>'
+    + '<div class="faq-a'+(open?'':' hidden')+'"><p>'+text+'</p></div></div>';
+}
 function renderSettlement(){
   if(!selCourse || !selCountry || selSchoolIdx === null){ stepSettle.classList.add('hidden'); return; }
   var s = schoolsFor(selCourse, selCountry)[selSchoolIdx];
   if(!s){ stepSettle.classList.add('hidden'); return; }
   var d = SETTLEMENT[selCountry];
   stepSettle.classList.remove('hidden');
-  document.getElementById('settleSub').textContent = s.course + ' at ' + s.school + ' — what happens after you graduate in ' + selCountry + '.';
+  document.getElementById('settleSub').textContent = s.course + ' at ' + s.school + ' — what happens after you graduate in ' + selCountry + '. Tap a row to expand it.';
   settlePanel.innerHTML = '<article class="panel"><h3>'+selCountry+' — after your MSc</h3>'
     + '<p class="context">'+s.school+' • '+s.course+' • Scholarship deadline '+DEADLINES[s.course]+'</p>'
-    + '<div class="kv">'
-    + '<div><b>How long you can stay</b><p>'+d.stay+'</p></div>'
-    + '<div><b>Can you work?</b><p>'+d.work+'</p></div>'
-    + '<div><b>What permit comes next</b><p>'+d.next+'</p></div>'
-    + '<div><b>Path to long-term residence</b><p>'+d.pr+'</p></div>'
+    + '<div class="faq">'
+    + faqItem('How long you can stay', d.stay, true)
+    + faqItem('Can you work?', d.work, false)
+    + faqItem('What permit comes next', d.next, false)
+    + faqItem('Path to long-term residence', d.pr, false)
     + '</div>'
     + '<div class="honest"><strong>Important:</strong> This settlement plan applies to the country where you finish and hold your student permit at graduation — not to every country you visit during the Erasmus mobility. If you want to settle in '+selCountry+', plan to finish there and confirm your final placement with the consortium before you accept a mobility track.</div>'
     + '</article>';
+  settlePanel.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var open = item.classList.toggle('open');
+      a.classList.toggle('hidden', !open);
+      q.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
 }
 
-searchInput.addEventListener('input', function(){
-  /* A new search clears the downstream picks so countries, schools and
-     settlement can never belong to a different course than the one picked. */
+/* Web Search behaviour (library: Web Search): on typing, show the globe
+   progress ring, the shimmering "Searching…" label and skeleton cards,
+   then resolve into the real course cards. Courses only. */
+function handleSearchInput(){
   selCourse = null;
   selCountry = null;
   selSchoolIdx = null;
   stepCountry.classList.add('hidden');
   stepSchool.classList.add('hidden');
   stepSettle.classList.add('hidden');
-  renderCourses();
-});
+  setStep(1);
+  searchClear.classList.toggle('hidden', !searchInput.value.trim());
+  if(searchTimer) clearTimeout(searchTimer);
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){ renderCourses(); return; }
+  searchBox.classList.add('is-searching');
+  searchStatus.classList.remove('hidden');
+  courseGrid.classList.add('hidden');
+  courseEmpty.classList.add('hidden');
+  skeletonGrid.classList.remove('hidden');
+  resultsMeta.textContent = '';
+  searchTimer = setTimeout(function(){
+    searchBox.classList.remove('is-searching');
+    searchStatus.classList.add('hidden');
+    skeletonGrid.classList.add('hidden');
+    courseGrid.classList.remove('hidden');
+    renderCourses();
+  }, 380);
+}
+searchInput.addEventListener('input', handleSearchInput);
 searchClear.addEventListener('click', function(){
   searchInput.value = '';
-  searchInput.dispatchEvent(new Event('input'));
+  handleSearchInput();
   searchInput.focus();
 });
 document.getElementById('chipRow').querySelectorAll('.chip').forEach(function(chip){
   chip.addEventListener('click', function(){
     searchInput.value = this.getAttribute('data-q');
-    searchInput.dispatchEvent(new Event('input'));
+    handleSearchInput();
     searchInput.focus();
   });
 });
 
+setStep(1);
 renderCourses();
 </script>
 </body>
