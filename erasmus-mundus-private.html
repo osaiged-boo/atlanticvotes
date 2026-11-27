@@ -385,12 +385,45 @@ function showToast(msg){
 
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
 function entryHay(e){ return (e.name + ' ' + (e.acr||'') + ' ' + (e.keys||'') + ' ' + (e.coord||'')).toLowerCase(); }
+/* Tight ranking: only close matches show.
+   Common catalogue words are stopwords — on their own they never match. */
+var COMMON_WORDS = {mundus:1, master:1, masters:1, european:1, joint:1, erasmus:1, programme:1, program:1, programmes:1, programs:1};
+function wordTokens(s){ return String(s).toLowerCase().split(/[^a-z0-9]+/).filter(function(w){ return !!w; }); }
 function entryScore(e, q){
-  var hay = entryHay(e), score = 0;
-  if(e.acr && e.acr.toLowerCase() === q) score += 40;
-  if(hay.indexOf(q) !== -1) score += 10;
-  q.split(/\s+/).forEach(function(w){ if(w && hay.indexOf(w) !== -1) score += 3; });
-  return score;
+  var words = wordTokens(q);
+  if(!words.length) return 0;
+  var distinctive = words.filter(function(w){ return !COMMON_WORDS[w] && w.length >= 2; });
+  var acrLower = (e.acr || '').toLowerCase();
+  var acrTokens = wordTokens(e.acr || '');
+  var nameLower = e.name.toLowerCase();
+  var nameAcrLower = (e.name + ' ' + (e.acr || '')).toLowerCase();
+  var nameAcrTokens = wordTokens(nameAcrLower);
+  var hayTokens = wordTokens(entryHay(e));
+  var keysLower = (e.keys || '').toLowerCase();
+  function allIn(list, ws){ return ws.every(function(w){ return list.indexOf(w) !== -1; }); }
+  var bonus = e.vcode ? 4 : (e.dv ? 2 : 0);
+  /* (1) Exact acronym match — the whole acronym, or one acronym token
+     ("MAPP" matches MUNDUS MAPP, "IMIM" matches IMIM). */
+  if(acrLower && (acrLower === q || acrLower.replace(/[^a-z0-9]/g,'') === q.replace(/[^a-z0-9]/g,''))) return 100 + bonus;
+  if(words.length === 1 && words[0].length >= 2 && !COMMON_WORDS[words[0]] && acrTokens.indexOf(words[0]) !== -1) return 100 + bonus;
+  if(distinctive.length === 1 && words.length > 1 && acrTokens.indexOf(distinctive[0]) !== -1) return 100 + bonus;
+  /* A search made only of common words ("Mundus", "Master", "European",
+     "Joint", "Erasmus") must never return a programme. */
+  if(!distinctive.length) return 0;
+  /* (2) Exact phrase match in the programme name / acronym. */
+  if(nameLower.indexOf(q) !== -1 || nameAcrLower.indexOf(q) !== -1) return 80 + bonus;
+  if(distinctive.length > 1 && nameAcrLower.indexOf(distinctive.join(' ')) !== -1) return 80 + bonus;
+  /* (3) All distinctive search words present in the name / acronym, any order. */
+  if(allIn(nameAcrTokens, distinctive)) return 60 + bonus;
+  /* (4) A distinctive subject word match — the word is a whole word in the
+     name / acronym / coordinator, or a curated subject keyword for one of
+     the verified courses (e.g. "vaccines", "quantum"). Multi-word searches
+     still need every distinctive word, so a lone common-word or single
+     partial match never qualifies. */
+  if(allIn(hayTokens, distinctive)) return 40 + bonus;
+  if(keysLower && distinctive.every(function(w){ return keysLower.indexOf(w) !== -1; })) return 40 + bonus;
+  /* Everything else is a loose match — dropped. */
+  return 0;
 }
 function badgesHTML(e){
   var b = '';
@@ -414,7 +447,7 @@ function renderResults(){
   var scored = ENTRIES.map(function(e){ return {e:e, score:entryScore(e, q)}; })
     .filter(function(x){ return x.score > 0; })
     .sort(function(a,b){ return b.score - a.score; });
-  var total = scored.length, shown = scored.slice(0, 60);
+  var total = scored.length, shown = scored.slice(0, 12);
   resultsMeta.textContent = total === 0 ? '' :
     (total === 1 ? '1 programme matches “' + searchInput.value.trim() + '”' : total + ' programmes match “' + searchInput.value.trim() + '”') +
     (total > shown.length ? ' — showing the first ' + shown.length + ', refine your search to narrow it down' : '') +
